@@ -1,0 +1,22 @@
+{
+  "name": "cultuurnet/search-v3",
+  "description": "Cultuurnet search service for version 3",
+  "type": "library",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Nils Destoop",
+      "email": "nils.destoop@wunderkraut.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "CultuurNet\\SearchV3\\": "src"
+    }
+  },
+  "require": {
+    "guzzle/guzzle": "~3.9.3"
+  }
+}
