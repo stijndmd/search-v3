@@ -89,6 +89,8 @@ class SearchQuery implements SearchQueryInterface
           $query['sort'] = $this->sorting;
         }
 
+        $query['embed'] = true;
+
         return $query;
 
     }
