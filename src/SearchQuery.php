@@ -26,6 +26,22 @@ class SearchQuery implements SearchQueryInterface
     protected $sorting = [];
 
     /**
+     * Return the full embedded search results, or only the ids.
+     * @var bool
+     */
+    protected $embed = FALSE;
+
+    /**
+     * SearchQuery constructor.
+     * @param bool $embed
+     *   Return fully embedded entities, or only an array of results.
+     */
+    public function __construct(bool $embed = false)
+    {
+        $this->embed = $embed;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function addParameter(ParameterInterface $parameter)
@@ -44,7 +60,7 @@ class SearchQuery implements SearchQueryInterface
     /**
      * {@inheritdoc}
      */
-    public function addSort($field, $direction)
+    public function addSort(string $field, string $direction)
     {
         $this->sorting[$field] = $direction;
     }
@@ -52,9 +68,18 @@ class SearchQuery implements SearchQueryInterface
     /**
      * {@inheritdoc}
      */
-    public function removeSort($field)
+    public function removeSort(string $field)
     {
       unset($this->sorting[$field]);
+    }
+
+    /**
+     * Set the embed mode.
+     * @param bool $embed
+     */
+    public function setEmbed(bool $embed)
+    {
+        $this->embed = true;
     }
 
     /**
@@ -89,7 +114,9 @@ class SearchQuery implements SearchQueryInterface
           $query['sort'] = $this->sorting;
         }
 
-        $query['embed'] = true;
+        if ($this->embed) {
+            $query['embed'] = true;
+        }
 
         return $query;
 

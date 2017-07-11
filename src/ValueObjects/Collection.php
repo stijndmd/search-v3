@@ -37,18 +37,28 @@ class Collection
         $typeParser = new TypeParser();
         $metadata = [];
         foreach ($values as $member) {
-            $class = $this->contextMapping[$member['@context']];
-            $metadata[$class] = $metadata[$class] ?? $deserializationContext->getMetadataFactory()->getMetadataForClass($class);
 
-            $object = new $class();
-            $memberVisitor->startVisitingObject($metadata[$class], $object, $typeParser->parse($class), $deserializationContext);
+            // If context is given, we have a full entity.
+            if (isset($member['@context'])) {
+                $class = $this->contextMapping[$member['@context']];
+                $metadata[$class] = $metadata[$class] ?? $deserializationContext->getMetadataFactory()->getMetadataForClass($class);
 
-            $properties = $metadata[$class]->propertyMetadata;
-            foreach ($properties as $property) {
-                $memberVisitor->visitProperty($property, $member, $deserializationContext);
+                $object = new $class();
+                $memberVisitor->startVisitingObject($metadata[$class], $object, $typeParser->parse($class), $deserializationContext);
+
+                $properties = $metadata[$class]->propertyMetadata;
+                foreach ($properties as $property) {
+                    $memberVisitor->visitProperty($property, $member, $deserializationContext);
+                }
+
+                $this->items[] = $object;
+            }
+            // If not, we only have id + type. Just copy the array.
+            else {
+                $this->items[] = $member;
             }
 
-            $this->items[] = $object;
+
         }
     }
 
