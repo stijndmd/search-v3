@@ -1,6 +1,8 @@
 <?php
 
-namespace CultuurNet\SearchV3;
+namespace CultuurNet\SearchV3\Parameter;
+
+use CultuurNet\SearchV3\ParameterInterface;
 
 /**
  * Provides an abstract class for query parameters.
@@ -16,7 +18,8 @@ abstract class AbstractParameter implements ParameterInterface
     protected $key;
 
     /**
-     * @var
+     * The value to use.
+     * @var string
      */
     protected $value;
 
@@ -24,14 +27,14 @@ abstract class AbstractParameter implements ParameterInterface
      * {@inheritdoc}
      */
     public function getKey() {
-
+        return $this->key;
     }
 
     /**
      * {@inheritdoc}
      */
     public function getValue() {
-
+        return $this->value;
     }
 
 }

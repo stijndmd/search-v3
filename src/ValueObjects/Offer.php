@@ -1,6 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Hydrator;
+namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\Annotation\Type;
 
@@ -75,13 +75,13 @@ abstract class Offer
 
     /**
      * @var MediaObject[]
-     * @Type("array<Cultuurnet\SearchV3\Hydrator\MediaObject>")
+     * @Type("array<CultuurNet\SearchV3\ValueObjects\MediaObject>")
      */
     protected $mediaObject;
 
     /**
      * @var Organizer
-     * @Type("CultuurNet\SearchV3\Hydrator\Organizer")
+     * @Type("CultuurNet\SearchV3\ValueObjects\Organizer")
      */
     protected $organizer;
 

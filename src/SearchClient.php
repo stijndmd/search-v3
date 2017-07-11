@@ -2,15 +2,8 @@
 
 namespace CultuurNet\SearchV3;
 
-use Guzzle\Http\Client;
-use CultureFeed_HttpClient;
-use CultureFeed_HttpResponse;
-use CultureFeed_DefaultHttpClient;
-use Exception;
+use CultuurNet\SearchV3\Serializer\SerializerInterface;
 use Guzzle\Http\ClientInterface;
-use Guzzle\Http\Exception\BadResponseException;
-use Guzzle\Http\Message\EntityEnclosingRequestInterface;
-use Guzzle\Service\Builder\ServiceBuilderInterface;
 
 /**
  * Default search client to perform searches on the search api.
@@ -25,29 +18,54 @@ class SearchClient
     protected $client;
 
     /**
+     * @var SerializerInterface
+     */
+    protected $serializer;
+
+    /**
      * SearchClient constructor.
      * @param ClientInterface $client
      */
-    public function __construct(ClientInterface $client)
+    public function __construct(ClientInterface $client, SerializerInterface $serializer)
     {
         $this->client = $client;
+        $this->serializer = $serializer;
     }
 
-  /**
-   * @param SearchQueryInterface $searchQuery
-   */
+    /**
+     * Perform a search on events.
+     *
+     * @param SearchQueryInterface $searchQuery
+     */
+    public function searchEvents(SearchQueryInterface $searchQuery)
+    {
+        return $this->search($searchQuery, 'events');
+    }
+
+    /**
+     * Perform a search on offers.
+    * @param SearchQueryInterface $searchQuery
+    */
     public function searchOffers(SearchQueryInterface $searchQuery)
     {
+        return $this->search($searchQuery, 'offers');
+    }
 
+    /**
+     * Perform a search on a given type.
+     * @param SearchQueryInterface $searchQuery
+     * @param $type The type to search on
+     */
+    protected function search(SearchQueryInterface $searchQuery, $type) {
         $options = [
-          'query' => $searchQuery->toArray(),
+            'query' => $searchQuery->toArray(),
         ];
 
-        $request = $this->client->createRequest('GET', 'offers', null, null, $options);
+        $request = $this->client->createRequest('GET', $type, null, null, $options);
 
         $result = $request->send();
 
-        return $result;
+        return $this->serializer->deserialize($result->getBody(true));
     }
 
 

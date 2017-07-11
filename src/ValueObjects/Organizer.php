@@ -1,6 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Hydrator;
+namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\Annotation\Type;
 

@@ -1,40 +1,34 @@
 <?php
 
-namespace CultuurNet\SearchV3\Hydrator;
+namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\Annotation\Type;
 
-class MediaObject
+class Address
 {
 
     /**
      * @var string
      * @Type("string")
      */
-    protected $id;
+    protected $addressCountry;
 
     /**
      * @var string
      * @Type("string")
      */
-    protected $contentUrl;
+    protected $addressLocality;
 
     /**
      * @var string
      * @Type("string")
      */
-    protected $thumbnailUrl;
+    protected $postalCode;
 
     /**
      * @var string
      * @Type("string")
      */
-    protected $description;
-
-    /**
-     * @var string
-     * @Type("string")
-     */
-    protected $copyrightHolder;
+    protected $streetAddress;
 
 }
