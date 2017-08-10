@@ -46,6 +46,18 @@ interface SearchQueryInterface
     public function setEmbed(bool $embed);
 
     /**
+     * Set the start parameter.
+     * @param int $start
+     */
+    public function setStart(int $start);
+
+    /**
+     * Set result limit parameter.
+     * @param int $limit
+     */
+    public function setLimit(int $limit);
+
+    /**
     * Cast the search query to an array.
     */
     public function toArray();

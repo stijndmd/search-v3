@@ -32,6 +32,18 @@ class SearchQuery implements SearchQueryInterface
     protected $embed = FALSE;
 
     /**
+     * The number of results to skip (defaults to 0).
+     * @var int
+     */
+    protected $start = FALSE;
+
+    /**
+     * The number of results to return in a single page (defaults to 30).
+     * @var int
+     */
+    protected $limit = FALSE;
+
+    /**
      * SearchQuery constructor.
      * @param bool $embed
      *   Return fully embedded entities, or only an array of results.
@@ -93,6 +105,22 @@ class SearchQuery implements SearchQueryInterface
     /**
      * {@inheritdoc}
      */
+    public function setStart(int $start)
+    {
+        $this->start = $start;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setLimit(int $limit)
+    {
+        $this->limit = $limit;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function toArray()
     {
 
@@ -116,6 +144,14 @@ class SearchQuery implements SearchQueryInterface
 
         if ($this->embed) {
             $query['embed'] = true;
+        }
+
+        if ($this->start) {
+            $query['start'] = $this->start;
+        }
+
+        if ($this->limit) {
+            $query['limit'] = $this->limit;
         }
 
         return $query;
