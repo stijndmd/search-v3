@@ -13,4 +13,21 @@ class Event extends Offer
      */
     protected $location;
 
+    /**
+     * @return Place
+     */
+    public function getLocation() {
+        return $this->location;
+    }
+
+    /**
+     * @param Place $location
+     * @return Event
+     */
+    public function setLocation($location) {
+        $this->location = $location;
+
+        return $this;
+    }
+
 }
