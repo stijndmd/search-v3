@@ -104,6 +104,12 @@ abstract class Offer
     protected $endDate;
 
     /**
+     * @var Term[]
+     * @Type("array<CultuurNet\SearchV3\ValueObjects\Term>")
+     */
+    protected $terms;
+
+    /**
      * @return string
      */
     public function getMainLanguage() {
@@ -371,6 +377,39 @@ abstract class Offer
      */
     public function setEndDate($endDate) {
         $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * @return Term[]
+     */
+    public function getTerms() {
+        return $this->terms;
+    }
+
+    /**
+     * Return terms, filtered on domain.
+     *
+     * @param string $domain
+     * @return Term[]
+     */
+    public function getTermsByDomain(string $domain) {
+        $filteredTerms = [];
+        foreach ($this->terms as $term) {
+            if ($term->getDomain() == $domain) {
+                $filteredTerms[] = $term;
+            }
+        }
+        return $filteredTerms;
+    }
+
+    /**
+     * @param Term[] $terms
+     * @return Offer
+     */
+    public function setTerms($terms) {
+        $this->terms = $terms;
 
         return $this;
     }
