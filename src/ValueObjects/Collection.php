@@ -18,6 +18,23 @@ class Collection
     protected $items = [];
 
     /**
+     * @return array
+     */
+    public function getItems() {
+        return $this->items;
+    }
+
+    /**
+     * @param array $items
+     * @return Collection
+     */
+    public function setItems($items) {
+        $this->items = $items;
+
+        return $this;
+    }
+
+    /**
      * @HandlerCallback("json", direction = "deserialization")
      */
     public function deserializeFromJson(JsonDeserializationVisitor $visitor, $values, DeserializationContext $context)

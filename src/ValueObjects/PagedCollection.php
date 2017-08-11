@@ -45,4 +45,72 @@ class PagedCollection
      */
     protected $facets;
 
+    /**
+     * @return int
+     */
+    public function getItemsPerPage() {
+        return $this->itemsPerPage;
+    }
+
+    /**
+     * @param int $itemsPerPage
+     * @return PagedCollection
+     */
+    public function setItemsPerPage($itemsPerPage) {
+        $this->itemsPerPage = $itemsPerPage;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTotalItems() {
+        return $this->totalItems;
+    }
+
+    /**
+     * @param int $totalItems
+     * @return PagedCollection
+     */
+    public function setTotalItems($totalItems) {
+        $this->totalItems = $totalItems;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getMember() {
+        return $this->member;
+    }
+
+    /**
+     * @param Collection $member
+     * @return PagedCollection
+     */
+    public function setMember($member) {
+        $this->member = $member;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFacets() {
+        return $this->facets;
+    }
+
+    /**
+     * @param mixed $facets
+     * @return PagedCollection
+     */
+    public function setFacets($facets) {
+        $this->facets = $facets;
+
+        return $this;
+    }
+
 }
