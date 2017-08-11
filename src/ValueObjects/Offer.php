@@ -92,6 +92,18 @@ abstract class Offer
     protected $labels;
 
     /**
+     * @var \DateTime
+     * @Type("DateTime")
+     */
+    protected $startDate;
+
+    /**
+     * @var \DateTime
+     * @Type("DateTime")
+     */
+    protected $endDate;
+
+    /**
      * @return string
      */
     public function getMainLanguage() {
@@ -325,6 +337,40 @@ abstract class Offer
      */
     public function setLabels($labels) {
         $this->labels = $labels;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getStartDate() {
+        return $this->startDate;
+    }
+
+    /**
+     * @param \DateTime $startDate
+     * @return Offer
+     */
+    public function setStartDate($startDate) {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndDate() {
+        return $this->endDate;
+    }
+
+    /**
+     * @param \DateTime $endDate
+     * @return Offer
+     */
+    public function setEndDate($endDate) {
+        $this->endDate = $endDate;
 
         return $this;
     }
