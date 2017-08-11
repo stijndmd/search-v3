@@ -17,6 +17,23 @@ class FacetResults
     protected $facetResults;
 
     /**
+     * @return array
+     */
+    public function getFacetResults() {
+        return $this->facetResults;
+    }
+
+    /**
+     * @param array $facetResults
+     * @return FacetResults
+     */
+    public function setFacetResults($facetResults) {
+        $this->facetResults = $facetResults;
+
+        return $this;
+    }
+
+    /**
      * @HandlerCallback("json", direction = "deserialization")
      */
     public function deserializeFromJson(JsonDeserializationVisitor $visitor, $values, DeserializationContext $context)

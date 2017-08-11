@@ -19,4 +19,38 @@ class Organizer
      */
     protected $email;
 
+    /**
+     * @return string
+     */
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     * @return Organizer
+     */
+    public function setName($name) {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getEmail() {
+        return $this->email;
+    }
+
+    /**
+     * @param array $email
+     * @return Organizer
+     */
+    public function setEmail($email) {
+        $this->email = $email;
+
+        return $this;
+    }
+
 }

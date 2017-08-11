@@ -13,4 +13,21 @@ class Place extends Offer
      */
     protected $address;
 
+    /**
+     * @return Address
+     */
+    public function getAddress() {
+        return $this->address;
+    }
+
+    /**
+     * @param Address $address
+     * @return Place
+     */
+    public function setAddress($address) {
+        $this->address = $address;
+
+        return $this;
+    }
+
 }
