@@ -20,6 +20,12 @@ class Organizer
     protected $email;
 
     /**
+     * @var array
+     * @Type("array<string>")
+     */
+    protected $hiddenLabels;
+
+    /**
      * @return string
      */
     public function getName() {
@@ -49,6 +55,23 @@ class Organizer
      */
     public function setEmail($email) {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getHiddenLabels() {
+        return $this->hiddenLabels;
+    }
+
+    /**
+     * @param array $hiddenLabels
+     * @return Organizer
+     */
+    public function setHiddenLabels($hiddenLabels) {
+        $this->hiddenLabels = $hiddenLabels;
 
         return $this;
     }
