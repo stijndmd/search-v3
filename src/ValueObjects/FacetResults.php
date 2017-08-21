@@ -34,6 +34,19 @@ class FacetResults
     }
 
     /**
+     * @return array
+     */
+    public function getFacetResultsByField($field) {
+        $results = [];
+        foreach ($this->facetResults as $facetResult) {
+            if ($facetResult->getField() == $field) {
+                $results[] = $facetResult;
+            }
+        }
+        return $this->facetResults;
+    }
+
+    /**
      * @HandlerCallback("json", direction = "deserialization")
      */
     public function deserializeFromJson(JsonDeserializationVisitor $visitor, $values, DeserializationContext $context)
