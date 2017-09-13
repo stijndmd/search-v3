@@ -3,9 +3,17 @@
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\SerializedName;
 
 abstract class Offer
 {
+
+    /**
+     * @var string
+     * @Type("string")
+     * @SerializedName("@id")
+     */
+    protected $id;
 
     /**
      * @var string
@@ -108,6 +116,31 @@ abstract class Offer
      * @Type("array<CultuurNet\SearchV3\ValueObjects\Term>")
      */
     protected $terms;
+
+    /**
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get the cdbid of current offer.
+     */
+    public function getCdbid()
+    {
+        $id_parts = explode('/', rtrim($this->id, '/'));
+        return end($id_parts);
+    }
+
+    /**
+     * @param string $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return string
