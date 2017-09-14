@@ -8,8 +8,10 @@ use JMS\Serializer\JsonDeserializationVisitor;
 use JMS\Serializer\TypeParser;
 use JMS\Serializer\Annotation\HandlerCallback;
 
-class FacetResults
+class FacetResults implements \Iterator
 {
+
+    protected $key;
 
     /**
      * @var array
@@ -44,6 +46,46 @@ class FacetResults
             }
         }
         return $this->facetResults;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function current()
+    {
+        return current($this->facetResults);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function next()
+    {
+        return next($this->facetResults);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function key()
+    {
+        return key($this->facetResults);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function valid()
+    {
+        return key($this->facetResults) !== null;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function rewind()
+    {
+        return reset($this->facetResults);
     }
 
     /**

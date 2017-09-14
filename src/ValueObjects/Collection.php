@@ -12,7 +12,7 @@ class Collection
 
     protected $contextMapping = [
         '/contexts/event' => Event::class,
-        '/contexts/place' => Place::class
+        '/contexts/place' => Place::class,
     ];
 
     protected $items = [];
