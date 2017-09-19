@@ -45,7 +45,7 @@ class FacetResults implements \Iterator
                 $results[] = $facetResult;
             }
         }
-        return $this->facetResults;
+        return $results;
     }
 
     /**
