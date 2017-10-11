@@ -64,6 +64,18 @@ class SearchQuery implements SearchQueryInterface
     /**
      * {@inheritdoc}
      */
+    public function removeParameter(ParameterInterface $parameter)
+    {
+        foreach($this->parameters as $i => $param) {
+            if ($param === $parameter) {
+                unset($this->parameters[$i]);
+            }
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getParameters()
     {
         return $this->parameters;

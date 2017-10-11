@@ -22,6 +22,12 @@ interface SearchQueryInterface
     public function addParameter(ParameterInterface $parameter);
 
     /**
+     * Remove an existing parameter.
+     * @param ParameterInterface $parameter
+     */
+    public function removeParameter(ParameterInterface $parameter);
+
+    /**
     * Get the parameters.
     * @return array
     */
