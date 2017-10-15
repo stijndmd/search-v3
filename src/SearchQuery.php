@@ -137,17 +137,31 @@ class SearchQuery implements SearchQueryInterface
     {
 
         $query = [];
+        $duplicateKeys = [];
         foreach ($this->parameters as $parameter) {
             $key = $parameter->getKey();
 
-            // Same query key is used multiple times? Change it to an array.
+            // Same query key is used multiple times? Merge it into 1 query.
             if (isset($query[$key])) {
-              $query[$key] = is_array($query[$key]) ? $query[$key] : [$query[$key]];
-              $query[$key][] = $parameter->getValue();
+                // Facets is allowed as array.
+                if ($key === 'facets') {
+                    $query[$key] = is_array($query[$key]) ? $query[$key] : [$query[$key]];
+                    $query[$key][] = $parameter->getValue();
+                }
+                else {
+                    $duplicateKeys[$key][] = $parameter->getValue();
+                }
             }
             else {
               $query[$key] = $parameter->getValue();
             }
+        }
+
+        // Merge the duplicate keys into the main query.
+        foreach ($duplicateKeys as $key => $duplicateKeyValues) {
+            // Copy the value that already exists in the query, to the duplicate array.
+            $duplicateKeyValues[] = $query[$key];
+            $query[$key] = '(' . implode(') AND (', $duplicateKeyValues) . ')';
         }
 
         if (!empty($this->sorting)) {
@@ -167,7 +181,5 @@ class SearchQuery implements SearchQueryInterface
         }
 
         return $query;
-
     }
-
 }

@@ -59,8 +59,9 @@ class SearchClient
      * @return PagedCollection
      */
     protected function search(SearchQueryInterface $searchQuery, $type) {
+
         $options = [
-            'query' => $searchQuery->toArray(),
+          'query' => $searchQuery->toArray()
         ];
 
         $request = $this->client->createRequest('GET', $type, null, null, $options);
