@@ -14,6 +14,11 @@ class Place extends Offer
     protected $address;
 
     /**
+     * @Type("CultuurNet\SearchV3\ValueObjects\GeoPoint")
+     */
+    protected $geo;
+
+    /**
      * @return Address
      */
     public function getAddress() {
@@ -30,4 +35,21 @@ class Place extends Offer
         return $this;
     }
 
+    /**
+     * @return GeoPoint
+     */
+    public function getGeo()
+    {
+        return $this->geo;
+    }
+
+    /**
+     * @param mixed $geo
+     * @return Place
+     */
+    public function setGeo($geo)
+    {
+        $this->geo = $geo;
+        return $this;
+    }
 }

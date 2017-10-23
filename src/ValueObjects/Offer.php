@@ -134,6 +134,12 @@ abstract class Offer
     protected $terms = [];
 
     /**
+     * @var ContactPoint
+     * @Type("CultuurNet\SearchV3\ValueObjects\ContactPoint")
+     */
+    protected $contactPoint;
+
+    /**
      * @return string
      */
     public function getId()
@@ -499,4 +505,21 @@ abstract class Offer
         return $this;
     }
 
+    /**
+     * @return ContactPoint
+     */
+    public function getContactPoint()
+    {
+        return $this->contactPoint;
+    }
+
+    /**
+     * @param ContactPoint $contactPoint
+     * @return Offer
+     */
+    public function setContactPoint($contactPoint)
+    {
+        $this->contactPoint = $contactPoint;
+        return $this;
+    }
 }
