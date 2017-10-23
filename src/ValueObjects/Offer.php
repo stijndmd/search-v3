@@ -8,6 +8,10 @@ use JMS\Serializer\Annotation\SerializedName;
 abstract class Offer
 {
 
+    const CALENDAR_TYPE_MULTIPLE = 'multiple';
+    const CALENDAR_TYPE_SINGLE = 'single';
+    const CALENDAR_TYPE_PERIODIC = 'periodic';
+
     /**
      * @var string
      * @Type("string")
@@ -38,6 +42,12 @@ abstract class Offer
      * @Type("string")
      */
     protected $calendarSummary;
+
+    /**
+     * @var string
+     * @Type("string")
+     */
+    protected $calendarType;
 
     /**
      * @var string
@@ -85,7 +95,7 @@ abstract class Offer
      * @var MediaObject[]
      * @Type("array<CultuurNet\SearchV3\ValueObjects\MediaObject>")
      */
-    protected $mediaObject;
+    protected $mediaObject = [];
 
     /**
      * @var Organizer
@@ -97,7 +107,13 @@ abstract class Offer
      * @var array
      * @Type("array<string>")
      */
-    protected $labels;
+    protected $labels = [];
+
+    /**
+     * @var array
+     * @Type("array<string>")
+     */
+    protected $hiddenLabels = [];
 
     /**
      * @var \DateTime
@@ -115,7 +131,7 @@ abstract class Offer
      * @var Term[]
      * @Type("array<CultuurNet\SearchV3\ValueObjects\Term>")
      */
-    protected $terms;
+    protected $terms = [];
 
     /**
      * @return string
@@ -190,6 +206,24 @@ abstract class Offer
     public function setDescription($description) {
         $this->description = $description;
 
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCalendarType()
+    {
+        return $this->calendarType;
+    }
+
+    /**
+     * @param string $calendarType
+     * @return Offer
+     */
+    public function setCalendarType($calendarType)
+    {
+        $this->calendarType = $calendarType;
         return $this;
     }
 
@@ -377,6 +411,24 @@ abstract class Offer
     public function setLabels($labels) {
         $this->labels = $labels;
 
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getHiddenLabels()
+    {
+        return $this->hiddenLabels;
+    }
+
+    /**
+     * @param array $hiddenLabels
+     * @return Offer
+     */
+    public function setHiddenLabels($hiddenLabels)
+    {
+        $this->hiddenLabels = $hiddenLabels;
         return $this;
     }
 
