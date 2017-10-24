@@ -6,17 +6,45 @@
     </fileset>
 
     <target name="test">
+        <phingcall target="composer-validate"/>
+        <phingcall target="lint"/>
+        <phingcall target="unit-tests" />
+        <phingcall target="coding-standards"/>
+    </target>
+
+    <target name="composer-validate">
         <exec command="composer validate" passthru="true" />
+    </target>
+
+    <target name="lint">
         <phplint>
             <fileset refid="php"/>
         </phplint>
+    </target>
+
+    <!--
+    The PHPUnit task of Phing does not support white-lists for code
+    coverage. Therefore we use the exec task instead.
+    -->
+    <target name="unit-tests">
+        <exec
+                command="./vendor/bin/phpunit"
+                checkreturn="true"
+                passthru="true"/>
+    </target>
+
+    <target name="coding-standards">
+        <exec command="vendor/bin/phpcs --config-set installed_paths vendor/escapestudios/symfony2-coding-standard"
+              passthru="true"/>
         <phpcodesniffer
                 standard="phpcs-ruleset.xml"
                 format="full"
                 allowedFileExtensions="php"
-                haltonerror="true">
+                haltonerror="true"
+                showWarnings="true">
             <fileset refid="php"/>
         </phpcodesniffer>
+
     </target>
 
     <target name="report-to-coveralls">
