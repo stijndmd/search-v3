@@ -58,7 +58,8 @@ class SearchClient
      * @param $type The type to search on
      * @return PagedCollection
      */
-    protected function search(SearchQueryInterface $searchQuery, $type) {
+    protected function search(SearchQueryInterface $searchQuery, $type)
+    {
 
         $options = [
           'query' => $searchQuery->toArray()
@@ -70,6 +71,4 @@ class SearchClient
 
         return $this->serializer->deserialize($result->getBody(true));
     }
-
-
 }

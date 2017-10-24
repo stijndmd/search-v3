@@ -2,7 +2,6 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-
 class Facet extends AbstractParameter
 {
 
@@ -16,5 +15,4 @@ class Facet extends AbstractParameter
         $this->key = 'facets';
         $this->value = $facetType;
     }
-
 }

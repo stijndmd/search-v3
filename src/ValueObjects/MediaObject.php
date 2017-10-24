@@ -40,7 +40,8 @@ class MediaObject
     /**
      * @return string
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -48,7 +49,8 @@ class MediaObject
      * @param string $id
      * @return MediaObject
      */
-    public function setId($id) {
+    public function setId($id)
+    {
         $this->id = $id;
 
         return $this;
@@ -57,7 +59,8 @@ class MediaObject
     /**
      * @return string
      */
-    public function getContentUrl() {
+    public function getContentUrl()
+    {
         return $this->contentUrl;
     }
 
@@ -65,7 +68,8 @@ class MediaObject
      * @param string $contentUrl
      * @return MediaObject
      */
-    public function setContentUrl($contentUrl) {
+    public function setContentUrl($contentUrl)
+    {
         $this->contentUrl = $contentUrl;
 
         return $this;
@@ -74,7 +78,8 @@ class MediaObject
     /**
      * @return string
      */
-    public function getThumbnailUrl() {
+    public function getThumbnailUrl()
+    {
         return $this->thumbnailUrl;
     }
 
@@ -82,7 +87,8 @@ class MediaObject
      * @param string $thumbnailUrl
      * @return MediaObject
      */
-    public function setThumbnailUrl($thumbnailUrl) {
+    public function setThumbnailUrl($thumbnailUrl)
+    {
         $this->thumbnailUrl = $thumbnailUrl;
 
         return $this;
@@ -91,7 +97,8 @@ class MediaObject
     /**
      * @return string
      */
-    public function getDescription() {
+    public function getDescription()
+    {
         return $this->description;
     }
 
@@ -99,7 +106,8 @@ class MediaObject
      * @param string $description
      * @return MediaObject
      */
-    public function setDescription($description) {
+    public function setDescription($description)
+    {
         $this->description = $description;
 
         return $this;
@@ -108,7 +116,8 @@ class MediaObject
     /**
      * @return string
      */
-    public function getCopyrightHolder() {
+    public function getCopyrightHolder()
+    {
         return $this->copyrightHolder;
     }
 
@@ -116,10 +125,10 @@ class MediaObject
      * @param string $copyrightHolder
      * @return MediaObject
      */
-    public function setCopyrightHolder($copyrightHolder) {
+    public function setCopyrightHolder($copyrightHolder)
+    {
         $this->copyrightHolder = $copyrightHolder;
 
         return $this;
     }
-
 }

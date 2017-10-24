@@ -167,7 +167,8 @@ abstract class Offer
     /**
      * @return string
      */
-    public function getMainLanguage() {
+    public function getMainLanguage()
+    {
         return $this->mainLanguage;
     }
 
@@ -175,7 +176,8 @@ abstract class Offer
      * @param string $mainLanguage
      * @return Offer
      */
-    public function setMainLanguage($mainLanguage) {
+    public function setMainLanguage($mainLanguage)
+    {
         $this->mainLanguage = $mainLanguage;
 
         return $this;
@@ -184,7 +186,8 @@ abstract class Offer
     /**
      * @return array
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -192,7 +195,8 @@ abstract class Offer
      * @param array $name
      * @return Offer
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -201,7 +205,8 @@ abstract class Offer
     /**
      * @return array
      */
-    public function getDescription() {
+    public function getDescription()
+    {
         return $this->description;
     }
 
@@ -209,7 +214,8 @@ abstract class Offer
      * @param array $description
      * @return Offer
      */
-    public function setDescription($description) {
+    public function setDescription($description)
+    {
         $this->description = $description;
 
         return $this;
@@ -236,7 +242,8 @@ abstract class Offer
     /**
      * @return string
      */
-    public function getCalendarSummary() {
+    public function getCalendarSummary()
+    {
         return $this->calendarSummary;
     }
 
@@ -244,7 +251,8 @@ abstract class Offer
      * @param string $calendarSummary
      * @return Offer
      */
-    public function setCalendarSummary($calendarSummary) {
+    public function setCalendarSummary($calendarSummary)
+    {
         $this->calendarSummary = $calendarSummary;
 
         return $this;
@@ -253,7 +261,8 @@ abstract class Offer
     /**
      * @return string
      */
-    public function getCreator() {
+    public function getCreator()
+    {
         return $this->creator;
     }
 
@@ -261,7 +270,8 @@ abstract class Offer
      * @param string $creator
      * @return Offer
      */
-    public function setCreator($creator) {
+    public function setCreator($creator)
+    {
         $this->creator = $creator;
 
         return $this;
@@ -270,7 +280,8 @@ abstract class Offer
     /**
      * @return \DateTime
      */
-    public function getCreated() {
+    public function getCreated()
+    {
         return $this->created;
     }
 
@@ -278,7 +289,8 @@ abstract class Offer
      * @param \DateTime $created
      * @return Offer
      */
-    public function setCreated($created) {
+    public function setCreated($created)
+    {
         $this->created = $created;
 
         return $this;
@@ -287,7 +299,8 @@ abstract class Offer
     /**
      * @return \DateTime
      */
-    public function getModified() {
+    public function getModified()
+    {
         return $this->modified;
     }
 
@@ -295,7 +308,8 @@ abstract class Offer
      * @param \DateTime $modified
      * @return Offer
      */
-    public function setModified($modified) {
+    public function setModified($modified)
+    {
         $this->modified = $modified;
 
         return $this;
@@ -304,7 +318,8 @@ abstract class Offer
     /**
      * @return string
      */
-    public function getPublisher() {
+    public function getPublisher()
+    {
         return $this->publisher;
     }
 
@@ -312,7 +327,8 @@ abstract class Offer
      * @param string $publisher
      * @return Offer
      */
-    public function setPublisher($publisher) {
+    public function setPublisher($publisher)
+    {
         $this->publisher = $publisher;
 
         return $this;
@@ -321,7 +337,8 @@ abstract class Offer
     /**
      * @return string
      */
-    public function getTypicalAgeRange() {
+    public function getTypicalAgeRange()
+    {
         return $this->typicalAgeRange;
     }
 
@@ -329,7 +346,8 @@ abstract class Offer
      * @param string $typicalAgeRange
      * @return Offer
      */
-    public function setTypicalAgeRange($typicalAgeRange) {
+    public function setTypicalAgeRange($typicalAgeRange)
+    {
         $this->typicalAgeRange = $typicalAgeRange;
 
         return $this;
@@ -338,7 +356,8 @@ abstract class Offer
     /**
      * @return array
      */
-    public function getPerformer() {
+    public function getPerformer()
+    {
         return $this->performer;
     }
 
@@ -346,7 +365,8 @@ abstract class Offer
      * @param array $performer
      * @return Offer
      */
-    public function setPerformer($performer) {
+    public function setPerformer($performer)
+    {
         $this->performer = $performer;
 
         return $this;
@@ -355,7 +375,8 @@ abstract class Offer
     /**
      * @return string
      */
-    public function getImage() {
+    public function getImage()
+    {
         return $this->image;
     }
 
@@ -363,7 +384,8 @@ abstract class Offer
      * @param string $image
      * @return Offer
      */
-    public function setImage($image) {
+    public function setImage($image)
+    {
         $this->image = $image;
 
         return $this;
@@ -372,7 +394,8 @@ abstract class Offer
     /**
      * @return MediaObject[]
      */
-    public function getMediaObject() {
+    public function getMediaObject()
+    {
         return $this->mediaObject;
     }
 
@@ -380,7 +403,8 @@ abstract class Offer
      * @param MediaObject[] $mediaObject
      * @return Offer
      */
-    public function setMediaObject($mediaObject) {
+    public function setMediaObject($mediaObject)
+    {
         $this->mediaObject = $mediaObject;
 
         return $this;
@@ -389,7 +413,8 @@ abstract class Offer
     /**
      * @return Organizer
      */
-    public function getOrganizer() {
+    public function getOrganizer()
+    {
         return $this->organizer;
     }
 
@@ -397,7 +422,8 @@ abstract class Offer
      * @param Organizer $organizer
      * @return Offer
      */
-    public function setOrganizer($organizer) {
+    public function setOrganizer($organizer)
+    {
         $this->organizer = $organizer;
 
         return $this;
@@ -406,7 +432,8 @@ abstract class Offer
     /**
      * @return array
      */
-    public function getLabels() {
+    public function getLabels()
+    {
         return $this->labels;
     }
 
@@ -414,7 +441,8 @@ abstract class Offer
      * @param array $labels
      * @return Offer
      */
-    public function setLabels($labels) {
+    public function setLabels($labels)
+    {
         $this->labels = $labels;
 
         return $this;
@@ -441,7 +469,8 @@ abstract class Offer
     /**
      * @return \DateTime
      */
-    public function getStartDate() {
+    public function getStartDate()
+    {
         return $this->startDate;
     }
 
@@ -449,7 +478,8 @@ abstract class Offer
      * @param \DateTime $startDate
      * @return Offer
      */
-    public function setStartDate($startDate) {
+    public function setStartDate($startDate)
+    {
         $this->startDate = $startDate;
 
         return $this;
@@ -458,7 +488,8 @@ abstract class Offer
     /**
      * @return \DateTime
      */
-    public function getEndDate() {
+    public function getEndDate()
+    {
         return $this->endDate;
     }
 
@@ -466,7 +497,8 @@ abstract class Offer
      * @param \DateTime $endDate
      * @return Offer
      */
-    public function setEndDate($endDate) {
+    public function setEndDate($endDate)
+    {
         $this->endDate = $endDate;
 
         return $this;
@@ -475,7 +507,8 @@ abstract class Offer
     /**
      * @return Term[]
      */
-    public function getTerms() {
+    public function getTerms()
+    {
         return $this->terms;
     }
 
@@ -485,7 +518,8 @@ abstract class Offer
      * @param string $domain
      * @return Term[]
      */
-    public function getTermsByDomain(string $domain) {
+    public function getTermsByDomain(string $domain)
+    {
         $filteredTerms = [];
         foreach ($this->terms as $term) {
             if ($term->getDomain() == $domain) {
@@ -499,7 +533,8 @@ abstract class Offer
      * @param Term[] $terms
      * @return Offer
      */
-    public function setTerms($terms) {
+    public function setTerms($terms)
+    {
         $this->terms = $terms;
 
         return $this;

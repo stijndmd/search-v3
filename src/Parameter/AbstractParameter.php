@@ -26,15 +26,16 @@ abstract class AbstractParameter implements ParameterInterface
     /**
      * {@inheritdoc}
      */
-    public function getKey() {
+    public function getKey()
+    {
         return $this->key;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getValue() {
+    public function getValue()
+    {
         return $this->value;
     }
-
 }

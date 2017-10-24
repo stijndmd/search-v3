@@ -17,5 +17,4 @@ class Labels extends AbstractParameter
         $this->value = $label;
         $this->key = 'labels';
     }
-
 }
