@@ -5,7 +5,8 @@ php:
 install: composer install
 script:
 - ./vendor/bin/phing test
-after_success: ./vendor/bin/phing report-to-coveralls
+after_script:
+- ./vendor/bin/coveralls -vvv
 notifications:
   email:
     recipients:
