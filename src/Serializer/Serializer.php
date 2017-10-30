@@ -25,7 +25,8 @@ class Serializer implements SerializerInterface
     /**
      * Serializer constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
 
         $this->serializer = SerializerBuilder::create()
             ->addMetadataDir(SerializerMetadata::directory(), SerializerMetadata::namespacePrefix())
@@ -38,7 +39,8 @@ class Serializer implements SerializerInterface
     /**
      * {@inheritdoc}
      */
-    public function setSerializer(\JMS\Serializer\SerializerInterface $serializer) {
+    public function setSerializer(\JMS\Serializer\SerializerInterface $serializer)
+    {
         $this->serializer = $serializer;
     }
 
@@ -63,5 +65,4 @@ class Serializer implements SerializerInterface
 
         return $this->serializer->deserialize($jsonString, PagedCollection::class, 'json', $deserializationContext);
     }
-
 }

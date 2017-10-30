@@ -2,7 +2,6 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
 use JMS\Serializer\TypeParser;
@@ -21,7 +20,8 @@ class FacetResults implements \Iterator
     /**
      * @return array
      */
-    public function getFacetResults() {
+    public function getFacetResults()
+    {
         return $this->facetResults;
     }
 
@@ -29,7 +29,8 @@ class FacetResults implements \Iterator
      * @param array $facetResults
      * @return FacetResults
      */
-    public function setFacetResults($facetResults) {
+    public function setFacetResults($facetResults)
+    {
         $this->facetResults = $facetResults;
 
         return $this;
@@ -38,7 +39,8 @@ class FacetResults implements \Iterator
     /**
      * @return array
      */
-    public function getFacetResultsByField($field) {
+    public function getFacetResultsByField($field)
+    {
         $results = [];
         foreach ($this->facetResults as $facetResult) {
             if ($facetResult->getField() == $field) {
@@ -101,8 +103,8 @@ class FacetResults implements \Iterator
     /**
      *
      */
-    protected function deserializeResults($results) {
-
+    protected function deserializeResults($results)
+    {
         $items = [];
         foreach ($results as $value => $result) {
             $children = isset($result['children']) ? $this->deserializeResults($result['children']) : [];
@@ -111,5 +113,4 @@ class FacetResults implements \Iterator
 
         return $items;
     }
-
 }

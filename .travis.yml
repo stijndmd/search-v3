@@ -1,0 +1,13 @@
+language: php
+php:
+- 7.0
+- 7.1
+install: composer install
+script:
+- ./vendor/bin/phpunit
+- ./vendor/bin/phing test
+after_success: ./vendor/bin/phing report-to-coveralls
+notifications:
+  email:
+    recipients:
+    - stijn.swaanen@publiq.be

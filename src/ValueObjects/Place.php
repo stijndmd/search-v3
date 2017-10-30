@@ -21,7 +21,8 @@ class Place extends Offer
     /**
      * @return Address
      */
-    public function getAddress() {
+    public function getAddress()
+    {
         return $this->address;
     }
 
@@ -29,7 +30,8 @@ class Place extends Offer
      * @param Address $address
      * @return Place
      */
-    public function setAddress($address) {
+    public function setAddress($address)
+    {
         $this->address = $address;
 
         return $this;

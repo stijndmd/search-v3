@@ -28,7 +28,8 @@ class Term
     /**
      * @return string
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -36,7 +37,8 @@ class Term
      * @param string $id
      * @return Term
      */
-    public function setId($id) {
+    public function setId($id)
+    {
         $this->id = $id;
 
         return $this;
@@ -45,7 +47,8 @@ class Term
     /**
      * @return string
      */
-    public function getLabel() {
+    public function getLabel()
+    {
         return $this->label;
     }
 
@@ -53,7 +56,8 @@ class Term
      * @param string $label
      * @return Term
      */
-    public function setLabel($label) {
+    public function setLabel($label)
+    {
         $this->label = $label;
 
         return $this;
@@ -62,7 +66,8 @@ class Term
     /**
      * @return string
      */
-    public function getDomain() {
+    public function getDomain()
+    {
         return $this->domain;
     }
 
@@ -70,10 +75,10 @@ class Term
      * @param string $domain
      * @return Term
      */
-    public function setDomain($domain) {
+    public function setDomain($domain)
+    {
         $this->domain = $domain;
 
         return $this;
     }
-
 }

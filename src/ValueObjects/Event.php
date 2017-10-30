@@ -38,7 +38,8 @@ class Event extends Offer
     /**
      * @return Place
      */
-    public function getLocation() {
+    public function getLocation()
+    {
         return $this->location;
     }
 
@@ -46,7 +47,8 @@ class Event extends Offer
      * @param Place $location
      * @return Event
      */
-    public function setLocation($location) {
+    public function setLocation($location)
+    {
         $this->location = $location;
 
         return $this;

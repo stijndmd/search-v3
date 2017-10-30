@@ -17,5 +17,4 @@ class Id extends AbstractParameter
         $this->value = $id;
         $this->key = 'id';
     }
-
 }
