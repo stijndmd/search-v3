@@ -4,9 +4,9 @@ php:
 - 7.1
 install: composer install
 script:
-- ./vendor/bin/phpunit
 - ./vendor/bin/phing test
-after_success: ./vendor/bin/phing report-to-coveralls
+after_script:
+- ./vendor/bin/coveralls -vvv
 notifications:
   email:
     recipients:
