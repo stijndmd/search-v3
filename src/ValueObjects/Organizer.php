@@ -11,6 +11,12 @@ class Organizer
      * @var string
      * @Type("string")
      */
+    protected $id;
+
+    /**
+     * @var string
+     * @Type("string")
+     */
     protected $name;
 
     /**
@@ -24,6 +30,34 @@ class Organizer
      * @Type("array<string>")
      */
     protected $hiddenLabels;
+
+    /**
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id
+     * @return Organizer
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * Get the cdbid.
+     * @return string
+     */
+    public function getCdbid()
+    {
+        $id_parts = explode('/', rtrim($this->id, '/'));
+        return end($id_parts);
+    }
 
     /**
      * @return string
@@ -75,5 +109,4 @@ class Organizer
 
         return $this;
     }
-
 }
