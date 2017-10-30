@@ -190,13 +190,11 @@ class SearchQuery implements SearchQueryInterface
 
         $stringValues = [];
         foreach ($query as $key => $value) {
-
             if (is_array($value)) {
                 foreach ($value as $sub_key => $sub_value) {
                     $stringValues[] = $key . '[' . $sub_key . ']=' . $sub_value;
                 }
-            }
-            else {
+            } else {
                 $stringValues[] = $key . '=' . $value;
             }
         }

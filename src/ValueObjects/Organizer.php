@@ -116,4 +116,3 @@ class Organizer
         return $this;
     }
 }
-
