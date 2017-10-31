@@ -2,8 +2,8 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-
-class AbstractDateParameter extends AbstractParameter {
+class AbstractDateParameter extends AbstractParameter
+{
 
     /**
      * Formats the date.
