@@ -29,4 +29,3 @@ class DateFrom extends AbstractParameter
         return $date->format('Y-m-d H:i:s');
     }
 }
-``
