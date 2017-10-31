@@ -48,7 +48,8 @@ class PagedCollection
     /**
      * @return int
      */
-    public function getItemsPerPage() {
+    public function getItemsPerPage()
+    {
         return $this->itemsPerPage;
     }
 
@@ -56,7 +57,8 @@ class PagedCollection
      * @param int $itemsPerPage
      * @return PagedCollection
      */
-    public function setItemsPerPage($itemsPerPage) {
+    public function setItemsPerPage($itemsPerPage)
+    {
         $this->itemsPerPage = $itemsPerPage;
 
         return $this;
@@ -65,7 +67,8 @@ class PagedCollection
     /**
      * @return int
      */
-    public function getTotalItems() {
+    public function getTotalItems()
+    {
         return $this->totalItems;
     }
 
@@ -73,7 +76,8 @@ class PagedCollection
      * @param int $totalItems
      * @return PagedCollection
      */
-    public function setTotalItems($totalItems) {
+    public function setTotalItems($totalItems)
+    {
         $this->totalItems = $totalItems;
 
         return $this;
@@ -82,7 +86,8 @@ class PagedCollection
     /**
      * @return Collection
      */
-    public function getMember() {
+    public function getMember()
+    {
         return $this->member;
     }
 
@@ -90,7 +95,8 @@ class PagedCollection
      * @param Collection $member
      * @return PagedCollection
      */
-    public function setMember($member) {
+    public function setMember($member)
+    {
         $this->member = $member;
 
         return $this;
@@ -99,7 +105,8 @@ class PagedCollection
     /**
      * @return mixed
      */
-    public function getFacets() {
+    public function getFacets()
+    {
         return $this->facets;
     }
 
@@ -107,10 +114,10 @@ class PagedCollection
      * @param mixed $facets
      * @return PagedCollection
      */
-    public function setFacets($facets) {
+    public function setFacets($facets)
+    {
         $this->facets = $facets;
 
         return $this;
     }
-
 }

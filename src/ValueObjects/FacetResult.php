@@ -2,7 +2,6 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-
 class FacetResult
 {
 
@@ -21,7 +20,8 @@ class FacetResult
     /**
      * @return string
      */
-    public function getField() {
+    public function getField()
+    {
         return $this->field;
     }
 
@@ -29,7 +29,8 @@ class FacetResult
      * @param string $field
      * @return FacetResult
      */
-    public function setField($field) {
+    public function setField($field)
+    {
         $this->field = $field;
 
         return $this;
@@ -38,7 +39,8 @@ class FacetResult
     /**
      * @return FacetResultItem[]
      */
-    public function getResults() {
+    public function getResults()
+    {
         return $this->results;
     }
 
@@ -46,7 +48,8 @@ class FacetResult
      * @param FacetResultItem[] $results
      * @return FacetResult
      */
-    public function setResults($results) {
+    public function setResults($results)
+    {
         $this->results = $results;
 
         return $this;
@@ -62,5 +65,4 @@ class FacetResult
         $this->field = $field;
         $this->results = $results;
     }
-
 }

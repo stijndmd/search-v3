@@ -15,6 +15,18 @@ class Event extends Offer
     protected $location;
 
     /**
+     * @var PriceInfo
+     * @Type("array<CultuurNet\SearchV3\ValueObjects\PriceInfo>")
+     */
+    protected $priceInfo;
+
+    /**
+     * @var BookingInfo
+     * @Type("CultuurNet\SearchV3\ValueObjects\BookingInfo")
+     */
+    protected $bookingInfo;
+
+    /**
      * Sub events exist if an event is organised on multiple days.
      * @var Event[]
      * @Type("array<CultuurNet\SearchV3\ValueObjects\Event>")
@@ -26,7 +38,8 @@ class Event extends Offer
     /**
      * @return Place
      */
-    public function getLocation() {
+    public function getLocation()
+    {
         return $this->location;
     }
 
@@ -34,7 +47,8 @@ class Event extends Offer
      * @param Place $location
      * @return Event
      */
-    public function setLocation($location) {
+    public function setLocation($location)
+    {
         $this->location = $location;
 
         return $this;
@@ -58,4 +72,39 @@ class Event extends Offer
         return $this;
     }
 
+    /**
+     * @return PriceInfo
+     */
+    public function getPriceInfo()
+    {
+        return $this->priceInfo;
+    }
+
+    /**
+     * @param mixed $priceInfo
+     * @return Offer
+     */
+    public function setPriceInfo($priceInfo)
+    {
+        $this->priceInfo = $priceInfo;
+        return $this;
+    }
+
+    /**
+     * @return BookingInfo
+     */
+    public function getBookingInfo()
+    {
+        return $this->bookingInfo;
+    }
+
+    /**
+     * @param BookingInfo $bookingInfo
+     * @return Offer
+     */
+    public function setBookingInfo($bookingInfo)
+    {
+        $this->bookingInfo = $bookingInfo;
+        return $this;
+    }
 }

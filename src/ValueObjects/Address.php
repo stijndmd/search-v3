@@ -34,7 +34,8 @@ class Address
     /**
      * @return string
      */
-    public function getAddressCountry() {
+    public function getAddressCountry()
+    {
         return $this->addressCountry;
     }
 
@@ -42,7 +43,8 @@ class Address
      * @param string $addressCountry
      * @return Address
      */
-    public function setAddressCountry($addressCountry) {
+    public function setAddressCountry($addressCountry)
+    {
         $this->addressCountry = $addressCountry;
 
         return $this;
@@ -51,7 +53,8 @@ class Address
     /**
      * @return string
      */
-    public function getAddressLocality() {
+    public function getAddressLocality()
+    {
         return $this->addressLocality;
     }
 
@@ -59,7 +62,8 @@ class Address
      * @param string $addressLocality
      * @return Address
      */
-    public function setAddressLocality($addressLocality) {
+    public function setAddressLocality($addressLocality)
+    {
         $this->addressLocality = $addressLocality;
 
         return $this;
@@ -68,7 +72,8 @@ class Address
     /**
      * @return string
      */
-    public function getPostalCode() {
+    public function getPostalCode()
+    {
         return $this->postalCode;
     }
 
@@ -76,7 +81,8 @@ class Address
      * @param string $postalCode
      * @return Address
      */
-    public function setPostalCode($postalCode) {
+    public function setPostalCode($postalCode)
+    {
         $this->postalCode = $postalCode;
 
         return $this;
@@ -85,7 +91,8 @@ class Address
     /**
      * @return string
      */
-    public function getStreetAddress() {
+    public function getStreetAddress()
+    {
         return $this->streetAddress;
     }
 
@@ -93,10 +100,10 @@ class Address
      * @param string $streetAddress
      * @return Address
      */
-    public function setStreetAddress($streetAddress) {
+    public function setStreetAddress($streetAddress)
+    {
         $this->streetAddress = $streetAddress;
 
         return $this;
     }
-
 }

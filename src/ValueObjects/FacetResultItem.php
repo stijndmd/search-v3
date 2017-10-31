@@ -44,7 +44,8 @@ class FacetResultItem
     /**
      * @return string
      */
-    public function getValue() {
+    public function getValue()
+    {
         return $this->value;
     }
 
@@ -52,7 +53,8 @@ class FacetResultItem
      * @param string $value
      * @return FacetResultItem
      */
-    public function setValue($value) {
+    public function setValue($value)
+    {
         $this->value = $value;
 
         return $this;
@@ -61,7 +63,8 @@ class FacetResultItem
     /**
      * @return array
      */
-    public function getNames() {
+    public function getNames()
+    {
         return $this->names;
     }
 
@@ -69,7 +72,8 @@ class FacetResultItem
      * @param array $names
      * @return FacetResultItem
      */
-    public function setNames($names) {
+    public function setNames($names)
+    {
         $this->names = $names;
 
         return $this;
@@ -78,7 +82,8 @@ class FacetResultItem
     /**
      * @return int
      */
-    public function getCount() {
+    public function getCount()
+    {
         return $this->count;
     }
 
@@ -86,7 +91,8 @@ class FacetResultItem
      * @param int $count
      * @return FacetResultItem
      */
-    public function setCount($count) {
+    public function setCount($count)
+    {
         $this->count = $count;
 
         return $this;
@@ -95,7 +101,8 @@ class FacetResultItem
     /**
      * @return array
      */
-    public function getChildren() {
+    public function getChildren()
+    {
         return $this->children;
     }
 
@@ -103,7 +110,8 @@ class FacetResultItem
      * @param array $children
      * @return FacetResultItem
      */
-    public function setChildren($children) {
+    public function setChildren($children)
+    {
         $this->children = $children;
 
         return $this;
@@ -123,5 +131,4 @@ class FacetResultItem
         $this->count = $count;
         $this->children = $children;
     }
-
 }

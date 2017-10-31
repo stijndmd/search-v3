@@ -11,6 +11,12 @@ class Organizer
      * @var string
      * @Type("string")
      */
+    protected $id;
+
+    /**
+     * @var string
+     * @Type("string")
+     */
     protected $name;
 
     /**
@@ -28,7 +34,36 @@ class Organizer
     /**
      * @return string
      */
-    public function getName() {
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id
+     * @return Organizer
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * Get the cdbid.
+     * @return string
+     */
+    public function getCdbid()
+    {
+        $id_parts = explode('/', rtrim($this->id, '/'));
+        return end($id_parts);
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -36,7 +71,8 @@ class Organizer
      * @param string $name
      * @return Organizer
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -45,7 +81,8 @@ class Organizer
     /**
      * @return array
      */
-    public function getEmail() {
+    public function getEmail()
+    {
         return $this->email;
     }
 
@@ -53,7 +90,8 @@ class Organizer
      * @param array $email
      * @return Organizer
      */
-    public function setEmail($email) {
+    public function setEmail($email)
+    {
         $this->email = $email;
 
         return $this;
@@ -62,7 +100,8 @@ class Organizer
     /**
      * @return array
      */
-    public function getHiddenLabels() {
+    public function getHiddenLabels()
+    {
         return $this->hiddenLabels;
     }
 
@@ -70,10 +109,10 @@ class Organizer
      * @param array $hiddenLabels
      * @return Organizer
      */
-    public function setHiddenLabels($hiddenLabels) {
+    public function setHiddenLabels($hiddenLabels)
+    {
         $this->hiddenLabels = $hiddenLabels;
 
         return $this;
     }
-
 }

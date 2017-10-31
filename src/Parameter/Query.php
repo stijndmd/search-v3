@@ -17,5 +17,4 @@ class Query extends AbstractParameter
         $this->value = $value;
         $this->key = 'q';
     }
-
 }

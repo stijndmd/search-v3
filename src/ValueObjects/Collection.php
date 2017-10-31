@@ -20,7 +20,8 @@ class Collection
     /**
      * @return array
      */
-    public function getItems() {
+    public function getItems()
+    {
         return $this->items;
     }
 
@@ -28,7 +29,8 @@ class Collection
      * @param array $items
      * @return Collection
      */
-    public function setItems($items) {
+    public function setItems($items)
+    {
         $this->items = $items;
 
         return $this;
@@ -54,14 +56,19 @@ class Collection
         $typeParser = new TypeParser();
         $metadata = [];
         foreach ($values as $member) {
-
             // If context is given, we have a full entity.
             if (isset($member['@context'])) {
                 $class = $this->contextMapping[$member['@context']];
-                $metadata[$class] = $metadata[$class] ?? $deserializationContext->getMetadataFactory()->getMetadataForClass($class);
+                $metadata[$class] = $metadata[$class] ??
+                    $deserializationContext->getMetadataFactory()->getMetadataForClass($class);
 
                 $object = new $class();
-                $memberVisitor->startVisitingObject($metadata[$class], $object, $typeParser->parse($class), $deserializationContext);
+                $memberVisitor->startVisitingObject(
+                    $metadata[$class],
+                    $object,
+                    $typeParser->parse($class),
+                    $deserializationContext
+                );
 
                 $properties = $metadata[$class]->propertyMetadata;
                 foreach ($properties as $property) {
@@ -69,14 +76,10 @@ class Collection
                 }
 
                 $this->items[] = $object;
-            }
-            // If not, we only have id + type. Just copy the array.
-            else {
+            } else {
+                // If not, we only have id + type. Just copy the array.
                 $this->items[] = $member;
             }
-
-
         }
     }
-
 }

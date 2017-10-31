@@ -29,19 +29,19 @@ class SearchQuery implements SearchQueryInterface
      * Return the full embedded search results, or only the ids.
      * @var bool
      */
-    protected $embed = FALSE;
+    protected $embed = false;
 
     /**
      * The number of results to skip (defaults to 0).
      * @var int
      */
-    protected $start = FALSE;
+    protected $start = false;
 
     /**
      * The number of results to return in a single page (defaults to 30).
      * @var int
      */
-    protected $limit = FALSE;
+    protected $limit = false;
 
     /**
      * SearchQuery constructor.
@@ -66,7 +66,7 @@ class SearchQuery implements SearchQueryInterface
      */
     public function removeParameter(ParameterInterface $parameter)
     {
-        foreach($this->parameters as $i => $param) {
+        foreach ($this->parameters as $i => $param) {
             if ($param === $parameter) {
                 unset($this->parameters[$i]);
             }
@@ -94,7 +94,7 @@ class SearchQuery implements SearchQueryInterface
      */
     public function removeSort(string $field)
     {
-      unset($this->sorting[$field]);
+        unset($this->sorting[$field]);
     }
 
     /**
@@ -111,7 +111,7 @@ class SearchQuery implements SearchQueryInterface
      */
     public function getSort()
     {
-      return $this->sorting;
+        return $this->sorting;
     }
 
     /**
@@ -147,13 +147,11 @@ class SearchQuery implements SearchQueryInterface
                 if ($key === 'facets') {
                     $query[$key] = is_array($query[$key]) ? $query[$key] : [$query[$key]];
                     $query[$key][] = $parameter->getValue();
-                }
-                else {
+                } else {
                     $duplicateKeys[$key][] = $parameter->getValue();
                 }
-            }
-            else {
-              $query[$key] = $parameter->getValue();
+            } else {
+                $query[$key] = $parameter->getValue();
             }
         }
 
@@ -165,7 +163,7 @@ class SearchQuery implements SearchQueryInterface
         }
 
         if (!empty($this->sorting)) {
-          $query['sort'] = $this->sorting;
+            $query['sort'] = $this->sorting;
         }
 
         if ($this->embed) {
@@ -181,5 +179,26 @@ class SearchQuery implements SearchQueryInterface
         }
 
         return $query;
+    }
+
+    /**
+     * Print the query as a querystring.
+     */
+    public function __toString()
+    {
+        $query = $this->toArray();
+
+        $stringValues = [];
+        foreach ($query as $key => $value) {
+            if (is_array($value)) {
+                foreach ($value as $sub_key => $sub_value) {
+                    $stringValues[] = $key . '[' . $sub_key . ']=' . $sub_value;
+                }
+            } else {
+                $stringValues[] = $key . '=' . $value;
+            }
+        }
+
+        return implode('&', $stringValues);
     }
 }

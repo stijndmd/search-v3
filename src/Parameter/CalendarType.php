@@ -22,5 +22,4 @@ class CalendarType extends AbstractParameter
         $this->value = $type;
         $this->key = 'calendarType';
     }
-
 }
