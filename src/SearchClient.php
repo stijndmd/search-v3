@@ -37,6 +37,7 @@ class SearchClient
      * Perform a search on events.
      *
      * @param SearchQueryInterface $searchQuery
+     * @return PagedCollection
      */
     public function searchEvents(SearchQueryInterface $searchQuery)
     {
@@ -44,9 +45,21 @@ class SearchClient
     }
 
     /**
+     * Perform a search on places.
+     *
+     * @param SearchQueryInterface $searchQuery
+     * @return PagedCollection
+     */
+    public function searchPlaces(SearchQueryInterface $searchQuery)
+    {
+        return $this->search($searchQuery, 'places');
+    }
+
+    /**
      * Perform a search on offers.
-    * @param SearchQueryInterface $searchQuery
-    */
+     * @param SearchQueryInterface $searchQuery
+     * @return PagedCollection
+     */
     public function searchOffers(SearchQueryInterface $searchQuery)
     {
         return $this->search($searchQuery, 'offers');
