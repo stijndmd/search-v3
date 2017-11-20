@@ -11,7 +11,8 @@ class TermTest extends \PHPUnit_Framework_TestCase
      */
     protected $term;
 
-    public function setUp() {
+    public function setUp()
+    {
         $this->term = new Term();
 
         $this->term->setId('term-id');
