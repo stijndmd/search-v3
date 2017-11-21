@@ -14,26 +14,28 @@ class OrganizerTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->organizer = new Organizer();
-
-        $this->organizer->setName('organizer name');
-        $this->organizer->setEmail(array('test@organizer.com'));
-        $this->organizer->setHiddenLabels(array('hidden1', 'hidden2'));
     }
 
     public function testGetNameMethod()
     {
+        $this->organizer->setName('organizer name');
+
         $result = $this->organizer->getName();
         $this->assertEquals('organizer name', $result);
     }
 
     public function testGetEmailMethod()
     {
+        $this->organizer->setEmail(array('test@organizer.com'));
+
         $result = $this->organizer->getEmail();
         $this->assertEquals(array('test@organizer.com'), $result);
     }
 
     public function testGetHiddenLabelsMethod()
     {
+        $this->organizer->setHiddenLabels(array('hidden1', 'hidden2'));
+
         $result = $this->organizer->getHiddenLabels();
         $this->assertEquals(array('hidden1', 'hidden2'), $result);
     }

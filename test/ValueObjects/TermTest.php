@@ -14,27 +14,29 @@ class TermTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->term = new Term();
-
-        $this->term->setId('term-id');
-        $this->term->setLabel('term-label');
-        $this->term->setDomain('term-domain');
     }
 
     public function testGetIdMethod()
     {
+        $this->term->setId('term-id');
+
         $result = $this->term->getId();
-        $this->assertEquals($result, 'term-id');
+        $this->assertEquals('term-id', $result);
     }
 
     public function testGetLabelMethod()
     {
+        $this->term->setLabel('term-label');
+
         $result = $this->term->getLabel();
-        $this->assertEquals($result, 'term-label');
+        $this->assertEquals('term-label', $result);
     }
 
     public function testGetDomainMethod()
     {
+        $this->term->setDomain('term-domain');
+
         $result = $this->term->getDomain();
-        $this->assertEquals($result, 'term-domain');
+        $this->assertEquals('term-domain', $result);
     }
 }

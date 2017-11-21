@@ -14,26 +14,28 @@ class PriceInfoTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->priceInfo = new priceInfo();
-
-        $this->priceInfo->setName('test priceInfo');
-        $this->priceInfo->setPriceCurrency('euro');
-        $this->priceInfo->setPrice(23.45);
     }
 
     public function testGetNameMethod()
     {
+        $this->priceInfo->setName('test priceInfo');
+
         $result = $this->priceInfo->getName();
         $this->assertEquals('test priceInfo', $result);
     }
 
     public function testGetPriceCurrency()
     {
+        $this->priceInfo->setPriceCurrency('euro');
+
         $result = $this->priceInfo->getPriceCurrency();
         $this->assertEquals('euro', $result);
     }
 
     public function testGetPriceMethod()
     {
+        $this->priceInfo->setPrice(23.45);
+
         $result = $this->priceInfo->getPrice();
         $this->assertEquals(23.45, $result);
     }
