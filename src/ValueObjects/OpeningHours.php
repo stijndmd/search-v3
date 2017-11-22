@@ -12,9 +12,9 @@ class OpeningHours
 
     /**
      * @var array
-     * @Type("array<CultuurNet\SearchV3\ValueObjects\DayOfWeek>")
+     * @Type("array<string>")
      */
-    protected $daysOfWeek;
+    protected $dayOfWeek = [];
 
     /**
      * @var string
@@ -31,17 +31,17 @@ class OpeningHours
     /**
      * @return mixed
      */
-    public function getDaysOfWeek()
+    public function getDayOfWeek()
     {
-        return $this->daysOfWeek;
+        return $this->dayOfWeek;
     }
 
     /**
-     * @param mixed $daysOfWeek
+     * @param mixed $dayOfWeek
      */
-    public function setDaysOfWeek($daysOfWeek)
+    public function setDaysOfWeek($dayOfWeek)
     {
-        $this->daysOfWeek = $daysOfWeek;
+        $this->dayOfWeek = $dayOfWeek;
     }
 
     /**

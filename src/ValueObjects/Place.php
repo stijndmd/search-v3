@@ -19,9 +19,10 @@ class Place extends Offer
     protected $geo;
 
     /**
-     * @Type("CultuurNet\SearchV3\ValueObjects\OpeningHours")
+     * @var array
+     * @Type("array<CultuurNet\SearchV3\ValueObjects\OpeningHours>")
      */
-    protected $openingHours;
+    protected $openingHours = [];
 
     /**
      * @return Address
