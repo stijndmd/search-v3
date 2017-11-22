@@ -19,11 +19,6 @@ class Place extends Offer
     protected $geo;
 
     /**
-     * @Type("CultuurNet\SearchV3\ValueObjects\OpeningHours")
-     */
-    protected $openingHours;
-
-    /**
      * @return Address
      */
     public function getAddress()
@@ -58,21 +53,5 @@ class Place extends Offer
     {
         $this->geo = $geo;
         return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getOpeningHours()
-    {
-        return $this->openingHours;
-    }
-
-    /**
-     * @param mixed $openingHours
-     */
-    public function setOpeningHours($openingHours)
-    {
-        $this->openingHours = $openingHours;
     }
 }
