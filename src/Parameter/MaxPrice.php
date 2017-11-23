@@ -10,7 +10,7 @@ class MaxPrice extends AbstractParameter
 
     /**
      * MaxPrice constructor.
-     * @param $maxPrice
+     * @param $maxPrice float
      */
     public function __construct($maxPrice)
     {

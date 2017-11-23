@@ -10,7 +10,7 @@ class Price extends AbstractParameter
 
     /**
      * Price constructor.
-     * @param $price
+     * @param $price float
      */
     public function __construct($price)
     {
