@@ -1,0 +1,162 @@
+{
+    "regions": {
+      "prv-oost-vlaanderen": {
+        "name": {
+          "nl": "Oost-Vlaanderen",
+          "fr": "Flandre orientale (la)"
+        },
+        "count": 4567,
+        "children": {
+          "reg-scheldeland-oost-vlaanderen": {
+            "name": {
+              "nl": "Scheldeland Oost-Vlaanderen"
+            },
+            "count": 1397
+          }
+        }
+      },
+      "prv-vlaams-brabant": {
+        "name": {
+          "nl": "Vlaams-Brabant",
+          "fr": "Brabant flamand (le)"
+        },
+        "count": 2783,
+        "children": {
+          "reg-groene-gordel": {
+            "name": {
+              "nl": "Groene Gordel"
+            },
+            "count": 1505
+          }
+        }
+      },
+      "prv-limburg": {
+        "name": {
+          "nl": "Limburg",
+          "fr": "Limbourg (le)"
+        },
+        "count": 2491,
+        "children": {
+          "reg-kempen": {
+            "name": {
+              "nl": "Kempen"
+            },
+            "count": 2777
+          },
+          "reg-limburgse-kempen": {
+            "name": {
+              "nl": "Limburgse Kempen"
+            },
+            "count": 1267
+          }
+        }
+      },
+      "prv-west-vlaanderen": {
+        "name": {
+          "nl": "West-Vlaanderen",
+          "fr": "Flandre occidentale (la)"
+        },
+        "count": 4172,
+        "children": {
+          "reg-leiestreek-west-vlaanderen": {
+            "name": {
+              "nl": "Leiestreek West-Vlaanderen"
+            },
+            "count": 1639
+          }
+        }
+      }
+    },
+    "facilities": {
+      "3.23.1.0.0": {
+        "name": {
+          "nl": "Voorzieningen voor rolstoelgebruikers",
+          "fr": "Facilités pour fauteuils roulants",
+          "de": "EInrichtung für Rollstuhlfahrer",
+          "en": "Wheelchair facilities"
+        },
+        "count": 186
+      },
+      "3.23.2.0.0": {
+        "name": {
+          "nl": "Assistentie",
+          "fr": "Assistance",
+          "de": "Hilfe",
+          "en": "Assistance"
+        },
+        "count": 41
+      },
+      "3.23.3.0.0": {
+        "name": {
+          "nl": "Rolstoel ter beschikking",
+          "fr": "Disponibilité de fauteuils roulants",
+          "de": "Rollstuhl verfügbar",
+          "en": "Wheelchair available"
+        },
+        "count": 24
+      },
+      "3.13.1.0.0": {
+        "name": {
+          "nl": "Voorzieningen voor hulp- en/of geleidehonden",
+          "fr": "Facilités de chiens d'aide et/ou d'aveugles",
+          "de": "Einrichtung für Nothunden",
+          "en": "Facilities for guide dogs"
+        },
+        "count": 17
+      },
+      "3.13.2.0.0": {
+        "name": {
+          "nl": "Audiodescriptie",
+          "fr": "Audiodéscription",
+          "de": "Audio-Beschreibung",
+          "en": "Audiodescription"
+        },
+        "count": 4
+      },
+      "3.13.3.0.0": {
+        "name": {
+          "nl": "Brochure beschikbaar in braille",
+          "fr": "Disponibilité de brochure en braille",
+          "de": "Broschüre in Blindenschrift",
+          "en": "Brochure available in braille"
+        },
+        "count": 2
+      },
+      "3.13.4.0.0": {
+        "name": {
+          "nl": "Brochure beschikbaar in grootletterschrift",
+          "fr": "Disponibilité de brochure en gros caractères",
+          "de": "Broschüre in Großdruck Skript",
+          "en": "Brochure available in large print"
+        },
+        "count": 5
+      },
+      "3.13.5.0.0": {
+        "name": {
+          "nl": "Brochure beschikbaar in gesproken vorm",
+          "fr": "Disponibilité de brochure orale",
+          "de": "Broschüre in gesprochener Form",
+          "en": "Brochure available in spoken form"
+        },
+        "count": 4
+      },
+      "3.17.1.0.0": {
+        "name": {
+          "nl": "Ringleiding",
+          "fr": "Boucle auditive",
+          "de": "Audio Induktionsschleife",
+          "en": "Audio induction loop"
+        },
+        "count": 7
+      },
+      "3.17.3.0.0": {
+        "name": {
+          "nl": "Ondertiteling",
+          "fr": "Soustitrages",
+          "de": "Untertitel",
+          "en": "Subtitles"
+        },
+        "count": 3
+      }
+    }
+}
