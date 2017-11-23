@@ -16,6 +16,22 @@ class OrganizerTest extends \PHPUnit_Framework_TestCase
         $this->organizer = new Organizer();
     }
 
+    public function testGetIdMethod()
+    {
+        $this->organizer->setId('organizer id');
+
+        $result = $this->organizer->getId();
+        $this->assertEquals('organizer id', $result);
+    }
+
+    public function testGetCdbidMethod()
+    {
+        $this->organizer->setId('this/is/an/organizer-id');
+
+        $result = $this->organizer->getCdbid();
+        $this->assertEquals('organizer-id', $result);
+    }
+
     public function testGetNameMethod()
     {
         $this->organizer->setName('organizer name');
