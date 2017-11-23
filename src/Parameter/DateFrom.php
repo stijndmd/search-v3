@@ -11,10 +11,11 @@ class DateFrom extends AbstractDateParameter
     /**
      * DateFrom constructor.
      * @param $dateFrom
+     * @param $offset
      */
-    public function __construct($dateFrom)
+    public function __construct($dateFrom, $offset = '+0')
     {
-        $this->value = $this->formatDate($dateFrom);
+        $this->value = $this->formatDate($dateFrom, $offset);
         $this->key = 'dateFrom';
     }
 }

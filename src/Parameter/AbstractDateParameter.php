@@ -8,11 +8,12 @@ class AbstractDateParameter extends AbstractParameter
     /**
      * Formats the date.
      * @param $date
+     * @param $offset
      * @return string
      */
-    public function formatDate($date)
+    public function formatDate($date, $offset)
     {
-        $date = new \DateTime($date);
-        return $date->format('Y-m-d H:i:s');
+        $date = new \DateTime($date, new \DateTimeZone($offset));
+        return $date->format(\DateTime::ATOM);
     }
 }
