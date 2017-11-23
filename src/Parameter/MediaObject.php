@@ -10,7 +10,7 @@ class MediaObject extends AbstractParameter
 
     /**
      * Id constructor.
-     * @param $hasMediaObject
+     * @param $hasMediaObject boolean
      */
     public function __construct($hasMediaObject)
     {
