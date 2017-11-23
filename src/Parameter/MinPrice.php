@@ -10,7 +10,7 @@ class MinPrice extends AbstractParameter
 
     /**
      * MinPrice constructor.
-     * @param $minPrice
+     * @param $minPrice float
      */
     public function __construct($minPrice)
     {
