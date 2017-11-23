@@ -10,7 +10,7 @@ class Uitpas extends AbstractParameter
 
     /**
      * Uitpas constructor.
-     * @param $uitpas
+     * @param $uitpas boolean
      */
     public function __construct($uitpas)
     {
