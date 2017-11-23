@@ -11,6 +11,7 @@ abstract class Offer
     const CALENDAR_TYPE_MULTIPLE = 'multiple';
     const CALENDAR_TYPE_SINGLE = 'single';
     const CALENDAR_TYPE_PERIODIC = 'periodic';
+    const CALENDAR_TYPE_PERMANENT = 'permanent';
 
     /**
      * @var string
