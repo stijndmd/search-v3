@@ -169,4 +169,12 @@ class SearchQueryTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expectedQuery, $result);
     }
+
+    public function testToStringMethod()
+    {
+        $expectedQueryString = 'labels=test-label&facets=regions&sort[title]=asc&embed=1&start=10&limit=50';
+        $result = $this->searchQuery->__toString();
+
+        $this->assertEquals($result, $expectedQueryString);
+    }
 }
