@@ -27,11 +27,17 @@ class Distance extends AbstractParameter
      */
     public function __construct($distance, $unit)
     {
-        if (!preg_match('/mi|yd|ft|in|km|m|cm|mm|nmi/', $unit)) {
+        if (in_array($unit, self::getConstants())) {
+            $this->value = $distance . $unit;
+            $this->key = 'distance';
+        } else {
             throw new \Exception('Invalid unit parameter for '.__CLASS__.' constructor', 400);
         }
+    }
 
-        $this->value = $distance . $unit;
-        $this->key = 'distance';
+    protected static function getConstants()
+    {
+        $oClass = new \ReflectionClass(__CLASS__);
+        return $oClass->getConstants();
     }
 }
