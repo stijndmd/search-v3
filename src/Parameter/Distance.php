@@ -27,8 +27,9 @@ class Distance extends AbstractParameter
      */
     public function __construct($distance, $unit)
     {
-        if (!preg_match('/mi|yd|ft|in|km|m|cm|mm|nmi/', $unit))
+        if (!preg_match('/mi|yd|ft|in|km|m|cm|mm|nmi/', $unit)) {
             throw new \Exception('Invalid unit parameter for '.__CLASS__.' constructor');
+        }
 
         $this->value = $distance . $unit;
         $this->key = 'distance';
