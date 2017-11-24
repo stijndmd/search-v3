@@ -23,13 +23,13 @@ class Languages extends AbstractParameter
         if (in_array($language, self::getConstants())) {
             $this->value = $language;
             $this->key = 'languages';
-        }
-        else {
+        } else {
             throw new \Exception('Invalid language parameter for '.__CLASS__.' constructor');
         }
     }
 
-    static function getConstants() {
+    protected static function getConstants()
+    {
         $oClass = new \ReflectionClass(__CLASS__);
         return $oClass->getConstants();
     }
