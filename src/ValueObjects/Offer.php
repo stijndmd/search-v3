@@ -141,6 +141,12 @@ abstract class Offer
     protected $contactPoint;
 
     /**
+     * @var array
+     * @Type("array<CultuurNet\SearchV3\ValueObjects\OpeningHours>")
+     */
+    protected $openingHours = [];
+
+    /**
      * @return string
      */
     public function getId()
@@ -557,5 +563,21 @@ abstract class Offer
     {
         $this->contactPoint = $contactPoint;
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOpeningHours()
+    {
+        return $this->openingHours;
+    }
+
+    /**
+     * @param mixed $openingHours
+     */
+    public function setOpeningHours($openingHours)
+    {
+        $this->openingHours = $openingHours;
     }
 }
