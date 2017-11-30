@@ -82,6 +82,27 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('test event', $queryResult);
     }
 
+    public function testSearchPlacesMethod()
+    {
+        $options = array('query' => 'asdfadsf');
+
+        $searchQueryMock = $this->provideSearchQueryMock();
+        $request = $this->provideRequestMockup();
+
+        $this->serializer->expects($this->once())
+            ->method('deserialize')
+            ->with('test response')
+            ->willReturn('test place');
+
+        $this->client->expects($this->once())
+            ->method('createRequest')
+            ->with('GET', 'places', null, null, $options)
+            ->willReturn($request);
+
+        $queryResult = $this->searchClient->searchPlaces($searchQueryMock);
+        $this->assertEquals('test place', $queryResult);
+    }
+
     public function testSearchOfferMethod()
     {
         $options = array('query' => 'asdfadsf');
