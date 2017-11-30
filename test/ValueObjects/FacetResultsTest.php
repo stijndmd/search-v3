@@ -30,6 +30,7 @@ class FacetResultsTest extends \PHPUnit_Framework_TestCase
     public function deserializeEverything()
     {
         $this->visitor = $this->getMockBuilder(JsonDeserializationVisitor::class)
+            ->disableOriginalConstructor()
             ->getMock();
         $this->context = $this->getMockBuilder(DeserializationContext::class)
             ->getMock();
