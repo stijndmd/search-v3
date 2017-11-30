@@ -6,6 +6,7 @@ use CultuurNet\SearchV3\ValueObjects\Address;
 use CultuurNet\SearchV3\ValueObjects\ContactPoint;
 use CultuurNet\SearchV3\ValueObjects\GeoPoint;
 use CultuurNet\SearchV3\ValueObjects\MediaObject;
+use CultuurNet\SearchV3\ValueObjects\OpeningHours;
 use CultuurNet\SearchV3\ValueObjects\Organizer;
 use CultuurNet\SearchV3\ValueObjects\Place;
 use CultuurNet\SearchV3\ValueObjects\Term;
@@ -249,5 +250,14 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
 
         $result = $this->place->getContactPoint();
         $this->assertEquals($mockContactPoint, $result);
+    }
+
+    public function testGetOpeningHoursMethod()
+    {
+        $mockOpeningHour = new OpeningHours();
+        $this->place->setOpeningHours($mockOpeningHour);
+
+        $result = $this->place->getOpeningHours();
+        $this->assertEquals($mockOpeningHour, $result);
     }
 }
