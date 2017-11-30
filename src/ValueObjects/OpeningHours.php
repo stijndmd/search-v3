@@ -31,7 +31,7 @@ class OpeningHours
     /**
      * @return mixed
      */
-    public function getDayOfWeek()
+    public function getDaysOfWeek()
     {
         return $this->dayOfWeek;
     }
