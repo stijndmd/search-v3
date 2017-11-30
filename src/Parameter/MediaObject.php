@@ -12,7 +12,7 @@ class MediaObject extends AbstractParameter
      * Id constructor.
      * @param $hasMediaObject boolean
      */
-    public function __construct($hasMediaObject)
+    public function __construct(bool $hasMediaObject)
     {
         $this->value = $hasMediaObject;
         $this->key = 'hasMediaObject';
