@@ -35,7 +35,8 @@ class SerializerTest extends \PHPUnit_Framework_TestCase
         $addressMock->setStreetAddress('Henegouwenkaai 41-43');
         $addressMock->setAddressCountry('BE');
 
-        $expectedAddress = '{"addressCountry":"BE","addressLocality":"Brussel","postalCode":"1000","streetAddress":"Henegouwenkaai 41-43"}';
+        $expectedAddress = '{"addressCountry":"BE","addressLocality":"Brussel",';
+        $expectedAddress .= '"postalCode":"1000","streetAddress":"Henegouwenkaai 41-43"}';
 
         $result = $this->serializer->serialize($addressMock);
         $this->assertEquals($expectedAddress, $result);
