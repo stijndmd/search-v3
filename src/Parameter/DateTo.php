@@ -5,17 +5,16 @@ namespace CultuurNet\SearchV3\Parameter;
 /**
  * Provides a parameter to search on dateTo.
  */
-class DateTo extends AbstractDateParameter
+class DateTo extends AbstractParameter
 {
 
     /**
      * DateFrom constructor.
-     * @param $dateTo
-     * @param $offset
+     * @param \DateTime $dateTo
      */
-    public function __construct($dateTo, $offset = '+0')
+    public function __construct(\DateTime $dateTo)
     {
-        $this->value = $this->formatDate($dateTo, $offset);
+        $this->value = $dateTo;
         $this->key = 'dateTo';
     }
 }

@@ -8,12 +8,13 @@ class DateFromTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstructor()
     {
-        $id = new DateFrom('21-12-2017 10:00', '+1');
+        $dateTime = new \DateTime('21-12-2017T10:00:00+01:00');
+        $id = new DateFrom($dateTime);
 
         $key = $id->getKey();
         $value = $id->getValue();
 
-        $this->assertEquals($key, 'dateFrom');
-        $this->assertEquals($value, '2017-12-21T10:00:00+01:00');
+        $this->assertEquals('dateFrom', $key);
+        $this->assertEquals($dateTime, $value);
     }
 }
