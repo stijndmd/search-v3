@@ -12,7 +12,7 @@ class Uitpas extends AbstractParameter
      * Uitpas constructor.
      * @param $uitpas boolean
      */
-    public function __construct($uitpas)
+    public function __construct(bool $uitpas)
     {
         $this->value = $uitpas;
         $this->key = 'uitpas';
