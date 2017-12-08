@@ -3,6 +3,7 @@
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\SerializedName;
 
 class Organizer
 {
@@ -10,6 +11,7 @@ class Organizer
     /**
      * @var string
      * @Type("string")
+     * @SerializedName("@id")
      */
     protected $id;
 
