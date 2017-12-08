@@ -4,7 +4,7 @@ namespace CultuurNet\SearchV3;
 
 use CultuurNet\SearchV3\Serializer\SerializerInterface;
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
-use Guzzle\Http\ClientInterface;
+use GuzzleHttp\ClientInterface;
 
 /**
  * Default search client to perform searches on the search api.
@@ -78,9 +78,7 @@ class SearchClient
           'query' => $searchQuery->toArray()
         ];
 
-        $request = $this->client->createRequest('GET', $type, null, null, $options);
-
-        $result = $request->send();
+        $result = $this->client->request('GET', $type, $options);
 
         return $this->serializer->deserialize($result->getBody(true));
     }
