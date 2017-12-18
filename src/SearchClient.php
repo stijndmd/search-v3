@@ -3,14 +3,13 @@
 namespace CultuurNet\SearchV3;
 
 use CultuurNet\SearchV3\Serializer\SerializerInterface;
-use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use GuzzleHttp\ClientInterface;
 
 /**
  * Default search client to perform searches on the search api.
  * @package CultuurNet\SearchV3
  */
-class SearchClient
+class SearchClient implements SearchClientInterface
 {
 
     /**
@@ -34,10 +33,22 @@ class SearchClient
     }
 
     /**
-     * Perform a search on events.
-     *
-     * @param SearchQueryInterface $searchQuery
-     * @return PagedCollection
+     * {@inheritdoc}
+     */
+    public function setClient(ClientInterface $client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getClient() {
+        return $this->client;
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function searchEvents(SearchQueryInterface $searchQuery)
     {
@@ -45,10 +56,7 @@ class SearchClient
     }
 
     /**
-     * Perform a search on places.
-     *
-     * @param SearchQueryInterface $searchQuery
-     * @return PagedCollection
+     * {@inheritdoc}
      */
     public function searchPlaces(SearchQueryInterface $searchQuery)
     {
@@ -56,9 +64,7 @@ class SearchClient
     }
 
     /**
-     * Perform a search on offers.
-     * @param SearchQueryInterface $searchQuery
-     * @return PagedCollection
+     * {@inheritdoc}
      */
     public function searchOffers(SearchQueryInterface $searchQuery)
     {
@@ -66,10 +72,7 @@ class SearchClient
     }
 
     /**
-     * Perform a search on a given type.
-     * @param SearchQueryInterface $searchQuery
-     * @param $type The type to search on
-     * @return PagedCollection
+     * {@inheritdoc}
      */
     protected function search(SearchQueryInterface $searchQuery, $type)
     {
