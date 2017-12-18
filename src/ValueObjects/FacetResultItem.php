@@ -80,6 +80,14 @@ class FacetResultItem
     }
 
     /**
+     * Get the name for the given language.
+     */
+    public function getNameForLanguage(string $langcode)
+    {
+        return $this->names[$langcode] ?? '';
+    }
+
+    /**
      * @return int
      */
     public function getCount()

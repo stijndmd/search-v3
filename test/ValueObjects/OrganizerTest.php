@@ -32,12 +32,11 @@ class OrganizerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('organizer-id', $result);
     }
 
-    public function testGetNameMethod()
+    public function testGetAndSetNameMethods()
     {
-        $this->organizer->setName('organizer name');
-
-        $result = $this->organizer->getName();
-        $this->assertEquals('organizer name', $result);
+        $this->organizer->setName(['nl' => 'organizer name']);
+        $this->assertEquals(['nl' => 'organizer name'], $this->organizer->getName());
+        $this->assertEquals('organizer name', $this->organizer->getNameForLanguage('nl'));
     }
 
     public function testGetEmailMethod()

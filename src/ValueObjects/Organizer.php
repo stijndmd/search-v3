@@ -16,8 +16,8 @@ class Organizer
     protected $id;
 
     /**
-     * @var string
-     * @Type("string")
+     * @var array
+     * @Type("array<string,string>")
      */
     protected $name;
 
@@ -62,7 +62,7 @@ class Organizer
     }
 
     /**
-     * @return string
+     * @return array
      */
     public function getName()
     {
@@ -78,6 +78,16 @@ class Organizer
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * Get the name for a given langcode.
+     *
+     * @param string $langcode
+     */
+    public function getNameForLanguage(string $langcode)
+    {
+        return $this->name[$langcode] ?? '';
     }
 
     /**
