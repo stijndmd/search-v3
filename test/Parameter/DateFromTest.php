@@ -15,6 +15,6 @@ class DateFromTest extends \PHPUnit_Framework_TestCase
         $value = $id->getValue();
 
         $this->assertEquals('dateFrom', $key);
-        $this->assertEquals($dateTime, $value);
+        $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
     }
 }
