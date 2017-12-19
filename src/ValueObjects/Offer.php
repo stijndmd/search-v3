@@ -210,6 +210,16 @@ abstract class Offer
     }
 
     /**
+     * Get the name for a given langcode.
+     *
+     * @param string $langcode
+     */
+    public function getNameForLanguage(string $langcode)
+    {
+       return $this->name[$langcode] ?? '';
+    }
+
+    /**
      * @return array
      */
     public function getDescription()
@@ -226,6 +236,16 @@ abstract class Offer
         $this->description = $description;
 
         return $this;
+    }
+
+    /**
+     * Get the description for given langcode.
+     *
+     * @param string $langcode
+     */
+    public function getDescriptionForLanguage(string $langcode)
+    {
+       return $this->name[$langcode] ?? '';
     }
 
     /**

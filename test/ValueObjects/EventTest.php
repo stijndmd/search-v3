@@ -19,6 +19,13 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $this->event = new Event();
     }
 
+    public function testNameGettersAndSetters()
+    {
+        $this->event->setName(['nl' => 'event name']);
+        $this->assertEquals(['nl' => 'event name'], $this->event->getName());
+        $this->assertEquals('event name', $this->event->getNameForLanguage('nl'));
+    }
+
     public function testGetLocationMethod()
     {
         $location = new Place();
