@@ -216,7 +216,7 @@ abstract class Offer
      */
     public function getNameForLanguage(string $langcode)
     {
-       return $this->name[$langcode] ?? '';
+        return $this->name[$langcode] ?? '';
     }
 
     /**
@@ -245,7 +245,7 @@ abstract class Offer
      */
     public function getDescriptionForLanguage(string $langcode)
     {
-       return $this->name[$langcode] ?? '';
+        return $this->name[$langcode] ?? '';
     }
 
     /**

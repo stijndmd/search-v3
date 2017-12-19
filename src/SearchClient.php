@@ -43,7 +43,8 @@ class SearchClient implements SearchClientInterface
     /**
      * {@inheritdoc}
      */
-    public function getClient() {
+    public function getClient()
+    {
         return $this->client;
     }
 
