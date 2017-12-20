@@ -3,6 +3,7 @@
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\SerializedName;
 
 class Organizer
 {
@@ -10,12 +11,13 @@ class Organizer
     /**
      * @var string
      * @Type("string")
+     * @SerializedName("@id")
      */
     protected $id;
 
     /**
-     * @var string
-     * @Type("string")
+     * @var TranslatedString
+     * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
     protected $name;
 
@@ -60,7 +62,7 @@ class Organizer
     }
 
     /**
-     * @return string
+     * @return TranslatedString
      */
     public function getName()
     {
@@ -68,10 +70,10 @@ class Organizer
     }
 
     /**
-     * @param string $name
+     * @param TranslatedString $name
      * @return Organizer
      */
-    public function setName($name)
+    public function setName(TranslatedString $name)
     {
         $this->name = $name;
 

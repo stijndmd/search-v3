@@ -10,6 +10,7 @@ use CultuurNet\SearchV3\ValueObjects\OpeningHours;
 use CultuurNet\SearchV3\ValueObjects\Organizer;
 use CultuurNet\SearchV3\ValueObjects\Place;
 use CultuurNet\SearchV3\ValueObjects\Term;
+use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 
 class PlaceTest extends \PHPUnit_Framework_TestCase
 {
@@ -71,18 +72,18 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
 
     public function testGetNameMethod()
     {
-        $this->place->setName('place-name');
 
-        $result = $this->place->getName();
-        $this->assertEquals('place-name', $result);
+        $name = new TranslatedString(['nl' => 'name']);
+        $this->place->setName($name);
+        $this->assertEquals($name, $this->place->getName());
     }
 
     public function testGetDescriptionMethod()
     {
-        $this->place->setDescription('this is a description');
+        $description = new TranslatedString(['nl' => 'description']);
 
-        $result = $this->place->getDescription();
-        $this->assertEquals('this is a description', $result);
+        $this->place->setDescription($description);
+        $this->assertEquals($description, $this->place->getDescription());
     }
 
     public function testGetCalendarTypeMethod()

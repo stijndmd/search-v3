@@ -22,7 +22,7 @@
   },
   "require": {
     "php": "^7.1",
-    "guzzle/guzzle": "~3.9.3"
+    "guzzlehttp/guzzle": "~6.0"
   },
   "require-dev": {
     "escapestudios/symfony2-coding-standard": "~2.0",
