@@ -5,7 +5,7 @@ namespace CultuurNet\SearchV3\Parameter;
 /**
  * Provides a parameter to search on modifiedTo.
  */
-class ModifiedTo extends AbstractParameter
+class ModifiedTo extends AbstractDateParameter
 {
 
     /**
