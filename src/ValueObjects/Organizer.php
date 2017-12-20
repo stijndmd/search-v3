@@ -16,8 +16,8 @@ class Organizer
     protected $id;
 
     /**
-     * @var array
-     * @Type("array<string,string>")
+     * @var TranslatedString
+     * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
     protected $name;
 
@@ -62,7 +62,7 @@ class Organizer
     }
 
     /**
-     * @return array
+     * @return TranslatedString
      */
     public function getName()
     {
@@ -70,24 +70,14 @@ class Organizer
     }
 
     /**
-     * @param string $name
+     * @param TranslatedString $name
      * @return Organizer
      */
-    public function setName($name)
+    public function setName(TranslatedString $name)
     {
         $this->name = $name;
 
         return $this;
-    }
-
-    /**
-     * Get the name for a given langcode.
-     *
-     * @param string $langcode
-     */
-    public function getNameForLanguage(string $langcode)
-    {
-        return $this->name[$langcode] ?? '';
     }
 
     /**

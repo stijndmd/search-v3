@@ -5,6 +5,7 @@ namespace CultuurNet\SearchV3\Test\ValueObjects;
 use CultuurNet\SearchV3\ValueObjects\FacetResults;
 use CultuurNet\SearchV3\ValueObjects\FacetResult;
 use CultuurNet\SearchV3\ValueObjects\FacetResultItem;
+use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
 
@@ -43,7 +44,7 @@ class FacetResultsTest extends \PHPUnit_Framework_TestCase
         $items = [];
         foreach ($results as $value => $result) {
             $children = isset($result['children']) ? $this->deserializeFacilitiesTestData($result['children']) : [];
-            $items[] = new FacetResultItem($value, $result['name'], $result['count'], $children);
+            $items[] = new FacetResultItem($value, new TranslatedString($result['name']), $result['count'], $children);
         }
 
         return $items;
