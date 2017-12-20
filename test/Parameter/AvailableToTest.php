@@ -15,6 +15,6 @@ class AvailableToTest extends \PHPUnit_Framework_TestCase
         $value = $id->getValue();
 
         $this->assertEquals('availableTo', $key);
-        $this->assertEquals($dateTime, $value);
+        $this->assertEquals('2017-04-11T12:08:01+01:00', $value);
     }
 }
