@@ -59,7 +59,8 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
     /**
      * Test the setter and getter of the search client.
      */
-    public function testSetClient() {
+    public function testSetClient()
+    {
         $client = new Client(['headers' => ['lorem' => 'ipsum']]);
         $this->searchClient->setClient($client);
         $this->assertEquals($client, $this->searchClient->getClient());
@@ -100,7 +101,7 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
 
         $this->client->expects($this->once())
             ->method('request')
-            ->with('GET', 'places',$options)
+            ->with('GET', 'places', $options)
             ->willReturn($response);
 
         $queryResult = $this->searchClient->searchPlaces($searchQueryMock);

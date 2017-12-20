@@ -3,6 +3,7 @@
 namespace CultuurNet\SearchV3\Test\ValueObjects;
 
 use CultuurNet\SearchV3\ValueObjects\Organizer;
+use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 
 class OrganizerTest extends \PHPUnit_Framework_TestCase
 {
@@ -34,9 +35,9 @@ class OrganizerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetAndSetNameMethods()
     {
-        $this->organizer->setName(['nl' => 'organizer name']);
-        $this->assertEquals(['nl' => 'organizer name'], $this->organizer->getName());
-        $this->assertEquals('organizer name', $this->organizer->getNameForLanguage('nl'));
+        $name = new TranslatedString(['nl' => 'organizer name']);
+        $this->organizer->setName($name);
+        $this->assertEquals($name, $this->organizer->getName());
     }
 
     public function testGetEmailMethod()

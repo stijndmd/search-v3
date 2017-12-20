@@ -6,6 +6,7 @@ use CultuurNet\SearchV3\ValueObjects\BookingInfo;
 use CultuurNet\SearchV3\ValueObjects\Event;
 use CultuurNet\SearchV3\ValueObjects\Place;
 use CultuurNet\SearchV3\ValueObjects\PriceInfo;
+use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 
 class EventTest extends \PHPUnit_Framework_TestCase
 {
@@ -21,9 +22,9 @@ class EventTest extends \PHPUnit_Framework_TestCase
 
     public function testNameGettersAndSetters()
     {
-        $this->event->setName(['nl' => 'event name']);
-        $this->assertEquals(['nl' => 'event name'], $this->event->getName());
-        $this->assertEquals('event name', $this->event->getNameForLanguage('nl'));
+        $name = new TranslatedString(['nl' => 'event name']);
+        $this->event->setName($name);
+        $this->assertEquals($name, $this->event->getName());
     }
 
     public function testGetLocationMethod()

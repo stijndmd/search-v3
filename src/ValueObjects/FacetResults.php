@@ -108,7 +108,7 @@ class FacetResults implements \Iterator
         $items = [];
         foreach ($results as $value => $result) {
             $children = isset($result['children']) ? $this->deserializeResults($result['children']) : [];
-            $items[] = new FacetResultItem($value, $result['name'], $result['count'], $children);
+            $items[] = new FacetResultItem($value, new TranslatedString($result['name']), $result['count'], $children);
         }
 
         return $items;

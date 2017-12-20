@@ -3,6 +3,7 @@
 namespace CultuurNet\SearchV3\Test\ValueObjects;
 
 use CultuurNet\SearchV3\ValueObjects\FacetResultItem;
+use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 
 class FacetResultItemTest extends \PHPUnit_Framework_TestCase
 {
@@ -14,7 +15,7 @@ class FacetResultItemTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $value = 'facetResultItemValue';
-        $names = array('name1', 'name2');
+        $names = new TranslatedString(array('name1', 'name2'));
         $count = 2;
         $children = array('child1', 'child2');
         $this->facetResultItem = new FacetResultItem($value, $names, $count, $children);
@@ -30,10 +31,10 @@ class FacetResultItemTest extends \PHPUnit_Framework_TestCase
 
     public function testGetNamesMethod()
     {
-        $this->facetResultItem->setNames(array('new name1', 'new name2'));
+        $names = new TranslatedString(array('new name1', 'new name2'));
+        $this->facetResultItem->setName($names);
 
-        $result = $this->facetResultItem->getNames();
-        $this->assertEquals(array('new name1', 'new name2'), $result);
+        $this->assertEquals($names, $this->facetResultItem->getName());
     }
 
     public function testGetCountMethod()

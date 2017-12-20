@@ -47,6 +47,13 @@
 
     </target>
 
+    <target name="phpcbf">
+        <exec command="vendor/bin/phpcbf test --standard=phpcs-ruleset.xml"
+              passthru="true"/>
+        <exec command="vendor/bin/phpcbf src --standard=phpcs-ruleset.xml"
+              passthru="true"/>
+    </target>
+
     <target name="report-to-coveralls">
         <exec
                 command="./vendor/bin/coveralls -v"
