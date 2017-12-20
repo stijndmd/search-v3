@@ -2,12 +2,13 @@
 
 namespace CultuurNet\SearchV3\Test;
 
-use Guzzle\Http\ClientInterface;
 use CultuurNet\SearchV3\Serializer\SerializerInterface;
 use CultuurNet\SearchV3\SearchQueryInterface;
 use CultuurNet\SearchV3\SearchClient;
 use Guzzle\Http\Message\Response;
 use Guzzle\Http\Message\RequestInterface;
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 
 class SearchClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -43,22 +44,26 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
         return $searchQueryMock;
     }
 
-    public function provideRequestMockup()
+    public function provideResponseMockup()
     {
-        $result = $this->getMockBuilder(Response::class)
+        $response = $this->getMockBuilder(Response::class)
             ->disableOriginalConstructor()
             ->getMock();
-        $result->expects($this->once())
+        $response->expects($this->once())
             ->method('getBody')
             ->willReturn('test response');
 
-        $request = $this->getMockBuilder(RequestInterface::class)
-            ->getMock();
-        $request->expects($this->once())
-            ->method('send')
-            ->willReturn($result);
+        return $response;
+    }
 
-        return $request;
+    /**
+     * Test the setter and getter of the search client.
+     */
+    public function testSetClient()
+    {
+        $client = new Client(['headers' => ['lorem' => 'ipsum']]);
+        $this->searchClient->setClient($client);
+        $this->assertEquals($client, $this->searchClient->getClient());
     }
 
     public function testSearchEventsMethod()
@@ -66,7 +71,7 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
         $options = array('query' => 'asdfadsf');
 
         $searchQueryMock = $this->provideSearchQueryMock();
-        $request = $this->provideRequestMockup();
+        $response = $this->provideResponseMockup();
 
         $this->serializer->expects($this->once())
             ->method('deserialize')
@@ -74,9 +79,9 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
             ->willReturn('test event');
 
         $this->client->expects($this->once())
-            ->method('createRequest')
-            ->with('GET', 'events', null, null, $options)
-            ->willReturn($request);
+            ->method('request')
+            ->with('GET', 'events', $options)
+            ->willReturn($response);
 
         $queryResult = $this->searchClient->searchEvents($searchQueryMock);
         $this->assertEquals('test event', $queryResult);
@@ -87,7 +92,7 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
         $options = array('query' => 'asdfadsf');
 
         $searchQueryMock = $this->provideSearchQueryMock();
-        $request = $this->provideRequestMockup();
+        $response = $this->provideResponseMockup();
 
         $this->serializer->expects($this->once())
             ->method('deserialize')
@@ -95,9 +100,9 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
             ->willReturn('test place');
 
         $this->client->expects($this->once())
-            ->method('createRequest')
-            ->with('GET', 'places', null, null, $options)
-            ->willReturn($request);
+            ->method('request')
+            ->with('GET', 'places', $options)
+            ->willReturn($response);
 
         $queryResult = $this->searchClient->searchPlaces($searchQueryMock);
         $this->assertEquals('test place', $queryResult);
@@ -108,7 +113,7 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
         $options = array('query' => 'asdfadsf');
 
         $searchQueryMock = $this->provideSearchQueryMock();
-        $request = $this->provideRequestMockup();
+        $response = $this->provideResponseMockup();
 
         $this->serializer->expects($this->once())
             ->method('deserialize')
@@ -116,9 +121,9 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
             ->willReturn('test offer');
 
         $this->client->expects($this->once())
-            ->method('createRequest')
-            ->with('GET', 'offers', null, null, $options)
-            ->willReturn($request);
+            ->method('request')
+            ->with('GET', 'offers', $options)
+            ->willReturn($response);
 
         $queryResult = $this->searchClient->searchOffers($searchQueryMock);
         $this->assertEquals('test offer', $queryResult);
