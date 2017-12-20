@@ -5,7 +5,7 @@ namespace CultuurNet\SearchV3\Parameter;
 /**
  * Provides a parameter to search on createdFrom.
  */
-class CreatedFrom extends AbstractParameter
+class CreatedFrom extends AbstractDateParameter
 {
 
     /**
