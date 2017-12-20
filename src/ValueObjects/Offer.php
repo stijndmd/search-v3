@@ -27,14 +27,14 @@ abstract class Offer
     protected $mainLanguage;
 
     /**
-     * @var array
-     * @Type("array<string,string>")
+     * @var TranslatedString
+     * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
     protected $name;
 
     /**
-     * @var array
-     * @Type("array<string,string>")
+     * @var TranslatedString
+     * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
     protected $description;
 
@@ -191,7 +191,7 @@ abstract class Offer
     }
 
     /**
-     * @return array
+     * @return TranslatedString
      */
     public function getName()
     {
@@ -199,10 +199,10 @@ abstract class Offer
     }
 
     /**
-     * @param array $name
+     * @param TranslatedString $name
      * @return Offer
      */
-    public function setName($name)
+    public function setName(TranslatedString $name)
     {
         $this->name = $name;
 
@@ -210,7 +210,7 @@ abstract class Offer
     }
 
     /**
-     * @return array
+     * @return TranslatedString
      */
     public function getDescription()
     {
@@ -218,10 +218,10 @@ abstract class Offer
     }
 
     /**
-     * @param array $description
+     * @param TranslatedString $description
      * @return Offer
      */
-    public function setDescription($description)
+    public function setDescription(TranslatedString $description)
     {
         $this->description = $description;
 

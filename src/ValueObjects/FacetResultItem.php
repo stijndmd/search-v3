@@ -21,11 +21,11 @@ class FacetResultItem
     protected $value;
 
     /**
-     * Array of names per language.
+     * The name of this facet result.
      *
-     * @var array
+     * @var TranslatedString
      */
-    protected $names;
+    protected $name;
 
     /**
      * Total results for this item.
@@ -61,20 +61,20 @@ class FacetResultItem
     }
 
     /**
-     * @return array
+     * @return TranslatedString
      */
-    public function getNames()
+    public function getName()
     {
-        return $this->names;
+        return $this->name;
     }
 
     /**
-     * @param array $names
+     * @param TranslatedString $names
      * @return FacetResultItem
      */
-    public function setNames($names)
+    public function setName($name)
     {
-        $this->names = $names;
+        $this->name = $name;
 
         return $this;
     }
@@ -120,14 +120,14 @@ class FacetResultItem
     /**
      * FacetResultItem constructor.
      * @param $value
-     * @param $names
+     * @param TranslatedString $names
      * @param $count
      * @param $children
      */
-    public function __construct($value, $names, $count, $children)
+    public function __construct($value, TranslatedString $name, $count, $children)
     {
         $this->value = $value;
-        $this->names = $names;
+        $this->name = $name;
         $this->count = $count;
         $this->children = $children;
     }
