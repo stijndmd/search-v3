@@ -28,6 +28,12 @@ class Organizer
     protected $email;
 
     /**
+     * @var ContactPoint
+     * @Type("CultuurNet\SearchV3\ValueObjects\ContactPoint")
+     */
+    protected $contactPoint;
+
+    /**
      * @var array
      * @Type("array<string>")
      */
@@ -96,6 +102,24 @@ class Organizer
     {
         $this->email = $email;
 
+        return $this;
+    }
+
+    /**
+     * @return ContactPoint
+     */
+    public function getContactPoint()
+    {
+        return $this->contactPoint;
+    }
+
+    /**
+     * @param ContactPoint $contactPoint
+     * @return Organizer
+     */
+    public function setContactPoint($contactPoint)
+    {
+        $this->contactPoint = $contactPoint;
         return $this;
     }
 
