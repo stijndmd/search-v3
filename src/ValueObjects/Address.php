@@ -32,8 +32,12 @@ class Address
      * @param string $postalCode
      * @param string $streetAddress
      */
-    public function __construct($addressCountry = null, $addressLocality = null, $postalCode = null, $streetAddress = null)
-    {
+    public function __construct(
+        $addressCountry = null,
+        $addressLocality = null,
+        $postalCode = null,
+        $streetAddress = null
+    ) {
         $this->addressCountry = $addressCountry;
         $this->addressLocality = $addressLocality;
         $this->postalCode = $postalCode;

@@ -57,13 +57,23 @@ class TranslatedAddress
     {
         foreach ($values as $key => $value) {
             if (is_array($value)) {
-                $this->addresses[$key] = new Address($value['addressCountry'], $value['addressLocality'], $value['postalCode'], $value['streetAddress']);
+                $this->addresses[$key] = new Address(
+                    $value['addressCountry'],
+                    $value['addressLocality'],
+                    $value['postalCode'],
+                    $value['streetAddress']
+                );
             }
         }
 
         // Some properties are not translated yet in the api. We save these as nl.
         if (empty($addresses) && !empty($values)) {
-            $addresses['nl'] = new Address($values['addressCountry'] ?? null, $values['addressLocality'] ?? null, $values['postalCode'] ?? null, $values['streetAddress'] ?? null);
+            $addresses['nl'] = new Address(
+                $values['addressCountry'] ?? null,
+                $values['addressLocality'] ?? null,
+                $values['postalCode'] ?? null,
+                $values['streetAddress'] ?? null
+            );
         }
     }
 }
