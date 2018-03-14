@@ -39,7 +39,7 @@ class TranslatedAddressTest extends \PHPUnit_Framework_TestCase
         $this->address->setAddresses($addresses);
 
         $result = $this->address->getAddressForLanguage('nl');
-;
+
         $this->assertEquals($addresses['nl'], $result);
         $this->assertEquals('België', $result->getAddressCountry());
         $this->assertEquals('Brussel', $result->getAddressLocality());
