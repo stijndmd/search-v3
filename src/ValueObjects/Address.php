@@ -2,34 +2,44 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-use JMS\Serializer\Annotation\Type;
-
 class Address
 {
 
     /**
      * @var string
-     * @Type("string")
      */
     protected $addressCountry;
 
     /**
      * @var string
-     * @Type("string")
      */
     protected $addressLocality;
 
     /**
      * @var string
-     * @Type("string")
      */
     protected $postalCode;
 
     /**
      * @var string
-     * @Type("string")
      */
     protected $streetAddress;
+
+    /**
+     * Address constructor.
+     * @param string $addressCountry
+     * @param string $addressLocality
+     * @param string $postalCode
+     * @param string $streetAddress
+     */
+    public function __construct($addressCountry = null, $addressLocality = null, $postalCode = null, $streetAddress = null)
+    {
+        $this->addressCountry = $addressCountry;
+        $this->addressLocality = $addressLocality;
+        $this->postalCode = $postalCode;
+        $this->streetAddress = $streetAddress;
+    }
+
 
     /**
      * @return string
