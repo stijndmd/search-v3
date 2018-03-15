@@ -2,7 +2,6 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\ValueObjects\Address;
 use JMS\Serializer\Annotation\HandlerCallback;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
