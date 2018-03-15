@@ -9,7 +9,7 @@ class Place extends Offer
 
     /**
      * @var Address
-     * @Type("CultuurNet\SearchV3\ValueObjects\Address")
+     * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedAddress")
      */
     protected $address;
 
