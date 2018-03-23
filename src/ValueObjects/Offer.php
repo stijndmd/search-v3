@@ -394,7 +394,7 @@ abstract class Offer
     {
         $mediaObjects = $this->getMediaObject();
         foreach ($mediaObjects as $mediaObject) {
-            if($mediaObject->getContentUrl() === $this->getImage()){
+            if ($mediaObject->getContentUrl() === $this->getImage()) {
                 return $mediaObject->getCopyrightHolder();
             }
         }
