@@ -420,13 +420,14 @@ abstract class Offer
     /**
      * @return mediaObject | string
      */
-    public function getMainMediaObject() {
+    public function getMainMediaObject()
+    {
         $mediaObjects = $this->getMediaObjects();
-            foreach ($mediaObjects as $mediaObject) {
-                if ($mediaObject->getContentUrl() === $this->getImage()) {
-                    return $mediaObject;
-                }
+        foreach ($mediaObjects as $mediaObject) {
+            if ($mediaObject->getContentUrl() === $this->getImage()) {
+                return $mediaObject;
             }
+        }
         return '';
     }
 
