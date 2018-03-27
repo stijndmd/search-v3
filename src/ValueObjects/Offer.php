@@ -388,17 +388,16 @@ abstract class Offer
     }
 
     /**
-     * @return string
+     * @return mediaObject
      */
-    public function getCopyright()
-    {
-        $mediaObjects = $this->getMediaObject();
-        foreach ($mediaObjects as $mediaObject) {
-            if ($mediaObject->getContentUrl() === $this->getImage()) {
-                return $mediaObject->getCopyrightHolder();
-            }
-        }
-        return '';
+    public function getMainMediaObject() {
+      $mediaObjects = $this->getMediaObject();
+      foreach ($mediaObjects as $mediaObject) {
+          if ($mediaObject->getContentUrl() === $this->getImage()) {
+              return $mediaObject;
+          }
+      }
+      return '';
     }
 
     /**
