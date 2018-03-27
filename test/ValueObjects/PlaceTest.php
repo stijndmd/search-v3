@@ -158,13 +158,25 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('http://path-to-image.com', $result);
     }
 
-    public function testGetMediaObjectMethod()
+    public function testGetMediaObjectsMethod()
     {
         $mockMediaObject = new MediaObject();
-        $this->place->setMediaObject(array($mockMediaObject));
+        $this->place->setMediaObjects(array($mockMediaObject));
 
-        $result = $this->place->getMediaObject();
+        $result = $this->place->getMediaObjects();
         $this->assertEquals(array($mockMediaObject), $result);
+    }
+
+    public function testGetMainMediaObjectMethod()
+    {
+        $this->place->setImage('http://path-to-image.com');
+
+        $mockMediaObject = new MediaObject();
+        $mockMediaObject->setContentUrl('http://path-to-image.com');
+        $this->place->setMediaObjects(array($mockMediaObject));
+
+        $result = $this->place->getMainMediaObject();
+        $this->assertEquals($mockMediaObject, $result);
     }
 
     public function testGetOrganizerMethod()

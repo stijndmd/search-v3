@@ -96,7 +96,7 @@ abstract class Offer
      * @var MediaObject[]
      * @Type("array<CultuurNet\SearchV3\ValueObjects\MediaObject>")
      */
-    protected $mediaObject = [];
+    protected $mediaObjects = [];
 
     /**
      * @var Organizer
@@ -401,20 +401,34 @@ abstract class Offer
     /**
      * @return MediaObject[]
      */
-    public function getMediaObject()
+    public function getMediaObjects()
     {
-        return $this->mediaObject;
+        return $this->mediaObjects;
     }
 
     /**
-     * @param MediaObject[] $mediaObject
+     * @param MediaObject[] $mediaObjects
      * @return Offer
      */
-    public function setMediaObject($mediaObject)
+    public function setMediaObjects($mediaObjects)
     {
-        $this->mediaObject = $mediaObject;
+        $this->mediaObjects = $mediaObjects;
 
         return $this;
+    }
+
+    /**
+     * @return mediaObject | string
+     */
+    public function getMainMediaObject()
+    {
+        $mediaObjects = $this->getMediaObjects();
+        foreach ($mediaObjects as $mediaObject) {
+            if ($mediaObject->getContentUrl() === $this->getImage()) {
+                return $mediaObject;
+            }
+        }
+        return '';
     }
 
     /**
