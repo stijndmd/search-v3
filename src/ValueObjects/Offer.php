@@ -95,6 +95,7 @@ abstract class Offer
     /**
      * @var MediaObject[]
      * @Type("array<CultuurNet\SearchV3\ValueObjects\MediaObject>")
+     * @SerializedName("mediaObject")
      */
     protected $mediaObjects = [];
 
