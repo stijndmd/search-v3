@@ -29,8 +29,8 @@ class BookingInfo
     protected $url;
 
     /**
-     * @var string
-     * @Type("string")
+     * @var TranslatedString
+     * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
     protected $urlLabel;
 
@@ -89,7 +89,7 @@ class BookingInfo
     }
 
     /**
-     * @return string
+     * @return TranslatedString
      */
     public function getUrlLabel()
     {
@@ -97,7 +97,7 @@ class BookingInfo
     }
 
     /**
-     * @param string $urlLabel
+     * @param TranslatedString $urlLabel
      * @return BookingInfo
      */
     public function setUrlLabel($urlLabel)
