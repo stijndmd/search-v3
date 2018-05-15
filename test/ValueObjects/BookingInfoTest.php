@@ -3,6 +3,7 @@
 namespace CultuurNet\SearchV3\Test\ValueObjects;
 
 use CultuurNet\SearchV3\ValueObjects\BookingInfo;
+use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 
 class BookingInfoTest extends \PHPUnit_Framework_TestCase
 {
@@ -42,9 +43,11 @@ class BookingInfoTest extends \PHPUnit_Framework_TestCase
 
     public function testGetUrlLabelMethod()
     {
-        $this->bookingInfo->setUrlLabel('Koop tickets');
+        $urlLabel = new TranslatedString(['nl' => 'Koop tickets']);
+        $this->bookingInfo->setUrlLabel($urlLabel);
 
         $result = $this->bookingInfo->getUrlLabel();
-        $this->assertEquals('Koop tickets', $result);
+        $this->assertInstanceOf('CultuurNet\SearchV3\ValueObjects\TranslatedString', $result);
+        $this->assertEquals($urlLabel, $result);
     }
 }
