@@ -3,6 +3,7 @@
 namespace CultuurNet\SearchV3\Test\ValueObjects;
 
 use CultuurNet\SearchV3\ValueObjects\PriceInfo;
+use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 
 class PriceInfoTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,10 +19,12 @@ class PriceInfoTest extends \PHPUnit_Framework_TestCase
 
     public function testGetNameMethod()
     {
-        $this->priceInfo->setName('test priceInfo');
+        $priceName = new TranslatedString(['nl' => 'Senioren']);
+        $this->priceInfo->setName($priceName);
 
         $result = $this->priceInfo->getName();
-        $this->assertEquals('test priceInfo', $result);
+        $this->assertInstanceOf('CultuurNet\SearchV3\ValueObjects\TranslatedString', $result);
+        $this->assertEquals($priceName, $result);
     }
 
     public function testGetPriceCurrency()

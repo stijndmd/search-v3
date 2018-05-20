@@ -11,8 +11,8 @@ class PriceInfo
 {
 
     /**
-     * @var string
-     * @Type("string")
+     * @var TranslatedString
+     * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
     protected $name;
 
@@ -29,17 +29,17 @@ class PriceInfo
     protected $price;
 
     /**
-     * @return string
+     * @return TranslatedString
      */
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     * @return PriceInfo
-     */
+   /**
+    * @param TranslatedString $name
+    * @return PriceInfo
+    */
     public function setName($name)
     {
         $this->name = $name;
