@@ -69,7 +69,7 @@ class SearchClient implements SearchClientInterface
      */
     public function searchOffers(SearchQueryInterface $searchQuery, $members)
     {
-        return $this->search($searchQuery, 'offers', $private);
+        return $this->search($searchQuery, 'offers', $members);
     }
 
     /**
@@ -82,8 +82,8 @@ class SearchClient implements SearchClientInterface
           'query' => $searchQuery->toArray()
         ];
 
-        if ($members){
-          $options['query']['audienceType'] = 'members';
+        if ($members) {
+            $options['query']['audienceType'] = 'members';
         }
 
         $result = $this->client->request('GET', $type, $options);
