@@ -31,7 +31,7 @@ interface SearchClientInterface
      * @param SearchQueryInterface $searchQuery
      * @return PagedCollection
      */
-    public function searchEvents(SearchQueryInterface $searchQuery);
+    public function searchEvents(SearchQueryInterface $searchQuery, $private);
 
     /**
      * Perform a search on places.
@@ -39,12 +39,12 @@ interface SearchClientInterface
      * @param SearchQueryInterface $searchQuery
      * @return PagedCollection
      */
-    public function searchPlaces(SearchQueryInterface $searchQuery);
+    public function searchPlaces(SearchQueryInterface $searchQuery, $private);
 
     /**
      * Perform a search on offers.
      * @param SearchQueryInterface $searchQuery
      * @return PagedCollection
      */
-    public function searchOffers(SearchQueryInterface $searchQuery);
+    public function searchOffers(SearchQueryInterface $searchQuery, $private);
 }

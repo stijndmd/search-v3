@@ -51,36 +51,40 @@ class SearchClient implements SearchClientInterface
     /**
      * {@inheritdoc}
      */
-    public function searchEvents(SearchQueryInterface $searchQuery)
+    public function searchEvents(SearchQueryInterface $searchQuery, $private)
     {
-        return $this->search($searchQuery, 'events');
+        return $this->search($searchQuery, 'events', $private);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function searchPlaces(SearchQueryInterface $searchQuery)
+    public function searchPlaces(SearchQueryInterface $searchQuery, $members)
     {
-        return $this->search($searchQuery, 'places');
+        return $this->search($searchQuery, 'places', $members);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function searchOffers(SearchQueryInterface $searchQuery)
+    public function searchOffers(SearchQueryInterface $searchQuery, $members)
     {
-        return $this->search($searchQuery, 'offers');
+        return $this->search($searchQuery, 'offers', $private);
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function search(SearchQueryInterface $searchQuery, $type)
+    protected function search(SearchQueryInterface $searchQuery, $type, $members)
     {
 
         $options = [
           'query' => $searchQuery->toArray()
         ];
+
+        if ($members){
+          $options['query']['audienceType'] = 'members';
+        }
 
         $result = $this->client->request('GET', $type, $options);
 
