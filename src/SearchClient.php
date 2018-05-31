@@ -51,9 +51,9 @@ class SearchClient implements SearchClientInterface
     /**
      * {@inheritdoc}
      */
-    public function searchEvents(SearchQueryInterface $searchQuery, $private)
+    public function searchEvents(SearchQueryInterface $searchQuery, $members)
     {
-        return $this->search($searchQuery, 'events', $private);
+        return $this->search($searchQuery, 'events', $members);
     }
 
     /**
