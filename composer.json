@@ -22,7 +22,8 @@
   },
   "require": {
     "php": "^7.1",
-    "guzzlehttp/guzzle": "~6.0"
+    "guzzlehttp/guzzle": "~6.0",
+    "jms/serializer": "~1.9"
   },
   "require-dev": {
     "escapestudios/symfony2-coding-standard": "~2.0",
@@ -30,8 +31,6 @@
     "squizlabs/php_codesniffer": "2.6.1",
     "phing/phing": "~2.10",
     "satooshi/php-coveralls": "~0.7",
-    "mikey179/vfsStream": "~1.6.2",
-    "jms/serializer": "~1.9",
-    "simple-bus/jms-serializer-bridge": "^1.0"
+    "mikey179/vfsStream": "~1.6.2"
   }
 }
