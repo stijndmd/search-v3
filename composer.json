@@ -24,7 +24,8 @@
     "php": "^7.1",
     "guzzlehttp/guzzle": "~6.0",
     "jms/serializer": "~1.9",
-    "simple-bus/jms-serializer-bridge": "^1.0"
+    "simple-bus/jms-serializer-bridge": "^1.0",
+    "indigophp/doctrine-annotation-autoload": "^0.1.0"
   },
   "require-dev": {
     "escapestudios/symfony2-coding-standard": "~2.0",
