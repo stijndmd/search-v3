@@ -51,7 +51,7 @@ class SearchClient implements SearchClientInterface
     /**
      * {@inheritdoc}
      */
-    public function searchEvents(SearchQueryInterface $searchQuery, $members)
+    public function searchEvents(SearchQueryInterface $searchQuery, $members = false)
     {
         return $this->search($searchQuery, 'events', $members);
     }
@@ -59,7 +59,7 @@ class SearchClient implements SearchClientInterface
     /**
      * {@inheritdoc}
      */
-    public function searchPlaces(SearchQueryInterface $searchQuery, $members)
+    public function searchPlaces(SearchQueryInterface $searchQuery, $members = false)
     {
         return $this->search($searchQuery, 'places', $members);
     }
@@ -67,7 +67,7 @@ class SearchClient implements SearchClientInterface
     /**
      * {@inheritdoc}
      */
-    public function searchOffers(SearchQueryInterface $searchQuery, $members)
+    public function searchOffers(SearchQueryInterface $searchQuery, $members = false)
     {
         return $this->search($searchQuery, 'offers', $members);
     }
@@ -75,7 +75,7 @@ class SearchClient implements SearchClientInterface
     /**
      * {@inheritdoc}
      */
-    protected function search(SearchQueryInterface $searchQuery, $type, $members)
+    protected function search(SearchQueryInterface $searchQuery, $type, $members = false)
     {
 
         $options = [
@@ -83,7 +83,7 @@ class SearchClient implements SearchClientInterface
         ];
 
         if ($members) {
-            $options['query']['audienceType'] = 'members';
+            $options['query']['audienceType'] = '*';
         }
 
         $result = $this->client->request('GET', $type, $options);
