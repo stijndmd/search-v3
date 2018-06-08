@@ -1,0 +1,544 @@
+<?php
+
+namespace CultuurNet\SearchV3\Utility;
+
+use CultuurNet\SearchV3\ValueObjects\Event;
+use CultuurNet\SearchV3\ValueObjects\Offer;
+use CultuurNet\SearchV3\ValueObjects\Place;
+use IntlDateFormatter;
+use Purl\Url;
+
+/**
+ * A preproccesor utility for Cultuurkuur search templates.
+ */
+class SearchPreprocessor {
+
+  use TextProcessingTrait;
+
+  /**
+   * Preprocess event data for twig templates..
+   *
+   * @param \CultuurNet\SearchV3\ValueObjects\Event $event
+   *   The event to process.
+   * @param string $langcode
+   *   The langcode to use for translations.
+   * @param array $settings
+   *   Optional settings for the event display.
+   *
+   * @return array
+   *   Collection of preprocessed variables.
+   */
+  public function preprocessEvent(Event $event, string $langcode, array $settings = []) {
+    $variables = [
+      'id' => $event->getCdbid(),
+      'name' => $event->getName()->getValueForLanguage($langcode),
+      'description' => $event->getDescription() ? $event->getDescription()
+        ->getValueForLanguage($langcode) : '',
+      'where' => $event->getLocation() ? $this->preprocessPlace($event->getLocation(), $langcode) : NULL,
+      'when_summary' => $this->formatEventDatesSummary($event, $langcode),
+      'organizer' => ($event->getOrganizer() && $event->getOrganizer()
+        ->getName()) ? $event->getOrganizer()
+        ->getName()
+        ->getValueForLanguage($langcode) : NULL,
+      'age_range' => ($event->getTypicalAgeRange() ? $this->formatAgeRange($event->getTypicalAgeRange(), $langcode) : NULL),
+      'themes' => $event->getTermsByDomain('theme'),
+      'labels' => $event->getLabels() ?? [],
+      'vlieg' => self::isVliegEvent($event),
+      'uitpas' => self::isUitpasEvent($event),
+    ];
+
+    $defaultImage = $settings['image']['default_image'] ?? NULL;
+    $image = $event->getImage() ?? $defaultImage;
+
+    if (!empty($image)) {
+      $url = Url::parse($image);
+      $url->getQuery()->setData([
+        'crop' => $settings['image']['crop'] ?? 'auto',
+        'scale' => $settings['image']['scale'] ?? 'both',
+        'width' => $settings['image']['width'] ?? '150',
+        'height' => $settings['image']['height'] ?? '150',
+      ]);
+
+      $variables['image'] = $url->__toString();
+    }
+
+    $variables['copyright'] = NULL;
+    if ($event->getMainMediaObject()) {
+      $variables['copyright'] = $event->getMainMediaObject()
+        ->getCopyrightHolder();
+    }
+
+    $variables['summary'] = strip_tags($variables['description']);
+    if (!empty($settings['description']['characters'])) {
+      $originalSummary = $variables['summary'];
+      $variables['summary'] = $this->createSummary($variables['summary'], $settings['description']['characters']);
+      if (strlen($variables['summary']) < strlen($originalSummary)) {
+        // Only add ellipsis if the summary does not end at the end of sentence.
+        $punctuation = ['.', '!', '?', '。', '؟ '];
+        $variables['summary'] .= in_array(substr($variables['summary'], -1), $punctuation) ? '' : '...';
+      }
+    }
+
+    $variables['description'] = $this->filterXss($variables['description']);
+
+    $languageIconKeywords = [
+      'één taalicoon' => 1,
+      'twee taaliconen' => 2,
+      'drie taaliconen' => 3,
+      'vier taaliconen' => 4,
+    ];
+
+    // Search for language keywords. Take the highest value of all items that match..
+    $totalLanguageIcons = 0;
+    if (!empty($variables['labels'])) {
+      foreach ($languageIconKeywords as $keyword => $value) {
+        if (in_array($keyword, $variables['labels'])) {
+          $totalLanguageIcons = $value;
+        }
+      }
+    }
+
+    $variables['language_icons'] = '';
+    if ($totalLanguageIcons) {
+      // @todo: Do not render sub templates here.
+      // $variables['language_icons'] = $this->twig->render('widgets/search-results-widget/language-icons.html.twig', ['score' => $totalLanguageIcons]);
+    }
+
+    // Strip not allowed types.
+    if (!empty($variables['labels']) && !empty($settings['labels']['limit_labels']) && $settings['labels']['limit_labels']['enabled']) {
+      $allowedLabels = explode(', ', $settings['labels']['limit_labels']['labels']);
+      $variables['labels'] = array_intersect($variables['labels'], $allowedLabels);
+    }
+
+    // Add types as first labels, if enabled.
+    if (!empty($settings['type']['enabled'])) {
+      $types = $event->getTermsByDomain('eventtype');
+      $typeLabels = [];
+      if (!empty($types)) {
+        foreach ($types as $type) {
+          $typeLabels[] = $type->getLabel();
+        }
+      }
+
+      $variables['type'] = $typeLabels;
+    }
+
+    // Age from.
+    $variables['for_kids'] = FALSE;
+
+    $variables['age_from'] = NULL;
+    if ($range = $event->getTypicalAgeRange()) {
+      if ($range !== '-') {
+        // Explode range on dash.
+        $explRange = explode('-', $range);
+        $variables['age_from'] = $explRange[0];
+
+        if ($explRange[0] < 12) {
+          $variables['for_kids'] = TRUE;
+        }
+      }
+    }
+
+    return $variables;
+  }
+
+  /**
+   * Preprocess an event detail page.
+   *
+   * @param \CultuurNet\SearchV3\ValueObjects\Event $event
+   *   The event to process.
+   * @param string $langcode
+   *   The langcode to use for translations.
+   * @param array $settings
+   *   Optional settings to use.
+   *
+   * @return array
+   *   Collection of preprocessed variables.
+   */
+  public function preprocessEventDetail(Event $event, string $langcode, array $settings = []) {
+    $variables = $this->preprocessEvent($event, $langcode, $settings);
+
+    $variables['summary'] = '';
+    if (!empty($settings['description']['characters'])) {
+      $variables['summary'] = $this->createHtmlSummary($variables['description'], $settings['description']['characters']);
+      if (strlen($variables['summary']) === strlen($variables['description'])) {
+        $variables['summary'] = '';
+      }
+    }
+
+    $variables['when_details'] = $this->formatEventDatesDetail($event, $langcode);
+
+    // Directions are done via direct link too google.
+    if ($event->getLocation()) {
+      $directionData = '';
+      if ($event->getLocation()->getGeo()) {
+        $geoInfo = $event->getLocation()->getGeo();
+        $directionData = $geoInfo->getLatitude() . ',' . $geoInfo->getLongitude();
+      }
+      else {
+        /** @var \CultuurNet\SearchV3\ValueObjects\TranslatedAddress $address */
+        $address = $event->getLocation()->getAddress();
+        if ($translatedAddress = $address->getAddressForLanguage($langcode)) {
+          $directionData = $translatedAddress->getStreetAddress() . ' ' . $translatedAddress->getPostalCode() . ' ' . $translatedAddress->getAddressLocality();
+        }
+      }
+
+      $variables['directions_link'] = 'https://www.google.com/maps/dir/?api=1&destination=' . urlencode($directionData);
+    }
+
+    // Booking information.
+    $variables['booking_info'] = [];
+    if ($event->getBookingInfo()) {
+      $bookingInfo = $event->getBookingInfo();
+      $variables['booking_info'] = [];
+      if ($bookingInfo->getEmail()) {
+        $variables['booking_info']['email'] = $bookingInfo->getEmail();
+      }
+      if ($bookingInfo->getPhone()) {
+        $variables['booking_info']['phone'] = $bookingInfo->getPhone();
+      }
+      if ($bookingInfo->getUrl()) {
+        $variables['booking_info']['url'] = [
+          'url' => $bookingInfo->getUrl(),
+          'label' => !empty($bookingInfo->getUrlLabel()
+            ->getValueForLanguage($langcode)) ? $bookingInfo->getUrlLabel()
+            ->getValueForLanguage($langcode) : $bookingInfo->getUrl(),
+        ];
+      }
+    }
+
+    // Contact info.
+    $variables['contact_info'] = [];
+    $variables['links'] = [];
+    if ($event->getContactPoint()) {
+      $contactPoint = $event->getContactPoint();
+      $variables['contact_info']['emails'] = $contactPoint->getEmails();
+      $variables['contact_info']['phone_numbers'] = $contactPoint->getPhoneNumbers();
+      $variables['links'] = $contactPoint->getUrls();
+    }
+
+    return $variables;
+  }
+
+  /**
+   * Preprocess a place.
+   *
+   * @param \CultuurNet\SearchV3\ValueObjects\Place $place
+   * @param $langcode
+   *
+   * @return array
+   */
+  public function preprocessPlace(Place $place, $langcode) {
+    $variables = [];
+    $variables['name'] = $place->getName()->getValueForLanguage($langcode);
+    $variables['address'] = [];
+    if ($address = $place->getAddress()) {
+      if ($translatedAddress = $address->getAddressForLanguage($langcode)) {
+        $variables['address']['street'] = $translatedAddress->getStreetAddress() ?? '';
+        $variables['address']['postalcode'] = $translatedAddress->getPostalCode() ?? '';
+        $variables['address']['city'] = $translatedAddress->getAddressLocality() ?? '';
+      }
+    }
+
+    return $variables;
+  }
+
+  /**
+   * Format all the event dates to 1 summary variable.
+   *
+   * @param \CultuurNet\SearchV3\ValueObjects\Event $event
+   *
+   * @return string
+   */
+  protected function formatEventDatesSummary(Event $event, string $langcode) {
+    // Switch the time locale to the requested langcode.
+    switch ($langcode) {
+      case 'fr':
+        $locale = 'fr_FR';
+        break;
+
+      case 'nl':
+      default:
+        $locale = 'nl_NL';
+        break;
+    }
+
+    $summary = '';
+    // Multiple and periodic events should show from and to date.
+    if ($event->getCalendarType() === Offer::CALENDAR_TYPE_MULTIPLE || $event->getCalendarType() === Offer::CALENDAR_TYPE_PERIODIC) {
+      $dateFormatter = new IntlDateFormatter(
+        $locale,
+        IntlDateFormatter::FULL,
+        IntlDateFormatter::FULL,
+        date_default_timezone_get(),
+        IntlDateFormatter::GREGORIAN,
+        'd MMMM Y'
+      );
+
+      $dateParts = [];
+
+      if ($event->getStartDate()) {
+        $dateParts[] = 'van ' . $dateFormatter->format($event->getStartDate());
+      }
+
+      if ($event->getEndDate()) {
+        $dateParts[] = 'tot ' . $dateFormatter->format($event->getEndDate());
+      }
+
+      $summary = implode($dateParts, ' ');
+    }
+    elseif ($event->getCalendarType() === Offer::CALENDAR_TYPE_SINGLE) {
+      $dateFormatter = new IntlDateFormatter(
+        $locale,
+        IntlDateFormatter::FULL,
+        IntlDateFormatter::FULL,
+        date_default_timezone_get(),
+        IntlDateFormatter::GREGORIAN,
+        'd MMMM Y'
+      );
+
+      $summary = $dateFormatter->format($event->getStartDate());
+    }
+
+    return $summary;
+  }
+
+  /**
+   * Format the event dates for the detail page.
+   *
+   * @param \CultuurNet\SearchV3\ValueObjects\Event $event
+   * @param string $langcode
+   *
+   * @return string
+   */
+  protected function formatEventDatesDetail(Event $event, string $langcode) {
+    // Switch the time locale to the requested langcode.
+    switch ($langcode) {
+      case 'fr':
+        $locale = 'fr_FR';
+        break;
+
+      case 'nl':
+      default:
+        $locale = 'nl_NL';
+        break;
+    }
+
+    if ($event->getCalendarType() === Offer::CALENDAR_TYPE_SINGLE || ($event->getCalendarType() === Offer::CALENDAR_TYPE_MULTIPLE && $event->getSubEvents() == NULL)) {
+      return $this->formatSingleDate($event->getStartDate(), $event->getEndDate(), $locale);
+    }
+    elseif ($event->getCalendarType() === Offer::CALENDAR_TYPE_PERIODIC) {
+      return $this->formatPeriod($event->getStartDate(), $event->getEndDate(), $locale);
+    }
+    elseif ($event->getCalendarType() === Offer::CALENDAR_TYPE_MULTIPLE) {
+      $output = '<ul class="cnw-event-date-info">';
+      $subEvents = $event->getSubEvents();
+      $now = new \DateTime();
+
+      /** @var \CultuurNet\SearchV3\ValueObjects\Event $subEvent */
+      foreach ($subEvents as $subEvent) {
+        if ($subEvent->getEndDate() > $now) {
+          $output .= '<li>' . $this->formatSingleDate($subEvent->getStartDate(), $subEvent->getEndDate(), $locale) . '</li>';
+        }
+      }
+      $output .= '</ul>';
+
+      return $output;
+    }
+  }
+
+  /**
+   * Format the given start and end date as period.
+   *
+   * @param \DateTime $dateFrom
+   * @param \DateTime $dateTo
+   * @param $locale
+   *
+   * @return string
+   */
+  protected function formatPeriod(\DateTime $dateFrom, \DateTime $dateTo, $locale) {
+    $dateFormatter = new IntlDateFormatter(
+      $locale,
+      IntlDateFormatter::FULL,
+      IntlDateFormatter::FULL,
+      date_default_timezone_get(),
+      IntlDateFormatter::GREGORIAN,
+      'd MMMM yyyy'
+    );
+
+    $intlDateFrom = $dateFormatter->format($dateFrom);
+    $intlDateTo = $dateFormatter->format($dateTo);
+
+    $output = '<p class="cf-period">';
+    $output .= '<span class="cf-from cf-meta">van</span>';
+    $output .= '<time itemprop="startDate" datetime="' . $dateFrom->format('Y-m-d') . '">';
+    $output .= '<span class="cf-date">' . $intlDateFrom . '</span> </time>';
+    $output .= '<span class="cf-to cf-meta">tot</span>';
+    $output .= '<time itemprop="endDate" datetime="' . $dateTo->format('Y-m-d') . '">';
+    $output .= '<span class="cf-date">' . $intlDateTo . '</span> </time>';
+    $output .= '</p>';
+
+    return $output;
+  }
+
+  /**
+   * Format a single date.
+   *
+   * @param \DateTime $dateFrom
+   * @param \DateTime $dateTo
+   * @param $locale
+   *
+   * @return string
+   */
+  protected function formatSingleDate(\DateTime $dateFrom, \DateTime $dateTo, $locale) {
+    $weekDayFormatter = new IntlDateFormatter(
+      $locale,
+      IntlDateFormatter::FULL,
+      IntlDateFormatter::FULL,
+      date_default_timezone_get(),
+      IntlDateFormatter::GREGORIAN,
+      'EEEE'
+    );
+
+    $dateFormatter = new IntlDateFormatter(
+      $locale,
+      IntlDateFormatter::FULL,
+      IntlDateFormatter::FULL,
+      date_default_timezone_get(),
+      IntlDateFormatter::GREGORIAN,
+      'd MMMM yyyy'
+    );
+
+    $timeFormatter = new IntlDateFormatter(
+      $locale,
+      IntlDateFormatter::FULL,
+      IntlDateFormatter::FULL,
+      new \DateTimeZone('Europe/Brussels'),
+      IntlDateFormatter::GREGORIAN,
+      'HH:mm'
+    );
+
+    $startTime = $timeFormatter->format($dateFrom);
+    $endTime = $timeFormatter->format($dateTo);
+    $hasStartTime = $startTime !== '00:00';
+    $hasEndTime = $endTime !== '00:00';
+
+    if ($hasStartTime) {
+      $output = '<time itemprop="startDate" datetime="' . $dateFrom->format('Y-m-d') . 'T' . $startTime . '">';
+    }
+    else {
+      $output = '<time itemprop="startDate" datetime="' . $dateFrom->format('Y-m-d') . '">';
+    }
+
+    $output .= '<span class="cf-weekday cf-meta">' . $weekDayFormatter->format($dateFrom) . '</span>';
+    $output .= ' ';
+    $output .= '<span class="cf-date">' . $dateFormatter->format($dateFrom) . '</span>';
+
+    if ($hasStartTime) {
+      $output .= ' ';
+      if ($hasEndTime) {
+        $output .= '<span class="cf-from cf-meta">van</span>';
+        $output .= ' ';
+      }
+      else {
+        $output .= '<span class="cf-from cf-meta">om</span>';
+        $output .= ' ';
+      }
+      $output .= '<span class="cf-time">' . $startTime . '</span>';
+      $output .= '</time>';
+      if ($hasEndTime) {
+        $output .= ' ';
+        $output .= '<span class="cf-to cf-meta">tot</span>';
+        $output .= ' ';
+        $output .= '<time itemprop="endDate" datetime="' . $dateTo->format('Y-m-d') . 'T' . $endTime . '">';
+        $output .= '<span class="cf-time">' . $endTime . '</span>';
+        $output .= '</time>';
+      }
+    }
+    else {
+      $output .= ' </time>';
+    }
+    return $output;
+  }
+
+  /**
+   * Format an age range value according to langcode.
+   *
+   * @param string $range
+   * @param string $langcode
+   *
+   * @return string
+   */
+  protected function formatAgeRange($range, string $langcode) {
+    // Check for empty range values.
+    if ($range == '-') {
+      return NULL;
+    }
+    // Explode range on dash.
+    $explRange = explode('-', $range);
+
+    if (empty($explRange[1]) || $explRange[0] === $explRange[1]) {
+      return $explRange[0] . ' jaar';
+    }
+
+    // Build range string according to language.
+    return "Vanaf $explRange[0] jaar tot $explRange[1] jaar.";
+  }
+
+  /**
+   * Check if event is considered a "Vlieg" event and return either
+   * the minimum age or a boolean value.
+   *
+   * @param \CultuurNet\SearchV3\ValueObjects\Event $event
+   *
+   * @return bool|string
+   */
+  public static function isVliegEvent(Event $event) {
+    $range = $event->getTypicalAgeRange();
+    $labels = $event->getLabels();
+    $labels = array_merge($labels, $event->getHiddenLabels());
+
+    // Check age range if there is one.
+    if ($range) {
+      // Check for empty range values.
+      if ($range !== '-') {
+        // Explode range on dash.
+        $explRange = explode('-', $range);
+        // Check min age and return it if it's lower than 12.
+        if ($explRange[0] < 12) {
+          return "$explRange[0]+";
+        }
+      }
+    }
+
+    // Check for certain labels that also determine "Vlieg" events.
+    return ($labels && count(array_intersect($labels, [
+      'ook voor kinderen',
+      'uit met vlieg',
+    ])) > 0 ? '0+' : FALSE);
+  }
+
+  /**
+   * Check if event is considered an "Uitpas" event.
+   *
+   * @param \CultuurNet\SearchV3\ValueObjects\Event $event
+   *
+   * @return bool
+   */
+  public static function isUitpasEvent(Event $event) {
+    $labels = $event->getLabels();
+    $labels = array_merge($labels, $event->getHiddenLabels());
+
+    // Check for label values containing "Uitpas".
+    if ($labels) {
+      foreach ($labels as $label) {
+        if (stripos($label, 'uitpas') !== FALSE || stripos($label, 'paspartoe') !== FALSE) {
+          return TRUE;
+        }
+      }
+    }
+
+    return FALSE;
+  }
+
+}
