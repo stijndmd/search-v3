@@ -4,6 +4,7 @@ namespace CultuurNet\SearchV3\Serializer;
 
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use Doctrine\Common\Annotations\AnnotationReader;
+use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
@@ -52,6 +53,9 @@ class Serializer implements SerializerInterface
         $serializationContext = SerializationContext::create()
             ->setSerializeNull(true);
 
+        // Register doctrine annotations loader.
+        AnnotationRegistry::registerLoader('class_exists');
+
         return $this->serializer->serialize($object, 'json', $serializationContext);
     }
 
@@ -62,6 +66,9 @@ class Serializer implements SerializerInterface
     {
         $deserializationContext = DeserializationContext::create()
             ->setSerializeNull(true);
+
+        // Register doctrine annotations loader.
+        AnnotationRegistry::registerLoader('class_exists');
 
         return $this->serializer->deserialize($jsonString, PagedCollection::class, 'json', $deserializationContext);
     }
