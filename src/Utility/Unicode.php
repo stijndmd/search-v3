@@ -8,7 +8,8 @@ namespace CultuurNet\SearchV3\Utility;
  * @ingroup utility
  * @source Drupal
  */
-class Unicode {
+class Unicode
+{
 
   /**
    * Matches Unicode characters that are word boundaries.
@@ -34,7 +35,7 @@ class Unicode {
    *
    * @see http://unicode.org/glossary
    */
-  const PREG_CLASS_WORD_BOUNDARY = <<<'EOD'
+    const PREG_CLASS_WORD_BOUNDARY = <<<'EOD'
 \x{0}-\x{2F}\x{3A}-\x{40}\x{5B}-\x{60}\x{7B}-\x{A9}\x{AB}-\x{B1}\x{B4}
 \x{B6}-\x{B8}\x{BB}\x{BF}\x{D7}\x{F7}\x{2C2}-\x{2C5}\x{2D2}-\x{2DF}
 \x{2E5}-\x{2EB}\x{2ED}\x{2EF}-\x{2FF}\x{375}\x{37E}-\x{385}\x{387}\x{3F6}
@@ -75,25 +76,25 @@ EOD;
   /**
    * Indicates that standard PHP (emulated) unicode support is being used.
    */
-  const STATUS_SINGLEBYTE = 0;
+    const STATUS_SINGLEBYTE = 0;
 
   /**
    * Indicates that full unicode support with the PHP mbstring extension is
    * being used.
    */
-  const STATUS_MULTIBYTE = 1;
+    const STATUS_MULTIBYTE = 1;
 
   /**
    * Indicates an error during check for PHP unicode support.
    */
-  const STATUS_ERROR = -1;
+    const STATUS_ERROR = -1;
 
   /**
    * Holds the multibyte capabilities of the current environment.
    *
    * @var int
    */
-  protected static $status;
+    protected static $status;
 
   /**
    * Gets the current status of unicode/multibyte support on this environment.
@@ -107,13 +108,14 @@ EOD;
    *   - Unicode::STATUS_ERROR
    *     An error occurred. No unicode support.
    */
-  public static function getStatus() {
-    if (empty(static::$status)) {
-      static::check();
-    }
+    public static function getStatus()
+    {
+        if (empty(static::$status)) {
+            static::check();
+        }
 
-    return static::$status;
-  }
+        return static::$status;
+    }
 
   /**
    * Sets the value for multibyte support status for the current environment.
@@ -129,12 +131,13 @@ EOD;
    * @param int $status
    *   The new status of multibyte support.
    */
-  public static function setStatus($status) {
-    if (!in_array($status, [static::STATUS_SINGLEBYTE, static::STATUS_MULTIBYTE, static::STATUS_ERROR])) {
-      throw new \InvalidArgumentException('Invalid status value for unicode support.');
+    public static function setStatus($status)
+    {
+        if (!in_array($status, [static::STATUS_SINGLEBYTE, static::STATUS_MULTIBYTE, static::STATUS_ERROR])) {
+            throw new \InvalidArgumentException('Invalid status value for unicode support.');
+        }
+        static::$status = $status;
     }
-    static::$status = $status;
-  }
 
   /**
    * Checks for Unicode support in PHP and sets the proper settings if possible.
@@ -147,41 +150,42 @@ EOD;
    *   A string identifier of a failed multibyte extension check, if any.
    *   Otherwise, an empty string.
    */
-  public static function check() {
-    // Check for mbstring extension.
-    if (!function_exists('mb_strlen')) {
-      static::$status = static::STATUS_SINGLEBYTE;
-      return 'mb_strlen';
-    }
+    public static function check()
+    {
+        // Check for mbstring extension.
+        if (!function_exists('mb_strlen')) {
+            static::$status = static::STATUS_SINGLEBYTE;
+            return 'mb_strlen';
+        }
 
-    // Check mbstring configuration.
-    if (ini_get('mbstring.func_overload') != 0) {
-      static::$status = static::STATUS_ERROR;
-      return 'mbstring.func_overload';
-    }
-    if (ini_get('mbstring.encoding_translation') != 0) {
-      static::$status = static::STATUS_ERROR;
-      return 'mbstring.encoding_translation';
-    }
-    // mbstring.http_input and mbstring.http_output are deprecated and empty by
-    // default in PHP 5.6.
-    if (version_compare(PHP_VERSION, '5.6.0') == -1) {
-      if (ini_get('mbstring.http_input') != 'pass') {
-        static::$status = static::STATUS_ERROR;
-        return 'mbstring.http_input';
-      }
-      if (ini_get('mbstring.http_output') != 'pass') {
-        static::$status = static::STATUS_ERROR;
-        return 'mbstring.http_output';
-      }
-    }
+        // Check mbstring configuration.
+        if (ini_get('mbstring.func_overload') != 0) {
+            static::$status = static::STATUS_ERROR;
+            return 'mbstring.func_overload';
+        }
+        if (ini_get('mbstring.encoding_translation') != 0) {
+            static::$status = static::STATUS_ERROR;
+            return 'mbstring.encoding_translation';
+        }
+        // mbstring.http_input and mbstring.http_output are deprecated and empty by
+        // default in PHP 5.6.
+        if (version_compare(PHP_VERSION, '5.6.0') == -1) {
+            if (ini_get('mbstring.http_input') != 'pass') {
+                static::$status = static::STATUS_ERROR;
+                return 'mbstring.http_input';
+            }
+            if (ini_get('mbstring.http_output') != 'pass') {
+                static::$status = static::STATUS_ERROR;
+                return 'mbstring.http_output';
+            }
+        }
 
-    // Set appropriate configuration.
-    mb_internal_encoding('utf-8');
-    mb_language('uni');
-    static::$status = static::STATUS_MULTIBYTE;
-    return '';
-  }
+        // Set appropriate configuration.
+        mb_internal_encoding('utf-8');
+        mb_language('uni');
+        static::$status = static::STATUS_MULTIBYTE;
+        return '';
+    }
 
   /**
    * Counts the number of characters in a UTF-8 string.
@@ -194,15 +198,15 @@ EOD;
    * @return int
    *   The length of the string.
    */
-  public static function strlen($text) {
-    if (static::getStatus() == static::STATUS_MULTIBYTE) {
-      return mb_strlen($text);
+    public static function strlen($text)
+    {
+        if (static::getStatus() == static::STATUS_MULTIBYTE) {
+            return mb_strlen($text);
+        } else {
+            // Do not count UTF-8 continuation bytes.
+            return strlen(preg_replace("/[\x80-\xBF]/", '', $text));
+        }
     }
-    else {
-      // Do not count UTF-8 continuation bytes.
-      return strlen(preg_replace("/[\x80-\xBF]/", '', $text));
-    }
-  }
 
   /**
    * Cuts off a piece of a string based on character indices and counts.
@@ -221,95 +225,91 @@ EOD;
    * @return string
    *   The shortened string.
    */
-  public static function substr($text, $start, $length = NULL) {
-    if (static::getStatus() == static::STATUS_MULTIBYTE) {
-      return $length === NULL ? mb_substr($text, $start) : mb_substr($text, $start, $length);
-    }
-    else {
-      $strlen = strlen($text);
-      // Find the starting byte offset.
-      $bytes = 0;
-      if ($start > 0) {
-        // Count all the characters except continuation bytes from the start
-        // until we have found $start characters or the end of the string.
-        $bytes = -1;
-        $chars = -1;
-        while ($bytes < $strlen - 1 && $chars < $start) {
-          $bytes++;
-          $c = ord($text[$bytes]);
-          if ($c < 0x80 || $c >= 0xC0) {
-            $chars++;
-          }
-        }
-      }
-      elseif ($start < 0) {
-        // Count all the characters except continuation bytes from the end
-        // until we have found abs($start) characters.
-        $start = abs($start);
-        $bytes = $strlen;
-        $chars = 0;
-        while ($bytes > 0 && $chars < $start) {
-          $bytes--;
-          $c = ord($text[$bytes]);
-          if ($c < 0x80 || $c >= 0xC0) {
-            $chars++;
-          }
-        }
-      }
-      $istart = $bytes;
+    public static function substr($text, $start, $length = null)
+    {
+        if (static::getStatus() == static::STATUS_MULTIBYTE) {
+            return $length === null ? mb_substr($text, $start) : mb_substr($text, $start, $length);
+        } else {
+            $strlen = strlen($text);
+            // Find the starting byte offset.
+            $bytes = 0;
+            if ($start > 0) {
+                // Count all the characters except continuation bytes from the start
+                // until we have found $start characters or the end of the string.
+                $bytes = -1;
+                $chars = -1;
+                while ($bytes < $strlen - 1 && $chars < $start) {
+                    $bytes++;
+                    $c = ord($text[$bytes]);
+                    if ($c < 0x80 || $c >= 0xC0) {
+                        $chars++;
+                    }
+                }
+            } elseif ($start < 0) {
+                // Count all the characters except continuation bytes from the end
+                // until we have found abs($start) characters.
+                $start = abs($start);
+                $bytes = $strlen;
+                $chars = 0;
+                while ($bytes > 0 && $chars < $start) {
+                    $bytes--;
+                    $c = ord($text[$bytes]);
+                    if ($c < 0x80 || $c >= 0xC0) {
+                        $chars++;
+                    }
+                }
+            }
+            $istart = $bytes;
 
-      // Find the ending byte offset.
-      if ($length === NULL) {
-        $iend = $strlen;
-      }
-      elseif ($length > 0) {
-        // Count all the characters except continuation bytes from the starting
-        // index until we have found $length characters or reached the end of
-        // the string, then backtrace one byte.
-        $iend = $istart - 1;
-        $chars = -1;
-        $lastReal = FALSE;
-        while ($iend < $strlen - 1 && $chars < $length) {
-          $iend++;
-          $c = ord($text[$iend]);
-          $lastReal = FALSE;
-          if ($c < 0x80 || $c >= 0xC0) {
-            $chars++;
-            $lastReal = TRUE;
-          }
-        }
-        // Backtrace one byte if the last character we found was a real
-        // character and we don't need it.
-        if ($lastReal && $chars >= $length) {
-          $iend--;
-        }
-      }
-      elseif ($length < 0) {
-        // Count all the characters except continuation bytes from the end
-        // until we have found abs($start) characters, then backtrace one byte.
-        $length = abs($length);
-        $iend = $strlen;
-        $chars = 0;
-        while ($iend > 0 && $chars < $length) {
-          $iend--;
-          $c = ord($text[$iend]);
-          if ($c < 0x80 || $c >= 0xC0) {
-            $chars++;
-          }
-        }
-        // Backtrace one byte if we are not at the beginning of the string.
-        if ($iend > 0) {
-          $iend--;
-        }
-      }
-      else {
-        // $length == 0, return an empty string.
-        return '';
-      }
+            // Find the ending byte offset.
+            if ($length === null) {
+                $iend = $strlen;
+            } elseif ($length > 0) {
+                // Count all the characters except continuation bytes from the starting
+                // index until we have found $length characters or reached the end of
+                // the string, then backtrace one byte.
+                $iend = $istart - 1;
+                $chars = -1;
+                $lastReal = false;
+                while ($iend < $strlen - 1 && $chars < $length) {
+                    $iend++;
+                    $c = ord($text[$iend]);
+                    $lastReal = false;
+                    if ($c < 0x80 || $c >= 0xC0) {
+                        $chars++;
+                        $lastReal = true;
+                    }
+                }
+                // Backtrace one byte if the last character we found was a real
+                // character and we don't need it.
+                if ($lastReal && $chars >= $length) {
+                    $iend--;
+                }
+            } elseif ($length < 0) {
+                // Count all the characters except continuation bytes from the end
+                // until we have found abs($start) characters, then backtrace one byte.
+                $length = abs($length);
+                $iend = $strlen;
+                $chars = 0;
+                while ($iend > 0 && $chars < $length) {
+                    $iend--;
+                    $c = ord($text[$iend]);
+                    if ($c < 0x80 || $c >= 0xC0) {
+                        $chars++;
+                    }
+                }
+                // Backtrace one byte if we are not at the beginning of the string.
+                if ($iend > 0) {
+                    $iend--;
+                }
+            } else {
+                // $length == 0, return an empty string.
+                return '';
+            }
 
-      return substr($text, $istart, max(0, $iend - $istart + 1));
+            return substr($text, $istart, max(0, $iend - $istart + 1));
+        }
     }
-  }
 
   /**
    * Truncates a UTF-8-encoded string safely to a number of characters.
@@ -345,54 +345,53 @@ EOD;
    * @return string
    *   The truncated string.
    */
-  public static function truncate($string, $maxLength, $wordsafe = FALSE, $addEllipsis = FALSE, $minWordsafeLength = 1) {
-    $ellipsis = '';
-    $maxLength = max($maxLength, 0);
-    $minWordsafeLength = max($minWordsafeLength, 0);
+    public static function truncate($string, $maxLength, $wordsafe = false, $addEllipsis = false, $minWordsafeLength = 1)
+    {
+        $ellipsis = '';
+        $maxLength = max($maxLength, 0);
+        $minWordsafeLength = max($minWordsafeLength, 0);
 
-    if (static::strlen($string) <= $maxLength) {
-      // No truncation needed, so don't add ellipsis, just return.
-      return $string;
+        if (static::strlen($string) <= $maxLength) {
+            // No truncation needed, so don't add ellipsis, just return.
+            return $string;
+        }
+
+        if ($addEllipsis) {
+            // Truncate ellipsis in case $maxLength is small.
+            $ellipsis = static::substr('…', 0, $maxLength);
+            $maxLength -= static::strlen($ellipsis);
+            $maxLength = max($maxLength, 0);
+        }
+
+        if ($maxLength <= $minWordsafeLength) {
+            // Do not attempt word-safe if lengths are bad.
+            $wordsafe = false;
+        }
+
+        if ($wordsafe) {
+            $matches = [];
+            // Find the last word boundary, if there is one within $minWordsafeLength
+            // to $maxLength characters. preg_match() is always greedy, so it will
+            // find the longest string possible.
+            $found = preg_match('/^(.{' . $minWordsafeLength . ',' . $maxLength . '})[' . Unicode::PREG_CLASS_WORD_BOUNDARY . ']/u', $string, $matches);
+            if ($found) {
+                $string = $matches[1];
+            } else {
+                $string = static::substr($string, 0, $maxLength);
+            }
+        } else {
+            $string = static::substr($string, 0, $maxLength);
+        }
+
+        if ($addEllipsis) {
+            // If we're adding an ellipsis, remove any trailing periods.
+            $string = rtrim($string, '.');
+
+            $string .= $ellipsis;
+        }
+
+        return $string;
     }
-
-    if ($addEllipsis) {
-      // Truncate ellipsis in case $maxLength is small.
-      $ellipsis = static::substr('…', 0, $maxLength);
-      $maxLength -= static::strlen($ellipsis);
-      $maxLength = max($maxLength, 0);
-    }
-
-    if ($maxLength <= $minWordsafeLength) {
-      // Do not attempt word-safe if lengths are bad.
-      $wordsafe = FALSE;
-    }
-
-    if ($wordsafe) {
-      $matches = [];
-      // Find the last word boundary, if there is one within $minWordsafeLength
-      // to $maxLength characters. preg_match() is always greedy, so it will
-      // find the longest string possible.
-      $found = preg_match('/^(.{' . $minWordsafeLength . ',' . $maxLength . '})[' . Unicode::PREG_CLASS_WORD_BOUNDARY . ']/u', $string, $matches);
-      if ($found) {
-        $string = $matches[1];
-      }
-      else {
-        $string = static::substr($string, 0, $maxLength);
-      }
-    }
-    else {
-      $string = static::substr($string, 0, $maxLength);
-    }
-
-    if ($addEllipsis) {
-      // If we're adding an ellipsis, remove any trailing periods.
-      $string = rtrim($string, '.');
-
-      $string .= $ellipsis;
-    }
-
-    return $string;
-  }
 
   /**
    * Finds the position of the first occurrence of a string in another string.
@@ -410,17 +409,16 @@ EOD;
    *   beginning (independent of $offset), or false if not found. Note that
    *   a return value of 0 is not the same as false.
    */
-  public static function strpos($haystack, $needle, $offset = 0) {
-    if (static::getStatus() == static::STATUS_MULTIBYTE) {
-      return mb_strpos($haystack, $needle, $offset);
+    public static function strpos($haystack, $needle, $offset = 0)
+    {
+        if (static::getStatus() == static::STATUS_MULTIBYTE) {
+            return mb_strpos($haystack, $needle, $offset);
+        } else {
+            // Remove Unicode continuation characters, to be compatible with
+            // Unicode::strlen() and Unicode::substr().
+            $haystack = preg_replace("/[\x80-\xBF]/", '', $haystack);
+            $needle = preg_replace("/[\x80-\xBF]/", '', $needle);
+            return strpos($haystack, $needle, $offset);
+        }
     }
-    else {
-      // Remove Unicode continuation characters, to be compatible with
-      // Unicode::strlen() and Unicode::substr().
-      $haystack = preg_replace("/[\x80-\xBF]/", '', $haystack);
-      $needle = preg_replace("/[\x80-\xBF]/", '', $needle);
-      return strpos($haystack, $needle, $offset);
-    }
-  }
-
 }
