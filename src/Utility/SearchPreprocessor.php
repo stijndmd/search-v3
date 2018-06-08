@@ -80,8 +80,6 @@ class SearchPreprocessor
             }
         }
 
-        $variables['description'] = $this->filterXss($variables['description']);
-
         $languageIconKeywords = [
             'één taalicoon' => 1,
             'twee taaliconen' => 2,
