@@ -83,7 +83,7 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
             ->with('GET', 'events', $options)
             ->willReturn($response);
 
-        $queryResult = $this->searchClient->searchEvents($searchQueryMock, false);
+        $queryResult = $this->searchClient->searchEvents($searchQueryMock);
         $this->assertEquals('test event', $queryResult);
     }
 
@@ -104,7 +104,7 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
             ->with('GET', 'places', $options)
             ->willReturn($response);
 
-        $queryResult = $this->searchClient->searchPlaces($searchQueryMock, false);
+        $queryResult = $this->searchClient->searchPlaces($searchQueryMock);
         $this->assertEquals('test place', $queryResult);
     }
 
@@ -125,7 +125,7 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
             ->with('GET', 'offers', $options)
             ->willReturn($response);
 
-        $queryResult = $this->searchClient->searchOffers($searchQueryMock, false);
+        $queryResult = $this->searchClient->searchOffers($searchQueryMock);
         $this->assertEquals('test offer', $queryResult);
     }
 }
