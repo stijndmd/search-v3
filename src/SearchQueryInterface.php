@@ -49,6 +49,11 @@ interface SearchQueryInterface
     */
     public function getSort();
 
+    /**
+     * Set the embed option.
+     *
+     * @param bool $embed
+     */
     public function setEmbed(bool $embed);
 
     /**

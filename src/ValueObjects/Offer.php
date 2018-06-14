@@ -81,6 +81,12 @@ abstract class Offer
     protected $typicalAgeRange;
 
     /**
+     * @var Audience
+     * @Type("CultuurNet\SearchV3\ValueObjects\Audience")
+     */
+    protected $audience;
+
+    /**
      * @var array
      * @Type("array")
      */
@@ -338,6 +344,25 @@ abstract class Offer
     public function setPublisher($publisher)
     {
         $this->publisher = $publisher;
+
+        return $this;
+    }
+
+    /**
+     * @return Audience
+     */
+    public function getAudience()
+    {
+        return $this->audience;
+    }
+
+    /**
+     * @param Audience $audience
+     * @return Offer
+     */
+    public function setAudience($audience)
+    {
+        $this->audience = $audience;
 
         return $this;
     }
