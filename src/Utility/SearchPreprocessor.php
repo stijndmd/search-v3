@@ -112,11 +112,11 @@ class SearchPreprocessor
             $typeLabels = [];
             if (!empty($types)) {
                 foreach ($types as $type) {
-                    $typeLabels[] = $type->getLabel();
+                    $typeLabels[$type->getId()] = $type->getLabel();
                 }
             }
 
-            $variables['type'] = $typeLabels;
+            $variables['types'] = $typeLabels;
         }
 
         // Age from.
@@ -132,6 +132,18 @@ class SearchPreprocessor
                 if ($explRange[0] < 12) {
                     $variables['for_kids'] = true;
                 }
+            }
+        }
+
+        $variables['prices'] = [];
+        if ($priceInfo = $event->getPriceInfo()) {
+            $prices = [];
+            foreach ($priceInfo as $price) {
+                $value = $price->getPrice() > 0 ? '&euro; ' . str_replace('.', ',', (float) $price->getPrice()) : 'gratis';
+                $variables['prices'][$value] = [
+                    'price' => $value,
+                    'info' => $price->getName()->getValueForLanguage($langcode),
+                ];
             }
         }
 
@@ -239,6 +251,12 @@ class SearchPreprocessor
                 $variables['address']['postalcode'] = $translatedAddress->getPostalCode() ?? '';
                 $variables['address']['city'] = $translatedAddress->getAddressLocality() ?? '';
             }
+        }
+
+        if ($geoInfo = $place->getGeo()) {
+            $variables['geo'] = [];
+            $variables['geo']['latitude'] = $geoInfo->getLatitude();
+            $variables['geo']['longitude'] = $geoInfo->getLongitude();
         }
 
         return $variables;
