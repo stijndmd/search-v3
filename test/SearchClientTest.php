@@ -6,7 +6,6 @@ use CultuurNet\SearchV3\Serializer\SerializerInterface;
 use CultuurNet\SearchV3\SearchQueryInterface;
 use CultuurNet\SearchV3\SearchClient;
 use Guzzle\Http\Message\Response;
-use Guzzle\Http\Message\RequestInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 
