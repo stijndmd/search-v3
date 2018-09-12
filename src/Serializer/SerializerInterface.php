@@ -1,6 +1,7 @@
 <?php
 
 namespace CultuurNet\SearchV3\Serializer;
+
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 
 /**
