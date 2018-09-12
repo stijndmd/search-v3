@@ -25,5 +25,5 @@ interface SerializerInterface
      * @param $class
      *   Type to decode to.
      */
-    public function deserialize(string $jsonString);
+    public function deserialize(string $jsonString, $class);
 }

@@ -62,7 +62,7 @@ class Serializer implements SerializerInterface
     /**
      * {@inheritdoc}
      */
-    public function deserialize(string $jsonString)
+    public function deserialize(string $jsonString, $class = PagedCollection::class)
     {
         $deserializationContext = DeserializationContext::create()
             ->setSerializeNull(true);
@@ -70,6 +70,6 @@ class Serializer implements SerializerInterface
         // Register doctrine annotations loader.
         AnnotationRegistry::registerLoader('class_exists');
 
-        return $this->serializer->deserialize($jsonString, PagedCollection::class, 'json', $deserializationContext);
+        return $this->serializer->deserialize($jsonString, $class, 'json', $deserializationContext);
     }
 }
