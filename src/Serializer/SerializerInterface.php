@@ -2,6 +2,8 @@
 
 namespace CultuurNet\SearchV3\Serializer;
 
+use CultuurNet\SearchV3\ValueObjects\PagedCollection;
+
 /**
  * Provides an interface for search serializer.
  */
@@ -25,5 +27,5 @@ interface SerializerInterface
      * @param $class
      *   Type to decode to.
      */
-    public function deserialize(string $jsonString);
+    public function deserialize(string $jsonString, $class = PagedCollection::class);
 }
