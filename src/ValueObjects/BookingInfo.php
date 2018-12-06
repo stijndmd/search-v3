@@ -35,6 +35,18 @@ class BookingInfo
     protected $urlLabel;
 
     /**
+     * @var \DateTime
+     * @Type("DateTime")
+     */
+    protected $availabilityStarts;
+
+    /**
+     * @var \DateTime
+     * @Type("DateTime")
+     */
+    protected $availabilityEnds;
+
+    /**
      * @return string
      */
     public function getPhone()
@@ -105,4 +117,40 @@ class BookingInfo
         $this->urlLabel = $urlLabel;
         return $this;
     }
+
+  /**
+   * @return \DateTime
+   */
+  public function getAvailabilityStarts()
+  {
+      return $this->availabilityStarts;
+  }
+
+  /**
+   * @param \DateTime $availabilityStarts
+   * @return BookingInfo
+   */
+  public function setAvailabilityStarts($availabilityStarts)
+  {
+      $this->availabilityStarts = $availabilityStarts;
+      return $this;
+  }
+
+  /**
+   * @return \DateTime
+   */
+  public function getAvailabilityEnds()
+  {
+      return $this->availabilityEnds;
+  }
+
+  /**
+   * @param \DateTime $availabilityEnds
+   * @return BookingInfo
+   */
+  public function setAvailabilityEnds($availabilityEnds)
+  {
+      $this->availabilityEnds = $availabilityEnds;
+      return $this;
+  }
 }

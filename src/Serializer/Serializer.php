@@ -2,10 +2,12 @@
 
 namespace CultuurNet\SearchV3\Serializer;
 
+use CultuurNet\SearchV3\Serializer\Handler\DateTimeHandler;
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\DeserializationContext;
+use JMS\Serializer\Handler\HandlerRegistry;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\SerializationContext;
@@ -33,6 +35,9 @@ class Serializer implements SerializerInterface
             ->addMetadataDir(SerializerMetadata::directory(), SerializerMetadata::namespacePrefix())
             ->setAnnotationReader(new AnnotationReader())
             ->setPropertyNamingStrategy(new SerializedNameAnnotationStrategy(new IdenticalPropertyNamingStrategy()))
+            ->configureHandlers(function(HandlerRegistry $registry) {
+                $registry->registerSubscribingHandler(new DateTimeHandler());
+            })
             ->build();
 
     }

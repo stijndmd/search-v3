@@ -2,6 +2,7 @@
 
 namespace CultuurNet\SearchV3\Utility;
 
+use CultuurNet\SearchV3\ValueObjects\BookingInfo;
 use CultuurNet\SearchV3\ValueObjects\Event;
 use CultuurNet\SearchV3\ValueObjects\Offer;
 use CultuurNet\SearchV3\ValueObjects\Place;
@@ -109,14 +110,13 @@ class SearchPreprocessor
         // Add types as first labels, if enabled.
         if (!empty($settings['type']['enabled'])) {
             $types = $event->getTermsByDomain('eventtype');
+            $variables['types'] = [];
             $typeLabels = [];
             if (!empty($types)) {
                 foreach ($types as $type) {
-                    $typeLabels[$type->getId()] = $type->getLabel();
+                  $variables['types'][] = $type;
                 }
             }
-
-            $variables['types'] = $typeLabels;
         }
 
         // Age from.
@@ -140,7 +140,7 @@ class SearchPreprocessor
             $prices = [];
             foreach ($priceInfo as $price) {
                 $value = $price->getPrice() > 0 ? '&euro; ' . str_replace('.', ',', (float) $price->getPrice()) : 'gratis';
-                $variables['prices'][$value] = [
+                $variables['prices'][] = [
                     'price' => $value,
                     'info' => $price->getName()->getValueForLanguage($langcode),
                 ];
@@ -216,6 +216,21 @@ class SearchPreprocessor
                         ->getValueForLanguage($langcode)) ? $bookingInfo->getUrlLabel()
                         ->getValueForLanguage($langcode) : $bookingInfo->getUrl(),
                 ];
+            }
+
+            $dateFormatter = new IntlDateFormatter(
+                'nl_NL',
+                IntlDateFormatter::FULL,
+                IntlDateFormatter::FULL,
+                date_default_timezone_get(),
+                IntlDateFormatter::GREGORIAN,
+                'd MMMM Y'
+            );
+            if ($bookingInfo->getAvailabilityStarts()) {
+                $variables['booking_info']['start_date'] = $dateFormatter->format($bookingInfo->getAvailabilityStarts());
+            }
+            if ($bookingInfo->getAvailabilityEnds()) {
+                $variables['booking_info']['end_date'] = $dateFormatter->format($bookingInfo->getAvailabilityStarts());
             }
         }
 
