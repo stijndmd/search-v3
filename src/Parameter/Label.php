@@ -5,11 +5,11 @@ namespace CultuurNet\SearchV3\Parameter;
 /**
  * Provides a parameter to search on labels.
  */
-class Labels extends AbstractParameter
+class Label extends AbstractParameter
 {
 
     /**
-     * Labels constructor.
+     * Label constructor.
      * @param $label
      */
     public function __construct($label)
