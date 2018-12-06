@@ -4,7 +4,7 @@ namespace CultuurNet\SearchV3\Test;
 
 use CultuurNet\SearchV3\Parameter\Facet;
 use CultuurNet\SearchV3\Parameter\Id;
-use CultuurNet\SearchV3\Parameter\Labels;
+use CultuurNet\SearchV3\Parameter\Label;
 use CultuurNet\SearchV3\SearchQuery;
 
 class SearchQueryTest extends \PHPUnit_Framework_TestCase
@@ -15,9 +15,9 @@ class SearchQueryTest extends \PHPUnit_Framework_TestCase
     protected $searchQuery;
 
     /**
-     * @var Labels
+     * @var Label
      */
-    protected $labels;
+    protected $label;
 
     /**
      * @var Facet
@@ -38,12 +38,12 @@ class SearchQueryTest extends \PHPUnit_Framework_TestCase
     {
         $this->searchQuery = new SearchQuery();
 
-        $this->labels = new Labels('test-label');
+        $this->label = new Label('test-label');
         $this->facet = new Facet('regions');
 
         $this->sorting = array('title', 'asc');
 
-        $this->searchQuery->addParameter($this->labels);
+        $this->searchQuery->addParameter($this->label);
         $this->searchQuery->addParameter($this->facet);
 
         $this->searchQuery->addSort($this->sorting[0], $this->sorting[1]);
@@ -129,7 +129,7 @@ class SearchQueryTest extends \PHPUnit_Framework_TestCase
 
     public function testToArrayMethodWithDuplicateParameterKeys()
     {
-        $this->searchQuery->addParameter(new Labels('test-label2'));
+        $this->searchQuery->addParameter(new Label('test-label2'));
 
         $expectedQuery = array(
             'sort' => array(
@@ -138,7 +138,10 @@ class SearchQueryTest extends \PHPUnit_Framework_TestCase
             'embed' => true,
             'start' => 10,
             'limit' => 50,
-            'labels' => '(test-label2) AND (test-label)',
+            'labels' => array(
+              'test-label',
+              'test-label2',
+            ),
             'facets' => 'regions'
         );
 

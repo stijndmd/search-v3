@@ -144,7 +144,7 @@ class SearchQuery implements SearchQueryInterface
             // Same query key is used multiple times? Merge it into 1 query.
             if (isset($query[$key])) {
                 // "facets", "regions" and "termIds" is allowed as array.
-                if (in_array($key, ['facets', 'regions', 'termIds'])) {
+                if (in_array($key, ['facets', 'regions', 'termIds', 'labels'])) {
                     $query[$key] = is_array($query[$key]) ? $query[$key] : [$query[$key]];
                     $query[$key][] = $parameter->getValue();
                 } else {

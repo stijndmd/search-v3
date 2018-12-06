@@ -2,13 +2,13 @@
 
 namespace CultuurNet\SearchV3\Parameter\Test;
 
-use CultuurNet\SearchV3\Parameter\Labels;
+use CultuurNet\SearchV3\Parameter\Label;
 
-class LabelsTest extends \PHPUnit_Framework_TestCase
+class LabelTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstructor()
     {
-        $label = new Labels('this-is-a-label');
+        $label = new Label('this-is-a-label');
 
         $key = $label->getKey();
         $value = $label->getValue();
