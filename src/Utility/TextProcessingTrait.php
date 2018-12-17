@@ -154,15 +154,29 @@ trait TextProcessingTrait
                 // Extract text up to next tag as $segment:
                 if (preg_match('/^([^<]+)(<\/?(\w+)[^>]*>)?/', $html, $matches)) {
                     $segment = $matches[1];
-                    // Following code taken from https://trac.cakephp.org/browser/tags/1.2.1.8004/cake/libs/view/helpers/text.php?rev=8005.
-                    // Not 100% sure about it, but assume it deals with utf and html entities/multi-byte characters to get accureate string length.
-                    $segmentLength = mb_strlen(preg_replace('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', ' ', $segment));
+                    // Following code taken from
+                    // https://trac.cakephp.org/browser/tags/1.2.1.8004/cake/libs/view/helpers/text.php?rev=8005.
+                    // Not 100% sure about it, but assume it deals with
+                    // utf and html entities/multi-byte characters to get accureate string length.
+                    $segmentLength = mb_strlen(
+                        preg_replace(
+                            '/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i',
+                            ' ',
+                            $segment
+                        )
+                    );
                     // Compare $segmentLength + $total to $length:
                     // Truncate $segment and set as $finalSegment:
                     if ($segmentLength + $total > $length) {
                         $remainder = $length - $total;
                         $entitiesLength = 0;
-                        if (preg_match_all('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', $segment, $entities, PREG_OFFSET_CAPTURE)) {
+                        if (preg_match_all(
+                            '/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i',
+                            $segment,
+                            $entities,
+                            PREG_OFFSET_CAPTURE
+                        )
+                        ) {
                             foreach ($entities[0] as $entity) {
                                 if ($entity[1] + 1 - $entitiesLength <= $remainder) {
                                     $remainder--;
@@ -473,7 +487,7 @@ trait TextProcessingTrait
                     '/
           ^
           (
-          "[^"]*("|$)     # - a string that starts with a double quote, up until the next double quote or the end of the string
+          "[^"]*("|$)     # - a string that starts with a double quote, til next double quote or end of the string
           |               # or
           \'[^\']*(\'|$)| # - a string that starts with a quote, up until the next quote or the end of the string
           |               # or

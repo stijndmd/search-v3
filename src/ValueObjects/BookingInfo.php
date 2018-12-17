@@ -118,39 +118,39 @@ class BookingInfo
         return $this;
     }
 
-  /**
-   * @return \DateTime
-   */
-  public function getAvailabilityStarts()
-  {
-      return $this->availabilityStarts;
-  }
+    /**
+    * @return \DateTime
+    */
+    public function getAvailabilityStarts()
+    {
+        return $this->availabilityStarts;
+    }
 
-  /**
-   * @param \DateTime $availabilityStarts
-   * @return BookingInfo
-   */
-  public function setAvailabilityStarts($availabilityStarts)
-  {
-      $this->availabilityStarts = $availabilityStarts;
-      return $this;
-  }
+    /**
+    * @param \DateTime $availabilityStarts
+    * @return BookingInfo
+    */
+    public function setAvailabilityStarts($availabilityStarts)
+    {
+        $this->availabilityStarts = $availabilityStarts;
+        return $this;
+    }
 
-  /**
-   * @return \DateTime
-   */
-  public function getAvailabilityEnds()
-  {
-      return $this->availabilityEnds;
-  }
+    /**
+    * @return \DateTime
+    */
+    public function getAvailabilityEnds()
+    {
+        return $this->availabilityEnds;
+    }
 
-  /**
-   * @param \DateTime $availabilityEnds
-   * @return BookingInfo
-   */
-  public function setAvailabilityEnds($availabilityEnds)
-  {
-      $this->availabilityEnds = $availabilityEnds;
-      return $this;
-  }
+    /**
+    * @param \DateTime $availabilityEnds
+    * @return BookingInfo
+    */
+    public function setAvailabilityEnds($availabilityEnds)
+    {
+        $this->availabilityEnds = $availabilityEnds;
+        return $this;
+    }
 }

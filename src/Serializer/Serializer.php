@@ -35,7 +35,7 @@ class Serializer implements SerializerInterface
             ->addMetadataDir(SerializerMetadata::directory(), SerializerMetadata::namespacePrefix())
             ->setAnnotationReader(new AnnotationReader())
             ->setPropertyNamingStrategy(new SerializedNameAnnotationStrategy(new IdenticalPropertyNamingStrategy()))
-            ->configureHandlers(function(HandlerRegistry $registry) {
+            ->configureHandlers(function (HandlerRegistry $registry) {
                 $registry->registerSubscribingHandler(new DateTimeHandler());
             })
             ->build();

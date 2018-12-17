@@ -345,8 +345,13 @@ EOD;
    * @return string
    *   The truncated string.
    */
-    public static function truncate($string, $maxLength, $wordsafe = false, $addEllipsis = false, $minWordsafeLength = 1)
-    {
+    public static function truncate(
+        $string,
+        $maxLength,
+        $wordsafe = false,
+        $addEllipsis = false,
+        $minWordsafeLength = 1
+    ) {
         $ellipsis = '';
         $maxLength = max($maxLength, 0);
         $minWordsafeLength = max($minWordsafeLength, 0);
@@ -373,7 +378,8 @@ EOD;
             // Find the last word boundary, if there is one within $minWordsafeLength
             // to $maxLength characters. preg_match() is always greedy, so it will
             // find the longest string possible.
-            $found = preg_match('/^(.{' . $minWordsafeLength . ',' . $maxLength . '})[' . Unicode::PREG_CLASS_WORD_BOUNDARY . ']/u', $string, $matches);
+            $found = preg_match('/^(.{' . $minWordsafeLength . ',' . $maxLength . '})
+            [' . Unicode::PREG_CLASS_WORD_BOUNDARY . ']/u', $string, $matches);
             if ($found) {
                 $string = $matches[1];
             } else {

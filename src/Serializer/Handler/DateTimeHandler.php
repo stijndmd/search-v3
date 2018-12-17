@@ -17,13 +17,13 @@ class DateTimeHandler extends DateHandler
    *
    * @return \DateTime|null
    */
-  public function deserializeDateTimeFromJson(JsonDeserializationVisitor $visitor, $data, array $type)
-  {
+    public function deserializeDateTimeFromJson(JsonDeserializationVisitor $visitor, $data, array $type)
+    {
 
-    if ((string)$data === '') {
-      return null;
+        if ((string)$data === '') {
+            return null;
+        }
+
+        return parent::deserializeDateTimeFromJson($visitor, $data, $type);
     }
-
-    return parent::deserializeDateTimeFromJson($visitor, $data, $type);
-  }
 }

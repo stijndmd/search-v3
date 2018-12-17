@@ -42,7 +42,8 @@ class SearchPreprocessor
                     ->getName()) ? $event->getOrganizer()
                 ->getName()
                 ->getValueForLanguage($langcode) : null,
-            'age_range' => $event->getTypicalAgeRange() ? $this->formatAgeRange($event->getTypicalAgeRange(), $langcode) : null,
+            'age_range' => $event->getTypicalAgeRange() ?
+                $this->formatAgeRange($event->getTypicalAgeRange(), $langcode) : null,
             'themes' => $event->getTermsByDomain('theme'),
             'labels' => $event->getLabels() ?? [],
             'vlieg' => self::isVliegEvent($event),
@@ -114,7 +115,7 @@ class SearchPreprocessor
             $typeLabels = [];
             if (!empty($types)) {
                 foreach ($types as $type) {
-                  $variables['types'][] = $type;
+                    $variables['types'][] = $type;
                 }
             }
         }
@@ -139,7 +140,8 @@ class SearchPreprocessor
         if ($priceInfo = $event->getPriceInfo()) {
             $prices = [];
             foreach ($priceInfo as $price) {
-                $value = $price->getPrice() > 0 ? '&euro; ' . str_replace('.', ',', (float) $price->getPrice()) : 'gratis';
+                $value = $price->getPrice() > 0 ? '&euro; ' .
+                    str_replace('.', ',', (float) $price->getPrice()) : 'gratis';
                 $variables['prices'][] = [
                     'price' => $value,
                     'info' => $price->getName()->getValueForLanguage($langcode),
@@ -191,11 +193,13 @@ class SearchPreprocessor
                 /** @var \CultuurNet\SearchV3\ValueObjects\TranslatedAddress $address */
                 $address = $event->getLocation()->getAddress();
                 if ($translatedAddress = $address->getAddressForLanguage($langcode)) {
-                    $directionData = $translatedAddress->getStreetAddress() . ' ' . $translatedAddress->getPostalCode() . ' ' . $translatedAddress->getAddressLocality();
+                    $directionData = $translatedAddress->getStreetAddress() . ' '
+                        . $translatedAddress->getPostalCode() . ' ' . $translatedAddress->getAddressLocality();
                 }
             }
 
-            $variables['directions_link'] = 'https://www.google.com/maps/dir/?api=1&destination=' . urlencode($directionData);
+            $variables['directions_link'] = 'https://www.google.com/maps/dir/?api=1&destination='
+                . urlencode($directionData);
         }
 
         // Booking information.
@@ -227,10 +231,12 @@ class SearchPreprocessor
                 'd MMMM Y'
             );
             if ($bookingInfo->getAvailabilityStarts()) {
-                $variables['booking_info']['start_date'] = $dateFormatter->format($bookingInfo->getAvailabilityStarts());
+                $variables['booking_info']['start_date'] =
+                    $dateFormatter->format($bookingInfo->getAvailabilityStarts());
             }
             if ($bookingInfo->getAvailabilityEnds()) {
-                $variables['booking_info']['end_date'] = $dateFormatter->format($bookingInfo->getAvailabilityStarts());
+                $variables['booking_info']['end_date'] =
+                    $dateFormatter->format($bookingInfo->getAvailabilityStarts());
             }
         }
 
@@ -300,7 +306,8 @@ class SearchPreprocessor
 
         $summary = '';
         // Multiple and periodic events should show from and to date.
-        if ($event->getCalendarType() === Offer::CALENDAR_TYPE_MULTIPLE || $event->getCalendarType() === Offer::CALENDAR_TYPE_PERIODIC) {
+        if ($event->getCalendarType() === Offer::CALENDAR_TYPE_MULTIPLE ||
+            $event->getCalendarType() === Offer::CALENDAR_TYPE_PERIODIC) {
             $dateFormatter = new IntlDateFormatter(
                 $locale,
                 IntlDateFormatter::FULL,
@@ -359,7 +366,8 @@ class SearchPreprocessor
                 break;
         }
 
-        if ($event->getCalendarType() === Offer::CALENDAR_TYPE_SINGLE || ($event->getCalendarType() === Offer::CALENDAR_TYPE_MULTIPLE && $event->getSubEvents() == null)) {
+        if ($event->getCalendarType() === Offer::CALENDAR_TYPE_SINGLE ||
+            ($event->getCalendarType() === Offer::CALENDAR_TYPE_MULTIPLE && $event->getSubEvents() == null)) {
             return $this->formatSingleDate($event->getStartDate(), $event->getEndDate(), $locale);
         } elseif ($event->getCalendarType() === Offer::CALENDAR_TYPE_PERIODIC) {
             return $this->formatPeriod($event->getStartDate(), $event->getEndDate(), $locale);
@@ -371,7 +379,9 @@ class SearchPreprocessor
             /** @var \CultuurNet\SearchV3\ValueObjects\Event $subEvent */
             foreach ($subEvents as $subEvent) {
                 if ($subEvent->getEndDate() > $now) {
-                    $output .= '<li>' . $this->formatSingleDate($subEvent->getStartDate(), $subEvent->getEndDate(), $locale) . '</li>';
+                    $output .= '<li>' .
+                        $this->formatSingleDate($subEvent->getStartDate(), $subEvent->getEndDate(), $locale) .
+                        '</li>';
                 }
             }
             $output .= '</ul>';
