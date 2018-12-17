@@ -66,7 +66,7 @@ class TranslatedAddress
         }
 
         // Some properties are not translated yet in the api. We save these as nl.
-        if (empty($addresses) && !empty($values)) {
+        if (empty($this->addresses) && !empty($values)) {
             $this->addresses['nl'] = new Address(
                 $values['addressCountry'] ?? null,
                 $values['addressLocality'] ?? null,
