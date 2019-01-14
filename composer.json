@@ -26,7 +26,8 @@
     "jms/serializer": "~1.9",
     "simple-bus/jms-serializer-bridge": "^1.0",
     "indigophp/doctrine-annotation-autoload": "^0.1.0",
-    "jwage/purl": "^0.0.10"
+    "jwage/purl": "^0.0.10",
+    "cultuurnet/calendar-summary-v3": "dev-master"
   },
   "require-dev": {
     "escapestudios/symfony2-coding-standard": "~2.0",
