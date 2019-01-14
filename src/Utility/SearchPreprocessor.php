@@ -335,10 +335,9 @@ class SearchPreprocessor
         $calendarHTMLFormatter = new CalendarHTMLFormatter($locale);
 
         if ($event->getCalendarType() === Offer::CALENDAR_TYPE_MULTIPLE) {
-          return $calendarHTMLFormatter->format($event, 'lg');
-        }
-        else {
-          return $calendarPlainTextFormatter->format($event, 'lg');
+            return $calendarHTMLFormatter->format($event, 'lg');
+        } else {
+            return $calendarPlainTextFormatter->format($event, 'lg');
         }
     }
 
