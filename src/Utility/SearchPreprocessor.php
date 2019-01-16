@@ -63,6 +63,8 @@ class SearchPreprocessor
             ]);
 
             $variables['image'] = $url->__toString();
+            $variables['image'] = str_replace('http://', '//', $variables['image']);
+            $variables['image'] = str_replace('https://', '//', $variables['image']);
         }
 
         $variables['copyright'] = null;
