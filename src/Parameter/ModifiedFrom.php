@@ -10,9 +10,9 @@ class ModifiedFrom extends AbstractDateParameter
 
     /**
      * ModifiedFrom constructor.
-     * @param \DateTime $modifiedFrom
+     * @param \DateTime|string $modifiedFrom
      */
-    public function __construct(\DateTime $modifiedFrom)
+    public function __construct($modifiedFrom)
     {
         $this->value = $modifiedFrom;
         $this->key = 'modifiedFrom';
