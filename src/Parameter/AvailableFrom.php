@@ -10,9 +10,9 @@ class AvailableFrom extends AbstractDateParameter
 
     /**
      * AvailableFrom constructor.
-     * @param \DateTime $availableFrom
+     * @param \DateTime|string $availableFrom
      */
-    public function __construct(\DateTime $availableFrom)
+    public function __construct($availableFrom)
     {
         $this->value = $availableFrom;
         $this->key = 'availableFrom';

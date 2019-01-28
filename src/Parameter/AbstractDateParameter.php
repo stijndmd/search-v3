@@ -19,6 +19,10 @@ abstract class AbstractDateParameter extends AbstractParameter
      */
     public function getValue()
     {
-         return $this->formatDate($this->value);
+        if ($this->value instanceof \DateTime) {
+            return $this->formatDate($this->value);
+        } else {
+            return $this->value;
+        }
     }
 }
