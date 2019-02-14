@@ -17,4 +17,16 @@ class DateToTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('dateTo', $key);
         $this->assertEquals('2017-11-23T10:00:00+01:00', $value);
     }
+
+    public function testConstructorWithWildcard()
+    {
+        $wildCard = '*';
+        $id = new DateTo($wildCard);
+
+        $key = $id->getKey();
+        $value = $id->getValue();
+
+        $this->assertEquals('dateTo', $key);
+        $this->assertEquals('*', $value);
+    }
 }

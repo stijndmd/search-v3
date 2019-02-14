@@ -10,9 +10,9 @@ class CreatedTo extends AbstractDateParameter
 
     /**
      * CreatedTo constructor.
-     * @param \DateTime $createdTo
+     * @param \DateTime|string $createdTo
      */
-    public function __construct(\DateTime $createdTo)
+    public function __construct($createdTo)
     {
         $this->value = $createdTo;
         $this->key = 'createdTo';

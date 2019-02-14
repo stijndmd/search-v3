@@ -17,4 +17,16 @@ class AvailableFromTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('availableFrom', $key);
         $this->assertEquals('2017-04-11T12:08:01+01:00', $value);
     }
+
+    public function testConstructorWithWildcard()
+    {
+        $wildCard = '*';
+        $id = new AvailableFrom($wildCard);
+
+        $key = $id->getKey();
+        $value = $id->getValue();
+
+        $this->assertEquals('availableFrom', $key);
+        $this->assertEquals('*', $value);
+    }
 }

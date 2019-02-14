@@ -10,9 +10,9 @@ class DateFrom extends AbstractDateParameter
 
     /**
      * DateFrom constructor.
-     * @param \DateTime $dateFrom
+     * @param \DateTime|string $dateFrom
      */
-    public function __construct(\DateTime $dateFrom)
+    public function __construct($dateFrom)
     {
         $this->value = $dateFrom;
         $this->key = 'dateFrom';

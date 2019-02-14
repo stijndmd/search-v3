@@ -17,4 +17,16 @@ class ModifiedToTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('modifiedTo', $key);
         $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
     }
+
+    public function testConstructorWithWildcard()
+    {
+        $wildCard = '*';
+        $id = new ModifiedTo($wildCard);
+
+        $key = $id->getKey();
+        $value = $id->getValue();
+
+        $this->assertEquals('modifiedTo', $key);
+        $this->assertEquals('*', $value);
+    }
 }

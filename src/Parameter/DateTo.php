@@ -10,9 +10,9 @@ class DateTo extends AbstractDateParameter
 
     /**
      * DateFrom constructor.
-     * @param \DateTime $dateTo
+     * @param \DateTime|string $dateTo
      */
-    public function __construct(\DateTime $dateTo)
+    public function __construct($dateTo)
     {
         $this->value = $dateTo;
         $this->key = 'dateTo';
