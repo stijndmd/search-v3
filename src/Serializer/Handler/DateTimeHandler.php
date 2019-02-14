@@ -11,7 +11,7 @@ use JMS\Serializer\JsonDeserializationVisitor;
 class DateTimeHandler extends DateHandler
 {
   /**
-   * @param XmlDeserializationVisitor $visitor
+   * @param JsonDeserializationVisitor $visitor
    * @param $data
    * @param array $type
    *
@@ -22,6 +22,10 @@ class DateTimeHandler extends DateHandler
 
         if ((string)$data === '') {
             return null;
+        }
+
+        if (substr($data, -1) === 'Z') {
+            $type['params'][0] = 'Y-m-d\TH:i:s.u\Z';
         }
 
         return parent::deserializeDateTimeFromJson($visitor, $data, $type);
