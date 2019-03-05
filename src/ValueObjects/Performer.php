@@ -51,7 +51,7 @@ class Performer
      */
     public function getRole()
     {
-      return $this->role;
+        return $this->role;
     }
 
     /**
@@ -60,8 +60,8 @@ class Performer
      */
     public function setRole($role)
     {
-      $this->role = $role;
+        $this->role = $role;
 
-      return $this;
+        return $this;
     }
 }
