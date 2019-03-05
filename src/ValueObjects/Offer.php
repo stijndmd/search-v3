@@ -89,8 +89,9 @@ abstract class Offer
     /**
      * @var Performer[]
      * @Type("array<CultuurNet\SearchV3\ValueObjects\Performer>")
+     * @SerializedName("performer")
      */
-    protected $performer;
+    protected $performers;
 
     /**
      * @var string
@@ -389,18 +390,18 @@ abstract class Offer
     /**
      * @return \CultuurNet\SearchV3\ValueObjects\Performer[]
      */
-    public function getPerformer()
+    public function getPerformers()
     {
-        return $this->performer;
+        return $this->performers;
     }
 
     /**
-     * @param array $performer
+     * @param array $performers
      * @return Offer
      */
-    public function setPerformer($performer)
+    public function setPerformers($performers)
     {
-        $this->performer = $performer;
+        $this->performers = $performers;
 
         return $this;
     }

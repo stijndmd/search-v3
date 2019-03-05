@@ -14,6 +14,12 @@ class Performer
      */
     protected $name;
 
+    /**
+     * @var string
+     * @Type("string")
+     */
+    protected $role;
+
     public function __construct(
         $name = null
     ) {
@@ -38,5 +44,24 @@ class Performer
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRole()
+    {
+      return $this->role;
+    }
+
+    /**
+     * @param string $role
+     * @return string
+     */
+    public function setRole($role)
+    {
+      $this->role = $role;
+
+      return $this;
     }
 }
