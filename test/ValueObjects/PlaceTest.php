@@ -8,6 +8,7 @@ use CultuurNet\SearchV3\ValueObjects\GeoPoint;
 use CultuurNet\SearchV3\ValueObjects\MediaObject;
 use CultuurNet\SearchV3\ValueObjects\OpeningHours;
 use CultuurNet\SearchV3\ValueObjects\Organizer;
+use CultuurNet\SearchV3\ValueObjects\Performer;
 use CultuurNet\SearchV3\ValueObjects\Place;
 use CultuurNet\SearchV3\ValueObjects\Term;
 use CultuurNet\SearchV3\ValueObjects\TranslatedString;
@@ -142,12 +143,12 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('9 - 11 jaar', $result);
     }
 
-    public function testGetPerformerMethod()
+    public function testGetPerformersMethod()
     {
-        $this->place->setPerformer(array('performer name'));
+        $this->place->setPerformers(array(new Performer('performer name')));
 
-        $result = $this->place->getPerformer();
-        $this->assertEquals(array('performer name'), $result);
+        $result = $this->place->getPerformers();
+        $this->assertEquals(array(new Performer('performer name')), $result);
     }
 
     public function testGetImageMethod()
