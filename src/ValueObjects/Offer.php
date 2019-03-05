@@ -87,8 +87,8 @@ abstract class Offer
     protected $audience;
 
     /**
-     * @var array
-     * @Type("array")
+     * @var Performer[]
+     * @Type("array<CultuurNet\SearchV3\ValueObjects\Performer>")
      */
     protected $performer;
 
@@ -387,7 +387,7 @@ abstract class Offer
     }
 
     /**
-     * @return array
+     * @return \CultuurNet\SearchV3\ValueObjects\Performer[]
      */
     public function getPerformer()
     {
