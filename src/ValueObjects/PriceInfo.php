@@ -9,6 +9,11 @@ use JMS\Serializer\Annotation\Type;
  */
 class PriceInfo
 {
+    /**
+     * @var string
+     * @Type("string")
+     */
+    protected $category;
 
     /**
      * @var TranslatedString
@@ -27,6 +32,24 @@ class PriceInfo
      * @Type("float")
      */
     protected $price;
+
+    /**
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param string $category
+     * @return PriceInfo
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
 
     /**
      * @return TranslatedString
