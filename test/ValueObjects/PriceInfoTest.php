@@ -17,6 +17,14 @@ class PriceInfoTest extends \PHPUnit_Framework_TestCase
         $this->priceInfo = new priceInfo();
     }
 
+    public function testGetCategoryMethod()
+    {
+        $this->priceInfo->setCategory('base');
+
+        $result = $this->priceInfo->getCategory();
+        $this->assertEquals('base', $result);
+    }
+
     public function testGetNameMethod()
     {
         $priceName = new TranslatedString(['nl' => 'Senioren']);
