@@ -72,6 +72,12 @@ abstract class Offer
      * @var string
      * @Type("string")
      */
+    protected $workflowStatus;
+
+    /**
+     * @var string
+     * @Type("string")
+     */
     protected $publisher;
 
     /**
@@ -326,6 +332,25 @@ abstract class Offer
     public function setModified($modified)
     {
         $this->modified = $modified;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWorkflowStatus()
+    {
+        return $this->workflowStatus;
+    }
+
+    /**
+     * @param string $workflowStatus
+     * @return Offer
+     */
+    public function setWorkflowStatus($workflowStatus)
+    {
+        $this->workflowStatus = $workflowStatus;
 
         return $this;
     }
