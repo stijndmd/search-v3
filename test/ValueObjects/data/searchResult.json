@@ -1,0 +1,125 @@
+{
+  "@id": "https:\/\/udb-silex-acc.uitdatabank.be\/event\/a3b78651-8d5a-4ff5-a9d0-6a6bc4c03746",
+  "@context": "\/contexts\/event",
+  "mainLanguage": "nl",
+  "name": {
+    "nl": "Knock"
+  },
+  "location": {
+    "@type": "Place",
+    "@id": "https:\/\/udb-silex-acc.uitdatabank.be\/place\/e03fe7fa-87d4-4bce-b2b0-16b27db864b3",
+    "@context": "\/contexts\/place",
+    "mainLanguage": "nl",
+    "name": {
+      "nl": "Imagibraine"
+    },
+    "address": {
+      "nl": {
+        "addressCountry": "BE",
+        "addressLocality": "Gent",
+        "postalCode": "9900",
+        "streetAddress": "Veldstraat 4"
+      },
+      "en": {
+        "addressCountry": "BE",
+        "addressLocality": "Ghent",
+        "postalCode": "9900",
+        "streetAddress": "Veldstraat 4"
+      }
+    },
+    "calendarType": "permanent",
+    "availableTo": "2100-01-01T00:00:00+00:00",
+    "terms": [
+      {
+        "id": "BtVNd33sR0WntjALVbyp3w",
+        "label": "Bioscoop",
+        "domain": "eventtype"
+      }
+    ],
+    "created": "2018-02-06T08:09:28+00:00",
+    "modified": "2018-02-06T08:09:32+00:00",
+    "creator": "carlo.dieltjens@cultuurnet.be",
+    "workflowStatus": "DRAFT",
+    "languages": [
+      "nl"
+    ],
+    "completedLanguages": [
+      "nl"
+    ],
+    "geo": {
+      "latitude": 50.6670581,
+      "longitude": 4.3782931
+    }
+  },
+  "calendarType": "multiple",
+  "startDate": "2018-03-12T15:00:00+01:00",
+  "endDate": "2018-03-15T16:53:00+01:00",
+  "availableTo": "2018-03-15T16:53:00+01:00",
+  "sameAs": [
+    "http:\/\/www.uitinvlaanderen.be\/agenda\/e\/knock\/a3b78651-8d5a-4ff5-a9d0-6a6bc4c03746"
+  ],
+  "terms": [
+    {
+      "id": "0.50.6.0.0",
+      "label": "Film",
+      "domain": "eventtype"
+    },
+    {
+      "id": "1.7.3.0.0",
+      "label": "Komedie",
+      "domain": "theme"
+    }
+  ],
+  "created": "2018-03-01T09:54:06+00:00",
+  "modified": "2018-03-01T09:54:10+00:00",
+  "creator": "jonas@cultuurnet.be",
+  "workflowStatus": "READY_FOR_VALIDATION",
+  "audience": {
+    "audienceType": "everyone"
+  },
+  "languages": [
+    "nl"
+  ],
+  "completedLanguages": [
+    "nl"
+  ],
+  "availableFrom": "2018-03-01T10:54:06+01:00",
+  "mediaObject": [
+    {
+      "@id": "https:\/\/udb-silex-acc.uitdatabank.be\/images\/1f06b060-36d4-490a-b0dc-690a8bbfa8cb",
+      "@type": "schema:ImageObject",
+      "contentUrl": "https:\/\/udb-silex-acc.uitdatabank.be\/images\/1f06b060-36d4-490a-b0dc-690a8bbfa8cb.jpeg",
+      "thumbnailUrl": "https:\/\/udb-silex-acc.uitdatabank.be\/images\/1f06b060-36d4-490a-b0dc-690a8bbfa8cb.jpeg",
+      "description": "Knock",
+      "copyrightHolder": "Kinepolis",
+      "inLanguage": "nl"
+    }
+  ],
+  "image": "https:\/\/udb-silex-acc.uitdatabank.be\/images\/1f06b060-36d4-490a-b0dc-690a8bbfa8cb.jpeg",
+  "labels": [
+    "UiTinVlaanderenFilm"
+  ],
+  "description": {
+    "nl": "Knock, een voormalige oplichter die arts is geworden, verhuist naar het kleine dorpje Saint-Maurice om er zijn \u0022methode\u0022 om rijk te worden toe te passen: hij gaat de bevolking overtuigen dat achter elke gezonde mens een ziekte schuilt."
+  },
+  "priceInfo": [
+    {
+      "category": "base",
+      "name": "Basistarief",
+      "price": 11.15,
+      "priceCurrency": "EUR"
+    },
+    {
+      "category": "tariff",
+      "name": "Kortingstarief",
+      "price": 10.15,
+      "priceCurrency": "EUR"
+    },
+    {
+      "category": "tariff",
+      "name": "Kinepolis Student Card",
+      "price": 8.35,
+      "priceCurrency": "EUR"
+    }
+  ]
+}
