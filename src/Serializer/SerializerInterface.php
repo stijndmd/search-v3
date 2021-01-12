@@ -4,9 +4,6 @@ namespace CultuurNet\SearchV3\Serializer;
 
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 
-/**
- * Provides an interface for search serializer.
- */
 interface SerializerInterface
 {
     /**

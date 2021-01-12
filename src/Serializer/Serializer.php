@@ -14,9 +14,6 @@ use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
 use SimpleBus\JMSSerializerBridge\SerializerMetadata;
 
-/**
- * Provides a serializer for the serializing / deserializing of search results.
- */
 class Serializer implements SerializerInterface
 {
     /**

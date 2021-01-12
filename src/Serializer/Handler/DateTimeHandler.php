@@ -2,22 +2,16 @@
 
 namespace CultuurNet\SearchV3\Serializer\Handler;
 
+use DateTime;
 use JMS\Serializer\Handler\DateHandler;
 use JMS\Serializer\JsonDeserializationVisitor;
 
 /**
- * Custom datetime hander to handle empty dates.
+ * Custom datetime handler to handle empty dates.
  */
 class DateTimeHandler extends DateHandler
 {
-  /**
-   * @param JsonDeserializationVisitor $visitor
-   * @param $data
-   * @param array $type
-   *
-   * @return \DateTime|null
-   */
-    public function deserializeDateTimeFromJson(JsonDeserializationVisitor $visitor, $data, array $type)
+    public function deserializeDateTimeFromJson(JsonDeserializationVisitor $visitor, $data, array $type): ?DateTime
     {
         if ((string)$data === '') {
             return null;
