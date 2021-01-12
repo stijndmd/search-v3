@@ -17,7 +17,7 @@ abstract class AbstractParameter implements ParameterInterface
 
     /**
      * The value to use.
-     * @var string
+     * @var string|array|integer|float|bool
      */
     protected $value;
 
