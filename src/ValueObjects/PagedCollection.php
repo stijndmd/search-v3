@@ -3,12 +3,8 @@
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use CultuurNet\SearchV3\Hydrator\Event;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\JsonDeserializationVisitor;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\HandlerCallback;
-use JMS\Serializer\TypeParser;
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
 
 class PagedCollection
 {

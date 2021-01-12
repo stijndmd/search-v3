@@ -2,15 +2,9 @@
 
 namespace CultuurNet\SearchV3;
 
-use Guzzle\Http\Client;
+use CultureFeed_DefaultHttpClient;
 use CultureFeed_HttpClient;
 use CultureFeed_HttpResponse;
-use CultureFeed_DefaultHttpClient;
-use Exception;
-use Guzzle\Http\ClientInterface;
-use Guzzle\Http\Exception\BadResponseException;
-use Guzzle\Http\Message\EntityEnclosingRequestInterface;
-use Guzzle\Service\Builder\ServiceBuilderInterface;
 
 class SearchQuery implements SearchQueryInterface
 {

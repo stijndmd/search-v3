@@ -2,10 +2,10 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
+use JMS\Serializer\Annotation\HandlerCallback;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
 use JMS\Serializer\TypeParser;
-use JMS\Serializer\Annotation\HandlerCallback;
 
 class Collection
 {

@@ -2,11 +2,6 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\JsonDeserializationVisitor;
-use JMS\Serializer\TypeParser;
-
 class FacetResultItem
 {
     /**

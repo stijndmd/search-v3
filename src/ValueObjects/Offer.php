@@ -3,8 +3,8 @@
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use DateTime;
-use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
 
 abstract class Offer
 {
