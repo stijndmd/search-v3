@@ -108,28 +108,19 @@ class SearchQuery implements SearchQueryInterface
     public function toArray()
     {
         $query = [];
-        $duplicateKeys = [];
         foreach ($this->parameters as $parameter) {
             $key = $parameter->getKey();
 
-            // Same query key is used multiple times? Merge it into 1 query.
             if (isset($query[$key])) {
                 if ($parameter->allowsMultiple()) {
                     $query[$key] = is_array($query[$key]) ? $query[$key] : [$query[$key]];
                     $query[$key][] = $parameter->getValue();
                 } else {
-                    $duplicateKeys[$key][] = $parameter->getValue();
+                    continue;
                 }
             } else {
                 $query[$key] = $parameter->getValue();
             }
-        }
-
-        // Merge the duplicate keys into the main query.
-        foreach ($duplicateKeys as $key => $duplicateKeyValues) {
-            // Copy the value that already exists in the query, to the duplicate array.
-            $duplicateKeyValues[] = $query[$key];
-            $query[$key] = '(' . implode(') AND (', $duplicateKeyValues) . ')';
         }
 
         if (!empty($this->sorting)) {
