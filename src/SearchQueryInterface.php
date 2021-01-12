@@ -2,9 +2,6 @@
 
 namespace CultuurNet\SearchV3;
 
-/**
- * SearchQuery
- */
 interface SearchQueryInterface
 {
     /**

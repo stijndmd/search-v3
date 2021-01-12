@@ -2,9 +2,6 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-/**
- * Provides a parameter to search on languages.
- */
 class Languages extends AbstractParameter
 {
     const LANG_NL = 'nl';

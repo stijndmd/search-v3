@@ -5,9 +5,6 @@ namespace CultuurNet\SearchV3\ValueObjects;
 use DateTime;
 use JMS\Serializer\Annotation\Type;
 
-/**
- * Provides a booking info value object.
- */
 class BookingInfo
 {
     /**

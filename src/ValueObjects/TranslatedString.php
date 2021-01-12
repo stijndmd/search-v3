@@ -6,9 +6,6 @@ use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
 use JMS\Serializer\Annotation\HandlerCallback;
 
-/**
- * Provides a value object for translated strings like name and description.
- */
 class TranslatedString
 {
     /**

@@ -4,9 +4,6 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\Annotation\Type;
 
-/**
- * Value object for price information
- */
 class PriceInfo
 {
     /**

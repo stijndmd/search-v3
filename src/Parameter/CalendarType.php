@@ -2,9 +2,6 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-/**
- * Provides a parameter to search on calendar type.
- */
 class CalendarType extends AbstractParameter
 {
     const TYPE_SINGLE = 'single';

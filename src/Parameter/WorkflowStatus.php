@@ -2,9 +2,6 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-/**
- * Provides a parameter to search on workflowStatus.
- */
 class WorkflowStatus extends AbstractParameter
 {
     const STATUS_DRAFT = 'DRAFT';

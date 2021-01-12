@@ -10,9 +10,6 @@ use JMS\Serializer\Annotation\HandlerCallback;
 use JMS\Serializer\TypeParser;
 use JMS\Serializer\Annotation\SerializedName;
 
-/**
- * PagedCollection class for a lists of items.
- */
 class PagedCollection
 {
     /**

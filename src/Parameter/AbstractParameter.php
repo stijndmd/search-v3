@@ -4,9 +4,6 @@ namespace CultuurNet\SearchV3\Parameter;
 
 use CultuurNet\SearchV3\ParameterInterface;
 
-/**
- * Provides an abstract class for query parameters.
- */
 abstract class AbstractParameter implements ParameterInterface
 {
     /**

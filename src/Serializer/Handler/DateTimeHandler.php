@@ -6,9 +6,6 @@ use DateTime;
 use JMS\Serializer\Handler\DateHandler;
 use JMS\Serializer\JsonDeserializationVisitor;
 
-/**
- * Custom datetime handler to handle empty dates.
- */
 class DateTimeHandler extends DateHandler
 {
     public function deserializeDateTimeFromJson(JsonDeserializationVisitor $visitor, $data, array $type): ?DateTime

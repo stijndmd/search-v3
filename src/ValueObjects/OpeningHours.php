@@ -4,9 +4,6 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\Annotation\Type;
 
-/**
- * OpeningHours class.
- */
 class OpeningHours
 {
     /**

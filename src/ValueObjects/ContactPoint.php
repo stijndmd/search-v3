@@ -5,9 +5,6 @@ namespace CultuurNet\SearchV3\ValueObjects;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\SerializedName;
 
-/**
- * Value object for contact point information
- */
 class ContactPoint
 {
     /**

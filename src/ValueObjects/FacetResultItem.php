@@ -7,9 +7,6 @@ use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
 use JMS\Serializer\TypeParser;
 
-/**
- * Represents the facets on a search result.
- */
 class FacetResultItem
 {
     /**

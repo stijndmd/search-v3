@@ -5,9 +5,6 @@ namespace CultuurNet\SearchV3;
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use GuzzleHttp\ClientInterface;
 
-/**
- * Provides an interface for search clients on the search api.
- */
 interface SearchClientInterface
 {
     public function setClient(ClientInterface $client);

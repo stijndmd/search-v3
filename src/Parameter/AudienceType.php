@@ -2,9 +2,6 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-/**
- * Provides a parameter to search on audienceType.
- */
 class AudienceType extends AbstractParameter
 {
     const AUDIENCE_EVERYONE = 'everyone';

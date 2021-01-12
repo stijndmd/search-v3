@@ -2,9 +2,6 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-/**
- * Provides a parameter to search on distance.
- */
 class Distance extends AbstractParameter
 {
     const UNIT_MILE = 'mi';
