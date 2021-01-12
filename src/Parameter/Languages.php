@@ -24,7 +24,7 @@ final class Languages extends AbstractParameter
         return true;
     }
 
-    protected static function getConstants()
+    protected static function getConstants(): array
     {
         $oClass = new \ReflectionClass(__CLASS__);
         return $oClass->getConstants();
