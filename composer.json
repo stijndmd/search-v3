@@ -5,12 +5,8 @@
   "license": "Apache-2.0",
   "authors": [
     {
-      "name": "Nils Destoop",
-      "email": "nils.destoop@wunderkraut.com"
-    },
-    {
-      "name": "Stijn Swaanen",
-      "email": "stijn.swaanen@publiq.be"
+      "name": "Publiq vwz",
+      "email": "info@publiq.be"
     }
   ],
   "minimum-stability": "dev",
