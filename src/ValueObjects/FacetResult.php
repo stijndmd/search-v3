@@ -15,6 +15,16 @@ class FacetResult
      */
     protected $results = [];
 
+    /**
+     * @param string $field
+     * @param FacetResultItem[] $results
+     */
+    public function __construct(string $field, array $results)
+    {
+        $this->field = $field;
+        $this->results = $results;
+    }
+
     public function getField(): string
     {
         return $this->field;
@@ -39,15 +49,5 @@ class FacetResult
     {
         $this->results = $results;
         return $this;
-    }
-
-    /**
-     * @param string $field
-     * @param FacetResultItem[] $results
-     */
-    public function __construct(string $field, array $results)
-    {
-        $this->field = $field;
-        $this->results = $results;
     }
 }

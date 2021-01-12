@@ -32,6 +32,14 @@ class FacetResultItem
      */
     protected $children;
 
+    public function __construct(string $value, TranslatedString $name, int $count, array $children = [])
+    {
+        $this->value = $value;
+        $this->name = $name;
+        $this->count = $count;
+        $this->children = $children;
+    }
+
     public function getValue(): string
     {
         return $this->value;
@@ -74,13 +82,5 @@ class FacetResultItem
     {
         $this->children = $children;
         return $this;
-    }
-
-    public function __construct(string $value, TranslatedString $name, int $count, array $children = [])
-    {
-        $this->value = $value;
-        $this->name = $name;
-        $this->count = $count;
-        $this->children = $children;
     }
 }
