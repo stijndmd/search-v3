@@ -14,41 +14,29 @@ class TranslatedString
     /**
      * Translations
      *
-     * @var array
+     * @var string[]
      */
     protected $values = [];
 
-    /**
-     * TranslatedString constructor.
-     * @param array $values
-     */
     public function __construct(array $values = [])
     {
         $this->values = $values;
     }
 
-    /**
-     * Get the value for a given langcode.
-     *
-     * @param string $langcode
-     */
-    public function getValueForLanguage(string $langcode)
+    public function getValueForLanguage(string $langcode): string
     {
         return $this->values[$langcode] ?? '';
     }
 
     /**
-     * Get the translations array.
+     * @return string[]
      */
-    public function getValues()
+    public function getValues(): array
     {
         return $this->values;
     }
 
-    /**
-     * Set the translations array.
-     */
-    public function setValues(array $values)
+    public function setValues(array $values): void
     {
         $this->values = $values;
     }
@@ -56,8 +44,11 @@ class TranslatedString
     /**
      * @HandlerCallback("json", direction = "deserialization")
      */
-    public function deserializeFromJson(JsonDeserializationVisitor $visitor, $value, DeserializationContext $context)
-    {
+    public function deserializeFromJson(
+        JsonDeserializationVisitor $visitor,
+        $value,
+        DeserializationContext $context
+    ): void {
         // Some properties are not translated yet in the api. Force them as nl.
         $this->values = is_array($value) ? $value : ['nl' => $value];
     }

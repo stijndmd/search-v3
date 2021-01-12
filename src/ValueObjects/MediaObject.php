@@ -7,120 +7,85 @@ use JMS\Serializer\Annotation\Type;
 class MediaObject
 {
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $id;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $contentUrl;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $thumbnailUrl;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $description;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $copyrightHolder;
 
-    /**
-     * @return string
-     */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     * @return MediaObject
-     */
-    public function setId($id)
+    public function setId(string $id): self
     {
         $this->id = $id;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getContentUrl()
+    public function getContentUrl(): ?string
     {
         return $this->contentUrl;
     }
 
-    /**
-     * @param string $contentUrl
-     * @return MediaObject
-     */
-    public function setContentUrl($contentUrl)
+    public function setContentUrl(string $contentUrl): self
     {
         $this->contentUrl = $contentUrl;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getThumbnailUrl()
+    public function getThumbnailUrl(): string
     {
         return $this->thumbnailUrl;
     }
 
-    /**
-     * @param string $thumbnailUrl
-     * @return MediaObject
-     */
-    public function setThumbnailUrl($thumbnailUrl)
+    public function setThumbnailUrl(string $thumbnailUrl): self
     {
         $this->thumbnailUrl = $thumbnailUrl;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     * @return MediaObject
-     */
-    public function setDescription($description)
+    public function setDescription(string $description): self
     {
         $this->description = $description;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCopyrightHolder()
+    public function getCopyrightHolder(): string
     {
         return $this->copyrightHolder;
     }
 
-    /**
-     * @param string $copyrightHolder
-     * @return MediaObject
-     */
-    public function setCopyrightHolder($copyrightHolder)
+    public function setCopyrightHolder(string $copyrightHolder): self
     {
         $this->copyrightHolder = $copyrightHolder;
         return $this;

@@ -9,35 +9,35 @@ use JMS\Serializer\Annotation\HandlerCallback;
 
 class FacetResults implements \Iterator
 {
+    /**
+     * @var string|null
+     */
     protected $key;
 
     /**
-     * @var array
+     * @var FacetResult[]
      */
-    protected $facetResults;
+    protected $facetResults = [];
 
     /**
-     * @return array
+     * @return FacetResult[]
      */
-    public function getFacetResults()
+    public function getFacetResults(): array
     {
         return $this->facetResults;
     }
 
     /**
-     * @param array $facetResults
-     * @return FacetResults
+     * @param FacetResult[] $facetResults
+     * @return self
      */
-    public function setFacetResults($facetResults)
+    public function setFacetResults(array $facetResults): self
     {
         $this->facetResults = $facetResults;
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getFacetResultsByField($field)
+    public function getFacetResultsByField($field): array
     {
         $results = [];
         foreach ($this->facetResults as $facetResult) {
@@ -53,9 +53,9 @@ class FacetResults implements \Iterator
         return current($this->facetResults);
     }
 
-    public function next()
+    public function next(): void
     {
-        return next($this->facetResults);
+        next($this->facetResults);
     }
 
     public function key()
@@ -63,30 +63,30 @@ class FacetResults implements \Iterator
         return key($this->facetResults);
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return key($this->facetResults) !== null;
     }
 
-    public function rewind()
+    public function rewind(): void
     {
-        return reset($this->facetResults);
+        reset($this->facetResults);
     }
 
     /**
      * @HandlerCallback("json", direction = "deserialization")
      */
-    public function deserializeFromJson(JsonDeserializationVisitor $visitor, $values, DeserializationContext $context)
-    {
+    public function deserializeFromJson(
+        JsonDeserializationVisitor $visitor,
+        array $values,
+        DeserializationContext $context
+    ): void {
         foreach ($values as $facet_type => $results) {
             $this->facetResults[$facet_type] = new FacetResult($facet_type, $this->deserializeResults($results));
         }
     }
 
-    /**
-     *
-     */
-    protected function deserializeResults($results)
+    protected function deserializeResults($results): array
     {
         $items = [];
         foreach ($results as $value => $result) {

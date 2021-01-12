@@ -16,19 +16,12 @@ class Collection
 
     protected $items = [];
 
-    /**
-     * @return array
-     */
-    public function getItems()
+    public function getItems(): array
     {
         return $this->items;
     }
 
-    /**
-     * @param array $items
-     * @return Collection
-     */
-    public function setItems($items)
+    public function setItems(array $items): self
     {
         $this->items = $items;
         return $this;
@@ -37,8 +30,11 @@ class Collection
     /**
      * @HandlerCallback("json", direction = "deserialization")
      */
-    public function deserializeFromJson(JsonDeserializationVisitor $visitor, $values, DeserializationContext $context)
-    {
+    public function deserializeFromJson(
+        JsonDeserializationVisitor $visitor,
+        array $values,
+        DeserializationContext $context
+    ): void {
         $deserializationContext = DeserializationContext::create()
             ->setSerializeNull(true);
 

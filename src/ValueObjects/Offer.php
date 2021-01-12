@@ -2,6 +2,7 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
+use DateTime;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\SerializedName;
 
@@ -13,80 +14,80 @@ abstract class Offer
     const CALENDAR_TYPE_PERMANENT = 'permanent';
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      * @SerializedName("@id")
      */
     protected $id;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $mainLanguage;
 
     /**
-     * @var TranslatedString
+     * @var TranslatedString|null
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
     protected $name;
 
     /**
-     * @var TranslatedString
+     * @var TranslatedString|null
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
     protected $description;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $calendarSummary;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $calendarType;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $creator;
 
     /**
-     * @var \DateTime
+     * @var DateTime|null
      * @Type("DateTime")
      */
     protected $created;
 
     /**
-     * @var \DateTime
+     * @var DateTime|null
      * @Type("DateTime")
      */
     protected $modified;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $workflowStatus;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $publisher;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $typicalAgeRange;
 
     /**
-     * @var Audience
+     * @var Audience|null
      * @Type("CultuurNet\SearchV3\ValueObjects\Audience")
      */
     protected $audience;
@@ -96,10 +97,10 @@ abstract class Offer
      * @Type("array<CultuurNet\SearchV3\ValueObjects\Performer>")
      * @SerializedName("performer")
      */
-    protected $performers;
+    protected $performers = [];
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $image;
@@ -112,7 +113,7 @@ abstract class Offer
     protected $mediaObjects = [];
 
     /**
-     * @var Organizer
+     * @var Organizer|null
      * @Type("CultuurNet\SearchV3\ValueObjects\Organizer")
      */
     protected $organizer;
@@ -130,13 +131,13 @@ abstract class Offer
     protected $hiddenLabels = [];
 
     /**
-     * @var \DateTime
+     * @var DateTime|null
      * @Type("DateTime")
      */
     protected $startDate;
 
     /**
-     * @var \DateTime
+     * @var DateTime|null
      * @Type("DateTime")
      */
     protected $endDate;
@@ -148,7 +149,7 @@ abstract class Offer
     protected $terms = [];
 
     /**
-     * @var ContactPoint
+     * @var ContactPoint|null
      * @Type("CultuurNet\SearchV3\ValueObjects\ContactPoint")
      */
     protected $contactPoint;
@@ -159,278 +160,183 @@ abstract class Offer
      */
     protected $openingHours = [];
 
-    /**
-     * @return string
-     */
-    public function getId()
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * Get the cdbid of current offer.
-     */
-    public function getCdbid()
+    public function getCdbid(): ?string
     {
+        if (is_null($this->id)) {
+            return null;
+        }
+
         $id_parts = explode('/', rtrim($this->id, '/'));
         return end($id_parts);
     }
 
-    /**
-     * @param string $id
-     */
-    public function setId($id)
+    public function setId(string $id): self
     {
         $this->id = $id;
+        return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getMainLanguage()
+    public function getMainLanguage(): ?string
     {
         return $this->mainLanguage;
     }
 
-    /**
-     * @param string $mainLanguage
-     * @return Offer
-     */
-    public function setMainLanguage($mainLanguage)
+    public function setMainLanguage(string $mainLanguage): self
     {
         $this->mainLanguage = $mainLanguage;
         return $this;
     }
 
-    /**
-     * @return TranslatedString
-     */
-    public function getName()
+    public function getName(): ?TranslatedString
     {
         return $this->name;
     }
 
-    /**
-     * @param TranslatedString $name
-     * @return Offer
-     */
-    public function setName(TranslatedString $name)
+    public function setName(TranslatedString $name): self
     {
         $this->name = $name;
         return $this;
     }
 
-    /**
-     * @return TranslatedString
-     */
-    public function getDescription()
+    public function getDescription(): ?TranslatedString
     {
         return $this->description;
     }
 
-    /**
-     * @param TranslatedString $description
-     * @return Offer
-     */
-    public function setDescription(TranslatedString $description)
+    public function setDescription(TranslatedString $description): self
     {
         $this->description = $description;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCalendarType()
+    public function getCalendarType(): ?string
     {
         return $this->calendarType;
     }
 
-    /**
-     * @param string $calendarType
-     * @return Offer
-     */
-    public function setCalendarType($calendarType)
+    public function setCalendarType(string $calendarType): self
     {
         $this->calendarType = $calendarType;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCalendarSummary()
+    public function getCalendarSummary(): ?string
     {
         return $this->calendarSummary;
     }
 
-    /**
-     * @param string $calendarSummary
-     * @return Offer
-     */
-    public function setCalendarSummary($calendarSummary)
+    public function setCalendarSummary(string $calendarSummary): self
     {
         $this->calendarSummary = $calendarSummary;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCreator()
+    public function getCreator(): ?string
     {
         return $this->creator;
     }
 
-    /**
-     * @param string $creator
-     * @return Offer
-     */
-    public function setCreator($creator)
+    public function setCreator(string $creator): self
     {
         $this->creator = $creator;
         return $this;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getCreated()
+    public function getCreated(): ?DateTime
     {
         return $this->created;
     }
 
-    /**
-     * @param \DateTime $created
-     * @return Offer
-     */
-    public function setCreated($created)
+    public function setCreated(DateTime $created): self
     {
         $this->created = $created;
         return $this;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getModified()
+    public function getModified(): ?DateTime
     {
         return $this->modified;
     }
 
-    /**
-     * @param \DateTime $modified
-     * @return Offer
-     */
-    public function setModified($modified)
+    public function setModified(DateTime $modified): self
     {
         $this->modified = $modified;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getWorkflowStatus()
+    public function getWorkflowStatus(): ?string
     {
         return $this->workflowStatus;
     }
 
-    /**
-     * @param string $workflowStatus
-     * @return Offer
-     */
-    public function setWorkflowStatus($workflowStatus)
+    public function setWorkflowStatus(string $workflowStatus): self
     {
         $this->workflowStatus = $workflowStatus;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPublisher()
+    public function getPublisher(): ?string
     {
         return $this->publisher;
     }
 
-    /**
-     * @param string $publisher
-     * @return Offer
-     */
-    public function setPublisher($publisher)
+    public function setPublisher(string $publisher): self
     {
         $this->publisher = $publisher;
         return $this;
     }
 
-    /**
-     * @return Audience
-     */
-    public function getAudience()
+    public function getAudience(): ?Audience
     {
         return $this->audience;
     }
 
-    /**
-     * @param Audience $audience
-     * @return Offer
-     */
-    public function setAudience($audience)
+    public function setAudience(Audience $audience): self
     {
         $this->audience = $audience;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTypicalAgeRange()
+    public function getTypicalAgeRange(): ?string
     {
         return $this->typicalAgeRange;
     }
 
-    /**
-     * @param string $typicalAgeRange
-     * @return Offer
-     */
-    public function setTypicalAgeRange($typicalAgeRange)
+    public function setTypicalAgeRange(string $typicalAgeRange): self
     {
         $this->typicalAgeRange = $typicalAgeRange;
         return $this;
     }
 
     /**
-     * @return \CultuurNet\SearchV3\ValueObjects\Performer[]
+     * @return Performer[]
      */
-    public function getPerformers()
+    public function getPerformers(): array
     {
         return $this->performers;
     }
 
     /**
-     * @param array $performers
-     * @return Offer
+     * @param Performer[] $performers
+     * @return self
      */
-    public function setPerformers($performers)
+    public function setPerformers(array $performers): self
     {
         $this->performers = $performers;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getImage()
+    public function getImage(): ?string
     {
         return $this->image;
     }
 
-    /**
-     * @param string $image
-     * @return Offer
-     */
-    public function setImage($image)
+    public function setImage(string $image): self
     {
         $this->image = $image;
         return $this;
@@ -439,25 +345,22 @@ abstract class Offer
     /**
      * @return MediaObject[]
      */
-    public function getMediaObjects()
+    public function getMediaObjects(): array
     {
         return $this->mediaObjects;
     }
 
     /**
      * @param MediaObject[] $mediaObjects
-     * @return Offer
+     * @return self
      */
-    public function setMediaObjects($mediaObjects)
+    public function setMediaObjects(array $mediaObjects): self
     {
         $this->mediaObjects = $mediaObjects;
         return $this;
     }
 
-    /**
-     * @return mediaObject | string
-     */
-    public function getMainMediaObject()
+    public function getMainMediaObject(): ?MediaObject
     {
         $mediaObjects = $this->getMediaObjects();
         foreach ($mediaObjects as $mediaObject) {
@@ -465,94 +368,59 @@ abstract class Offer
                 return $mediaObject;
             }
         }
-        return '';
+        return null;
     }
 
-    /**
-     * @return Organizer
-     */
-    public function getOrganizer()
+    public function getOrganizer(): ?Organizer
     {
         return $this->organizer;
     }
 
-    /**
-     * @param Organizer $organizer
-     * @return Offer
-     */
-    public function setOrganizer($organizer)
+    public function setOrganizer(Organizer $organizer): self
     {
         $this->organizer = $organizer;
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getLabels()
+    public function getLabels(): array
     {
         return $this->labels;
     }
 
-    /**
-     * @param array $labels
-     * @return Offer
-     */
-    public function setLabels($labels)
+    public function setLabels(array $labels): self
     {
         $this->labels = $labels;
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getHiddenLabels()
+    public function getHiddenLabels(): array
     {
         return $this->hiddenLabels;
     }
 
-    /**
-     * @param array $hiddenLabels
-     * @return Offer
-     */
-    public function setHiddenLabels($hiddenLabels)
+    public function setHiddenLabels(array $hiddenLabels): self
     {
         $this->hiddenLabels = $hiddenLabels;
         return $this;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getStartDate()
+    public function getStartDate(): ?DateTime
     {
         return $this->startDate;
     }
 
-    /**
-     * @param \DateTime $startDate
-     * @return Offer
-     */
-    public function setStartDate($startDate)
+    public function setStartDate(DateTime $startDate): self
     {
         $this->startDate = $startDate;
         return $this;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getEndDate()
+    public function getEndDate(): ?DateTime
     {
         return $this->endDate;
     }
 
-    /**
-     * @param \DateTime $endDate
-     * @return Offer
-     */
-    public function setEndDate($endDate)
+    public function setEndDate(DateTime $endDate): self
     {
         $this->endDate = $endDate;
         return $this;
@@ -561,7 +429,7 @@ abstract class Offer
     /**
      * @return Term[]
      */
-    public function getTerms()
+    public function getTerms(): array
     {
         return $this->terms;
     }
@@ -572,7 +440,7 @@ abstract class Offer
      * @param string $domain
      * @return Term[]
      */
-    public function getTermsByDomain(string $domain)
+    public function getTermsByDomain(string $domain): array
     {
         $filteredTerms = [];
         foreach ($this->terms as $term) {
@@ -585,45 +453,40 @@ abstract class Offer
 
     /**
      * @param Term[] $terms
-     * @return Offer
+     * @return self
      */
-    public function setTerms($terms)
+    public function setTerms(array $terms): self
     {
         $this->terms = $terms;
         return $this;
     }
 
-    /**
-     * @return ContactPoint
-     */
-    public function getContactPoint()
+    public function getContactPoint(): ?ContactPoint
     {
         return $this->contactPoint;
     }
 
-    /**
-     * @param ContactPoint $contactPoint
-     * @return Offer
-     */
-    public function setContactPoint($contactPoint)
+    public function setContactPoint(ContactPoint $contactPoint): self
     {
         $this->contactPoint = $contactPoint;
         return $this;
     }
 
     /**
-     * @return mixed
+     * @return OpeningHours[]
      */
-    public function getOpeningHours()
+    public function getOpeningHours(): array
     {
         return $this->openingHours;
     }
 
     /**
-     * @param mixed $openingHours
+     * @param OpeningHours[] $openingHours
+     * @return self
      */
-    public function setOpeningHours($openingHours)
+    public function setOpeningHours(array $openingHours): self
     {
         $this->openingHours = $openingHours;
+        return $this;
     }
 }

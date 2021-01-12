@@ -17,100 +17,72 @@ class PagedCollection
 {
     /**
      * Total items per page
-     * @var int
+     * @var int|null
      * @Type("integer")
      */
     protected $itemsPerPage;
 
     /**
      * Total items found.
-     * @var int
+     * @var int|null
      * @Type("integer")
      */
     protected $totalItems;
 
     /**
      * All members of this collection result.
-     * @var Collection
+     * @var Collection|null
      * @Type("CultuurNet\SearchV3\ValueObjects\Collection")
      */
     protected $member;
 
     /**
      * All facets for this paged collection.
-     *
+     * @var FacetResults|null
      * @Type("CultuurNet\SearchV3\ValueObjects\FacetResults")
      * @SerializedName("facet")
      */
     protected $facets;
 
-    /**
-     * @return int
-     */
-    public function getItemsPerPage()
+    public function getItemsPerPage(): ?int
     {
         return $this->itemsPerPage;
     }
 
-    /**
-     * @param int $itemsPerPage
-     * @return PagedCollection
-     */
-    public function setItemsPerPage($itemsPerPage)
+    public function setItemsPerPage(int $itemsPerPage): self
     {
         $this->itemsPerPage = $itemsPerPage;
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getTotalItems()
+    public function getTotalItems(): ?int
     {
         return $this->totalItems;
     }
 
-    /**
-     * @param int $totalItems
-     * @return PagedCollection
-     */
-    public function setTotalItems($totalItems)
+    public function setTotalItems(int $totalItems): self
     {
         $this->totalItems = $totalItems;
         return $this;
     }
 
-    /**
-     * @return Collection
-     */
-    public function getMember()
+    public function getMember(): ?Collection
     {
         return $this->member;
     }
 
-    /**
-     * @param Collection $member
-     * @return PagedCollection
-     */
-    public function setMember($member)
+    public function setMember(Collection $member): self
     {
         $this->member = $member;
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getFacets()
+    public function getFacets(): ?FacetResults
     {
         return $this->facets;
     }
 
-    /**
-     * @param mixed $facets
-     * @return PagedCollection
-     */
-    public function setFacets($facets)
+    public function setFacets(FacetResults $facets): self
     {
         $this->facets = $facets;
         return $this;

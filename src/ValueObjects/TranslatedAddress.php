@@ -9,12 +9,12 @@ use JMS\Serializer\JsonDeserializationVisitor;
 class TranslatedAddress
 {
     /**
-     * @var array
+     * @var Address[]
      */
-    protected $addresses;
+    protected $addresses = [];
 
     /**
-     * @return array
+     * @return Address[]
      */
     public function getAddresses(): array
     {
@@ -22,22 +22,14 @@ class TranslatedAddress
     }
 
     /**
-     * @param array $addresses
+     * @param Address[] $addresses
      */
-    public function setAddresses(array $addresses)
+    public function setAddresses(array $addresses): void
     {
         $this->addresses = $addresses;
     }
 
-    /**
-     * Get the address for a given langcode.
-     *
-     * @param string $langcode
-     *   The langcode to retrieve the address for.
-     * @return Address|null
-     *   The retrieved address or null if it's not available.
-     */
-    public function getAddressForLanguage(string $langcode)
+    public function getAddressForLanguage(string $langcode): ?Address
     {
         return $this->addresses[$langcode] ?? null;
     }
@@ -45,8 +37,11 @@ class TranslatedAddress
     /**
      * @HandlerCallback("json", direction = "deserialization")
      */
-    public function deserializeFromJson(JsonDeserializationVisitor $visitor, $values, DeserializationContext $context)
-    {
+    public function deserializeFromJson(
+        JsonDeserializationVisitor $visitor,
+        array $values,
+        DeserializationContext $context
+    ): void {
         foreach ($values as $key => $value) {
             if (is_array($value)) {
                 $this->addresses[$key] = new Address(

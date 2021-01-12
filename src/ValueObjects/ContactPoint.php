@@ -31,55 +31,34 @@ class ContactPoint
      */
     protected $urls = [];
 
-    /**
-     * @return array
-     */
-    public function getEmails()
+    public function getEmails(): array
     {
         return $this->emails;
     }
 
-    /**
-     * @param array $emails
-     * @return ContactPoint
-     */
-    public function setEmails($emails)
+    public function setEmails(array $emails): self
     {
         $this->emails = $emails;
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getPhoneNumbers()
+    public function getPhoneNumbers(): array
     {
         return $this->phoneNumbers;
     }
 
-    /**
-     * @param array $phoneNumbers
-     * @return ContactPoint
-     */
-    public function setPhoneNumbers($phoneNumbers)
+    public function setPhoneNumbers(array $phoneNumbers): self
     {
         $this->phoneNumbers = $phoneNumbers;
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getUrls()
+    public function getUrls(): array
     {
         return $this->urls;
     }
 
-    /**
-     * @param array $urls
-     * @return ContactPoint
-     */
-    public function setUrls($urls)
+    public function setUrls(array $urls): self
     {
         $this->urls = $urls;
         return $this;

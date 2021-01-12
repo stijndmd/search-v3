@@ -7,47 +7,34 @@ use JMS\Serializer\Annotation\Type;
 class Place extends Offer
 {
     /**
-     * @var Address
+     * @var Address|null
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedAddress")
      */
     protected $address;
 
     /**
+     * @var GeoPoint
      * @Type("CultuurNet\SearchV3\ValueObjects\GeoPoint")
      */
     protected $geo;
 
-    /**
-     * @return Address
-     */
-    public function getAddress()
+    public function getAddress(): ?Address
     {
         return $this->address;
     }
 
-    /**
-     * @param Address $address
-     * @return Place
-     */
-    public function setAddress($address)
+    public function setAddress(Address $address): self
     {
         $this->address = $address;
         return $this;
     }
 
-    /**
-     * @return GeoPoint
-     */
-    public function getGeo()
+    public function getGeo(): ?GeoPoint
     {
         return $this->geo;
     }
 
-    /**
-     * @param mixed $geo
-     * @return Place
-     */
-    public function setGeo($geo)
+    public function setGeo(GeoPoint $geo): self
     {
         $this->geo = $geo;
         return $this;

@@ -14,7 +14,7 @@ class FacetResultTest extends \PHPUnit_Framework_TestCase
         $field = 'facet result field';
         $results = $this->getMockBuilder('\FacetResultItem')
             ->getMock();
-        $this->facetResult = new FacetResult($field, $results);
+        $this->facetResult = new FacetResult($field, [$results]);
     }
 
     public function testGetFieldMethod()
@@ -29,9 +29,9 @@ class FacetResultTest extends \PHPUnit_Framework_TestCase
     {
         $newResults = $this->getMockBuilder('\FacetResultItem')
             ->getMock();
-        $this->facetResult->setResults($newResults);
+        $this->facetResult->setResults([$newResults]);
 
         $result = $this->facetResult->getResults();
-        $this->assertEquals($newResults, $result);
+        $this->assertEquals([$newResults], $result);
     }
 }

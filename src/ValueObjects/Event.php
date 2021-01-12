@@ -8,19 +8,19 @@ use JMS\Serializer\Annotation\SerializedName;
 class Event extends Offer
 {
     /**
-     * @var Place
+     * @var Place|null
      * @Type("CultuurNet\SearchV3\ValueObjects\Place")
      */
     protected $location;
 
     /**
-     * @var PriceInfo
+     * @var PriceInfo|null
      * @Type("array<CultuurNet\SearchV3\ValueObjects\PriceInfo>")
      */
     protected $priceInfo;
 
     /**
-     * @var BookingInfo
+     * @var BookingInfo|null
      * @Type("CultuurNet\SearchV3\ValueObjects\BookingInfo")
      */
     protected $bookingInfo;
@@ -31,75 +31,47 @@ class Event extends Offer
      * @Type("array<CultuurNet\SearchV3\ValueObjects\Event>")
      * @SerializedName("subEvent")
      */
-    protected $subEvents;
+    protected $subEvents = [];
 
-    /**
-     * @return Place
-     */
-    public function getLocation()
+    public function getLocation(): ?Place
     {
         return $this->location;
     }
 
-    /**
-     * @param Place $location
-     * @return Event
-     */
-    public function setLocation($location)
+    public function setLocation(Place $location): self
     {
         $this->location = $location;
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getSubEvents()
+    public function getSubEvents(): array
     {
         return $this->subEvents;
     }
 
-    /**
-     * @param mixed $subEvents
-     * @return Event
-     */
-    public function setSubEvents($subEvents)
+    public function setSubEvents(array $subEvents): self
     {
         $this->subEvents = $subEvents;
         return $this;
     }
 
-    /**
-     * @return PriceInfo
-     */
-    public function getPriceInfo()
+    public function getPriceInfo(): ?PriceInfo
     {
         return $this->priceInfo;
     }
 
-    /**
-     * @param mixed $priceInfo
-     * @return Offer
-     */
-    public function setPriceInfo($priceInfo)
+    public function setPriceInfo(PriceInfo $priceInfo): self
     {
         $this->priceInfo = $priceInfo;
         return $this;
     }
 
-    /**
-     * @return BookingInfo
-     */
-    public function getBookingInfo()
+    public function getBookingInfo(): ?BookingInfo
     {
         return $this->bookingInfo;
     }
 
-    /**
-     * @param BookingInfo $bookingInfo
-     * @return Offer
-     */
-    public function setBookingInfo($bookingInfo)
+    public function setBookingInfo(BookingInfo $bookingInfo): self
     {
         $this->bookingInfo = $bookingInfo;
         return $this;

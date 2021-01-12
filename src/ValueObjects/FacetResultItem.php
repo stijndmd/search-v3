@@ -40,86 +40,51 @@ class FacetResultItem
      */
     protected $children;
 
-    /**
-     * @return string
-     */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->value;
     }
 
-    /**
-     * @param string $value
-     * @return FacetResultItem
-     */
-    public function setValue($value)
+    public function setValue(string $value): self
     {
         $this->value = $value;
         return $this;
     }
 
-    /**
-     * @return TranslatedString
-     */
-    public function getName()
+    public function getName(): TranslatedString
     {
         return $this->name;
     }
 
-    /**
-     * @param TranslatedString $names
-     * @return FacetResultItem
-     */
-    public function setName($name)
+    public function setName(TranslatedString $name): self
     {
         $this->name = $name;
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getCount()
+    public function getCount(): int
     {
         return $this->count;
     }
 
-    /**
-     * @param int $count
-     * @return FacetResultItem
-     */
-    public function setCount($count)
+    public function setCount(int $count): self
     {
         $this->count = $count;
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getChildren()
+    public function getChildren(): array
     {
         return $this->children;
     }
 
-    /**
-     * @param array $children
-     * @return FacetResultItem
-     */
-    public function setChildren($children)
+    public function setChildren(array $children): self
     {
         $this->children = $children;
         return $this;
     }
 
-    /**
-     * FacetResultItem constructor.
-     * @param $value
-     * @param TranslatedString $names
-     * @param $count
-     * @param $children
-     */
-    public function __construct($value, TranslatedString $name, $count, $children)
+    public function __construct(string $value, TranslatedString $name, int $count, array $children = [])
     {
         $this->value = $value;
         $this->name = $name;

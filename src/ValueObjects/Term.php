@@ -7,72 +7,51 @@ use JMS\Serializer\Annotation\Type;
 class Term
 {
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $id;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $label;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      */
     protected $domain;
 
-    /**
-     * @return string
-     */
-    public function getId()
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     * @return Term
-     */
-    public function setId($id)
+    public function setId(string $id): self
     {
         $this->id = $id;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLabel()
+    public function getLabel(): ?string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     * @return Term
-     */
-    public function setLabel($label)
+    public function setLabel(string $label): self
     {
         $this->label = $label;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomain()
+    public function getDomain(): ?string
     {
         return $this->domain;
     }
 
-    /**
-     * @param string $domain
-     * @return Term
-     */
-    public function setDomain($domain)
+    public function setDomain(string $domain): self
     {
         $this->domain = $domain;
         return $this;

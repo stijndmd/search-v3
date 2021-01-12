@@ -11,53 +11,41 @@ class FacetResult
     protected $field;
 
     /**
-     * All results for this facet.
      * @var FacetResultItem[]
      */
-    protected $results;
+    protected $results = [];
 
-    /**
-     * @return string
-     */
-    public function getField()
+    public function getField(): string
     {
         return $this->field;
     }
 
-    /**
-     * @param string $field
-     * @return FacetResult
-     */
-    public function setField($field)
+    public function setField(string $field): self
     {
         $this->field = $field;
         return $this;
     }
 
-    /**
-     * @return FacetResultItem[]
-     */
-    public function getResults()
+    public function getResults(): array
     {
         return $this->results;
     }
 
     /**
      * @param FacetResultItem[] $results
-     * @return FacetResult
+     * @return self
      */
-    public function setResults($results)
+    public function setResults(array $results): self
     {
         $this->results = $results;
         return $this;
     }
 
     /**
-     * FacetResult constructor.
-     * @param $field
-     * @param $results
+     * @param string $field
+     * @param FacetResultItem[] $results
      */
-    public function __construct($field, $results)
+    public function __construct(string $field, array $results)
     {
         $this->field = $field;
         $this->results = $results;

@@ -258,9 +258,9 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
     public function testGetOpeningHoursMethod()
     {
         $mockOpeningHour = new OpeningHours();
-        $this->place->setOpeningHours($mockOpeningHour);
+        $this->place->setOpeningHours([$mockOpeningHour]);
 
         $result = $this->place->getOpeningHours();
-        $this->assertEquals($mockOpeningHour, $result);
+        $this->assertEquals([$mockOpeningHour], $result);
     }
 }
