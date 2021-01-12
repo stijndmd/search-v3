@@ -3,6 +3,7 @@
 namespace CultuurNet\SearchV3\Parameter;
 
 use InvalidArgumentException;
+use ReflectionClass;
 
 final class Languages extends AbstractParameter
 {
@@ -28,7 +29,7 @@ final class Languages extends AbstractParameter
 
     private static function getConstants(): array
     {
-        $oClass = new \ReflectionClass(__CLASS__);
+        $oClass = new ReflectionClass(__CLASS__);
         return $oClass->getConstants();
     }
 }
