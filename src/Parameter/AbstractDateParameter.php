@@ -4,9 +4,6 @@ namespace CultuurNet\SearchV3\Parameter;
 
 abstract class AbstractDateParameter extends AbstractParameter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValue()
     {
         if ($this->value instanceof \DateTime) {

@@ -50,41 +50,26 @@ class FacetResults implements \Iterator
         return $results;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function current()
     {
         return current($this->facetResults);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function next()
     {
         return next($this->facetResults);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function key()
     {
         return key($this->facetResults);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function valid()
     {
         return key($this->facetResults) !== null;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function rewind()
     {
         return reset($this->facetResults);

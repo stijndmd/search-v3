@@ -53,17 +53,11 @@ class SearchQuery implements SearchQueryInterface
         $this->embed = $embed;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function addParameter(ParameterInterface $parameter)
     {
         $this->parameters[] = $parameter;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function removeParameter(ParameterInterface $parameter)
     {
         foreach ($this->parameters as $i => $param) {
@@ -73,25 +67,16 @@ class SearchQuery implements SearchQueryInterface
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getParameters()
     {
         return $this->parameters;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function addSort(string $field, string $direction)
     {
         $this->sorting[$field] = $direction;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function removeSort(string $field)
     {
         unset($this->sorting[$field]);
@@ -106,33 +91,21 @@ class SearchQuery implements SearchQueryInterface
         $this->embed = true;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getSort()
     {
         return $this->sorting;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function setStart(int $start)
     {
         $this->start = $start;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function setLimit(int $limit)
     {
         $this->limit = $limit;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toArray()
     {
 

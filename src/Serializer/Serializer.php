@@ -42,17 +42,11 @@ class Serializer implements SerializerInterface
 
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function setSerializer(\JMS\Serializer\SerializerInterface $serializer)
     {
         $this->serializer = $serializer;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function serialize($object)
     {
         $serializationContext = SerializationContext::create()
@@ -64,9 +58,6 @@ class Serializer implements SerializerInterface
         return $this->serializer->serialize($object, 'json', $serializationContext);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function deserialize(string $jsonString, $class = PagedCollection::class)
     {
         $deserializationContext = DeserializationContext::create()

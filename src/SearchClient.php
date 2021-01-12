@@ -31,49 +31,31 @@ class SearchClient implements SearchClientInterface
         $this->serializer = $serializer;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function setClient(ClientInterface $client)
     {
         $this->client = $client;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getClient()
     {
         return $this->client;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function searchEvents(SearchQueryInterface $searchQuery)
     {
         return $this->search($searchQuery, 'events');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function searchPlaces(SearchQueryInterface $searchQuery)
     {
         return $this->search($searchQuery, 'places');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function searchOffers(SearchQueryInterface $searchQuery)
     {
         return $this->search($searchQuery, 'offers');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function search(SearchQueryInterface $searchQuery, $type)
     {
 
