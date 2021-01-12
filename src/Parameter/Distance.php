@@ -4,15 +4,15 @@ namespace CultuurNet\SearchV3\Parameter;
 
 final class Distance extends AbstractParameter
 {
-    const UNIT_MILE = 'mi';
-    const UNIT_YARD = 'yd';
-    const UNIT_FEET = 'ft';
-    const UNIT_INCH = 'in';
-    const UNIT_KILOMETER = 'km';
-    const UNIT_METER = 'm';
-    const UNIT_CENTIMETER = 'cm';
-    const UNIT_MILLIMETER = 'mm';
-    const UNIT_NAUTICAL_MILE = 'nmi';
+    public const UNIT_MILE = 'mi';
+    public const UNIT_YARD = 'yd';
+    public const UNIT_FEET = 'ft';
+    public const UNIT_INCH = 'in';
+    public const UNIT_KILOMETER = 'km';
+    public const UNIT_METER = 'm';
+    public const UNIT_CENTIMETER = 'cm';
+    public const UNIT_MILLIMETER = 'mm';
+    public const UNIT_NAUTICAL_MILE = 'nmi';
 
     public function __construct(int $distance, string $unit)
     {

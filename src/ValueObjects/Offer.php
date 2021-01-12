@@ -8,10 +8,10 @@ use JMS\Serializer\Annotation\Type;
 
 abstract class Offer
 {
-    const CALENDAR_TYPE_MULTIPLE = 'multiple';
-    const CALENDAR_TYPE_SINGLE = 'single';
-    const CALENDAR_TYPE_PERIODIC = 'periodic';
-    const CALENDAR_TYPE_PERMANENT = 'permanent';
+    public const CALENDAR_TYPE_MULTIPLE = 'multiple';
+    public const CALENDAR_TYPE_SINGLE = 'single';
+    public const CALENDAR_TYPE_PERIODIC = 'periodic';
+    public const CALENDAR_TYPE_PERMANENT = 'permanent';
 
     /**
      * @var string|null

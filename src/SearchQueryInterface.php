@@ -7,8 +7,8 @@ interface SearchQueryInterface
     /**
     * Sorting options.
     */
-    const SORT_DIRECTION_ASC = 'asc';
-    const SORT_DIRECTION_DESC = 'desc';
+    public const SORT_DIRECTION_ASC = 'asc';
+    public const SORT_DIRECTION_DESC = 'desc';
 
     public function addParameter(ParameterInterface $parameter): void;
 

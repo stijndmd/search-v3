@@ -4,10 +4,10 @@ namespace CultuurNet\SearchV3\Parameter;
 
 final class Languages extends AbstractParameter
 {
-    const LANG_NL = 'nl';
-    const LANG_FR = 'fr';
-    const LANG_DE = 'de';
-    const LANG_EN = 'en';
+    public const LANG_NL = 'nl';
+    public const LANG_FR = 'fr';
+    public const LANG_DE = 'de';
+    public const LANG_EN = 'en';
 
     public function __construct(string $language)
     {

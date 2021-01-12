@@ -4,9 +4,9 @@ namespace CultuurNet\SearchV3\Parameter;
 
 final class AudienceType extends AbstractParameter
 {
-    const AUDIENCE_EVERYONE = 'everyone';
-    const AUDIENCE_MEMBERS = 'members';
-    const AUDIENCE_EDUCATION = 'education';
+    public const AUDIENCE_EVERYONE = 'everyone';
+    public const AUDIENCE_MEMBERS = 'members';
+    public const AUDIENCE_EDUCATION = 'education';
 
     public function __construct(string $audienceType)
     {
