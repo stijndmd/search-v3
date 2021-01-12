@@ -16,7 +16,7 @@ final class Distance extends AbstractParameter
 
     public function __construct(int $distance, string $unit)
     {
-        if (in_array($unit, self::getConstants())) {
+        if (in_array($unit, self::getConstants(), true)) {
             $this->value = $distance . $unit;
             $this->key = 'distance';
         } else {

@@ -444,7 +444,7 @@ abstract class Offer
     {
         $filteredTerms = [];
         foreach ($this->terms as $term) {
-            if ($term->getDomain() == $domain) {
+            if ($term->getDomain() === $domain) {
                 $filteredTerms[] = $term;
             }
         }

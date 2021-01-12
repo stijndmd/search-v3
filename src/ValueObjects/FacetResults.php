@@ -40,7 +40,7 @@ final class FacetResults implements \Iterator
     {
         $results = [];
         foreach ($this->facetResults as $facetResult) {
-            if ($facetResult->getField() == $field) {
+            if ($facetResult->getField() === $field) {
                 $results[] = $facetResult;
             }
         }

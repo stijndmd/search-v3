@@ -11,7 +11,7 @@ final class Languages extends AbstractParameter
 
     public function __construct(string $language)
     {
-        if (in_array($language, self::getConstants())) {
+        if (in_array($language, self::getConstants(), true)) {
             $this->value = $language;
             $this->key = 'languages';
         } else {
