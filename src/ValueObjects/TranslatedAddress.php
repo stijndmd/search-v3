@@ -34,12 +34,6 @@ class TranslatedAddress
      * Get the address for a given langcode.
      *
      * @param string $langcode
-     */
-
-    /**
-     * Get the address for a given langcode.
-     *
-     * @param string $langcode
      *   The langcode to retrieve the address for.
      * @return Address|null
      *   The retrieved address or null if it's not available.
