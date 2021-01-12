@@ -1,10 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
-
-use CultuurNet\SearchV3\ValueObjects\ContactPoint;
-use CultuurNet\SearchV3\ValueObjects\Organizer;
-use CultuurNet\SearchV3\ValueObjects\TranslatedString;
+namespace CultuurNet\SearchV3\ValueObjects;
 
 class OrganizerTest extends \PHPUnit_Framework_TestCase
 {

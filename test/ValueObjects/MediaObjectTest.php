@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
-
-use CultuurNet\SearchV3\ValueObjects\MediaObject;
+namespace CultuurNet\SearchV3\ValueObjects;
 
 class MediaObjectTest extends \PHPUnit_Framework_TestCase
 {

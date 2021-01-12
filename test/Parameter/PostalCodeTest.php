@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\PostalCode;
+namespace CultuurNet\SearchV3\Parameter;
 
 class PostalCodeTest extends \PHPUnit_Framework_TestCase
 {

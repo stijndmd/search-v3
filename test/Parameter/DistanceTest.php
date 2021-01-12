@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\Distance;
+namespace CultuurNet\SearchV3\Parameter;
 
 class DistanceTest extends \PHPUnit_Framework_TestCase
 {

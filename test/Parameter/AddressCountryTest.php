@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\AddressCountry;
+namespace CultuurNet\SearchV3\Parameter;
 
 class AddressCountryTest extends \PHPUnit_Framework_TestCase
 {

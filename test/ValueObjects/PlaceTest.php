@@ -1,17 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
-
-use CultuurNet\SearchV3\ValueObjects\Address;
-use CultuurNet\SearchV3\ValueObjects\ContactPoint;
-use CultuurNet\SearchV3\ValueObjects\GeoPoint;
-use CultuurNet\SearchV3\ValueObjects\MediaObject;
-use CultuurNet\SearchV3\ValueObjects\OpeningHours;
-use CultuurNet\SearchV3\ValueObjects\Organizer;
-use CultuurNet\SearchV3\ValueObjects\Performer;
-use CultuurNet\SearchV3\ValueObjects\Place;
-use CultuurNet\SearchV3\ValueObjects\Term;
-use CultuurNet\SearchV3\ValueObjects\TranslatedString;
+namespace CultuurNet\SearchV3\ValueObjects;
 
 class PlaceTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\MinAge;
+namespace CultuurNet\SearchV3\Parameter;
 
 class MinAgeTest extends \PHPUnit_Framework_TestCase
 {

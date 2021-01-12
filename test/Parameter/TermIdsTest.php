@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\TermIds;
+namespace CultuurNet\SearchV3\Parameter;
 
 class TermIdsTest extends \PHPUnit_Framework_TestCase
 {

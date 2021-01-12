@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\CalendarType;
+namespace CultuurNet\SearchV3\Parameter;
 
 class CalendarTypeTest extends \PHPUnit_Framework_TestCase
 {

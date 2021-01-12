@@ -1,10 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
-
-use CultuurNet\SearchV3\ValueObjects\PagedCollection;
-use CultuurNet\SearchV3\ValueObjects\Collection;
-use CultuurNet\SearchV3\ValueObjects\FacetResults;
+namespace CultuurNet\SearchV3\ValueObjects;
 
 class PagedCollectionTest extends \PHPUnit_Framework_TestCase
 {

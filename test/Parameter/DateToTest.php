@@ -1,8 +1,7 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\DateTo;
 use DateTime;
 
 class DateToTest extends \PHPUnit_Framework_TestCase

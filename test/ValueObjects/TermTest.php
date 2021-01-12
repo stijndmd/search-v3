@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
-
-use CultuurNet\SearchV3\ValueObjects\Term;
+namespace CultuurNet\SearchV3\ValueObjects;
 
 class TermTest extends \PHPUnit_Framework_TestCase
 {

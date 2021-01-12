@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\Coordinates;
+namespace CultuurNet\SearchV3\Parameter;
 
 class CoordinatesTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,9 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
-
-use CultuurNet\SearchV3\ValueObjects\BookingInfo;
-use CultuurNet\SearchV3\ValueObjects\TranslatedString;
+namespace CultuurNet\SearchV3\ValueObjects;
 
 class BookingInfoTest extends \PHPUnit_Framework_TestCase
 {

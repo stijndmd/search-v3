@@ -1,8 +1,7 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\Serializer;
+namespace CultuurNet\SearchV3\Serializer;
 
-use CultuurNet\SearchV3\Serializer\Serializer;
 use CultuurNet\SearchV3\ValueObjects\Address;
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use JMS\Serializer\SerializerInterface;

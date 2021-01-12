@@ -1,10 +1,8 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test;
+namespace CultuurNet\SearchV3;
 
 use CultuurNet\SearchV3\Serializer\SerializerInterface;
-use CultuurNet\SearchV3\SearchQueryInterface;
-use CultuurNet\SearchV3\SearchClient;
 use Guzzle\Http\Message\Response;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;

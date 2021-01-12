@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\MaxPrice;
+namespace CultuurNet\SearchV3\Parameter;
 
 class MaxPriceTest extends \PHPUnit_Framework_TestCase
 {

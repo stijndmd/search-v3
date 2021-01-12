@@ -1,11 +1,10 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test;
+namespace CultuurNet\SearchV3;
 
 use CultuurNet\SearchV3\Parameter\Facet;
 use CultuurNet\SearchV3\Parameter\Id;
 use CultuurNet\SearchV3\Parameter\Label;
-use CultuurNet\SearchV3\SearchQuery;
 
 class SearchQueryTest extends \PHPUnit_Framework_TestCase
 {

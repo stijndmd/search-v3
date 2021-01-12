@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\AudienceType;
+namespace CultuurNet\SearchV3\Parameter;
 
 class AudienceTypeTest extends \PHPUnit_Framework_TestCase
 {

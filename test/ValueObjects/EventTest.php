@@ -1,12 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
-
-use CultuurNet\SearchV3\ValueObjects\BookingInfo;
-use CultuurNet\SearchV3\ValueObjects\Event;
-use CultuurNet\SearchV3\ValueObjects\Place;
-use CultuurNet\SearchV3\ValueObjects\PriceInfo;
-use CultuurNet\SearchV3\ValueObjects\TranslatedString;
+namespace CultuurNet\SearchV3\ValueObjects;
 
 class EventTest extends \PHPUnit_Framework_TestCase
 {

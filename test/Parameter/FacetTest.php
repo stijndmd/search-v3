@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\Facet;
+namespace CultuurNet\SearchV3\Parameter;
 
 class FacetTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,8 +1,6 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
-
-use CultuurNet\SearchV3\Parameter\MinPrice;
+namespace CultuurNet\SearchV3\Parameter;
 
 class MinPriceTest extends \PHPUnit_Framework_TestCase
 {
