@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class Regions extends AbstractParameter
 {
-    /**
-     * Regions constructor.
-     * @param $region string
-     */
     public function __construct(string $region)
     {
         $this->value = $region;

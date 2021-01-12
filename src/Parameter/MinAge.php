@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class MinAge extends AbstractParameter
 {
-    /**
-     * MinAge constructor.
-     * @param $value
-     */
     public function __construct(int $value)
     {
         $this->value = $value;

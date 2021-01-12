@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class Uitpas extends AbstractParameter
 {
-    /**
-     * Uitpas constructor.
-     * @param $uitpas boolean
-     */
     public function __construct(bool $uitpas)
     {
         $this->value = $uitpas;

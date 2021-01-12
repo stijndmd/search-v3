@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class OrganizerId extends AbstractParameter
 {
-    /**
-     * locationId constructor.
-     * @param $organizerId
-     */
     public function __construct(string $organizerId)
     {
         $this->value = $organizerId;

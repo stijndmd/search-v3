@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class MinPrice extends AbstractParameter
 {
-    /**
-     * MinPrice constructor.
-     * @param $minPrice float
-     */
     public function __construct(float $minPrice)
     {
         $this->value = $minPrice;

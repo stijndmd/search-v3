@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class AddressCountry extends AbstractParameter
 {
-    /**
-     * AddressCountry constructor.
-     * @param $addressCountry
-     */
     public function __construct(string $addressCountry)
     {
         $this->value = $addressCountry;

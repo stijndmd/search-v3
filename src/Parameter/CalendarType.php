@@ -12,10 +12,6 @@ class CalendarType extends AbstractParameter
     const TYPE_PERIODIC = 'periodic';
     const TYPE_PERMANENT = 'permanent';
 
-    /**
-     * Calendar type constructor.
-     * @param $type
-     */
     public function __construct(string $type)
     {
         $this->value = $type;

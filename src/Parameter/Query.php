@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class Query extends AbstractParameter
 {
-    /**
-     * Query constructor.
-     * @param $value
-     */
     public function __construct(string $value)
     {
         $this->value = $value;

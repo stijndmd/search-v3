@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class Price extends AbstractParameter
 {
-    /**
-     * Price constructor.
-     * @param $price float
-     */
     public function __construct(float $price)
     {
         $this->value = $price;

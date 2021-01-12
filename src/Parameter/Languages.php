@@ -12,12 +12,6 @@ class Languages extends AbstractParameter
     const LANG_DE = 'de';
     const LANG_EN = 'en';
 
-    /**
-     * Languages constructor.
-     * @param $language
-     *
-     * @throws \Exception when language is not one of the constants.
-     */
     public function __construct(string $language)
     {
         if (in_array($language, self::getConstants())) {

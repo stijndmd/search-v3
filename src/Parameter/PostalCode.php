@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class PostalCode extends AbstractParameter
 {
-    /**
-     * PostalCode constructor.
-     * @param $postalCode
-     */
     public function __construct(string $postalCode)
     {
         $this->value = $postalCode;

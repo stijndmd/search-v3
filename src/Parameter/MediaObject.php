@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class MediaObject extends AbstractParameter
 {
-    /**
-     * Id constructor.
-     * @param $hasMediaObject boolean
-     */
     public function __construct(bool $hasMediaObject)
     {
         $this->value = $hasMediaObject;

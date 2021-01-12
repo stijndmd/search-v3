@@ -17,13 +17,6 @@ class Distance extends AbstractParameter
     const UNIT_MILLIMETER = 'mm';
     const UNIT_NAUTICAL_MILE = 'nmi';
 
-    /**
-     * Distance constructor.
-     * @param $distance integer
-     * @param $unit
-     *
-     * @throws \Exception when the unit is not a constant of the class.
-     */
     public function __construct(int $distance, string $unit)
     {
         if (in_array($unit, self::getConstants())) {

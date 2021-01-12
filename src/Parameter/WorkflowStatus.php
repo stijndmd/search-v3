@@ -13,10 +13,6 @@ class WorkflowStatus extends AbstractParameter
     const STATUS_REJECTED = 'REJECTED';
     const STATUS_DELETED = 'DELETED';
 
-    /**
-     * workflowStatus constructor.
-     * @param $workflowStatus
-     */
     public function __construct(string $workflowStatus)
     {
         $this->value = $workflowStatus;

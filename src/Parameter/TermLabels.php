@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class TermLabels extends AbstractParameter
 {
-    /**
-     * TermLabels constructor.
-     * @param $termLabel string
-     */
     public function __construct(string $termLabel)
     {
         $this->value = $termLabel;

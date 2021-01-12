@@ -11,10 +11,6 @@ class AudienceType extends AbstractParameter
     const AUDIENCE_MEMBERS = 'members';
     const AUDIENCE_EDUCATION = 'education';
 
-    /**
-     * AudienceType constructor.
-     * @param $audienceType
-     */
     public function __construct(string $audienceType)
     {
         $this->value = $audienceType;

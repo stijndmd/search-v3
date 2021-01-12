@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class LocationId extends AbstractParameter
 {
-    /**
-     * locationId constructor.
-     * @param $locationId
-     */
     public function __construct(string $locationId)
     {
         $this->value = $locationId;

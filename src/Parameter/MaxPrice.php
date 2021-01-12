@@ -7,10 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class MaxPrice extends AbstractParameter
 {
-    /**
-     * MaxPrice constructor.
-     * @param $maxPrice float
-     */
     public function __construct(float $maxPrice)
     {
         $this->value = $maxPrice;
