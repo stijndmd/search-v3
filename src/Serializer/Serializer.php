@@ -21,9 +21,6 @@ class Serializer implements SerializerInterface
      */
     private $serializer;
 
-    /**
-     * Serializer constructor.
-     */
     public function __construct()
     {
         $this->serializer = SerializerBuilder::create()
