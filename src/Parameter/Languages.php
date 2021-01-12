@@ -2,6 +2,8 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
+use InvalidArgumentException;
+
 final class Languages extends AbstractParameter
 {
     public const LANG_NL = 'nl';
@@ -15,7 +17,7 @@ final class Languages extends AbstractParameter
             $this->value = $language;
             $this->key = 'languages';
         } else {
-            throw new \Exception('Invalid language parameter for '.__CLASS__.' constructor');
+            throw new InvalidArgumentException('Invalid language parameter for '.__CLASS__.' constructor');
         }
     }
 
