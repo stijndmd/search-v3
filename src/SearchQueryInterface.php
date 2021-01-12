@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3;
  */
 interface SearchQueryInterface
 {
-
     /**
     * Sorting options.
     */

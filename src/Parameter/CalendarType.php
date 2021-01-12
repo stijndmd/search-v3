@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class CalendarType extends AbstractParameter
 {
-
     const TYPE_SINGLE = 'single';
     const TYPE_MULTIPLE = 'multiple';
     const TYPE_PERIODIC = 'periodic';

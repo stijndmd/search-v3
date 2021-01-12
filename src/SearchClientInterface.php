@@ -10,7 +10,6 @@ use GuzzleHttp\ClientInterface;
  */
 interface SearchClientInterface
 {
-
     /**
      * Set the guzzle client.
      *

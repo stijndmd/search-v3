@@ -9,7 +9,6 @@ use JMS\Serializer\Annotation\HandlerCallback;
 
 class Collection
 {
-
     protected $contextMapping = [
         '/contexts/event' => Event::class,
         '/contexts/place' => Place::class,
@@ -32,7 +31,6 @@ class Collection
     public function setItems($items)
     {
         $this->items = $items;
-
         return $this;
     }
 

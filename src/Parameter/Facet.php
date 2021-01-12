@@ -4,7 +4,6 @@ namespace CultuurNet\SearchV3\Parameter;
 
 class Facet extends AbstractParameter
 {
-
     /**
      * Facet constructor.
      * @param $facetType

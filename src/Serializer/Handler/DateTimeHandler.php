@@ -19,7 +19,6 @@ class DateTimeHandler extends DateHandler
    */
     public function deserializeDateTimeFromJson(JsonDeserializationVisitor $visitor, $data, array $type)
     {
-
         if ((string)$data === '') {
             return null;
         }

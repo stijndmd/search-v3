@@ -10,7 +10,6 @@ use JMS\Serializer\Annotation\SerializedName;
  */
 class ContactPoint
 {
-
     /**
      * @var array
      * @Type("array<string>")

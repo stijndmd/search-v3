@@ -11,7 +11,6 @@ use JMS\Serializer\Annotation\HandlerCallback;
  */
 class TranslatedString
 {
-
     /**
      * Translations
      *

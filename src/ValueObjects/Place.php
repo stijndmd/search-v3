@@ -6,7 +6,6 @@ use JMS\Serializer\Annotation\Type;
 
 class Place extends Offer
 {
-
     /**
      * @var Address
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedAddress")
@@ -33,7 +32,6 @@ class Place extends Offer
     public function setAddress($address)
     {
         $this->address = $address;
-
         return $this;
     }
 

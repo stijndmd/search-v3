@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class WorkflowStatus extends AbstractParameter
 {
-
     const STATUS_DRAFT = 'DRAFT';
     const STATUS_READY_FOR_VALIDATION = 'READY_FOR_VALIDATION';
     const STATUS_APPROVED = 'APPROVED';

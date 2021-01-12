@@ -4,7 +4,6 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 class FacetResult
 {
-
     /**
      * Field where facets are based on.
      * @var string
@@ -32,7 +31,6 @@ class FacetResult
     public function setField($field)
     {
         $this->field = $field;
-
         return $this;
     }
 
@@ -51,7 +49,6 @@ class FacetResult
     public function setResults($results)
     {
         $this->results = $results;
-
         return $this;
     }
 

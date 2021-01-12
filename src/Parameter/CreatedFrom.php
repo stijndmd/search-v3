@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class CreatedFrom extends AbstractDateParameter
 {
-
     /**
      * CreatedFrom constructor.
      * @param \DateTime|string $createdFrom

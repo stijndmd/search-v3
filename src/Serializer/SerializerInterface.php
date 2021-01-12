@@ -9,7 +9,6 @@ use CultuurNet\SearchV3\ValueObjects\PagedCollection;
  */
 interface SerializerInterface
 {
-
     /**
      * Set the JMS serializer.
      */

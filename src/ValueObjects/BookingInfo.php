@@ -9,7 +9,6 @@ use JMS\Serializer\Annotation\Type;
  */
 class BookingInfo
 {
-
     /**
      * @var string
      * @Type("string")

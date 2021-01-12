@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class Creator extends AbstractParameter
 {
-
     /**
      * Creator constructor.
      * @param $creator

@@ -6,7 +6,6 @@ use JMS\Serializer\Annotation\Type;
 
 class Term
 {
-
     /**
      * @var string
      * @Type("string")
@@ -40,7 +39,6 @@ class Term
     public function setId($id)
     {
         $this->id = $id;
-
         return $this;
     }
 
@@ -59,7 +57,6 @@ class Term
     public function setLabel($label)
     {
         $this->label = $label;
-
         return $this;
     }
 
@@ -78,7 +75,6 @@ class Term
     public function setDomain($domain)
     {
         $this->domain = $domain;
-
         return $this;
     }
 }

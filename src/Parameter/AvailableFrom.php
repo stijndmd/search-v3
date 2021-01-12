@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class AvailableFrom extends AbstractDateParameter
 {
-
     /**
      * AvailableFrom constructor.
      * @param \DateTime|string $availableFrom

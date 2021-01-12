@@ -4,7 +4,6 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 class Address
 {
-
     /**
      * @var string
      */
@@ -44,7 +43,6 @@ class Address
         $this->streetAddress = $streetAddress;
     }
 
-
     /**
      * @return string
      */
@@ -60,7 +58,6 @@ class Address
     public function setAddressCountry($addressCountry)
     {
         $this->addressCountry = $addressCountry;
-
         return $this;
     }
 
@@ -79,7 +76,6 @@ class Address
     public function setAddressLocality($addressLocality)
     {
         $this->addressLocality = $addressLocality;
-
         return $this;
     }
 
@@ -98,7 +94,6 @@ class Address
     public function setPostalCode($postalCode)
     {
         $this->postalCode = $postalCode;
-
         return $this;
     }
 
@@ -117,7 +112,6 @@ class Address
     public function setStreetAddress($streetAddress)
     {
         $this->streetAddress = $streetAddress;
-
         return $this;
     }
 }

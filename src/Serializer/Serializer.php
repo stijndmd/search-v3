@@ -19,7 +19,6 @@ use SimpleBus\JMSSerializerBridge\SerializerMetadata;
  */
 class Serializer implements SerializerInterface
 {
-
     /**
      * @var SerializerInterface
      */
@@ -30,7 +29,6 @@ class Serializer implements SerializerInterface
      */
     public function __construct()
     {
-
         $this->serializer = SerializerBuilder::create()
             ->addMetadataDir(SerializerMetadata::directory(), SerializerMetadata::namespacePrefix())
             ->setAnnotationReader(new AnnotationReader())

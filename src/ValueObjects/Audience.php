@@ -7,7 +7,6 @@ use JMS\Serializer\Annotation\SerializedName;
 
 class Audience
 {
-
     /**
      * @var string
      * @Type("string")
@@ -19,7 +18,6 @@ class Audience
     ) {
         $this->audienceType = $audienceType;
     }
-
 
     /**
      * @return string
@@ -36,7 +34,6 @@ class Audience
     public function setAudienceType($audienceType)
     {
         $this->audienceType = $audienceType;
-
         return $this;
     }
 }

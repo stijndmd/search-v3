@@ -10,7 +10,6 @@ use GuzzleHttp\ClientInterface;
  */
 class SearchClient implements SearchClientInterface
 {
-
     /**
      * @var ClientInterface
      */
@@ -58,7 +57,6 @@ class SearchClient implements SearchClientInterface
 
     protected function search(SearchQueryInterface $searchQuery, $type)
     {
-
         $options = [
           'query' => $searchQuery->toArray()
         ];

@@ -7,7 +7,6 @@ use JMS\Serializer\Annotation\SerializedName;
 
 class Performer
 {
-
     /**
      * @var string
      * @Type("string")
@@ -26,7 +25,6 @@ class Performer
         $this->name = $name;
     }
 
-
     /**
      * @return string
      */
@@ -42,7 +40,6 @@ class Performer
     public function setName($name)
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -61,7 +58,6 @@ class Performer
     public function setRole($role)
     {
         $this->role = $role;
-
         return $this;
     }
 }

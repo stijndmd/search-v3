@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class ModifiedTo extends AbstractDateParameter
 {
-
     /**
      * ModifiedTo constructor.
      * @param \DateTime|string $modifiedTo

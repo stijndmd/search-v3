@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class LocationId extends AbstractParameter
 {
-
     /**
      * locationId constructor.
      * @param $locationId

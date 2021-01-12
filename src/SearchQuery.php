@@ -14,7 +14,6 @@ use Guzzle\Service\Builder\ServiceBuilderInterface;
 
 class SearchQuery implements SearchQueryInterface
 {
-
     /**
      * @var ParameterInterface[]
      */
@@ -108,7 +107,6 @@ class SearchQuery implements SearchQueryInterface
 
     public function toArray()
     {
-
         $query = [];
         $duplicateKeys = [];
         foreach ($this->parameters as $parameter) {

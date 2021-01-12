@@ -5,10 +5,8 @@ namespace CultuurNet\SearchV3\Parameter;
 /**
  * Provides a parameters to search on addressCountry.
  */
-
 class AddressCountry extends AbstractParameter
 {
-
     /**
      * AddressCountry constructor.
      * @param $addressCountry

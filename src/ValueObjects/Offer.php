@@ -7,7 +7,6 @@ use JMS\Serializer\Annotation\SerializedName;
 
 abstract class Offer
 {
-
     const CALENDAR_TYPE_MULTIPLE = 'multiple';
     const CALENDAR_TYPE_SINGLE = 'single';
     const CALENDAR_TYPE_PERIODIC = 'periodic';
@@ -200,7 +199,6 @@ abstract class Offer
     public function setMainLanguage($mainLanguage)
     {
         $this->mainLanguage = $mainLanguage;
-
         return $this;
     }
 
@@ -219,7 +217,6 @@ abstract class Offer
     public function setName(TranslatedString $name)
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -238,7 +235,6 @@ abstract class Offer
     public function setDescription(TranslatedString $description)
     {
         $this->description = $description;
-
         return $this;
     }
 
@@ -275,7 +271,6 @@ abstract class Offer
     public function setCalendarSummary($calendarSummary)
     {
         $this->calendarSummary = $calendarSummary;
-
         return $this;
     }
 
@@ -294,7 +289,6 @@ abstract class Offer
     public function setCreator($creator)
     {
         $this->creator = $creator;
-
         return $this;
     }
 
@@ -313,7 +307,6 @@ abstract class Offer
     public function setCreated($created)
     {
         $this->created = $created;
-
         return $this;
     }
 
@@ -332,7 +325,6 @@ abstract class Offer
     public function setModified($modified)
     {
         $this->modified = $modified;
-
         return $this;
     }
 
@@ -351,7 +343,6 @@ abstract class Offer
     public function setWorkflowStatus($workflowStatus)
     {
         $this->workflowStatus = $workflowStatus;
-
         return $this;
     }
 
@@ -370,7 +361,6 @@ abstract class Offer
     public function setPublisher($publisher)
     {
         $this->publisher = $publisher;
-
         return $this;
     }
 
@@ -389,7 +379,6 @@ abstract class Offer
     public function setAudience($audience)
     {
         $this->audience = $audience;
-
         return $this;
     }
 
@@ -408,7 +397,6 @@ abstract class Offer
     public function setTypicalAgeRange($typicalAgeRange)
     {
         $this->typicalAgeRange = $typicalAgeRange;
-
         return $this;
     }
 
@@ -427,7 +415,6 @@ abstract class Offer
     public function setPerformers($performers)
     {
         $this->performers = $performers;
-
         return $this;
     }
 
@@ -446,7 +433,6 @@ abstract class Offer
     public function setImage($image)
     {
         $this->image = $image;
-
         return $this;
     }
 
@@ -465,7 +451,6 @@ abstract class Offer
     public function setMediaObjects($mediaObjects)
     {
         $this->mediaObjects = $mediaObjects;
-
         return $this;
     }
 
@@ -498,7 +483,6 @@ abstract class Offer
     public function setOrganizer($organizer)
     {
         $this->organizer = $organizer;
-
         return $this;
     }
 
@@ -517,7 +501,6 @@ abstract class Offer
     public function setLabels($labels)
     {
         $this->labels = $labels;
-
         return $this;
     }
 
@@ -554,7 +537,6 @@ abstract class Offer
     public function setStartDate($startDate)
     {
         $this->startDate = $startDate;
-
         return $this;
     }
 
@@ -573,7 +555,6 @@ abstract class Offer
     public function setEndDate($endDate)
     {
         $this->endDate = $endDate;
-
         return $this;
     }
 
@@ -609,7 +590,6 @@ abstract class Offer
     public function setTerms($terms)
     {
         $this->terms = $terms;
-
         return $this;
     }
 

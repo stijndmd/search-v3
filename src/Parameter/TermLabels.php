@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class TermLabels extends AbstractParameter
 {
-
     /**
      * TermLabels constructor.
      * @param $termLabel string

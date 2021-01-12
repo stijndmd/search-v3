@@ -7,7 +7,6 @@ use JMS\Serializer\Annotation\SerializedName;
 
 class Organizer
 {
-
     /**
      * @var string
      * @Type("string")
@@ -82,7 +81,6 @@ class Organizer
     public function setName(TranslatedString $name)
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -101,7 +99,6 @@ class Organizer
     public function setEmail($email)
     {
         $this->email = $email;
-
         return $this;
     }
 
@@ -138,7 +135,6 @@ class Organizer
     public function setHiddenLabels($hiddenLabels)
     {
         $this->hiddenLabels = $hiddenLabels;
-
         return $this;
     }
 }

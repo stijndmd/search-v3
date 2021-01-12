@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3;
  */
 interface ParameterInterface
 {
-
     /**
      * Get the key to use in the query string.
      */

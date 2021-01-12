@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class DateFrom extends AbstractDateParameter
 {
-
     /**
      * DateFrom constructor.
      * @param \DateTime|string $dateFrom

@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class Id extends AbstractParameter
 {
-
     /**
      * Id constructor.
      * @param $id

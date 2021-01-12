@@ -9,7 +9,6 @@ use JMS\Serializer\Annotation\Type;
  */
 class GeoPoint
 {
-
     /**
      * @var string
      * @Type("string")

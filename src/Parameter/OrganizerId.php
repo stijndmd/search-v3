@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class OrganizerId extends AbstractParameter
 {
-
     /**
      * locationId constructor.
      * @param $organizerId

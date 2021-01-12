@@ -6,7 +6,6 @@ use JMS\Serializer\Annotation\Type;
 
 class MediaObject
 {
-
     /**
      * @var string
      * @Type("string")
@@ -52,7 +51,6 @@ class MediaObject
     public function setId($id)
     {
         $this->id = $id;
-
         return $this;
     }
 
@@ -71,7 +69,6 @@ class MediaObject
     public function setContentUrl($contentUrl)
     {
         $this->contentUrl = $contentUrl;
-
         return $this;
     }
 
@@ -90,7 +87,6 @@ class MediaObject
     public function setThumbnailUrl($thumbnailUrl)
     {
         $this->thumbnailUrl = $thumbnailUrl;
-
         return $this;
     }
 
@@ -109,7 +105,6 @@ class MediaObject
     public function setDescription($description)
     {
         $this->description = $description;
-
         return $this;
     }
 
@@ -128,7 +123,6 @@ class MediaObject
     public function setCopyrightHolder($copyrightHolder)
     {
         $this->copyrightHolder = $copyrightHolder;
-
         return $this;
     }
 }

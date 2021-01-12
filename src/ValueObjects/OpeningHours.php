@@ -9,7 +9,6 @@ use JMS\Serializer\Annotation\Type;
  */
 class OpeningHours
 {
-
     /**
      * @var array
      * @Type("array<string>")

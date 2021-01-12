@@ -9,7 +9,6 @@ use CultuurNet\SearchV3\ParameterInterface;
  */
 abstract class AbstractParameter implements ParameterInterface
 {
-
     /**
      * The key to use in the query string
      * @var string

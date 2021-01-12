@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class Coordinates extends AbstractParameter
 {
-
     /**
      * Coordinates constructor.
      * @param $latitude string

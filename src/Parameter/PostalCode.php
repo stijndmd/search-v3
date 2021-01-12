@@ -5,10 +5,8 @@ namespace CultuurNet\SearchV3\Parameter;
 /**
  * Provides a parameters to search on postalCode.
  */
-
 class PostalCode extends AbstractParameter
 {
-
     /**
      * PostalCode constructor.
      * @param $postalCode

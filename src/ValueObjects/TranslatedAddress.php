@@ -8,7 +8,6 @@ use JMS\Serializer\JsonDeserializationVisitor;
 
 class TranslatedAddress
 {
-
     /**
      * @var array
      */

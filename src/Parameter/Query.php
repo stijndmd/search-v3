@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class Query extends AbstractParameter
 {
-
     /**
      * Query constructor.
      * @param $value

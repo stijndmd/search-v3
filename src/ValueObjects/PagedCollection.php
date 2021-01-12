@@ -15,7 +15,6 @@ use JMS\Serializer\Annotation\SerializedName;
  */
 class PagedCollection
 {
-
     /**
      * Total items per page
      * @var int
@@ -60,7 +59,6 @@ class PagedCollection
     public function setItemsPerPage($itemsPerPage)
     {
         $this->itemsPerPage = $itemsPerPage;
-
         return $this;
     }
 
@@ -79,7 +77,6 @@ class PagedCollection
     public function setTotalItems($totalItems)
     {
         $this->totalItems = $totalItems;
-
         return $this;
     }
 
@@ -98,7 +95,6 @@ class PagedCollection
     public function setMember($member)
     {
         $this->member = $member;
-
         return $this;
     }
 
@@ -117,7 +113,6 @@ class PagedCollection
     public function setFacets($facets)
     {
         $this->facets = $facets;
-
         return $this;
     }
 }

@@ -9,7 +9,6 @@ use JMS\Serializer\Annotation\HandlerCallback;
 
 class FacetResults implements \Iterator
 {
-
     protected $key;
 
     /**
@@ -32,7 +31,6 @@ class FacetResults implements \Iterator
     public function setFacetResults($facetResults)
     {
         $this->facetResults = $facetResults;
-
         return $this;
     }
 
@@ -95,7 +93,6 @@ class FacetResults implements \Iterator
             $children = isset($result['children']) ? $this->deserializeResults($result['children']) : [];
             $items[] = new FacetResultItem($value, new TranslatedString($result['name']), $result['count'], $children);
         }
-
         return $items;
     }
 }

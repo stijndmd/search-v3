@@ -12,7 +12,6 @@ use JMS\Serializer\TypeParser;
  */
 class FacetResultItem
 {
-
     /**
      * The value of the facet item.
      *
@@ -56,7 +55,6 @@ class FacetResultItem
     public function setValue($value)
     {
         $this->value = $value;
-
         return $this;
     }
 
@@ -75,7 +73,6 @@ class FacetResultItem
     public function setName($name)
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -94,7 +91,6 @@ class FacetResultItem
     public function setCount($count)
     {
         $this->count = $count;
-
         return $this;
     }
 
@@ -113,7 +109,6 @@ class FacetResultItem
     public function setChildren($children)
     {
         $this->children = $children;
-
         return $this;
     }
 

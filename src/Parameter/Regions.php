@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class Regions extends AbstractParameter
 {
-
     /**
      * Regions constructor.
      * @param $region string

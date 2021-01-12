@@ -7,7 +7,6 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class Uitpas extends AbstractParameter
 {
-
     /**
      * Uitpas constructor.
      * @param $uitpas boolean

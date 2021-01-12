@@ -7,7 +7,6 @@ use JMS\Serializer\Annotation\SerializedName;
 
 class Event extends Offer
 {
-
     /**
      * @var Place
      * @Type("CultuurNet\SearchV3\ValueObjects\Place")
@@ -34,7 +33,6 @@ class Event extends Offer
      */
     protected $subEvents;
 
-
     /**
      * @return Place
      */
@@ -50,7 +48,6 @@ class Event extends Offer
     public function setLocation($location)
     {
         $this->location = $location;
-
         return $this;
     }
 
