@@ -11,7 +11,7 @@ interface ParameterInterface
     /**
      * Get the key to use in the query string.
      */
-    public function getKey();
+    public function getKey(): string;
 
     /**
      * Get the value to use in the query string.
