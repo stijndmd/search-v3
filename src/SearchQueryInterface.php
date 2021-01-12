@@ -13,61 +13,23 @@ interface SearchQueryInterface
     const SORT_DIRECTION_ASC = 'asc';
     const SORT_DIRECTION_DESC = 'desc';
 
-    /**
-    * Add a parameter to the search query.
-    * @param ParameterInterface $parameter
-    */
-    public function addParameter(ParameterInterface $parameter);
+    public function addParameter(ParameterInterface $parameter): void;
 
-    /**
-     * Remove an existing parameter.
-     * @param ParameterInterface $parameter
-     */
-    public function removeParameter(ParameterInterface $parameter);
+    public function removeParameter(ParameterInterface $parameter): void;
 
-    /**
-    * Get the parameters.
-    * @return array
-    */
-    public function getParameters();
+    public function getParameters(): array;
 
-    /**
-    * Add a sort to the search query.
-    */
-    public function addSort(string $field, string $direction);
+    public function addSort(string $field, string $direction): void;
 
-    /**
-    * Add a sort to the search query.
-    */
-    public function removeSort(string $field);
+    public function removeSort(string $field): void;
 
-    /**
-    * Get the sorting options.
-    * @return array
-    */
-    public function getSort();
+    public function getSort(): array;
 
-    /**
-     * Set the embed option.
-     *
-     * @param bool $embed
-     */
-    public function setEmbed(bool $embed);
+    public function setEmbed(bool $embed): void;
 
-    /**
-     * Set the start parameter.
-     * @param int $start
-     */
     public function setStart(int $start);
 
-    /**
-     * Set result limit parameter.
-     * @param int $limit
-     */
     public function setLimit(int $limit);
 
-    /**
-    * Cast the search query to an array.
-    */
-    public function toArray();
+    public function toArray(): array;
 }

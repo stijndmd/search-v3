@@ -3,6 +3,7 @@
 namespace CultuurNet\SearchV3;
 
 use CultuurNet\SearchV3\Serializer\SerializerInterface;
+use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use GuzzleHttp\ClientInterface;
 
 /**
@@ -20,42 +21,38 @@ class SearchClient implements SearchClientInterface
      */
     protected $serializer;
 
-    /**
-     * SearchClient constructor.
-     * @param ClientInterface $client
-     */
     public function __construct(ClientInterface $client, SerializerInterface $serializer)
     {
         $this->client = $client;
         $this->serializer = $serializer;
     }
 
-    public function setClient(ClientInterface $client)
+    public function setClient(ClientInterface $client): void
     {
         $this->client = $client;
     }
 
-    public function getClient()
+    public function getClient(): ClientInterface
     {
         return $this->client;
     }
 
-    public function searchEvents(SearchQueryInterface $searchQuery)
+    public function searchEvents(SearchQueryInterface $searchQuery): PagedCollection
     {
         return $this->search($searchQuery, 'events');
     }
 
-    public function searchPlaces(SearchQueryInterface $searchQuery)
+    public function searchPlaces(SearchQueryInterface $searchQuery): PagedCollection
     {
         return $this->search($searchQuery, 'places');
     }
 
-    public function searchOffers(SearchQueryInterface $searchQuery)
+    public function searchOffers(SearchQueryInterface $searchQuery): PagedCollection
     {
         return $this->search($searchQuery, 'offers');
     }
 
-    protected function search(SearchQueryInterface $searchQuery, $type)
+    protected function search(SearchQueryInterface $searchQuery, $type): PagedCollection
     {
         $options = [
           'query' => $searchQuery->toArray()

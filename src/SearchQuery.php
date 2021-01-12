@@ -32,32 +32,27 @@ class SearchQuery implements SearchQueryInterface
 
     /**
      * The number of results to skip (defaults to 0).
-     * @var int
+     * @var int|null
      */
-    protected $start = false;
+    protected $start;
 
     /**
      * The number of results to return in a single page (defaults to 30).
-     * @var int
+     * @var int|null
      */
-    protected $limit = false;
+    protected $limit;
 
-    /**
-     * SearchQuery constructor.
-     * @param bool $embed
-     *   Return fully embedded entities, or only an array of results.
-     */
     public function __construct(bool $embed = false)
     {
         $this->embed = $embed;
     }
 
-    public function addParameter(ParameterInterface $parameter)
+    public function addParameter(ParameterInterface $parameter): void
     {
         $this->parameters[] = $parameter;
     }
 
-    public function removeParameter(ParameterInterface $parameter)
+    public function removeParameter(ParameterInterface $parameter): void
     {
         foreach ($this->parameters as $i => $param) {
             if ($param === $parameter) {
@@ -66,46 +61,45 @@ class SearchQuery implements SearchQueryInterface
         }
     }
 
-    public function getParameters()
+    /**
+     * @return ParameterInterface[]
+     */
+    public function getParameters(): array
     {
         return $this->parameters;
     }
 
-    public function addSort(string $field, string $direction)
+    public function addSort(string $field, string $direction): void
     {
         $this->sorting[$field] = $direction;
     }
 
-    public function removeSort(string $field)
+    public function removeSort(string $field): void
     {
         unset($this->sorting[$field]);
     }
 
-    /**
-     * Set the embed mode.
-     * @param bool $embed
-     */
-    public function setEmbed(bool $embed)
+    public function setEmbed(bool $embed): void
     {
         $this->embed = true;
     }
 
-    public function getSort()
+    public function getSort(): array
     {
         return $this->sorting;
     }
 
-    public function setStart(int $start)
+    public function setStart(int $start): void
     {
         $this->start = $start;
     }
 
-    public function setLimit(int $limit)
+    public function setLimit(int $limit): void
     {
         $this->limit = $limit;
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         $query = [];
         foreach ($this->parameters as $parameter) {
@@ -131,21 +125,18 @@ class SearchQuery implements SearchQueryInterface
             $query['embed'] = true;
         }
 
-        if ($this->start) {
+        if (!is_null($this->start)) {
             $query['start'] = $this->start;
         }
 
-        if ($this->limit) {
+        if (!is_null($this->limit)) {
             $query['limit'] = $this->limit;
         }
 
         return $query;
     }
 
-    /**
-     * Print the query as a querystring.
-     */
-    public function __toString()
+    public function __toString(): string
     {
         $query = $this->toArray();
 
