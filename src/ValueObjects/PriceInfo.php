@@ -10,25 +10,25 @@ final class PriceInfo
      * @var string|null
      * @Type("string")
      */
-    protected $category;
+    private $category;
 
     /**
      * @var TranslatedString|null
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
-    protected $name;
+    private $name;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $priceCurrency;
+    private $priceCurrency;
 
     /**
      * @var float|null
      * @Type("float")
      */
-    protected $price;
+    private $price;
 
     public function getCategory(): ?string
     {

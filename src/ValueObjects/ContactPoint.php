@@ -12,21 +12,21 @@ final class ContactPoint
      * @Type("array<string>")
      * @SerializedName("email")
      */
-    protected $emails = [];
+    private $emails = [];
 
     /**
      * @var array
      * @Type("array<string>")
      * @SerializedName("phone")
      */
-    protected $phoneNumbers = [];
+    private $phoneNumbers = [];
 
     /**
      * @var array
      * @Type("array<string>")
      * @SerializedName("url")
      */
-    protected $urls = [];
+    private $urls = [];
 
     public function getEmails(): array
     {

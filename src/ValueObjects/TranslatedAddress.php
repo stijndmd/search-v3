@@ -11,7 +11,7 @@ final class TranslatedAddress
     /**
      * @var Address[]
      */
-    protected $addresses = [];
+    private $addresses = [];
 
     /**
      * @return Address[]

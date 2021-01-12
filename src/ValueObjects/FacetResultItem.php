@@ -9,28 +9,28 @@ final class FacetResultItem
      *
      * @var string
      */
-    protected $value;
+    private $value;
 
     /**
      * The name of this facet result.
      *
      * @var TranslatedString
      */
-    protected $name;
+    private $name;
 
     /**
      * Total results for this item.
      *
      * @var int
      */
-    protected $count;
+    private $count;
 
     /**
      * Child facet results
      *
      * @var array
      */
-    protected $children;
+    private $children;
 
     public function __construct(string $value, TranslatedString $name, int $count, array $children = [])
     {

@@ -13,7 +13,7 @@ final class TranslatedString
      *
      * @var string[]
      */
-    protected $values = [];
+    private $values = [];
 
     public function __construct(array $values = [])
     {

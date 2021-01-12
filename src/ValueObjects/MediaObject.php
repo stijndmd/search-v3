@@ -10,31 +10,31 @@ final class MediaObject
      * @var string|null
      * @Type("string")
      */
-    protected $id;
+    private $id;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $contentUrl;
+    private $contentUrl;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $thumbnailUrl;
+    private $thumbnailUrl;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $description;
+    private $description;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $copyrightHolder;
+    private $copyrightHolder;
 
     public function getId(): string
     {

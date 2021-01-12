@@ -10,13 +10,13 @@ final class Place extends Offer
      * @var Address|null
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedAddress")
      */
-    protected $address;
+    private $address;
 
     /**
      * @var GeoPoint
      * @Type("CultuurNet\SearchV3\ValueObjects\GeoPoint")
      */
-    protected $geo;
+    private $geo;
 
     public function getAddress(): ?Address
     {

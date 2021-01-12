@@ -11,12 +11,12 @@ final class SearchClient implements SearchClientInterface
     /**
      * @var ClientInterface
      */
-    protected $client;
+    private $client;
 
     /**
      * @var SerializerInterface
      */
-    protected $serializer;
+    private $serializer;
 
     public function __construct(ClientInterface $client, SerializerInterface $serializer)
     {
@@ -49,7 +49,7 @@ final class SearchClient implements SearchClientInterface
         return $this->search($searchQuery, 'offers');
     }
 
-    protected function search(SearchQueryInterface $searchQuery, $type): PagedCollection
+    private function search(SearchQueryInterface $searchQuery, $type): PagedCollection
     {
         $options = [
           'query' => $searchQuery->toArray()

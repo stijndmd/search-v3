@@ -10,19 +10,19 @@ final class Term
      * @var string|null
      * @Type("string")
      */
-    protected $id;
+    private $id;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $label;
+    private $label;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $domain;
+    private $domain;
 
     public function getId(): ?string
     {

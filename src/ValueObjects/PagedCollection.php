@@ -12,21 +12,21 @@ final class PagedCollection
      * @var int|null
      * @Type("integer")
      */
-    protected $itemsPerPage;
+    private $itemsPerPage;
 
     /**
      * Total items found.
      * @var int|null
      * @Type("integer")
      */
-    protected $totalItems;
+    private $totalItems;
 
     /**
      * All members of this collection result.
      * @var Collection|null
      * @Type("CultuurNet\SearchV3\ValueObjects\Collection")
      */
-    protected $member;
+    private $member;
 
     /**
      * All facets for this paged collection.
@@ -34,7 +34,7 @@ final class PagedCollection
      * @Type("CultuurNet\SearchV3\ValueObjects\FacetResults")
      * @SerializedName("facet")
      */
-    protected $facets;
+    private $facets;
 
     public function getItemsPerPage(): ?int
     {

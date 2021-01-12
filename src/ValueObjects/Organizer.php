@@ -12,31 +12,31 @@ final class Organizer
      * @Type("string")
      * @SerializedName("@id")
      */
-    protected $id;
+    private $id;
 
     /**
      * @var TranslatedString|null
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
-    protected $name;
+    private $name;
 
     /**
      * @var string[]
      * @Type("array<string>")
      */
-    protected $email = [];
+    private $email = [];
 
     /**
      * @var ContactPoint|null
      * @Type("CultuurNet\SearchV3\ValueObjects\ContactPoint")
      */
-    protected $contactPoint;
+    private $contactPoint;
 
     /**
      * @var string[]
      * @Type("array<string>")
      */
-    protected $hiddenLabels = [];
+    private $hiddenLabels = [];
 
     public function getId(): ?string
     {

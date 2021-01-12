@@ -7,30 +7,30 @@ final class SearchQuery implements SearchQueryInterface
     /**
      * @var ParameterInterface[]
      */
-    protected $parameters = [];
+    private $parameters = [];
 
     /**
      * @var array
      */
-    protected $sorting = [];
+    private $sorting = [];
 
     /**
      * Return the full embedded search results, or only the ids.
      * @var bool
      */
-    protected $embed = false;
+    private $embed = false;
 
     /**
      * The number of results to skip (defaults to 0).
      * @var int|null
      */
-    protected $start;
+    private $start;
 
     /**
      * The number of results to return in a single page (defaults to 30).
      * @var int|null
      */
-    protected $limit;
+    private $limit;
 
     public function __construct(bool $embed = false)
     {

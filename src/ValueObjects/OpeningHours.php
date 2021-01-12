@@ -10,19 +10,19 @@ final class OpeningHours
      * @var string[]
      * @Type("array<string>")
      */
-    protected $dayOfWeek = [];
+    private $dayOfWeek = [];
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $opens;
+    private $opens;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $closes;
+    private $closes;
 
     /**
      * @return string[]

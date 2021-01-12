@@ -18,147 +18,147 @@ abstract class Offer
      * @Type("string")
      * @SerializedName("@id")
      */
-    protected $id;
+    private $id;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $mainLanguage;
+    private $mainLanguage;
 
     /**
      * @var TranslatedString|null
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
-    protected $name;
+    private $name;
 
     /**
      * @var TranslatedString|null
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
-    protected $description;
+    private $description;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $calendarSummary;
+    private $calendarSummary;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $calendarType;
+    private $calendarType;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $creator;
+    private $creator;
 
     /**
      * @var DateTime|null
      * @Type("DateTime")
      */
-    protected $created;
+    private $created;
 
     /**
      * @var DateTime|null
      * @Type("DateTime")
      */
-    protected $modified;
+    private $modified;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $workflowStatus;
+    private $workflowStatus;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $publisher;
+    private $publisher;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $typicalAgeRange;
+    private $typicalAgeRange;
 
     /**
      * @var Audience|null
      * @Type("CultuurNet\SearchV3\ValueObjects\Audience")
      */
-    protected $audience;
+    private $audience;
 
     /**
      * @var Performer[]
      * @Type("array<CultuurNet\SearchV3\ValueObjects\Performer>")
      * @SerializedName("performer")
      */
-    protected $performers = [];
+    private $performers = [];
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $image;
+    private $image;
 
     /**
      * @var MediaObject[]
      * @Type("array<CultuurNet\SearchV3\ValueObjects\MediaObject>")
      * @SerializedName("mediaObject")
      */
-    protected $mediaObjects = [];
+    private $mediaObjects = [];
 
     /**
      * @var Organizer|null
      * @Type("CultuurNet\SearchV3\ValueObjects\Organizer")
      */
-    protected $organizer;
+    private $organizer;
 
     /**
      * @var array
      * @Type("array<string>")
      */
-    protected $labels = [];
+    private $labels = [];
 
     /**
      * @var array
      * @Type("array<string>")
      */
-    protected $hiddenLabels = [];
+    private $hiddenLabels = [];
 
     /**
      * @var DateTime|null
      * @Type("DateTime")
      */
-    protected $startDate;
+    private $startDate;
 
     /**
      * @var DateTime|null
      * @Type("DateTime")
      */
-    protected $endDate;
+    private $endDate;
 
     /**
      * @var Term[]
      * @Type("array<CultuurNet\SearchV3\ValueObjects\Term>")
      */
-    protected $terms = [];
+    private $terms = [];
 
     /**
      * @var ContactPoint|null
      * @Type("CultuurNet\SearchV3\ValueObjects\ContactPoint")
      */
-    protected $contactPoint;
+    private $contactPoint;
 
     /**
      * @var array
      * @Type("array<CultuurNet\SearchV3\ValueObjects\OpeningHours>")
      */
-    protected $openingHours = [];
+    private $openingHours = [];
 
     public function getId(): ?string
     {

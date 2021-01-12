@@ -24,7 +24,7 @@ final class Distance extends AbstractParameter
         }
     }
 
-    protected static function getConstants(): array
+    private static function getConstants(): array
     {
         $oClass = new \ReflectionClass(__CLASS__);
         return $oClass->getConstants();

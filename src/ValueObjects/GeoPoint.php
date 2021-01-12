@@ -10,13 +10,13 @@ final class GeoPoint
      * @var string|null
      * @Type("string")
      */
-    protected $latitude;
+    private $latitude;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $longitude;
+    private $longitude;
 
     public function getLatitude(): ?string
     {

@@ -11,19 +11,19 @@ final class Event extends Offer
      * @var Place|null
      * @Type("CultuurNet\SearchV3\ValueObjects\Place")
      */
-    protected $location;
+    private $location;
 
     /**
      * @var PriceInfo|null
      * @Type("array<CultuurNet\SearchV3\ValueObjects\PriceInfo>")
      */
-    protected $priceInfo;
+    private $priceInfo;
 
     /**
      * @var BookingInfo|null
      * @Type("CultuurNet\SearchV3\ValueObjects\BookingInfo")
      */
-    protected $bookingInfo;
+    private $bookingInfo;
 
     /**
      * Sub events exist if an event is organised on multiple days.
@@ -31,7 +31,7 @@ final class Event extends Offer
      * @Type("array<CultuurNet\SearchV3\ValueObjects\Event>")
      * @SerializedName("subEvent")
      */
-    protected $subEvents = [];
+    private $subEvents = [];
 
     public function getLocation(): ?Place
     {

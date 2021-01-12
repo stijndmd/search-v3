@@ -10,7 +10,7 @@ final class Audience
      * @var string|null
      * @Type("string")
      */
-    protected $audienceType;
+    private $audienceType;
 
     public function __construct(
         ?string $audienceType = null

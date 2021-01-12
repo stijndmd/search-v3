@@ -11,12 +11,12 @@ final class FacetResults implements \Iterator
     /**
      * @var string|null
      */
-    protected $key;
+    private $key;
 
     /**
      * @var FacetResult[]
      */
-    protected $facetResults = [];
+    private $facetResults = [];
 
     /**
      * @return FacetResult[]
@@ -85,7 +85,7 @@ final class FacetResults implements \Iterator
         }
     }
 
-    protected function deserializeResults($results): array
+    private function deserializeResults($results): array
     {
         $items = [];
         foreach ($results as $value => $result) {

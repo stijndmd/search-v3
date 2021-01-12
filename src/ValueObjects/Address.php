@@ -7,22 +7,22 @@ final class Address
     /**
      * @var string
      */
-    protected $addressCountry;
+    private $addressCountry;
 
     /**
      * @var string
      */
-    protected $addressLocality;
+    private $addressLocality;
 
     /**
      * @var string
      */
-    protected $postalCode;
+    private $postalCode;
 
     /**
      * @var string
      */
-    protected $streetAddress;
+    private $streetAddress;
 
     public function __construct(
         string $addressCountry = null,

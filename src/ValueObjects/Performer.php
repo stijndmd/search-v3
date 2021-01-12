@@ -10,13 +10,13 @@ final class Performer
      * @var string|null
      * @Type("string")
      */
-    protected $name;
+    private $name;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $role;
+    private $role;
 
     public function __construct(
         ?string $name = null

@@ -8,12 +8,12 @@ final class FacetResult
      * Field where facets are based on.
      * @var string
      */
-    protected $field;
+    private $field;
 
     /**
      * @var FacetResultItem[]
      */
-    protected $results = [];
+    private $results = [];
 
     /**
      * @param string $field

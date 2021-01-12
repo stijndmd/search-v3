@@ -11,37 +11,37 @@ final class BookingInfo
      * @var string|null
      * @Type("string")
      */
-    protected $phone;
+    private $phone;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $email;
+    private $email;
 
     /**
      * @var string|null
      * @Type("string")
      */
-    protected $url;
+    private $url;
 
     /**
      * @var TranslatedString|null
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
-    protected $urlLabel;
+    private $urlLabel;
 
     /**
      * @var DateTime|null
      * @Type("DateTime")
      */
-    protected $availabilityStarts;
+    private $availabilityStarts;
 
     /**
      * @var DateTime|null
      * @Type("DateTime")
      */
-    protected $availabilityEnds;
+    private $availabilityEnds;
 
     public function getPhone(): ?string
     {

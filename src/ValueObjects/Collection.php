@@ -9,12 +9,12 @@ use JMS\Serializer\TypeParser;
 
 final class Collection
 {
-    protected $contextMapping = [
+    private $contextMapping = [
         '/contexts/event' => Event::class,
         '/contexts/place' => Place::class,
     ];
 
-    protected $items = [];
+    private $items = [];
 
     public function getItems(): array
     {
