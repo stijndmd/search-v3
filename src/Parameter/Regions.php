@@ -12,4 +12,9 @@ class Regions extends AbstractParameter
         $this->value = $region;
         $this->key = 'regions';
     }
+
+    public function allowsMultiple(): bool
+    {
+        return true;
+    }
 }

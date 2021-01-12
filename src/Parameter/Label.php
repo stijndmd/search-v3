@@ -12,4 +12,9 @@ class Label extends AbstractParameter
         $this->value = $label;
         $this->key = 'labels';
     }
+
+    public function allowsMultiple(): bool
+    {
+        return true;
+    }
 }

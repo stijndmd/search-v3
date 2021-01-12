@@ -12,4 +12,9 @@ class TermIds extends AbstractParameter
         $this->value = $termId;
         $this->key = 'termIds';
     }
+
+    public function allowsMultiple(): bool
+    {
+        return true;
+    }
 }

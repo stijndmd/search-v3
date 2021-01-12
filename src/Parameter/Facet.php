@@ -9,4 +9,9 @@ class Facet extends AbstractParameter
         $this->key = 'facets';
         $this->value = $facetType;
     }
+
+    public function allowsMultiple(): bool
+    {
+        return true;
+    }
 }

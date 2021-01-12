@@ -30,4 +30,9 @@ abstract class AbstractParameter implements ParameterInterface
     {
         return $this->value;
     }
+
+    public function allowsMultiple(): bool
+    {
+        return false;
+    }
 }

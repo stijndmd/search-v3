@@ -22,6 +22,11 @@ class Languages extends AbstractParameter
         }
     }
 
+    public function allowsMultiple(): bool
+    {
+        return true;
+    }
+
     protected static function getConstants()
     {
         $oClass = new \ReflectionClass(__CLASS__);

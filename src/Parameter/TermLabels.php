@@ -12,4 +12,9 @@ class TermLabels extends AbstractParameter
         $this->value = $termLabel;
         $this->key = 'termLabels';
     }
+
+    public function allowsMultiple(): bool
+    {
+        return true;
+    }
 }
