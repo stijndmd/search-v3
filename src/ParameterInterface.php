@@ -8,12 +8,12 @@ namespace CultuurNet\SearchV3;
 interface ParameterInterface
 {
     /**
-     * Get the key to use in the query string.
+     * Get the key to use in the URL query.
      */
     public function getKey(): string;
 
     /**
-     * Get the value to use in the query string.
+     * Get the value to use in the URL query.
      */
     public function getValue();
 
