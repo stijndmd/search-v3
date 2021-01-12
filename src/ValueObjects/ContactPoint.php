@@ -33,10 +33,9 @@ final class ContactPoint
         return $this->emails;
     }
 
-    public function setEmails(array $emails): self
+    public function setEmails(array $emails): void
     {
         $this->emails = $emails;
-        return $this;
     }
 
     public function getPhoneNumbers(): array
@@ -44,10 +43,9 @@ final class ContactPoint
         return $this->phoneNumbers;
     }
 
-    public function setPhoneNumbers(array $phoneNumbers): self
+    public function setPhoneNumbers(array $phoneNumbers): void
     {
         $this->phoneNumbers = $phoneNumbers;
-        return $this;
     }
 
     public function getUrls(): array
@@ -55,9 +53,8 @@ final class ContactPoint
         return $this->urls;
     }
 
-    public function setUrls(array $urls): self
+    public function setUrls(array $urls): void
     {
         $this->urls = $urls;
-        return $this;
     }
 }

@@ -23,9 +23,8 @@ final class Audience
         return $this->audienceType;
     }
 
-    public function setAudienceType(string $audienceType): self
+    public function setAudienceType(string $audienceType): void
     {
         $this->audienceType = $audienceType;
-        return $this;
     }
 }

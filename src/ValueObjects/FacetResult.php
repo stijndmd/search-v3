@@ -30,10 +30,9 @@ final class FacetResult
         return $this->field;
     }
 
-    public function setField(string $field): self
+    public function setField(string $field): void
     {
         $this->field = $field;
-        return $this;
     }
 
     public function getResults(): array
@@ -43,11 +42,9 @@ final class FacetResult
 
     /**
      * @param FacetResultItem[] $results
-     * @return self
      */
-    public function setResults(array $results): self
+    public function setResults(array $results): void
     {
         $this->results = $results;
-        return $this;
     }
 }

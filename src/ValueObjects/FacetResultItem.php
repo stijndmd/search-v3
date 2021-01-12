@@ -45,10 +45,9 @@ final class FacetResultItem
         return $this->value;
     }
 
-    public function setValue(string $value): self
+    public function setValue(string $value): void
     {
         $this->value = $value;
-        return $this;
     }
 
     public function getName(): TranslatedString
@@ -56,10 +55,9 @@ final class FacetResultItem
         return $this->name;
     }
 
-    public function setName(TranslatedString $name): self
+    public function setName(TranslatedString $name): void
     {
         $this->name = $name;
-        return $this;
     }
 
     public function getCount(): int
@@ -67,10 +65,9 @@ final class FacetResultItem
         return $this->count;
     }
 
-    public function setCount(int $count): self
+    public function setCount(int $count): void
     {
         $this->count = $count;
-        return $this;
     }
 
     public function getChildren(): array
@@ -78,9 +75,8 @@ final class FacetResultItem
         return $this->children;
     }
 
-    public function setChildren(array $children): self
+    public function setChildren(array $children): void
     {
         $this->children = $children;
-        return $this;
     }
 }

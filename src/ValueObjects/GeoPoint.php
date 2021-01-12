@@ -23,10 +23,9 @@ final class GeoPoint
         return $this->latitude;
     }
 
-    public function setLatitude(string $latitude): self
+    public function setLatitude(string $latitude): void
     {
         $this->latitude = $latitude;
-        return $this;
     }
 
     public function getLongitude(): ?string
@@ -34,9 +33,8 @@ final class GeoPoint
         return $this->longitude;
     }
 
-    public function setLongitude(string $longitude): self
+    public function setLongitude(string $longitude): void
     {
         $this->longitude = $longitude;
-        return $this;
     }
 }

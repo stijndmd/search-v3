@@ -35,10 +35,9 @@ final class PriceInfo
         return $this->category;
     }
 
-    public function setCategory(string $category): self
+    public function setCategory(string $category): void
     {
         $this->category = $category;
-        return $this;
     }
 
     public function getName(): ?TranslatedString
@@ -46,10 +45,9 @@ final class PriceInfo
         return $this->name;
     }
 
-    public function setName(TranslatedString $name): self
+    public function setName(TranslatedString $name): void
     {
         $this->name = $name;
-        return $this;
     }
 
     public function getPriceCurrency(): ?string
@@ -57,10 +55,9 @@ final class PriceInfo
         return $this->priceCurrency;
     }
 
-    public function setPriceCurrency(string $priceCurrency): self
+    public function setPriceCurrency(string $priceCurrency): void
     {
         $this->priceCurrency = $priceCurrency;
-        return $this;
     }
 
     public function getPrice(): ?float
@@ -68,9 +65,8 @@ final class PriceInfo
         return $this->price;
     }
 
-    public function setPrice(float $price): self
+    public function setPrice(float $price): void
     {
         $this->price = $price;
-        return $this;
     }
 }

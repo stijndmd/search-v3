@@ -23,10 +23,9 @@ final class Place extends Offer
         return $this->address;
     }
 
-    public function setAddress(Address $address): self
+    public function setAddress(Address $address): void
     {
         $this->address = $address;
-        return $this;
     }
 
     public function getGeo(): ?GeoPoint
@@ -34,9 +33,8 @@ final class Place extends Offer
         return $this->geo;
     }
 
-    public function setGeo(GeoPoint $geo): self
+    public function setGeo(GeoPoint $geo): void
     {
         $this->geo = $geo;
-        return $this;
     }
 }

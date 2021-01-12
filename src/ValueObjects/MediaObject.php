@@ -41,10 +41,9 @@ final class MediaObject
         return $this->id;
     }
 
-    public function setId(string $id): self
+    public function setId(string $id): void
     {
         $this->id = $id;
-        return $this;
     }
 
     public function getContentUrl(): ?string
@@ -52,10 +51,9 @@ final class MediaObject
         return $this->contentUrl;
     }
 
-    public function setContentUrl(string $contentUrl): self
+    public function setContentUrl(string $contentUrl): void
     {
         $this->contentUrl = $contentUrl;
-        return $this;
     }
 
     public function getThumbnailUrl(): string
@@ -63,10 +61,9 @@ final class MediaObject
         return $this->thumbnailUrl;
     }
 
-    public function setThumbnailUrl(string $thumbnailUrl): self
+    public function setThumbnailUrl(string $thumbnailUrl): void
     {
         $this->thumbnailUrl = $thumbnailUrl;
-        return $this;
     }
 
     public function getDescription(): string
@@ -74,10 +71,9 @@ final class MediaObject
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(string $description): void
     {
         $this->description = $description;
-        return $this;
     }
 
     public function getCopyrightHolder(): string
@@ -85,9 +81,8 @@ final class MediaObject
         return $this->copyrightHolder;
     }
 
-    public function setCopyrightHolder(string $copyrightHolder): self
+    public function setCopyrightHolder(string $copyrightHolder): void
     {
         $this->copyrightHolder = $copyrightHolder;
-        return $this;
     }
 }

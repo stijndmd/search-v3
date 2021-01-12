@@ -41,10 +41,9 @@ final class Address
         return $this->addressCountry;
     }
 
-    public function setAddressCountry(string $addressCountry): self
+    public function setAddressCountry(string $addressCountry): void
     {
         $this->addressCountry = $addressCountry;
-        return $this;
     }
 
     public function getAddressLocality(): string
@@ -52,10 +51,9 @@ final class Address
         return $this->addressLocality;
     }
 
-    public function setAddressLocality(string $addressLocality): self
+    public function setAddressLocality(string $addressLocality): void
     {
         $this->addressLocality = $addressLocality;
-        return $this;
     }
 
     public function getPostalCode(): string
@@ -63,10 +61,9 @@ final class Address
         return $this->postalCode;
     }
 
-    public function setPostalCode(string $postalCode): self
+    public function setPostalCode(string $postalCode): void
     {
         $this->postalCode = $postalCode;
-        return $this;
     }
 
     public function getStreetAddress(): string
@@ -74,9 +71,8 @@ final class Address
         return $this->streetAddress;
     }
 
-    public function setStreetAddress(string $streetAddress): self
+    public function setStreetAddress(string $streetAddress): void
     {
         $this->streetAddress = $streetAddress;
-        return $this;
     }
 }

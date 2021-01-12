@@ -48,10 +48,9 @@ final class BookingInfo
         return $this->phone;
     }
 
-    public function setPhone(string $phone): self
+    public function setPhone(string $phone): void
     {
         $this->phone = $phone;
-        return $this;
     }
 
     public function getEmail(): ?string
@@ -59,10 +58,9 @@ final class BookingInfo
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(string $email): void
     {
         $this->email = $email;
-        return $this;
     }
 
     public function getUrl(): ?string
@@ -70,10 +68,9 @@ final class BookingInfo
         return $this->url;
     }
 
-    public function setUrl(string $url): self
+    public function setUrl(string $url): void
     {
         $this->url = $url;
-        return $this;
     }
 
     public function getUrlLabel(): ?TranslatedString
@@ -81,10 +78,9 @@ final class BookingInfo
         return $this->urlLabel;
     }
 
-    public function setUrlLabel(TranslatedString $urlLabel): self
+    public function setUrlLabel(TranslatedString $urlLabel): void
     {
         $this->urlLabel = $urlLabel;
-        return $this;
     }
 
     public function getAvailabilityStarts(): ?DateTime
@@ -92,10 +88,9 @@ final class BookingInfo
         return $this->availabilityStarts;
     }
 
-    public function setAvailabilityStarts(DateTime $availabilityStarts): self
+    public function setAvailabilityStarts(DateTime $availabilityStarts): void
     {
         $this->availabilityStarts = $availabilityStarts;
-        return $this;
     }
 
     public function getAvailabilityEnds(): ?DateTime
@@ -103,9 +98,8 @@ final class BookingInfo
         return $this->availabilityEnds;
     }
 
-    public function setAvailabilityEnds(DateTime $availabilityEnds): self
+    public function setAvailabilityEnds(DateTime $availabilityEnds): void
     {
         $this->availabilityEnds = $availabilityEnds;
-        return $this;
     }
 }

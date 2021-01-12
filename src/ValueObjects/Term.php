@@ -29,10 +29,9 @@ final class Term
         return $this->id;
     }
 
-    public function setId(string $id): self
+    public function setId(string $id): void
     {
         $this->id = $id;
-        return $this;
     }
 
     public function getLabel(): ?string
@@ -40,10 +39,9 @@ final class Term
         return $this->label;
     }
 
-    public function setLabel(string $label): self
+    public function setLabel(string $label): void
     {
         $this->label = $label;
-        return $this;
     }
 
     public function getDomain(): ?string
@@ -51,9 +49,8 @@ final class Term
         return $this->domain;
     }
 
-    public function setDomain(string $domain): self
+    public function setDomain(string $domain): void
     {
         $this->domain = $domain;
-        return $this;
     }
 }

@@ -41,10 +41,9 @@ final class PagedCollection
         return $this->itemsPerPage;
     }
 
-    public function setItemsPerPage(int $itemsPerPage): self
+    public function setItemsPerPage(int $itemsPerPage): void
     {
         $this->itemsPerPage = $itemsPerPage;
-        return $this;
     }
 
     public function getTotalItems(): ?int
@@ -52,10 +51,9 @@ final class PagedCollection
         return $this->totalItems;
     }
 
-    public function setTotalItems(int $totalItems): self
+    public function setTotalItems(int $totalItems): void
     {
         $this->totalItems = $totalItems;
-        return $this;
     }
 
     public function getMember(): ?Collection
@@ -63,10 +61,9 @@ final class PagedCollection
         return $this->member;
     }
 
-    public function setMember(Collection $member): self
+    public function setMember(Collection $member): void
     {
         $this->member = $member;
-        return $this;
     }
 
     public function getFacets(): ?FacetResults
@@ -74,9 +71,8 @@ final class PagedCollection
         return $this->facets;
     }
 
-    public function setFacets(FacetResults $facets): self
+    public function setFacets(FacetResults $facets): void
     {
         $this->facets = $facets;
-        return $this;
     }
 }

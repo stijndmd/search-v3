@@ -21,10 +21,9 @@ final class Collection
         return $this->items;
     }
 
-    public function setItems(array $items): self
+    public function setItems(array $items): void
     {
         $this->items = $items;
-        return $this;
     }
 
     /**

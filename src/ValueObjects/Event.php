@@ -38,10 +38,9 @@ final class Event extends Offer
         return $this->location;
     }
 
-    public function setLocation(Place $location): self
+    public function setLocation(Place $location): void
     {
         $this->location = $location;
-        return $this;
     }
 
     public function getSubEvents(): array
@@ -49,10 +48,9 @@ final class Event extends Offer
         return $this->subEvents;
     }
 
-    public function setSubEvents(array $subEvents): self
+    public function setSubEvents(array $subEvents): void
     {
         $this->subEvents = $subEvents;
-        return $this;
     }
 
     public function getPriceInfo(): ?PriceInfo
@@ -60,10 +58,9 @@ final class Event extends Offer
         return $this->priceInfo;
     }
 
-    public function setPriceInfo(PriceInfo $priceInfo): self
+    public function setPriceInfo(PriceInfo $priceInfo): void
     {
         $this->priceInfo = $priceInfo;
-        return $this;
     }
 
     public function getBookingInfo(): ?BookingInfo
@@ -71,9 +68,8 @@ final class Event extends Offer
         return $this->bookingInfo;
     }
 
-    public function setBookingInfo(BookingInfo $bookingInfo): self
+    public function setBookingInfo(BookingInfo $bookingInfo): void
     {
         $this->bookingInfo = $bookingInfo;
-        return $this;
     }
 }

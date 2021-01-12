@@ -28,12 +28,10 @@ final class FacetResults implements \Iterator
 
     /**
      * @param FacetResult[] $facetResults
-     * @return self
      */
-    public function setFacetResults(array $facetResults): self
+    public function setFacetResults(array $facetResults): void
     {
         $this->facetResults = $facetResults;
-        return $this;
     }
 
     public function getFacetResultsByField($field): array

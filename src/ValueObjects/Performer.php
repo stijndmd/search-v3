@@ -29,10 +29,9 @@ final class Performer
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(string $name): void
     {
         $this->name = $name;
-        return $this;
     }
 
     public function getRole(): ?string
@@ -40,9 +39,8 @@ final class Performer
         return $this->role;
     }
 
-    public function setRole(string $role): self
+    public function setRole(string $role): void
     {
         $this->role = $role;
-        return $this;
     }
 }

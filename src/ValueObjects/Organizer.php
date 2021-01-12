@@ -43,10 +43,9 @@ final class Organizer
         return $this->id;
     }
 
-    public function setId(string $id): self
+    public function setId(string $id): void
     {
         $this->id = $id;
-        return $this;
     }
 
     public function getCdbid(): ?string
@@ -64,10 +63,9 @@ final class Organizer
         return $this->name;
     }
 
-    public function setName(TranslatedString $name): ?Organizer
+    public function setName(TranslatedString $name): void
     {
         $this->name = $name;
-        return $this;
     }
 
     public function getEmail(): array
@@ -75,10 +73,9 @@ final class Organizer
         return $this->email;
     }
 
-    public function setEmail(array $email): self
+    public function setEmail(array $email): void
     {
         $this->email = $email;
-        return $this;
     }
 
     public function getContactPoint(): ?ContactPoint
@@ -86,10 +83,9 @@ final class Organizer
         return $this->contactPoint;
     }
 
-    public function setContactPoint(ContactPoint $contactPoint): self
+    public function setContactPoint(ContactPoint $contactPoint): void
     {
         $this->contactPoint = $contactPoint;
-        return $this;
     }
 
     /**
@@ -102,11 +98,9 @@ final class Organizer
 
     /**
      * @param string[] $hiddenLabels
-     * @return self
      */
-    public function setHiddenLabels(array $hiddenLabels): self
+    public function setHiddenLabels(array $hiddenLabels): void
     {
         $this->hiddenLabels = $hiddenLabels;
-        return $this;
     }
 }

@@ -175,10 +175,9 @@ abstract class Offer
         return end($id_parts);
     }
 
-    public function setId(string $id): self
+    public function setId(string $id): void
     {
         $this->id = $id;
-        return $this;
     }
 
     public function getMainLanguage(): ?string
@@ -186,10 +185,9 @@ abstract class Offer
         return $this->mainLanguage;
     }
 
-    public function setMainLanguage(string $mainLanguage): self
+    public function setMainLanguage(string $mainLanguage): void
     {
         $this->mainLanguage = $mainLanguage;
-        return $this;
     }
 
     public function getName(): ?TranslatedString
@@ -197,10 +195,9 @@ abstract class Offer
         return $this->name;
     }
 
-    public function setName(TranslatedString $name): self
+    public function setName(TranslatedString $name): void
     {
         $this->name = $name;
-        return $this;
     }
 
     public function getDescription(): ?TranslatedString
@@ -208,10 +205,9 @@ abstract class Offer
         return $this->description;
     }
 
-    public function setDescription(TranslatedString $description): self
+    public function setDescription(TranslatedString $description): void
     {
         $this->description = $description;
-        return $this;
     }
 
     public function getCalendarType(): ?string
@@ -219,10 +215,9 @@ abstract class Offer
         return $this->calendarType;
     }
 
-    public function setCalendarType(string $calendarType): self
+    public function setCalendarType(string $calendarType): void
     {
         $this->calendarType = $calendarType;
-        return $this;
     }
 
     public function getCalendarSummary(): ?string
@@ -230,10 +225,9 @@ abstract class Offer
         return $this->calendarSummary;
     }
 
-    public function setCalendarSummary(string $calendarSummary): self
+    public function setCalendarSummary(string $calendarSummary): void
     {
         $this->calendarSummary = $calendarSummary;
-        return $this;
     }
 
     public function getCreator(): ?string
@@ -241,10 +235,9 @@ abstract class Offer
         return $this->creator;
     }
 
-    public function setCreator(string $creator): self
+    public function setCreator(string $creator): void
     {
         $this->creator = $creator;
-        return $this;
     }
 
     public function getCreated(): ?DateTime
@@ -252,10 +245,9 @@ abstract class Offer
         return $this->created;
     }
 
-    public function setCreated(DateTime $created): self
+    public function setCreated(DateTime $created): void
     {
         $this->created = $created;
-        return $this;
     }
 
     public function getModified(): ?DateTime
@@ -263,10 +255,9 @@ abstract class Offer
         return $this->modified;
     }
 
-    public function setModified(DateTime $modified): self
+    public function setModified(DateTime $modified): void
     {
         $this->modified = $modified;
-        return $this;
     }
 
     public function getWorkflowStatus(): ?string
@@ -274,10 +265,9 @@ abstract class Offer
         return $this->workflowStatus;
     }
 
-    public function setWorkflowStatus(string $workflowStatus): self
+    public function setWorkflowStatus(string $workflowStatus): void
     {
         $this->workflowStatus = $workflowStatus;
-        return $this;
     }
 
     public function getPublisher(): ?string
@@ -285,10 +275,9 @@ abstract class Offer
         return $this->publisher;
     }
 
-    public function setPublisher(string $publisher): self
+    public function setPublisher(string $publisher): void
     {
         $this->publisher = $publisher;
-        return $this;
     }
 
     public function getAudience(): ?Audience
@@ -296,10 +285,9 @@ abstract class Offer
         return $this->audience;
     }
 
-    public function setAudience(Audience $audience): self
+    public function setAudience(Audience $audience): void
     {
         $this->audience = $audience;
-        return $this;
     }
 
     public function getTypicalAgeRange(): ?string
@@ -307,10 +295,9 @@ abstract class Offer
         return $this->typicalAgeRange;
     }
 
-    public function setTypicalAgeRange(string $typicalAgeRange): self
+    public function setTypicalAgeRange(string $typicalAgeRange): void
     {
         $this->typicalAgeRange = $typicalAgeRange;
-        return $this;
     }
 
     /**
@@ -325,10 +312,9 @@ abstract class Offer
      * @param Performer[] $performers
      * @return self
      */
-    public function setPerformers(array $performers): self
+    public function setPerformers(array $performers): void
     {
         $this->performers = $performers;
-        return $this;
     }
 
     public function getImage(): ?string
@@ -336,10 +322,9 @@ abstract class Offer
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(string $image): void
     {
         $this->image = $image;
-        return $this;
     }
 
     /**
@@ -352,12 +337,10 @@ abstract class Offer
 
     /**
      * @param MediaObject[] $mediaObjects
-     * @return self
      */
-    public function setMediaObjects(array $mediaObjects): self
+    public function setMediaObjects(array $mediaObjects): void
     {
         $this->mediaObjects = $mediaObjects;
-        return $this;
     }
 
     public function getMainMediaObject(): ?MediaObject
@@ -376,10 +359,9 @@ abstract class Offer
         return $this->organizer;
     }
 
-    public function setOrganizer(Organizer $organizer): self
+    public function setOrganizer(Organizer $organizer): void
     {
         $this->organizer = $organizer;
-        return $this;
     }
 
     public function getLabels(): array
@@ -387,10 +369,9 @@ abstract class Offer
         return $this->labels;
     }
 
-    public function setLabels(array $labels): self
+    public function setLabels(array $labels): void
     {
         $this->labels = $labels;
-        return $this;
     }
 
     public function getHiddenLabels(): array
@@ -398,10 +379,9 @@ abstract class Offer
         return $this->hiddenLabels;
     }
 
-    public function setHiddenLabels(array $hiddenLabels): self
+    public function setHiddenLabels(array $hiddenLabels): void
     {
         $this->hiddenLabels = $hiddenLabels;
-        return $this;
     }
 
     public function getStartDate(): ?DateTime
@@ -409,10 +389,9 @@ abstract class Offer
         return $this->startDate;
     }
 
-    public function setStartDate(DateTime $startDate): self
+    public function setStartDate(DateTime $startDate): void
     {
         $this->startDate = $startDate;
-        return $this;
     }
 
     public function getEndDate(): ?DateTime
@@ -420,10 +399,9 @@ abstract class Offer
         return $this->endDate;
     }
 
-    public function setEndDate(DateTime $endDate): self
+    public function setEndDate(DateTime $endDate): void
     {
         $this->endDate = $endDate;
-        return $this;
     }
 
     /**
@@ -453,12 +431,10 @@ abstract class Offer
 
     /**
      * @param Term[] $terms
-     * @return self
      */
-    public function setTerms(array $terms): self
+    public function setTerms(array $terms): void
     {
         $this->terms = $terms;
-        return $this;
     }
 
     public function getContactPoint(): ?ContactPoint
@@ -466,10 +442,9 @@ abstract class Offer
         return $this->contactPoint;
     }
 
-    public function setContactPoint(ContactPoint $contactPoint): self
+    public function setContactPoint(ContactPoint $contactPoint): void
     {
         $this->contactPoint = $contactPoint;
-        return $this;
     }
 
     /**
@@ -482,11 +457,9 @@ abstract class Offer
 
     /**
      * @param OpeningHours[] $openingHours
-     * @return self
      */
-    public function setOpeningHours(array $openingHours): self
+    public function setOpeningHours(array $openingHours): void
     {
         $this->openingHours = $openingHours;
-        return $this;
     }
 }
