@@ -2,10 +2,6 @@
 
 namespace CultuurNet\SearchV3;
 
-use CultureFeed_DefaultHttpClient;
-use CultureFeed_HttpClient;
-use CultureFeed_HttpResponse;
-
 class SearchQuery implements SearchQueryInterface
 {
     /**

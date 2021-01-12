@@ -2,7 +2,6 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\Hydrator\Event;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
