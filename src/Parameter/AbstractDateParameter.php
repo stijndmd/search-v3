@@ -6,7 +6,7 @@ use DateTimeInterface;
 
 abstract class AbstractDateParameter extends AbstractParameter
 {
-    public function __construct(string $dateTime)
+    final public function __construct(string $dateTime)
     {
         $this->value = $dateTime;
     }
