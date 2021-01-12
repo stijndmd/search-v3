@@ -11,8 +11,8 @@ abstract class AbstractDateParameter extends AbstractParameter
     {
         if ($this->value instanceof \DateTime) {
             return $this->value->format(\DateTime::ATOM);
-        } else {
-            return $this->value;
         }
+
+        return $this->value;
     }
 }
