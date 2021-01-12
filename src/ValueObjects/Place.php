@@ -4,7 +4,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\Annotation\Type;
 
-class Place extends Offer
+final class Place extends Offer
 {
     /**
      * @var Address|null

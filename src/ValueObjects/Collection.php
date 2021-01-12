@@ -7,7 +7,7 @@ use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
 use JMS\Serializer\TypeParser;
 
-class Collection
+final class Collection
 {
     protected $contextMapping = [
         '/contexts/event' => Event::class,

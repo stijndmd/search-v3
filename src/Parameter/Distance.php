@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class Distance extends AbstractParameter
+final class Distance extends AbstractParameter
 {
     const UNIT_MILE = 'mi';
     const UNIT_YARD = 'yd';

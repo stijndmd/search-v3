@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class CalendarType extends AbstractParameter
+final class CalendarType extends AbstractParameter
 {
     const TYPE_SINGLE = 'single';
     const TYPE_MULTIPLE = 'multiple';

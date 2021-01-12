@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3;
 
-class SearchQuery implements SearchQueryInterface
+final class SearchQuery implements SearchQueryInterface
 {
     /**
      * @var ParameterInterface[]

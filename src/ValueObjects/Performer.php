@@ -4,7 +4,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\Annotation\Type;
 
-class Performer
+final class Performer
 {
     /**
      * @var string|null

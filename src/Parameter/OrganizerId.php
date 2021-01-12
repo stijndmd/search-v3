@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class OrganizerId extends AbstractParameter
+final class OrganizerId extends AbstractParameter
 {
     public function __construct(string $organizerId)
     {

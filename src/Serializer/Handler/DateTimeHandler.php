@@ -6,7 +6,7 @@ use DateTime;
 use JMS\Serializer\Handler\DateHandler;
 use JMS\Serializer\JsonDeserializationVisitor;
 
-class DateTimeHandler extends DateHandler
+final class DateTimeHandler extends DateHandler
 {
     public function deserializeDateTimeFromJson(JsonDeserializationVisitor $visitor, $data, array $type): ?DateTime
     {

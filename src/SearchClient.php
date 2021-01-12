@@ -6,7 +6,7 @@ use CultuurNet\SearchV3\Serializer\SerializerInterface;
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use GuzzleHttp\ClientInterface;
 
-class SearchClient implements SearchClientInterface
+final class SearchClient implements SearchClientInterface
 {
     /**
      * @var ClientInterface

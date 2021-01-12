@@ -6,7 +6,7 @@ use JMS\Serializer\Annotation\HandlerCallback;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
 
-class TranslatedAddress
+final class TranslatedAddress
 {
     /**
      * @var Address[]

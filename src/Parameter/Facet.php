@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class Facet extends AbstractParameter
+final class Facet extends AbstractParameter
 {
     public function __construct(string $facetType)
     {

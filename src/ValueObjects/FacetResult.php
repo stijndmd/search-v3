@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-class FacetResult
+final class FacetResult
 {
     /**
      * Field where facets are based on.

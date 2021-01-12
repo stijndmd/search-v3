@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class Price extends AbstractParameter
+final class Price extends AbstractParameter
 {
     public function __construct(float $price)
     {

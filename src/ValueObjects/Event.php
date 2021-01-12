@@ -5,7 +5,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
-class Event extends Offer
+final class Event extends Offer
 {
     /**
      * @var Place|null

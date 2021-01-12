@@ -6,7 +6,7 @@ use JMS\Serializer\Annotation\HandlerCallback;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
 
-class FacetResults implements \Iterator
+final class FacetResults implements \Iterator
 {
     /**
      * @var string|null

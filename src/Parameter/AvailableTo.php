@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class AvailableTo extends AbstractDateParameter
+final class AvailableTo extends AbstractDateParameter
 {
     protected $key = 'availableTo';
 }

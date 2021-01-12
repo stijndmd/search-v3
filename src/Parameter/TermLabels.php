@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class TermLabels extends AbstractParameter
+final class TermLabels extends AbstractParameter
 {
     public function __construct(string $termLabel)
     {

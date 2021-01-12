@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-class Address
+final class Address
 {
     /**
      * @var string

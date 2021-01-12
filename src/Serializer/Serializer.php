@@ -14,7 +14,7 @@ use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
 use SimpleBus\JMSSerializerBridge\SerializerMetadata;
 
-class Serializer implements SerializerInterface
+final class Serializer implements SerializerInterface
 {
     /**
      * @var SerializerInterface

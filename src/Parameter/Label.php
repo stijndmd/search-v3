@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class Label extends AbstractParameter
+final class Label extends AbstractParameter
 {
     public function __construct(string $label)
     {

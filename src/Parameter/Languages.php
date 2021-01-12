@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class Languages extends AbstractParameter
+final class Languages extends AbstractParameter
 {
     const LANG_NL = 'nl';
     const LANG_FR = 'fr';

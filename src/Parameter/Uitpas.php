@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class Uitpas extends AbstractParameter
+final class Uitpas extends AbstractParameter
 {
     public function __construct(bool $uitpas)
     {

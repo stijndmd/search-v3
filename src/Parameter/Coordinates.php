@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class Coordinates extends AbstractParameter
+final class Coordinates extends AbstractParameter
 {
     public function __construct(string $latitude, string $longitude)
     {

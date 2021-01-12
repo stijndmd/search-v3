@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class MediaObject extends AbstractParameter
+final class MediaObject extends AbstractParameter
 {
     public function __construct(bool $hasMediaObject)
     {

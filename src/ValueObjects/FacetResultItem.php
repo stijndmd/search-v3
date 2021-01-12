@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-class FacetResultItem
+final class FacetResultItem
 {
     /**
      * The value of the facet item.

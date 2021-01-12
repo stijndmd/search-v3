@@ -5,7 +5,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 use DateTime;
 use JMS\Serializer\Annotation\Type;
 
-class BookingInfo
+final class BookingInfo
 {
     /**
      * @var string|null

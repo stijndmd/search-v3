@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class TermIds extends AbstractParameter
+final class TermIds extends AbstractParameter
 {
     public function __construct(string $termId)
     {

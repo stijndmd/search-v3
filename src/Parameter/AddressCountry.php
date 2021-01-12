@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class AddressCountry extends AbstractParameter
+final class AddressCountry extends AbstractParameter
 {
     public function __construct(string $addressCountry)
     {

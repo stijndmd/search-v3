@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class DateFrom extends AbstractDateParameter
+final class DateFrom extends AbstractDateParameter
 {
     protected $key = 'dateFrom';
 }

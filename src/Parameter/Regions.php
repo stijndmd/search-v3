@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class Regions extends AbstractParameter
+final class Regions extends AbstractParameter
 {
     public function __construct(string $region)
     {

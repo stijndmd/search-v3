@@ -2,7 +2,7 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class Query extends AbstractParameter
+final class Query extends AbstractParameter
 {
     public function __construct(string $value)
     {
