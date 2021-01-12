@@ -6,7 +6,6 @@ use CultuurNet\SearchV3\ParameterInterface;
 
 /**
  * Provides an abstract class for query parameters.
- * @package CultuurNet\SearchV3
  */
 abstract class AbstractParameter implements ParameterInterface
 {

@@ -7,7 +7,6 @@ use GuzzleHttp\ClientInterface;
 
 /**
  * Default search client to perform searches on the search api.
- * @package CultuurNet\SearchV3
  */
 class SearchClient implements SearchClientInterface
 {

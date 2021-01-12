@@ -4,7 +4,6 @@ namespace CultuurNet\SearchV3;
 
 /**
  * Provides an interface for search parameters.
- * @package CultuurNet\SearchV3
  */
 interface ParameterInterface
 {

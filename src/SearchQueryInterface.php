@@ -4,7 +4,6 @@ namespace CultuurNet\SearchV3;
 
 /**
  * SearchQuery
- * @package CultuurNet\SearchV3
  */
 interface SearchQueryInterface
 {
