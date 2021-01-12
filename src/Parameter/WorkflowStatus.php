@@ -17,7 +17,7 @@ class WorkflowStatus extends AbstractParameter
      * workflowStatus constructor.
      * @param $workflowStatus
      */
-    public function __construct($workflowStatus)
+    public function __construct(string $workflowStatus)
     {
         $this->value = $workflowStatus;
         $this->key = 'workflowStatus';

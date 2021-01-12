@@ -9,7 +9,7 @@ class Facet extends AbstractParameter
      * @param $facetType
      *   Type of facets to request.
      */
-    public function __construct($facetType)
+    public function __construct(string $facetType)
     {
         $this->key = 'facets';
         $this->value = $facetType;

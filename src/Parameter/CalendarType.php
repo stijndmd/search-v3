@@ -16,7 +16,7 @@ class CalendarType extends AbstractParameter
      * Calendar type constructor.
      * @param $type
      */
-    public function __construct($type)
+    public function __construct(string $type)
     {
         $this->value = $type;
         $this->key = 'calendarType';

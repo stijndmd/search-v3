@@ -11,7 +11,7 @@ class LocationId extends AbstractParameter
      * locationId constructor.
      * @param $locationId
      */
-    public function __construct($locationId)
+    public function __construct(string $locationId)
     {
         $this->value = $locationId;
         $this->key = 'locationId';

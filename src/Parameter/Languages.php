@@ -18,7 +18,7 @@ class Languages extends AbstractParameter
      *
      * @throws \Exception when language is not one of the constants.
      */
-    public function __construct($language)
+    public function __construct(string $language)
     {
         if (in_array($language, self::getConstants())) {
             $this->value = $language;

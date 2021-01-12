@@ -11,7 +11,7 @@ class TermLabels extends AbstractParameter
      * TermLabels constructor.
      * @param $termLabel string
      */
-    public function __construct($termLabel)
+    public function __construct(string $termLabel)
     {
         $this->value = $termLabel;
         $this->key = 'termLabels';

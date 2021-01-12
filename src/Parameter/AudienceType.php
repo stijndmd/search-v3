@@ -15,7 +15,7 @@ class AudienceType extends AbstractParameter
      * AudienceType constructor.
      * @param $audienceType
      */
-    public function __construct($audienceType)
+    public function __construct(string $audienceType)
     {
         $this->value = $audienceType;
         $this->key = 'audienceType';

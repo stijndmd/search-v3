@@ -11,7 +11,7 @@ class AddressCountry extends AbstractParameter
      * AddressCountry constructor.
      * @param $addressCountry
      */
-    public function __construct($addressCountry)
+    public function __construct(string $addressCountry)
     {
         $this->value = $addressCountry;
         $this->key = 'addressCountry';

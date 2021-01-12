@@ -24,7 +24,7 @@ class Distance extends AbstractParameter
      *
      * @throws \Exception when the unit is not a constant of the class.
      */
-    public function __construct($distance, $unit)
+    public function __construct(int $distance, string $unit)
     {
         if (in_array($unit, self::getConstants())) {
             $this->value = $distance . $unit;

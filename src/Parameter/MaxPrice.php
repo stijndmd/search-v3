@@ -11,7 +11,7 @@ class MaxPrice extends AbstractParameter
      * MaxPrice constructor.
      * @param $maxPrice float
      */
-    public function __construct($maxPrice)
+    public function __construct(float $maxPrice)
     {
         $this->value = $maxPrice;
         $this->key = 'maxPrice';

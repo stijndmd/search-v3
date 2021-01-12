@@ -11,7 +11,7 @@ class TermIds extends AbstractParameter
      * TermIds constructor.
      * @param $termId string
      */
-    public function __construct($termId)
+    public function __construct(string $termId)
     {
         $this->value = $termId;
         $this->key = 'termIds';

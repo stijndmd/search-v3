@@ -11,7 +11,7 @@ class MaxAge extends AbstractParameter
      * MaxAge constructor.
      * @param $value
      */
-    public function __construct($value)
+    public function __construct(int $value)
     {
         $this->value = $value;
         $this->key = 'maxAge';

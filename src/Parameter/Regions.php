@@ -11,7 +11,7 @@ class Regions extends AbstractParameter
      * Regions constructor.
      * @param $region string
      */
-    public function __construct($region)
+    public function __construct(string $region)
     {
         $this->value = $region;
         $this->key = 'regions';

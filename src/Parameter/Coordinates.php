@@ -12,7 +12,7 @@ class Coordinates extends AbstractParameter
      * @param $latitude string
      * @param $longitude string
      */
-    public function __construct($latitude, $longitude)
+    public function __construct(string $latitude, string $longitude)
     {
         $this->value = $latitude . ',' . $longitude;
         $this->key = 'coordinates';

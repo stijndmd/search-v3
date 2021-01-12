@@ -11,7 +11,7 @@ class Creator extends AbstractParameter
      * Creator constructor.
      * @param $creator
      */
-    public function __construct($creator)
+    public function __construct(string $creator)
     {
         $this->value = $creator;
         $this->key = 'creator';

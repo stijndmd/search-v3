@@ -11,7 +11,7 @@ class Id extends AbstractParameter
      * Id constructor.
      * @param $id
      */
-    public function __construct($id)
+    public function __construct(string $id)
     {
         $this->value = $id;
         $this->key = 'id';

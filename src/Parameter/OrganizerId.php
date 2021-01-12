@@ -11,7 +11,7 @@ class OrganizerId extends AbstractParameter
      * locationId constructor.
      * @param $organizerId
      */
-    public function __construct($organizerId)
+    public function __construct(string $organizerId)
     {
         $this->value = $organizerId;
         $this->key = 'organizerId';
