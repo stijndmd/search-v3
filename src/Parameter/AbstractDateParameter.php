@@ -2,14 +2,17 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
+use DateTimeInterface;
+
 abstract class AbstractDateParameter extends AbstractParameter
 {
-    public function getValue()
+    public function __construct(string $dateTime)
     {
-        if ($this->value instanceof \DateTime) {
-            return $this->value->format(\DateTime::ATOM);
-        }
+        $this->value = $dateTime;
+    }
 
-        return $this->value;
+    public static function createFromDateTime(DateTimeInterface $value): self
+    {
+        return new static($value->format(DATE_ATOM));
     }
 }

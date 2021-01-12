@@ -7,13 +7,5 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class ModifiedFrom extends AbstractDateParameter
 {
-    /**
-     * ModifiedFrom constructor.
-     * @param \DateTime|string $modifiedFrom
-     */
-    public function __construct($modifiedFrom)
-    {
-        $this->value = $modifiedFrom;
-        $this->key = 'modifiedFrom';
-    }
+    protected $key = 'modifiedFrom';
 }

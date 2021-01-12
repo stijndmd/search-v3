@@ -3,16 +3,29 @@
 namespace CultuurNet\SearchV3\Parameter\Test;
 
 use CultuurNet\SearchV3\Parameter\ModifiedFrom;
+use DateTime;
 
 class ModifiedFromTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstructor()
     {
-        $dateTime = new \DateTime('21-12-2017T10:00:00+01:00');
-        $id = new ModifiedFrom($dateTime);
+        $dateTime = '2017-12-21T10:00:00+01:00';
+        $modifiedFrom = new ModifiedFrom($dateTime);
 
-        $key = $id->getKey();
-        $value = $id->getValue();
+        $key = $modifiedFrom->getKey();
+        $value = $modifiedFrom->getValue();
+
+        $this->assertEquals('modifiedFrom', $key);
+        $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
+    }
+
+    public function testFactoryMethodWithDateTime()
+    {
+        $dateTime = new DateTime('2017-12-21T10:00:00+01:00');
+        $modifiedFrom = ModifiedFrom::createFromDateTime($dateTime);
+
+        $key = $modifiedFrom->getKey();
+        $value = $modifiedFrom->getValue();
 
         $this->assertEquals('modifiedFrom', $key);
         $this->assertEquals('2017-12-21T10:00:00+01:00', $value);

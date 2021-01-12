@@ -7,13 +7,5 @@ namespace CultuurNet\SearchV3\Parameter;
  */
 class AvailableTo extends AbstractDateParameter
 {
-    /**
-     * AvailableTo constructor.
-     * @param \DateTime|string $availableTo
-     */
-    public function __construct($availableTo)
-    {
-        $this->value = $availableTo;
-        $this->key = 'availableTo';
-    }
+    protected $key = 'availableTo';
 }
