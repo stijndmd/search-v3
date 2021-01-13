@@ -4,8 +4,9 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
+use PHPUnit\Framework\TestCase;
 
-class TranslatedStringTest extends \PHPUnit_Framework_TestCase
+class TranslatedStringTest extends TestCase
 {
 
     /**

@@ -2,7 +2,9 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-class BookingInfoTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class BookingInfoTest extends TestCase
 {
     /**
      * @var BookingInfo

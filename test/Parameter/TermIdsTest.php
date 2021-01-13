@@ -2,7 +2,9 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class TermIdsTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class TermIdsTest extends TestCase
 {
     public function testConstructor()
     {

@@ -2,7 +2,9 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-class PriceInfoTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class PriceInfoTest extends TestCase
 {
     /**
      * @var PriceInfo

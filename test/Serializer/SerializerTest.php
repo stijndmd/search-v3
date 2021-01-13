@@ -20,8 +20,9 @@ use CultuurNet\SearchV3\ValueObjects\Term;
 use CultuurNet\SearchV3\ValueObjects\TranslatedAddress;
 use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 use JMS\Serializer\SerializerInterface;
+use PHPUnit\Framework\TestCase;
 
-class SerializerTest extends \PHPUnit_Framework_TestCase
+class SerializerTest extends TestCase
 {
     /**
      * @var Serializer

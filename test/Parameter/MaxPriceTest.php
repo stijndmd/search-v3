@@ -2,7 +2,9 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class MaxPriceTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class MaxPriceTest extends TestCase
 {
     public function testConstructor()
     {

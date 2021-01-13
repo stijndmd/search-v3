@@ -2,7 +2,9 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class LocationIdTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class LocationIdTest extends TestCase
 {
     public function testConstructor()
     {

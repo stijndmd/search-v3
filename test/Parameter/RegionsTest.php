@@ -2,7 +2,9 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class RegionsTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class RegionsTest extends TestCase
 {
     public function testConstructor()
     {

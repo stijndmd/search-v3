@@ -3,8 +3,9 @@
 namespace CultuurNet\SearchV3\Parameter;
 
 use DateTime;
+use PHPUnit\Framework\TestCase;
 
-class ModifiedToTest extends \PHPUnit_Framework_TestCase
+class ModifiedToTest extends TestCase
 {
     public function testConstructor()
     {

@@ -2,7 +2,9 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class PriceTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class PriceTest extends TestCase
 {
     public function testConstructor()
     {

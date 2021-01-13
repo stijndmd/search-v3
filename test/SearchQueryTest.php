@@ -5,8 +5,9 @@ namespace CultuurNet\SearchV3;
 use CultuurNet\SearchV3\Parameter\Facet;
 use CultuurNet\SearchV3\Parameter\Id;
 use CultuurNet\SearchV3\Parameter\Label;
+use PHPUnit\Framework\TestCase;
 
-class SearchQueryTest extends \PHPUnit_Framework_TestCase
+class SearchQueryTest extends TestCase
 {
     /**
      * @var SearchQuery

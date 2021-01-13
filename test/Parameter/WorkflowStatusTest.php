@@ -2,7 +2,9 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-class WorkflowStatusTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class WorkflowStatusTest extends TestCase
 {
     public function testConstructor()
     {

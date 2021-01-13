@@ -2,7 +2,9 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-class MediaObjectTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class MediaObjectTest extends TestCase
 {
     /**
      * @var MediaObject

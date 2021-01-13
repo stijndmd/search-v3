@@ -7,8 +7,9 @@ use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use Guzzle\Http\Message\Response;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use PHPUnit\Framework\TestCase;
 
-class SearchClientTest extends \PHPUnit_Framework_TestCase
+class SearchClientTest extends TestCase
 {
     /**
      * @var ClientInterface | \PHPUnit_Framework_MockObject_MockObject

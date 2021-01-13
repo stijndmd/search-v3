@@ -2,7 +2,9 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-class FacetResultItemTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class FacetResultItemTest extends TestCase
 {
     /**
      * @var FacetResultItem
