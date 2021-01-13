@@ -4,10 +4,10 @@ namespace CultuurNet\SearchV3;
 
 use CultuurNet\SearchV3\Serializer\SerializerInterface;
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
-use Guzzle\Http\Message\Response;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface;
 
 class SearchClientTest extends TestCase
 {
@@ -45,7 +45,7 @@ class SearchClientTest extends TestCase
 
     public function provideResponseMockup()
     {
-        $response = $this->getMockBuilder(Response::class)
+        $response = $this->getMockBuilder(ResponseInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
         $response->expects($this->once())
