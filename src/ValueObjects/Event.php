@@ -14,10 +14,10 @@ final class Event extends Offer
     private $location;
 
     /**
-     * @var PriceInfo|null
+     * @var PriceInfo[]
      * @Type("array<CultuurNet\SearchV3\ValueObjects\PriceInfo>")
      */
-    private $priceInfo;
+    private $priceInfo = [];
 
     /**
      * @var BookingInfo|null
@@ -53,12 +53,18 @@ final class Event extends Offer
         $this->subEvents = $subEvents;
     }
 
-    public function getPriceInfo(): ?PriceInfo
+    /**
+     * @return PriceInfo[]
+     */
+    public function getPriceInfo(): array
     {
         return $this->priceInfo;
     }
 
-    public function setPriceInfo(PriceInfo $priceInfo): void
+    /**
+     * @param PriceInfo[] $priceInfo
+     */
+    public function setPriceInfo(array $priceInfo): void
     {
         $this->priceInfo = $priceInfo;
     }
