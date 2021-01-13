@@ -41,10 +41,10 @@ class EventTest extends \PHPUnit_Framework_TestCase
     public function testGetPriceInfoMethod()
     {
         $priceInfo = new PriceInfo();
-        $this->event->setPriceInfo($priceInfo);
+        $this->event->setPriceInfo([$priceInfo]);
 
         $result = $this->event->getPriceInfo();
-        $this->assertEquals($priceInfo, $result);
+        $this->assertEquals([$priceInfo], $result);
     }
 
     public function testGetBookingInfoMethod()

@@ -16,11 +16,11 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
 
     public function testGetAddressMethod()
     {
-        $mockAddress = new Address();
+        $mockAddress = new TranslatedAddress();
         $this->place->setAddress($mockAddress);
 
         $result = $this->place->getAddress();
-        $this->assertInstanceOf(Address::class, $result);
+        $this->assertInstanceOf(TranslatedAddress::class, $result);
     }
 
     public function testGetGeoMethod()
