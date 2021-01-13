@@ -55,17 +55,33 @@ To customize your search, you can configure `\CultuurNet\SearchV3\SearchQuery` l
 
 ```php
 $searchQuery = new \CultuurNet\SearchV3\SearchQuery();
-$searchQuery->setEmbed(true); // Embed the JSON-LD of the search results, instead of only the ID and type.
-$searchQuery->setStart(0); // Set the number of which result to fetch first. Defaults to 0.
-$searchQuery->setLimit(30); // Set the max amount of results to return per page.
-$searchQuery->addSort('created', 'ASC'); // Add a sort (see SAPI3 docs for possible fields to sort on)
-$searchQuery->removeSort('created'); // Remove a sort
-$searchQuery->addParameter( // Add a search parameter (see src/Parameter for all options)
+
+// Embed the JSON-LD of the search results, instead of only the ID and type.
+$searchQuery->setEmbed(true);
+
+// Set the number of which result to fetch first. Defaults to 0.
+// If the first page had a limit of 30 for example, and you want to get the results of the second page, set the start to
+// 30. (So the start is always the limit multiplied by the page number you want to get, starting with 0.)
+$searchQuery->setStart(0);
+
+// Set the max amount of results to return per page.
+$searchQuery->setLimit(30);
+
+// Add a sort (see SAPI3 docs for possible fields to sort on)
+$searchQuery->addSort('created', 'ASC');
+
+// Remove a sort
+$searchQuery->removeSort('created');
+
+// Add a search parameter (see src/Parameter for all options)
+$searchQuery->addParameter(
     new CultuurNet\SearchV3\Parameter\AudienceType(
         CultuurNet\SearchV3\Parameter\AudienceType::AUDIENCE_EDUCATION
     )
 );
-$searchQuery->removeParameter( // Remove a search parameter (see src/Parameter for all options)
+
+// Remove a search parameter (see src/Parameter for all options)
+$searchQuery->removeParameter(
     new CultuurNet\SearchV3\Parameter\AudienceType(
         CultuurNet\SearchV3\Parameter\AudienceType::AUDIENCE_EDUCATION
     )
