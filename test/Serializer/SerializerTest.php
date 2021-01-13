@@ -34,14 +34,6 @@ class SerializerTest extends TestCase
         $this->serializer = new Serializer();
     }
 
-    public function testSetSerializerMethod()
-    {
-        $serializerInterfaceMock = $this->getMockBuilder(SerializerInterface::class)
-            ->getMock();
-
-        $this->serializer->setSerializer($serializerInterfaceMock);
-    }
-
     public function testSerializeMethod()
     {
         $addressMock = new Address();

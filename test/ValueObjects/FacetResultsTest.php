@@ -65,34 +65,4 @@ class FacetResultsTest extends TestCase
 
         $this->assertEquals($result, $facilitiesTestData);
     }
-
-    public function testIteratorCurrentMethod()
-    {
-        $this->deserializeEverything();
-        $this->facetResults->current();
-    }
-
-    public function testIteratorNextMethod()
-    {
-        $this->deserializeEverything();
-        $this->facetResults->next();
-    }
-
-    public function testIteratorKeyMethod()
-    {
-        $this->deserializeEverything();
-        $this->facetResults->key();
-    }
-
-    public function testIteratorValidMethod()
-    {
-        $this->deserializeEverything();
-        $this->facetResults->valid();
-    }
-
-    public function testIteratorRewindMethod()
-    {
-        $this->deserializeEverything();
-        $this->facetResults->rewind();
-    }
 }
