@@ -2,6 +2,7 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 final class MediaObject
@@ -9,6 +10,7 @@ final class MediaObject
     /**
      * @var string|null
      * @Type("string")
+     * @SerializedName("@id")
      */
     private $id;
 
