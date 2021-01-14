@@ -6,18 +6,19 @@ use CultuurNet\SearchV3\Serializer\SerializerInterface;
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
 class SearchClientTest extends TestCase
 {
     /**
-     * @var ClientInterface | \PHPUnit_Framework_MockObject_MockObject
+     * @var ClientInterface | MockObject
      */
     protected $client;
 
     /**
-     * @var SerializerInterface | \PHPUnit_Framework_MockObject_MockObject
+     * @var SerializerInterface | MockObject
      */
     protected $serializer;
 
