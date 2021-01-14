@@ -13,7 +13,7 @@ class AddressCountryTest extends TestCase
         $key = $query->getKey();
         $value = $query->getValue();
 
-        self::assertEquals('addressCountry', $key);
-        self::assertEquals('BE', $value);
+        $this->assertEquals('addressCountry', $key);
+        $this->assertEquals('BE', $value);
     }
 }

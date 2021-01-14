@@ -15,8 +15,8 @@ class AvailableFromTest extends TestCase
         $key = $availableFrom->getKey();
         $value = $availableFrom->getValue();
 
-        self::assertEquals('availableFrom', $key);
-        self::assertEquals('2017-04-11T12:08:01+01:00', $value);
+        $this->assertEquals('availableFrom', $key);
+        $this->assertEquals('2017-04-11T12:08:01+01:00', $value);
     }
 
     public function testFactoryMethodWithAtomString(): void
@@ -27,8 +27,8 @@ class AvailableFromTest extends TestCase
         $key = $availableFrom->getKey();
         $value = $availableFrom->getValue();
 
-        self::assertEquals('availableFrom', $key);
-        self::assertEquals('2017-04-11T12:08:01+01:00', $value);
+        $this->assertEquals('availableFrom', $key);
+        $this->assertEquals('2017-04-11T12:08:01+01:00', $value);
     }
 
     public function testWithWildcard(): void
@@ -38,7 +38,7 @@ class AvailableFromTest extends TestCase
         $key = $id->getKey();
         $value = $id->getValue();
 
-        self::assertEquals('availableFrom', $key);
-        self::assertEquals('*', $value);
+        $this->assertEquals('availableFrom', $key);
+        $this->assertEquals('*', $value);
     }
 }

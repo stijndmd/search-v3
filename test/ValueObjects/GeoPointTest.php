@@ -21,7 +21,7 @@ class GeoPointTest extends TestCase
         $this->geoPoint->setLatitude('40.3445');
 
         $result = $this->geoPoint->getLatitude();
-        self::assertEquals('40.3445', $result);
+        $this->assertEquals('40.3445', $result);
     }
 
     public function testGetLongitudeMethod(): void
@@ -29,6 +29,6 @@ class GeoPointTest extends TestCase
         $this->geoPoint->setLongitude('4.321');
 
         $result = $this->geoPoint->getLongitude();
-        self::assertEquals('4.321', $result);
+        $this->assertEquals('4.321', $result);
     }
 }

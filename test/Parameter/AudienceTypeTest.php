@@ -13,7 +13,7 @@ class AudienceTypeTest extends TestCase
         $key = $audienceType->getKey();
         $value = $audienceType->getValue();
 
-        self::assertEquals('audienceType', $key);
-        self::assertEquals('everyone', $value);
+        $this->assertEquals('audienceType', $key);
+        $this->assertEquals('everyone', $value);
     }
 }

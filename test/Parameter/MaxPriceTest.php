@@ -13,7 +13,7 @@ class MaxPriceTest extends TestCase
         $key = $price->getKey();
         $value = $price->getValue();
 
-        self::assertEquals('maxPrice', $key);
-        self::assertEquals(19.99, $value);
+        $this->assertEquals('maxPrice', $key);
+        $this->assertEquals(19.99, $value);
     }
 }

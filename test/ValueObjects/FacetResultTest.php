@@ -24,7 +24,7 @@ class FacetResultTest extends TestCase
         $this->facetResult->setField('new facet result field');
 
         $result = $this->facetResult->getField();
-        self::assertEquals('new facet result field', $result);
+        $this->assertEquals('new facet result field', $result);
     }
 
     public function testGetResultsMethod(): void
@@ -34,6 +34,6 @@ class FacetResultTest extends TestCase
         $this->facetResult->setResults([$newResults]);
 
         $result = $this->facetResult->getResults();
-        self::assertEquals([$newResults], $result);
+        $this->assertEquals([$newResults], $result);
     }
 }

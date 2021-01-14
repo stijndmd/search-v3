@@ -15,7 +15,7 @@ class TranslatedStringTest extends TestCase
     public function testGetValueForLanguage(): void
     {
         $string = new TranslatedString(['nl' => 'test nl']);
-        self::assertEquals('test nl', $string->getValueForLanguage('nl'));
+        $this->assertEquals('test nl', $string->getValueForLanguage('nl'));
     }
 
     /**
@@ -25,7 +25,7 @@ class TranslatedStringTest extends TestCase
     {
         $string = new TranslatedString();
         $string->setValues(['nl' => 'test nl']);
-        self::assertEquals(['nl' => 'test nl'], $string->getValues());
+        $this->assertEquals(['nl' => 'test nl'], $string->getValues());
     }
 
     /**
@@ -43,10 +43,10 @@ class TranslatedStringTest extends TestCase
 
         $string = new TranslatedString();
         $string->deserializeFromJson($visitor, 'value', $context);
-        self::assertEquals(['nl' => 'value'], $string->getValues());
+        $this->assertEquals(['nl' => 'value'], $string->getValues());
 
         $string = new TranslatedString();
         $string->deserializeFromJson($visitor, ['test1', 'test2'], $context);
-        self::assertEquals(['test1', 'test2'], $string->getValues());
+        $this->assertEquals(['test1', 'test2'], $string->getValues());
     }
 }

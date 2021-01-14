@@ -21,7 +21,7 @@ class OrganizerTest extends TestCase
         $this->organizer->setId('organizer id');
 
         $result = $this->organizer->getId();
-        self::assertEquals('organizer id', $result);
+        $this->assertEquals('organizer id', $result);
     }
 
     public function testGetCdbidMethod(): void
@@ -29,14 +29,14 @@ class OrganizerTest extends TestCase
         $this->organizer->setId('this/is/an/organizer-id');
 
         $result = $this->organizer->getCdbid();
-        self::assertEquals('organizer-id', $result);
+        $this->assertEquals('organizer-id', $result);
     }
 
     public function testGetAndSetNameMethods(): void
     {
         $name = new TranslatedString(['nl' => 'organizer name']);
         $this->organizer->setName($name);
-        self::assertEquals($name, $this->organizer->getName());
+        $this->assertEquals($name, $this->organizer->getName());
     }
 
     public function testGetEmailMethod(): void
@@ -44,7 +44,7 @@ class OrganizerTest extends TestCase
         $this->organizer->setEmail(array('test@organizer.com'));
 
         $result = $this->organizer->getEmail();
-        self::assertEquals(array('test@organizer.com'), $result);
+        $this->assertEquals(array('test@organizer.com'), $result);
     }
 
     public function testGetContactPointMehtod(): void
@@ -56,7 +56,7 @@ class OrganizerTest extends TestCase
         $this->organizer->setContactPoint($contactPoint);
 
         $result = $this->organizer->getContactPoint();
-        self::assertEquals($contactPoint, $result);
+        $this->assertEquals($contactPoint, $result);
     }
 
     public function testGetHiddenLabelsMethod(): void
@@ -64,6 +64,6 @@ class OrganizerTest extends TestCase
         $this->organizer->setHiddenLabels(array('hidden1', 'hidden2'));
 
         $result = $this->organizer->getHiddenLabels();
-        self::assertEquals(array('hidden1', 'hidden2'), $result);
+        $this->assertEquals(array('hidden1', 'hidden2'), $result);
     }
 }

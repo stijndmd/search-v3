@@ -63,7 +63,7 @@ class SearchClientTest extends TestCase
     {
         $client = new Client(['headers' => ['lorem' => 'ipsum']]);
         $this->searchClient->setClient($client);
-        self::assertEquals($client, $this->searchClient->getClient());
+        $this->assertEquals($client, $this->searchClient->getClient());
     }
 
     public function testSearchEventsMethod(): void
@@ -85,7 +85,7 @@ class SearchClientTest extends TestCase
             ->willReturn($response);
 
         $queryResult = $this->searchClient->searchEvents($searchQueryMock);
-        self::assertEquals($pagedCollection, $queryResult);
+        $this->assertEquals($pagedCollection, $queryResult);
     }
 
     public function testSearchPlacesMethod(): void
@@ -107,7 +107,7 @@ class SearchClientTest extends TestCase
             ->willReturn($response);
 
         $queryResult = $this->searchClient->searchPlaces($searchQueryMock);
-        self::assertEquals($pagedCollection, $queryResult);
+        $this->assertEquals($pagedCollection, $queryResult);
     }
 
     public function testSearchOfferMethod(): void
@@ -129,6 +129,6 @@ class SearchClientTest extends TestCase
             ->willReturn($response);
 
         $queryResult = $this->searchClient->searchOffers($searchQueryMock);
-        self::assertEquals($pagedCollection, $queryResult);
+        $this->assertEquals($pagedCollection, $queryResult);
     }
 }

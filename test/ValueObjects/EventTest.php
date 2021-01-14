@@ -20,7 +20,7 @@ class EventTest extends TestCase
     {
         $name = new TranslatedString(['nl' => 'event name']);
         $this->event->setName($name);
-        self::assertEquals($name, $this->event->getName());
+        $this->assertEquals($name, $this->event->getName());
     }
 
     public function testGetLocationMethod(): void
@@ -29,7 +29,7 @@ class EventTest extends TestCase
         $this->event->setLocation($location);
 
         $result = $this->event->getLocation();
-        self::assertEquals($location, $result);
+        $this->assertEquals($location, $result);
     }
 
     public function testGetSubEventsMethod(): void
@@ -37,7 +37,7 @@ class EventTest extends TestCase
         $this->event->setSubEvents(array(new Event(), new Event()));
 
         $result = $this->event->getSubEvents();
-        self::assertEquals(array(new Event(), new Event()), $result);
+        $this->assertEquals(array(new Event(), new Event()), $result);
     }
 
     public function testGetPriceInfoMethod(): void
@@ -46,7 +46,7 @@ class EventTest extends TestCase
         $this->event->setPriceInfo([$priceInfo]);
 
         $result = $this->event->getPriceInfo();
-        self::assertEquals([$priceInfo], $result);
+        $this->assertEquals([$priceInfo], $result);
     }
 
     public function testGetBookingInfoMethod(): void
@@ -55,6 +55,6 @@ class EventTest extends TestCase
         $this->event->setBookingInfo($bookingInfo);
 
         $result = $this->event->getBookingInfo();
-        self::assertEquals($bookingInfo, $result);
+        $this->assertEquals($bookingInfo, $result);
     }
 }

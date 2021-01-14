@@ -15,8 +15,8 @@ class ModifiedToTest extends TestCase
         $key = $modifiedTo->getKey();
         $value = $modifiedTo->getValue();
 
-        self::assertEquals('modifiedTo', $key);
-        self::assertEquals('2017-12-21T10:00:00+01:00', $value);
+        $this->assertEquals('modifiedTo', $key);
+        $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
     }
 
     public function testFactoryMethodWithAtomString(): void
@@ -27,8 +27,8 @@ class ModifiedToTest extends TestCase
         $key = $modifiedTo->getKey();
         $value = $modifiedTo->getValue();
 
-        self::assertEquals('modifiedTo', $key);
-        self::assertEquals('2017-12-21T10:00:00+01:00', $value);
+        $this->assertEquals('modifiedTo', $key);
+        $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
     }
 
     public function testWithWildcard(): void
@@ -38,7 +38,7 @@ class ModifiedToTest extends TestCase
         $key = $id->getKey();
         $value = $id->getValue();
 
-        self::assertEquals('modifiedTo', $key);
-        self::assertEquals('*', $value);
+        $this->assertEquals('modifiedTo', $key);
+        $this->assertEquals('*', $value);
     }
 }

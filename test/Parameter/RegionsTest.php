@@ -13,7 +13,7 @@ class RegionsTest extends TestCase
         $key = $region->getKey();
         $value = $region->getValue();
 
-        self::assertEquals('regions', $key);
-        self::assertEquals('prv-antwerpen', $value);
+        $this->assertEquals('regions', $key);
+        $this->assertEquals('prv-antwerpen', $value);
     }
 }

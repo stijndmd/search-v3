@@ -13,8 +13,8 @@ class LanguagesTest extends TestCase
         $key = $language->getKey();
         $value = $language->getValue();
 
-        self::assertEquals('languages', $key);
-        self::assertEquals('nl', $value);
+        $this->assertEquals('languages', $key);
+        $this->assertEquals('nl', $value);
     }
 
     public function testConstructorWithWrongLanguage()

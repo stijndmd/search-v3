@@ -51,7 +51,7 @@ class FacetResultsTest extends TestCase
     {
         $this->facetResults->setFacetResults($this->facetJson);
         $result = $this->facetResults->getFacetResults();
-        self::assertEquals($result, $this->facetJson);
+        $this->assertEquals($result, $this->facetJson);
     }
 
     public function testGetFacetResultsByFieldMethod(): void
@@ -63,6 +63,6 @@ class FacetResultsTest extends TestCase
 
         $result = $this->facetResults->getFacetResultsByField('facilities');
 
-        self::assertEquals($result, $facilitiesTestData);
+        $this->assertEquals($result, $facilitiesTestData);
     }
 }

@@ -13,7 +13,7 @@ class MaxAgeTest extends TestCase
         $key = $id->getKey();
         $value = $id->getValue();
 
-        self::assertEquals('maxAge', $key);
-        self::assertEquals('16', $value);
+        $this->assertEquals('maxAge', $key);
+        $this->assertEquals('16', $value);
     }
 }

@@ -13,7 +13,7 @@ class MinAgeTest extends TestCase
         $key = $id->getKey();
         $value = $id->getValue();
 
-        self::assertEquals('minAge', $key);
-        self::assertEquals('12', $value);
+        $this->assertEquals('minAge', $key);
+        $this->assertEquals('12', $value);
     }
 }

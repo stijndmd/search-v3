@@ -22,7 +22,7 @@ class ContactPointTest extends TestCase
         $this->contactPoint->setEmails($emails);
 
         $result = $this->contactPoint->getEmails();
-        self::assertEquals($emails, $result);
+        $this->assertEquals($emails, $result);
     }
 
     public function testGetPhoneNumbersMethod(): void
@@ -31,7 +31,7 @@ class ContactPointTest extends TestCase
         $this->contactPoint->setPhoneNumbers($phones);
 
         $result = $this->contactPoint->getPhoneNumbers();
-        self::assertEquals($phones, $result);
+        $this->assertEquals($phones, $result);
     }
 
     public function testGetUrlsMethod(): void
@@ -40,6 +40,6 @@ class ContactPointTest extends TestCase
         $this->contactPoint->setUrls($urls);
 
         $result = $this->contactPoint->getUrls();
-        self::assertEquals($urls, $result);
+        $this->assertEquals($urls, $result);
     }
 }

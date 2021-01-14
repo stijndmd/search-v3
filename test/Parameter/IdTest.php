@@ -13,7 +13,7 @@ class IdTest extends TestCase
         $key = $id->getKey();
         $value = $id->getValue();
 
-        self::assertEquals('id', $key);
-        self::assertEquals('this-is-an-id', $value);
+        $this->assertEquals('id', $key);
+        $this->assertEquals('this-is-an-id', $value);
     }
 }

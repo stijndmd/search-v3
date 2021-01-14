@@ -54,7 +54,7 @@ class SearchQueryTest extends TestCase
 
     public function testConstructor(): void
     {
-        self::assertInstanceOf(SearchQuery::class, $this->searchQuery);
+        $this->assertInstanceOf(SearchQuery::class, $this->searchQuery);
     }
 
     public function testAddParameterMethod(): void
@@ -66,7 +66,7 @@ class SearchQueryTest extends TestCase
 
         $this->searchQuery->addParameter($idParameter);
 
-        self::assertEquals($expectedParameters, $this->searchQuery->getParameters());
+        $this->assertEquals($expectedParameters, $this->searchQuery->getParameters());
     }
 
     public function testRemoveParametersMethod(): void
@@ -76,13 +76,13 @@ class SearchQueryTest extends TestCase
 
         $this->searchQuery->removeParameter($this->facet);
 
-        self::assertEquals($expectedParameters, $this->searchQuery->getParameters());
+        $this->assertEquals($expectedParameters, $this->searchQuery->getParameters());
     }
 
     public function testGetParametersMethod(): void
     {
         $expectedParameters = $this->searchQuery->getParameters();
-        self::assertEquals($expectedParameters, $this->searchQuery->getParameters());
+        $this->assertEquals($expectedParameters, $this->searchQuery->getParameters());
     }
 
     public function testAddSortMethod(): void
@@ -92,7 +92,7 @@ class SearchQueryTest extends TestCase
 
         $this->searchQuery->addSort('availableTo', 'desc');
 
-        self::assertEquals($expectedSortings, $this->searchQuery->getSort());
+        $this->assertEquals($expectedSortings, $this->searchQuery->getSort());
     }
 
     public function testRemoveSortMethod(): void
@@ -100,13 +100,13 @@ class SearchQueryTest extends TestCase
         $expectedSortings = [];
         $this->searchQuery->removeSort('title');
 
-        self::assertEquals($expectedSortings, $this->searchQuery->getSort());
+        $this->assertEquals($expectedSortings, $this->searchQuery->getSort());
     }
 
     public function testGetSortMethod(): void
     {
         $expectedSortings = $this->searchQuery->getSort();
-        self::assertEquals($expectedSortings, $this->searchQuery->getSort());
+        $this->assertEquals($expectedSortings, $this->searchQuery->getSort());
     }
 
     public function testToArrayMethod(): void
@@ -124,7 +124,7 @@ class SearchQueryTest extends TestCase
 
         $result = $this->searchQuery->toArray();
 
-        self::assertEquals($expectedQuery, $result);
+        $this->assertEquals($expectedQuery, $result);
     }
 
     public function testToArrayMethodWithDuplicateParameterKeys(): void
@@ -147,7 +147,7 @@ class SearchQueryTest extends TestCase
 
         $result = $this->searchQuery->toArray();
 
-        self::assertEquals($expectedQuery, $result);
+        $this->assertEquals($expectedQuery, $result);
     }
 
     public function testToArrayMethodWithDuplicateFacetKeys(): void
@@ -170,7 +170,7 @@ class SearchQueryTest extends TestCase
 
         $result = $this->searchQuery->toArray();
 
-        self::assertEquals($expectedQuery, $result);
+        $this->assertEquals($expectedQuery, $result);
     }
 
     public function testToStringMethod(): void
@@ -178,6 +178,6 @@ class SearchQueryTest extends TestCase
         $expectedQueryString = 'labels=test-label&facets=regions&sort[title]=asc&embed=1&start=10&limit=50';
         $result = $this->searchQuery->__toString();
 
-        self::assertEquals($result, $expectedQueryString);
+        $this->assertEquals($result, $expectedQueryString);
     }
 }

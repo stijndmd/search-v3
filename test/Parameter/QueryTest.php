@@ -13,7 +13,7 @@ class QueryTest extends TestCase
         $key = $query->getKey();
         $value = $query->getValue();
 
-        self::assertEquals('q', $key);
-        self::assertEquals('this-is-a-random-query', $value);
+        $this->assertEquals('q', $key);
+        $this->assertEquals('this-is-a-random-query', $value);
     }
 }
