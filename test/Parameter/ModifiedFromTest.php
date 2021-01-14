@@ -33,7 +33,7 @@ class ModifiedFromTest extends TestCase
 
     public function testWithWildcard()
     {
-        $id = ModifiedFrom::createWithWildcardValue();
+        $id = ModifiedFrom::wildcard();
 
         $key = $id->getKey();
         $value = $id->getValue();

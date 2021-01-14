@@ -21,7 +21,7 @@ abstract class AbstractDateParameter extends AbstractParameter
         return new static($dateTime);
     }
 
-    public static function createWithWildcardValue(): self
+    public static function wildcard(): self
     {
         $parameter = new static(new \DateTimeImmutable());
         $parameter->value = '*';

@@ -33,7 +33,7 @@ class DateFromTest extends TestCase
 
     public function testWithWildcard()
     {
-        $id = DateFrom::createWithWildcardValue();
+        $id = DateFrom::wildcard();
 
         $key = $id->getKey();
         $value = $id->getValue();

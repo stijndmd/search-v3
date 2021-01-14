@@ -33,7 +33,7 @@ class AvailableToTest extends TestCase
 
     public function testWithWildcard()
     {
-        $id = AvailableTo::createWithWildcardValue();
+        $id = AvailableTo::wildcard();
 
         $key = $id->getKey();
         $value = $id->getValue();

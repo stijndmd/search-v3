@@ -33,7 +33,7 @@ class CreatedToTest extends TestCase
 
     public function testWithWildcard()
     {
-        $id = CreatedTo::createWithWildcardValue();
+        $id = CreatedTo::wildcard();
 
         $key = $id->getKey();
         $value = $id->getValue();
