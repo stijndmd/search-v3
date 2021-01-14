@@ -17,7 +17,7 @@ class DistanceTest extends TestCase
         self::assertEquals($value, '15km');
     }
 
-    public function testConstructorWithWrongUnit()
+    public function testConstructorWithWrongUnit(): void
     {
         $this->expectException(\Exception::class);
         new Distance(15, 'wrong unit');
