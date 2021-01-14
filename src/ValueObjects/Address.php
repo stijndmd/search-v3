@@ -25,10 +25,10 @@ final class Address
     private $streetAddress;
 
     public function __construct(
-        string $addressCountry = null,
-        string $addressLocality = null,
-        string $postalCode = null,
-        string $streetAddress = null
+        ?string $addressCountry = null,
+        ?string $addressLocality = null,
+        ?string $postalCode = null,
+        ?string $streetAddress = null
     ) {
         $this->addressCountry = $addressCountry;
         $this->addressLocality = $addressLocality;
