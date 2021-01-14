@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class CreatorTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $creator = new Creator('meneer Oerschaffel');
 

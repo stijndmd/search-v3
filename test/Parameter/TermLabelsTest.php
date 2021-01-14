@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class TermLabelsTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $termLabel = new TermLabels('Jeugdhuis of jeugdcentrum');
 

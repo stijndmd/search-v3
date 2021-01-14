@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class AddressCountryTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $query = new AddressCountry('BE');
 

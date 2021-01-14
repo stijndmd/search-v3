@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class DistanceTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $distance = new Distance(15, Distance::UNIT_KILOMETER);
 

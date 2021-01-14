@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class OrganizerIdTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $id = new OrganizerId('7d1f485d-dab5-4ad2-8894-322060a2bc52');
 

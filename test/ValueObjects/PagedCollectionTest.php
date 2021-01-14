@@ -11,12 +11,12 @@ class PagedCollectionTest extends TestCase
      */
     protected $pagedCollection;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->pagedCollection = new PagedCollection();
     }
 
-    public function testGetItemsPerPageMethod()
+    public function testGetItemsPerPageMethod(): void
     {
         $this->pagedCollection->setItemsPerPage(10);
 
@@ -24,7 +24,7 @@ class PagedCollectionTest extends TestCase
         $this->assertEquals(10, $result);
     }
 
-    public function testGetTotalItems()
+    public function testGetTotalItems(): void
     {
         $this->pagedCollection->setTotalItems(120);
 
@@ -32,7 +32,7 @@ class PagedCollectionTest extends TestCase
         $this->assertEquals(120, $result);
     }
 
-    public function testGetMemberMethod()
+    public function testGetMemberMethod(): void
     {
         $mockCollection = new Collection();
         $this->pagedCollection->setMember($mockCollection);
@@ -41,7 +41,7 @@ class PagedCollectionTest extends TestCase
         $this->assertInstanceOf(Collection::class, $result);
     }
 
-    public function testGetFacets()
+    public function testGetFacets(): void
     {
         $mockFacetResults = new FacetResults();
         $this->pagedCollection->setFacets($mockFacetResults);

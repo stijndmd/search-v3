@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class UitpasTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $uitpas = new Uitpas(true);
 

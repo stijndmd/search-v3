@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class PriceTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $price = new Price(5.46);
 

@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class LanguagesTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $language = new Languages(Languages::LANG_NL);
 

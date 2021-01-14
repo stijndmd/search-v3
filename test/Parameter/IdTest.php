@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class IdTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $id = new Id('this-is-an-id');
 

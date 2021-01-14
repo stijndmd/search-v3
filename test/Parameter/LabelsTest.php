@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class LabelTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $label = new Label('this-is-a-label');
 

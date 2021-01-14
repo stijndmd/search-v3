@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class ModifiedToTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $dateTime = new DateTime('2017-12-21T10:00:00+01:00');
         $modifiedTo = new ModifiedTo($dateTime);
@@ -19,7 +19,7 @@ class ModifiedToTest extends TestCase
         $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
     }
 
-    public function testFactoryMethodWithAtomString()
+    public function testFactoryMethodWithAtomString(): void
     {
         $dateTime = '2017-12-21T10:00:00+01:00';
         $modifiedTo = ModifiedTo::createFromAtomString($dateTime);
@@ -31,7 +31,7 @@ class ModifiedToTest extends TestCase
         $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
     }
 
-    public function testWithWildcard()
+    public function testWithWildcard(): void
     {
         $id = ModifiedTo::wildcard();
 

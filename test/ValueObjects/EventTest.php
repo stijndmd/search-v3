@@ -11,19 +11,19 @@ class EventTest extends TestCase
      */
     protected $event;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->event = new Event();
     }
 
-    public function testNameGettersAndSetters()
+    public function testNameGettersAndSetters(): void
     {
         $name = new TranslatedString(['nl' => 'event name']);
         $this->event->setName($name);
         $this->assertEquals($name, $this->event->getName());
     }
 
-    public function testGetLocationMethod()
+    public function testGetLocationMethod(): void
     {
         $location = new Place();
         $this->event->setLocation($location);
@@ -32,7 +32,7 @@ class EventTest extends TestCase
         $this->assertEquals($location, $result);
     }
 
-    public function testGetSubEventsMethod()
+    public function testGetSubEventsMethod(): void
     {
         $this->event->setSubEvents(array(new Event(), new Event()));
 
@@ -40,7 +40,7 @@ class EventTest extends TestCase
         $this->assertEquals(array(new Event(), new Event()), $result);
     }
 
-    public function testGetPriceInfoMethod()
+    public function testGetPriceInfoMethod(): void
     {
         $priceInfo = new PriceInfo();
         $this->event->setPriceInfo([$priceInfo]);
@@ -49,7 +49,7 @@ class EventTest extends TestCase
         $this->assertEquals([$priceInfo], $result);
     }
 
-    public function testGetBookingInfoMethod()
+    public function testGetBookingInfoMethod(): void
     {
         $bookingInfo = new BookingInfo();
         $this->event->setBookingInfo($bookingInfo);

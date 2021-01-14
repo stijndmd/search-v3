@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class MinPriceTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $price = new minPrice(9.99);
 

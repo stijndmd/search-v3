@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class FacetTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $facet = new Facet('regions');
 

@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class MaxAgeTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $id = new MaxAge('16');
 

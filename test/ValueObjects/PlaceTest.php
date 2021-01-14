@@ -11,12 +11,12 @@ class PlaceTest extends TestCase
      */
     protected $place;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->place = new Place();
     }
 
-    public function testGetAddressMethod()
+    public function testGetAddressMethod(): void
     {
         $mockAddress = new TranslatedAddress();
         $this->place->setAddress($mockAddress);
@@ -25,7 +25,7 @@ class PlaceTest extends TestCase
         $this->assertInstanceOf(TranslatedAddress::class, $result);
     }
 
-    public function testGetGeoMethod()
+    public function testGetGeoMethod(): void
     {
         $mockGeo = new GeoPoint();
         $this->place->setGeo($mockGeo);
@@ -38,7 +38,7 @@ class PlaceTest extends TestCase
      * Test the abstract class methods
      */
 
-    public function testGetIdMethod()
+    public function testGetIdMethod(): void
     {
         $this->place->setId('place-id');
 
@@ -46,7 +46,7 @@ class PlaceTest extends TestCase
         $this->assertEquals('place-id', $result);
     }
 
-    public function testGetCdbidMethod()
+    public function testGetCdbidMethod(): void
     {
         $this->place->setId('this/is/a/cdbid');
 
@@ -54,7 +54,7 @@ class PlaceTest extends TestCase
         $this->assertEquals('cdbid', $result);
     }
 
-    public function testGetMainLanguageMethod()
+    public function testGetMainLanguageMethod(): void
     {
         $this->place->setMainLanguage('nl');
 
@@ -62,7 +62,7 @@ class PlaceTest extends TestCase
         $this->assertEquals('nl', $result);
     }
 
-    public function testGetNameMethod()
+    public function testGetNameMethod(): void
     {
 
         $name = new TranslatedString(['nl' => 'name']);
@@ -70,7 +70,7 @@ class PlaceTest extends TestCase
         $this->assertEquals($name, $this->place->getName());
     }
 
-    public function testGetDescriptionMethod()
+    public function testGetDescriptionMethod(): void
     {
         $description = new TranslatedString(['nl' => 'description']);
 
@@ -78,7 +78,7 @@ class PlaceTest extends TestCase
         $this->assertEquals($description, $this->place->getDescription());
     }
 
-    public function testGetCalendarTypeMethod()
+    public function testGetCalendarTypeMethod(): void
     {
         $this->place->setCalendarType('multiple');
 
@@ -86,7 +86,7 @@ class PlaceTest extends TestCase
         $this->assertEquals('multiple', $result);
     }
 
-    public function testGetCalendarSummaryMethod()
+    public function testGetCalendarSummaryMethod(): void
     {
         $this->place->setCalendarSummary('cal sum');
 
@@ -94,7 +94,7 @@ class PlaceTest extends TestCase
         $this->assertEquals('cal sum', $result);
     }
 
-    public function testGetCreatorMethod()
+    public function testGetCreatorMethod(): void
     {
         $this->place->setCreator('that\'s me!');
 
@@ -102,7 +102,7 @@ class PlaceTest extends TestCase
         $this->assertEquals('that\'s me!', $result);
     }
 
-    public function testGetCreatedMethod()
+    public function testGetCreatedMethod(): void
     {
         $this->place->setCreated(new \DateTime('21-11-2017'));
 
@@ -110,7 +110,7 @@ class PlaceTest extends TestCase
         $this->assertEquals(new \DateTime('21-11-2017'), $result);
     }
 
-    public function testGetModifiedMethod()
+    public function testGetModifiedMethod(): void
     {
         $this->place->setModified(new \DateTime('25-11-2017'));
 
@@ -118,7 +118,7 @@ class PlaceTest extends TestCase
         $this->assertEquals(new \DateTime('25-11-2017'), $result);
     }
 
-    public function testGetPublisherMethod()
+    public function testGetPublisherMethod(): void
     {
         $this->place->setPublisher('publisher name');
 
@@ -126,7 +126,7 @@ class PlaceTest extends TestCase
         $this->assertEquals('publisher name', $result);
     }
 
-    public function testGetTypicalAgeRangeMethod()
+    public function testGetTypicalAgeRangeMethod(): void
     {
         $this->place->setTypicalAgeRange('9 - 11 jaar');
 
@@ -134,7 +134,7 @@ class PlaceTest extends TestCase
         $this->assertEquals('9 - 11 jaar', $result);
     }
 
-    public function testGetPerformersMethod()
+    public function testGetPerformersMethod(): void
     {
         $this->place->setPerformers(array(new Performer('performer name')));
 
@@ -142,7 +142,7 @@ class PlaceTest extends TestCase
         $this->assertEquals(array(new Performer('performer name')), $result);
     }
 
-    public function testGetImageMethod()
+    public function testGetImageMethod(): void
     {
         $this->place->setImage('http://path-to-image.com');
 
@@ -150,7 +150,7 @@ class PlaceTest extends TestCase
         $this->assertEquals('http://path-to-image.com', $result);
     }
 
-    public function testGetMediaObjectsMethod()
+    public function testGetMediaObjectsMethod(): void
     {
         $mockMediaObject = new MediaObject();
         $this->place->setMediaObjects(array($mockMediaObject));
@@ -159,7 +159,7 @@ class PlaceTest extends TestCase
         $this->assertEquals(array($mockMediaObject), $result);
     }
 
-    public function testGetMainMediaObjectMethod()
+    public function testGetMainMediaObjectMethod(): void
     {
         $this->place->setImage('http://path-to-image.com');
 
@@ -171,7 +171,7 @@ class PlaceTest extends TestCase
         $this->assertEquals($mockMediaObject, $result);
     }
 
-    public function testGetOrganizerMethod()
+    public function testGetOrganizerMethod(): void
     {
         $mockOrganizer = new Organizer();
         $this->place->setOrganizer($mockOrganizer);
@@ -180,7 +180,7 @@ class PlaceTest extends TestCase
         $this->assertEquals($mockOrganizer, $result);
     }
 
-    public function testGetLabelsMethod()
+    public function testGetLabelsMethod(): void
     {
         $this->place->setLabels(array('label1', 'label2'));
 
@@ -188,7 +188,7 @@ class PlaceTest extends TestCase
         $this->assertEquals(array('label1', 'label2'), $result);
     }
 
-    public function testGetHiddenLabelsMethod()
+    public function testGetHiddenLabelsMethod(): void
     {
         $this->place->setHiddenLabels(array('hidden1', 'hidden2'));
 
@@ -196,7 +196,7 @@ class PlaceTest extends TestCase
         $this->assertEquals(array('hidden1', 'hidden2'), $result);
     }
 
-    public function testGetStartDateMethod()
+    public function testGetStartDateMethod(): void
     {
         $this->place->setStartDate(new \DateTime('01-01-2017'));
 
@@ -204,7 +204,7 @@ class PlaceTest extends TestCase
         $this->assertEquals(new \DateTime('01-01-2017'), $result);
     }
 
-    public function testGetEndDateMethod()
+    public function testGetEndDateMethod(): void
     {
         $this->place->setEndDate(new \DateTime('31-12-2017'));
 
@@ -212,7 +212,7 @@ class PlaceTest extends TestCase
         $this->assertEquals(new \DateTime('31-12-2017'), $result);
     }
 
-    public function testGetTermsMethod()
+    public function testGetTermsMethod(): void
     {
         $mockTerm1 = new Term();
         $mockTerm1->setId('1');
@@ -230,7 +230,7 @@ class PlaceTest extends TestCase
         $this->assertEquals(array($mockTerm1, $mockTerm2), $result);
     }
 
-    public function testGetTermsByDomainMethod()
+    public function testGetTermsByDomainMethod(): void
     {
         $mockTerm1 = new Term();
         $mockTerm1->setId('1');
@@ -248,7 +248,7 @@ class PlaceTest extends TestCase
         $this->assertEquals(array($mockTerm1), $result);
     }
 
-    public function testGetContactPointMethod()
+    public function testGetContactPointMethod(): void
     {
         $mockContactPoint = new ContactPoint();
         $this->place->setContactPoint($mockContactPoint);
@@ -257,7 +257,7 @@ class PlaceTest extends TestCase
         $this->assertEquals($mockContactPoint, $result);
     }
 
-    public function testGetOpeningHoursMethod()
+    public function testGetOpeningHoursMethod(): void
     {
         $mockOpeningHour = new OpeningHours();
         $this->place->setOpeningHours([$mockOpeningHour]);

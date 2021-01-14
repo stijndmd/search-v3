@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class CalendarTypeTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $calendarType = new CalendarType('single');
 

@@ -11,12 +11,12 @@ class OpeningHoursTest extends TestCase
      */
     protected $openingHours;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->openingHours = new OpeningHours();
     }
 
-    public function testGetDayOfWeekMethod()
+    public function testGetDayOfWeekMethod(): void
     {
         $daysOfWeek = array('tuesday', 'wednesday', 'thursday');
         $this->openingHours->setDaysOfWeek($daysOfWeek);
@@ -25,7 +25,7 @@ class OpeningHoursTest extends TestCase
         $this->assertEquals($daysOfWeek, $result);
     }
 
-    public function testGetOpensMethod()
+    public function testGetOpensMethod(): void
     {
         $opens = '10:00';
         $this->openingHours->setOpens($opens);
@@ -34,7 +34,7 @@ class OpeningHoursTest extends TestCase
         $this->assertEquals($opens, $result);
     }
 
-    public function testGetClosesMethod()
+    public function testGetClosesMethod(): void
     {
         $closes = '18:00';
         $this->openingHours->setCloses($closes);

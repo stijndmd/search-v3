@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class TermIdsTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $termId = new TermIds('JCjA0i5COUmdjMwcyjNAFA');
 

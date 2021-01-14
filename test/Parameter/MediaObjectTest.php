@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class MediaObjectTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $mediaObject = new MediaObject(true);
 

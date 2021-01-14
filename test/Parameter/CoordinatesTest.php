@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class CoordinatesTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $coordinates = new Coordinates('50.8511740', '4.3386740');
 

@@ -11,12 +11,12 @@ class CollectionTest extends TestCase
      */
     protected $collection;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->collection = new Collection();
     }
 
-    public function testGetItemsMethod()
+    public function testGetItemsMethod(): void
     {
         $items = array('item1', 'item2', 'item3');
         $this->collection->setItems($items);

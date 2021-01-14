@@ -11,12 +11,12 @@ class MediaObjectTest extends TestCase
      */
     protected $mediaObject;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mediaObject = new MediaObject();
     }
 
-    public function testGetIdMethod()
+    public function testGetIdMethod(): void
     {
         $this->mediaObject->setId('mediaObject-id');
 
@@ -24,7 +24,7 @@ class MediaObjectTest extends TestCase
         $this->assertEquals('mediaObject-id', $result);
     }
 
-    public function testGetContentUrlMethod()
+    public function testGetContentUrlMethod(): void
     {
         $this->mediaObject->setContentUrl('http://content-url.com');
 
@@ -32,7 +32,7 @@ class MediaObjectTest extends TestCase
         $this->assertEquals('http://content-url.com', $result);
     }
 
-    public function testGetThumbnailUrlMethod()
+    public function testGetThumbnailUrlMethod(): void
     {
         $this->mediaObject->setThumbnailUrl('http://thumbnail-url.com');
 
@@ -40,7 +40,7 @@ class MediaObjectTest extends TestCase
         $this->assertEquals('http://thumbnail-url.com', $result);
     }
 
-    public function testGetDescriptionMethod()
+    public function testGetDescriptionMethod(): void
     {
         $this->mediaObject->setDescription('this is a description');
 
@@ -48,7 +48,7 @@ class MediaObjectTest extends TestCase
         $this->assertEquals('this is a description', $result);
     }
 
-    public function testGetCopyrightHolderMethod()
+    public function testGetCopyrightHolderMethod(): void
     {
         $this->mediaObject->setCopyrightHolder('copyright holder');
 

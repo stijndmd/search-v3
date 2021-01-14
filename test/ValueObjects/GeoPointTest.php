@@ -11,12 +11,12 @@ class GeoPointTest extends TestCase
      */
     protected $geoPoint;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->geoPoint = new GeoPoint();
     }
 
-    public function testGetLatitudeMethod()
+    public function testGetLatitudeMethod(): void
     {
         $this->geoPoint->setLatitude('40.3445');
 
@@ -24,7 +24,7 @@ class GeoPointTest extends TestCase
         $this->assertEquals('40.3445', $result);
     }
 
-    public function testGetLongitudeMethod()
+    public function testGetLongitudeMethod(): void
     {
         $this->geoPoint->setLongitude('4.321');
 

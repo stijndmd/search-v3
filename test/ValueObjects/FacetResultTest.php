@@ -11,7 +11,7 @@ class FacetResultTest extends TestCase
      */
     protected $facetResult;
 
-    public function setUp()
+    public function setUp(): void
     {
         $field = 'facet result field';
         $results = $this->getMockBuilder('\FacetResultItem')
@@ -19,7 +19,7 @@ class FacetResultTest extends TestCase
         $this->facetResult = new FacetResult($field, [$results]);
     }
 
-    public function testGetFieldMethod()
+    public function testGetFieldMethod(): void
     {
         $this->facetResult->setField('new facet result field');
 
@@ -27,7 +27,7 @@ class FacetResultTest extends TestCase
         $this->assertEquals('new facet result field', $result);
     }
 
-    public function testGetResultsMethod()
+    public function testGetResultsMethod(): void
     {
         $newResults = $this->getMockBuilder('\FacetResultItem')
             ->getMock();

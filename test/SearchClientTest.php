@@ -24,7 +24,7 @@ class SearchClientTest extends TestCase
 
     protected $searchClient;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->client = $this->getMockBuilder(ClientInterface::class)
             ->getMock();
@@ -33,7 +33,7 @@ class SearchClientTest extends TestCase
         $this->searchClient = new SearchClient($this->client, $this->serializer);
     }
 
-    public function provideSearchQueryMock()
+    public function provideSearchQueryMock(): SearchQueryInterface
     {
         $searchQueryMock = $this->getMockBuilder(SearchQueryInterface::class)
             ->getMock();
@@ -44,7 +44,7 @@ class SearchClientTest extends TestCase
         return $searchQueryMock;
     }
 
-    public function provideResponseMockup()
+    public function provideResponseMockup(): ResponseInterface
     {
         $response = $this->getMockBuilder(ResponseInterface::class)
             ->disableOriginalConstructor()
@@ -59,14 +59,14 @@ class SearchClientTest extends TestCase
     /**
      * Test the setter and getter of the search client.
      */
-    public function testSetClient()
+    public function testSetClient(): void
     {
         $client = new Client(['headers' => ['lorem' => 'ipsum']]);
         $this->searchClient->setClient($client);
         $this->assertEquals($client, $this->searchClient->getClient());
     }
 
-    public function testSearchEventsMethod()
+    public function testSearchEventsMethod(): void
     {
         $options = array('query' => ['foo' => 'bar']);
 
@@ -88,7 +88,7 @@ class SearchClientTest extends TestCase
         $this->assertEquals($pagedCollection, $queryResult);
     }
 
-    public function testSearchPlacesMethod()
+    public function testSearchPlacesMethod(): void
     {
         $options = array('query' => ['foo' => 'bar']);
 
@@ -110,7 +110,7 @@ class SearchClientTest extends TestCase
         $this->assertEquals($pagedCollection, $queryResult);
     }
 
-    public function testSearchOfferMethod()
+    public function testSearchOfferMethod(): void
     {
         $options = array('query' => ['foo' => 'bar']);
         $pagedCollection = new PagedCollection();

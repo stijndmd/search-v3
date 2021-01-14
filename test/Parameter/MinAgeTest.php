@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class MinAgeTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $id = new MinAge('12');
 

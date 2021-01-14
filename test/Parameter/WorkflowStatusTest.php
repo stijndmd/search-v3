@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class WorkflowStatusTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $workflow = new WorkflowStatus(WorkflowStatus::STATUS_APPROVED);
 

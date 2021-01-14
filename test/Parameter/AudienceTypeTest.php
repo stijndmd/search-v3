@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class AudienceTypeTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $audienceType = new AudienceType(AudienceType::AUDIENCE_EVERYONE);
 

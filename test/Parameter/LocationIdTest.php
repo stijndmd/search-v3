@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class LocationIdTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $id = new LocationId('b8bff8fa-988a-44db-8dd8-70bef77f3933');
 

@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class RegionsTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $region = new Regions('prv-antwerpen');
 

@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class QueryTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $query = new Query('this-is-a-random-query');
 

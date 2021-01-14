@@ -28,12 +28,12 @@ class SerializerTest extends TestCase
      */
     protected $serializer;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->serializer = new Serializer();
     }
 
-    public function testSerializeMethod()
+    public function testSerializeMethod(): void
     {
         $addressMock = new Address();
         $addressMock->setAddressLocality('Brussel');
@@ -48,7 +48,7 @@ class SerializerTest extends TestCase
         $this->assertEquals($expectedAddress, $result);
     }
 
-    public function testDeserializeMethodForResultsWithoutEmbed()
+    public function testDeserializeMethodForResultsWithoutEmbed(): void
     {
         $jsonString = file_get_contents(__DIR__ . '/data/search-without-embed.json');
 
@@ -73,7 +73,7 @@ class SerializerTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testDeserializeMethodForResultsWithEmbedAndFacets()
+    public function testDeserializeMethodForResultsWithEmbedAndFacets(): void
     {
         $jsonString = file_get_contents(__DIR__ . '/data/search-with-embed-and-facets.json');
 

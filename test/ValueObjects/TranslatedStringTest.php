@@ -12,7 +12,7 @@ class TranslatedStringTest extends TestCase
     /**
      * Test the getValueForLanguage method.
      */
-    public function testGetValueForLanguage()
+    public function testGetValueForLanguage(): void
     {
         $string = new TranslatedString(['nl' => 'test nl']);
         $this->assertEquals('test nl', $string->getValueForLanguage('nl'));
@@ -21,7 +21,7 @@ class TranslatedStringTest extends TestCase
     /**
      * Test the getters and setters
      */
-    public function testGettersAndSetters()
+    public function testGettersAndSetters(): void
     {
         $string = new TranslatedString();
         $string->setValues(['nl' => 'test nl']);
@@ -31,7 +31,7 @@ class TranslatedStringTest extends TestCase
     /**
      * Test the deserialize method.
      */
-    public function testDeserializeMethod()
+    public function testDeserializeMethod(): void
     {
         $visitor = $this->getMockBuilder(JsonDeserializationVisitor::class)
             ->disableOriginalConstructor()
