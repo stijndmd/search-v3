@@ -19,7 +19,6 @@ use CultuurNet\SearchV3\ValueObjects\PriceInfo;
 use CultuurNet\SearchV3\ValueObjects\Term;
 use CultuurNet\SearchV3\ValueObjects\TranslatedAddress;
 use CultuurNet\SearchV3\ValueObjects\TranslatedString;
-use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
 
 class SerializerTest extends TestCase
