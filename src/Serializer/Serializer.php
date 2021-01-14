@@ -12,12 +12,13 @@ use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
+use JMS\Serializer\SerializerInterface as JMSSerializerInterface;
 use SimpleBus\JMSSerializerBridge\SerializerMetadata;
 
 final class Serializer implements SerializerInterface
 {
     /**
-     * @var SerializerInterface
+     * @var JMSSerializerInterface
      */
     private $serializer;
 
@@ -34,7 +35,7 @@ final class Serializer implements SerializerInterface
 
     }
 
-    public function setSerializer(\JMS\Serializer\SerializerInterface $serializer)
+    public function setSerializer(JMSSerializerInterface $serializer)
     {
         $this->serializer = $serializer;
     }
