@@ -13,7 +13,7 @@ class CoordinatesTest extends TestCase
         $key = $coordinates->getKey();
         $value = $coordinates->getValue();
 
-        self::assertEquals($key, 'coordinates');
-        self::assertEquals($value, '50.8511740,4.3386740');
+        self::assertEquals('coordinates', $key);
+        self::assertEquals('50.8511740,4.3386740', $value);
     }
 }

@@ -13,7 +13,7 @@ class MinPriceTest extends TestCase
         $key = $price->getKey();
         $value = $price->getValue();
 
-        self::assertEquals($key, 'minPrice');
-        self::assertEquals($value, 9.99);
+        self::assertEquals('minPrice', $key);
+        self::assertEquals(9.99, $value);
     }
 }

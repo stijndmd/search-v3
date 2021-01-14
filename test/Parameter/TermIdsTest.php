@@ -13,7 +13,7 @@ class TermIdsTest extends TestCase
         $key = $termId->getKey();
         $value = $termId->getValue();
 
-        self::assertEquals($key, 'termIds');
-        self::assertEquals($value, 'JCjA0i5COUmdjMwcyjNAFA');
+        self::assertEquals('termIds', $key);
+        self::assertEquals('JCjA0i5COUmdjMwcyjNAFA', $value);
     }
 }

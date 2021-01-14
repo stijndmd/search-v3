@@ -13,7 +13,7 @@ class LabelTest extends TestCase
         $key = $label->getKey();
         $value = $label->getValue();
 
-        self::assertEquals($key, 'labels');
-        self::assertEquals($value, 'this-is-a-label');
+        self::assertEquals('labels', $key);
+        self::assertEquals('this-is-a-label', $value);
     }
 }

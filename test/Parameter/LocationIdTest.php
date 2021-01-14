@@ -13,7 +13,7 @@ class LocationIdTest extends TestCase
         $key = $id->getKey();
         $value = $id->getValue();
 
-        self::assertEquals($key, 'locationId');
-        self::assertEquals($value, 'b8bff8fa-988a-44db-8dd8-70bef77f3933');
+        self::assertEquals('locationId', $key);
+        self::assertEquals('b8bff8fa-988a-44db-8dd8-70bef77f3933', $value);
     }
 }

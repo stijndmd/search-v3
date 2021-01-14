@@ -13,7 +13,7 @@ class UitpasTest extends TestCase
         $key = $uitpas->getKey();
         $value = $uitpas->getValue();
 
-        self::assertEquals($key, 'uitpas');
-        self::assertEquals($value, true);
+        self::assertEquals('uitpas', $key);
+        self::assertEquals(true, $value);
     }
 }

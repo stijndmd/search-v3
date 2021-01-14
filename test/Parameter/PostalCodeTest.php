@@ -13,7 +13,7 @@ class PostalCodeTest extends TestCase
         $key = $query->getKey();
         $value = $query->getValue();
 
-        self::assertEquals($key, 'postalCode');
-        self::assertEquals($value, '3000');
+        self::assertEquals('postalCode', $key);
+        self::assertEquals('3000', $value);
     }
 }
