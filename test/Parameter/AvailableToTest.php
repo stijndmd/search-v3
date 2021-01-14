@@ -9,7 +9,7 @@ class AvailableToTest extends TestCase
 {
     public function testConstructor()
     {
-        $dateTime = '2017-04-11T12:08:01+01:00';
+        $dateTime = new DateTime('2017-04-11T12:08:01+01:00');
         $availableTo = new AvailableTo($dateTime);
 
         $key = $availableTo->getKey();
@@ -19,10 +19,10 @@ class AvailableToTest extends TestCase
         $this->assertEquals('2017-04-11T12:08:01+01:00', $value);
     }
 
-    public function testFactoryMethodWithDateTime()
+    public function testFactoryMethodWithAtomString()
     {
-        $dateTime = new DateTime('2017-04-11T12:08:01+01:00');
-        $availableFrom = AvailableTo::createFromDateTime($dateTime);
+        $dateTime = '2017-04-11T12:08:01+01:00';
+        $availableFrom = AvailableTo::createFromAtomString($dateTime);
 
         $key = $availableFrom->getKey();
         $value = $availableFrom->getValue();
@@ -31,10 +31,9 @@ class AvailableToTest extends TestCase
         $this->assertEquals('2017-04-11T12:08:01+01:00', $value);
     }
 
-    public function testConstructorWithWildcard()
+    public function testWithWildcard()
     {
-        $wildCard = '*';
-        $id = new AvailableTo($wildCard);
+        $id = AvailableTo::createWithWildcardValue();
 
         $key = $id->getKey();
         $value = $id->getValue();

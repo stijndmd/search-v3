@@ -9,7 +9,7 @@ class DateToTest extends TestCase
 {
     public function testConstructor()
     {
-        $dateTime = '2017-11-23T10:00:00+01:00';
+        $dateTime = new DateTime('2017-11-23T10:00:00+01:00');
         $dateTo = new DateTo($dateTime);
 
         $key = $dateTo->getKey();
@@ -19,10 +19,10 @@ class DateToTest extends TestCase
         $this->assertEquals('2017-11-23T10:00:00+01:00', $value);
     }
 
-    public function testFactoryMethodWithDateTime()
+    public function testFactoryMethodWithAtomString()
     {
-        $dateTime = new DateTime('23-11-2017T10:00:00+01:00');
-        $dateTo = DateTo::createFromDateTime($dateTime);
+        $dateTime = '2017-11-23T10:00:00+01:00';
+        $dateTo = DateTo::createFromAtomString($dateTime);
 
         $key = $dateTo->getKey();
         $value = $dateTo->getValue();
@@ -31,10 +31,9 @@ class DateToTest extends TestCase
         $this->assertEquals('2017-11-23T10:00:00+01:00', $value);
     }
 
-    public function testConstructorWithWildcard()
+    public function testWithWildcard()
     {
-        $wildCard = '*';
-        $id = new DateTo($wildCard);
+        $id = DateTo::createWithWildcardValue();
 
         $key = $id->getKey();
         $value = $id->getValue();

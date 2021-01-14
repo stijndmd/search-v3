@@ -9,7 +9,7 @@ class ModifiedFromTest extends TestCase
 {
     public function testConstructor()
     {
-        $dateTime = '2017-12-21T10:00:00+01:00';
+        $dateTime = new DateTime('2017-12-21T10:00:00+01:00');
         $modifiedFrom = new ModifiedFrom($dateTime);
 
         $key = $modifiedFrom->getKey();
@@ -19,10 +19,10 @@ class ModifiedFromTest extends TestCase
         $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
     }
 
-    public function testFactoryMethodWithDateTime()
+    public function testFactoryMethodWithAtomString()
     {
-        $dateTime = new DateTime('2017-12-21T10:00:00+01:00');
-        $modifiedFrom = ModifiedFrom::createFromDateTime($dateTime);
+        $dateTime = '2017-12-21T10:00:00+01:00';
+        $modifiedFrom = ModifiedFrom::createFromAtomString($dateTime);
 
         $key = $modifiedFrom->getKey();
         $value = $modifiedFrom->getValue();
@@ -31,10 +31,9 @@ class ModifiedFromTest extends TestCase
         $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
     }
 
-    public function testConstructorWithWildcard()
+    public function testWithWildcard()
     {
-        $wildCard = '*';
-        $id = new ModifiedFrom($wildCard);
+        $id = ModifiedFrom::createWithWildcardValue();
 
         $key = $id->getKey();
         $value = $id->getValue();
