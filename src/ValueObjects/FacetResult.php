@@ -13,7 +13,7 @@ final class FacetResult
     /**
      * @var FacetResultItem[]
      */
-    private $results = [];
+    private $results;
 
     /**
      * @param string $field

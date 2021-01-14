@@ -18,7 +18,7 @@ final class SearchQuery implements SearchQueryInterface
      * Return the full embedded search results, or only the ids.
      * @var bool
      */
-    private $embed = false;
+    private $embed;
 
     /**
      * The number of results to skip (defaults to 0).
