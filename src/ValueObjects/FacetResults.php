@@ -9,11 +9,6 @@ use JMS\Serializer\JsonDeserializationVisitor;
 final class FacetResults implements \Iterator
 {
     /**
-     * @var string|null
-     */
-    private $key;
-
-    /**
      * @var FacetResult[]
      */
     private $facetResults = [];
