@@ -21,7 +21,7 @@ class AddressTest extends TestCase
         $this->address->setAddressCountry('België');
 
         $result = $this->address->getAddressCountry();
-        $this->assertEquals('België', $result);
+        self::assertEquals('België', $result);
     }
 
     public function testGetAddressLocalityMethod(): void
@@ -29,7 +29,7 @@ class AddressTest extends TestCase
         $this->address->setAddressLocality('Brussel');
 
         $result = $this->address->getAddressLocality();
-        $this->assertEquals('Brussel', $result);
+        self::assertEquals('Brussel', $result);
     }
 
     public function testGetPostalCodeMethod(): void
@@ -37,7 +37,7 @@ class AddressTest extends TestCase
         $this->address->setPostalCode('1000');
 
         $result = $this->address->getPostalCode();
-        $this->assertEquals('1000', $result);
+        self::assertEquals('1000', $result);
     }
 
     public function testGetStreetAddressMethod(): void
@@ -45,6 +45,6 @@ class AddressTest extends TestCase
         $this->address->setStreetAddress('Henegouwenkaai 41-43');
 
         $result = $this->address->getStreetAddress();
-        $this->assertEquals('Henegouwenkaai 41-43', $result);
+        self::assertEquals('Henegouwenkaai 41-43', $result);
     }
 }

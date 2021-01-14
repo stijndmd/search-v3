@@ -22,6 +22,6 @@ class CollectionTest extends TestCase
         $this->collection->setItems($items);
 
         $result = $this->collection->getItems();
-        $this->assertEquals($items, $result);
+        self::assertEquals($items, $result);
     }
 }

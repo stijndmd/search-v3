@@ -13,7 +13,7 @@ class WorkflowStatusTest extends TestCase
         $key = $workflow->getKey();
         $value = $workflow->getValue();
 
-        $this->assertEquals($key, 'workflowStatus');
-        $this->assertEquals($value, 'APPROVED');
+        self::assertEquals($key, 'workflowStatus');
+        self::assertEquals($value, 'APPROVED');
     }
 }

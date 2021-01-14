@@ -13,7 +13,7 @@ class OrganizerIdTest extends TestCase
         $key = $id->getKey();
         $value = $id->getValue();
 
-        $this->assertEquals($key, 'organizerId');
-        $this->assertEquals($value, '7d1f485d-dab5-4ad2-8894-322060a2bc52');
+        self::assertEquals($key, 'organizerId');
+        self::assertEquals($value, '7d1f485d-dab5-4ad2-8894-322060a2bc52');
     }
 }

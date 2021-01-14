@@ -13,7 +13,7 @@ class CalendarTypeTest extends TestCase
         $key = $calendarType->getKey();
         $value = $calendarType->getValue();
 
-        $this->assertEquals($key, 'calendarType');
-        $this->assertEquals($value, 'single');
+        self::assertEquals($key, 'calendarType');
+        self::assertEquals($value, 'single');
     }
 }

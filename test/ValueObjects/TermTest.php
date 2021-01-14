@@ -21,7 +21,7 @@ class TermTest extends TestCase
         $this->term->setId('term-id');
 
         $result = $this->term->getId();
-        $this->assertEquals('term-id', $result);
+        self::assertEquals('term-id', $result);
     }
 
     public function testGetLabelMethod(): void
@@ -29,7 +29,7 @@ class TermTest extends TestCase
         $this->term->setLabel('term-label');
 
         $result = $this->term->getLabel();
-        $this->assertEquals('term-label', $result);
+        self::assertEquals('term-label', $result);
     }
 
     public function testGetDomainMethod(): void
@@ -37,6 +37,6 @@ class TermTest extends TestCase
         $this->term->setDomain('term-domain');
 
         $result = $this->term->getDomain();
-        $this->assertEquals('term-domain', $result);
+        self::assertEquals('term-domain', $result);
     }
 }

@@ -21,7 +21,7 @@ class PriceInfoTest extends TestCase
         $this->priceInfo->setCategory('base');
 
         $result = $this->priceInfo->getCategory();
-        $this->assertEquals('base', $result);
+        self::assertEquals('base', $result);
     }
 
     public function testGetNameMethod(): void
@@ -30,8 +30,8 @@ class PriceInfoTest extends TestCase
         $this->priceInfo->setName($priceName);
 
         $result = $this->priceInfo->getName();
-        $this->assertInstanceOf('CultuurNet\SearchV3\ValueObjects\TranslatedString', $result);
-        $this->assertEquals($priceName, $result);
+        self::assertInstanceOf('CultuurNet\SearchV3\ValueObjects\TranslatedString', $result);
+        self::assertEquals($priceName, $result);
     }
 
     public function testGetPriceCurrency(): void
@@ -39,7 +39,7 @@ class PriceInfoTest extends TestCase
         $this->priceInfo->setPriceCurrency('euro');
 
         $result = $this->priceInfo->getPriceCurrency();
-        $this->assertEquals('euro', $result);
+        self::assertEquals('euro', $result);
     }
 
     public function testGetPriceMethod(): void
@@ -47,6 +47,6 @@ class PriceInfoTest extends TestCase
         $this->priceInfo->setPrice(23.45);
 
         $result = $this->priceInfo->getPrice();
-        $this->assertEquals(23.45, $result);
+        self::assertEquals(23.45, $result);
     }
 }

@@ -13,7 +13,7 @@ class PriceTest extends TestCase
         $key = $price->getKey();
         $value = $price->getValue();
 
-        $this->assertEquals($key, 'price');
-        $this->assertEquals($value, 5.46);
+        self::assertEquals($key, 'price');
+        self::assertEquals($value, 5.46);
     }
 }

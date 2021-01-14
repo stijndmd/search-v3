@@ -21,7 +21,7 @@ class PagedCollectionTest extends TestCase
         $this->pagedCollection->setItemsPerPage(10);
 
         $result = $this->pagedCollection->getItemsPerPage();
-        $this->assertEquals(10, $result);
+        self::assertEquals(10, $result);
     }
 
     public function testGetTotalItems(): void
@@ -29,7 +29,7 @@ class PagedCollectionTest extends TestCase
         $this->pagedCollection->setTotalItems(120);
 
         $result = $this->pagedCollection->getTotalItems();
-        $this->assertEquals(120, $result);
+        self::assertEquals(120, $result);
     }
 
     public function testGetMemberMethod(): void
@@ -38,7 +38,7 @@ class PagedCollectionTest extends TestCase
         $this->pagedCollection->setMember($mockCollection);
 
         $result = $this->pagedCollection->getMember();
-        $this->assertInstanceOf(Collection::class, $result);
+        self::assertInstanceOf(Collection::class, $result);
     }
 
     public function testGetFacets(): void
@@ -47,6 +47,6 @@ class PagedCollectionTest extends TestCase
         $this->pagedCollection->setFacets($mockFacetResults);
 
         $result = $this->pagedCollection->getFacets();
-        $this->assertInstanceOf(FacetResults::class, $result);
+        self::assertInstanceOf(FacetResults::class, $result);
     }
 }

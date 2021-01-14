@@ -48,7 +48,7 @@ class TranslatedAddressTest extends TestCase
         $this->address->setAddresses($addresses);
 
         $result = $this->address->getAddresses();
-        $this->assertEquals($addresses, $result);
+        self::assertEquals($addresses, $result);
     }
 
     public function testGetAddressForLanguageMethod(): void
@@ -61,11 +61,11 @@ class TranslatedAddressTest extends TestCase
 
         $result = $this->address->getAddressForLanguage('nl');
 
-        $this->assertEquals($addresses['nl'], $result);
-        $this->assertEquals('België', $result->getAddressCountry());
-        $this->assertEquals('Brussel', $result->getAddressLocality());
-        $this->assertEquals('1000', $result->getPostalCode());
-        $this->assertEquals('Henegouwenkaai 41-43', $result->getStreetAddress());
+        self::assertEquals($addresses['nl'], $result);
+        self::assertEquals('België', $result->getAddressCountry());
+        self::assertEquals('Brussel', $result->getAddressLocality());
+        self::assertEquals('1000', $result->getPostalCode());
+        self::assertEquals('Henegouwenkaai 41-43', $result->getStreetAddress());
     }
 
     public function testDeserializeAddress(): void
@@ -75,7 +75,7 @@ class TranslatedAddressTest extends TestCase
         $resultNl = $this->address->getAddressForLanguage('nl');
         $resultEn = $this->address->getAddressForLanguage('en');
 
-        $this->assertEquals('Gent', $resultNl->getAddressLocality());
-        $this->assertEquals('Ghent', $resultEn->getAddressLocality());
+        self::assertEquals('Gent', $resultNl->getAddressLocality());
+        self::assertEquals('Ghent', $resultEn->getAddressLocality());
     }
 }

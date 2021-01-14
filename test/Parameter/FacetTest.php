@@ -13,7 +13,7 @@ class FacetTest extends TestCase
         $key = $facet->getKey();
         $value = $facet->getValue();
 
-        $this->assertEquals($key, 'facets');
-        $this->assertEquals($value, 'regions');
+        self::assertEquals($key, 'facets');
+        self::assertEquals($value, 'regions');
     }
 }

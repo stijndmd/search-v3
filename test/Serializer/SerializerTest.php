@@ -45,7 +45,7 @@ class SerializerTest extends TestCase
         $expectedAddress .= '"postalCode":"1000","streetAddress":"Henegouwenkaai 41-43"}';
 
         $result = $this->serializer->serialize($addressMock);
-        $this->assertEquals($expectedAddress, $result);
+        self::assertEquals($expectedAddress, $result);
     }
 
     public function testDeserializeMethodForResultsWithoutEmbed(): void
@@ -70,7 +70,7 @@ class SerializerTest extends TestCase
 
         $actual = $this->serializer->deserialize($jsonString);
 
-        $this->assertEquals($expected, $actual);
+        self::assertEquals($expected, $actual);
     }
 
     public function testDeserializeMethodForResultsWithEmbedAndFacets(): void
@@ -228,7 +228,7 @@ class SerializerTest extends TestCase
 
         $actual = $this->serializer->deserialize($jsonString);
 
-        $this->assertEquals($expected, $actual);
+        self::assertEquals($expected, $actual);
     }
 
     private function createEventWithId(string $id): Event

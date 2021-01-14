@@ -13,7 +13,7 @@ class TermLabelsTest extends TestCase
         $key = $termLabel->getKey();
         $value = $termLabel->getValue();
 
-        $this->assertEquals($key, 'termLabels');
-        $this->assertEquals($value, 'Jeugdhuis of jeugdcentrum');
+        self::assertEquals($key, 'termLabels');
+        self::assertEquals($value, 'Jeugdhuis of jeugdcentrum');
     }
 }

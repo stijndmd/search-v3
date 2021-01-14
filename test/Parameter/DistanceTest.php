@@ -13,8 +13,8 @@ class DistanceTest extends TestCase
         $key = $distance->getKey();
         $value = $distance->getValue();
 
-        $this->assertEquals($key, 'distance');
-        $this->assertEquals($value, '15km');
+        self::assertEquals($key, 'distance');
+        self::assertEquals($value, '15km');
     }
 
     public function testConstructorWithWrongUnit()

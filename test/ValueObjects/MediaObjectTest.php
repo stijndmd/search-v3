@@ -21,7 +21,7 @@ class MediaObjectTest extends TestCase
         $this->mediaObject->setId('mediaObject-id');
 
         $result = $this->mediaObject->getId();
-        $this->assertEquals('mediaObject-id', $result);
+        self::assertEquals('mediaObject-id', $result);
     }
 
     public function testGetContentUrlMethod(): void
@@ -29,7 +29,7 @@ class MediaObjectTest extends TestCase
         $this->mediaObject->setContentUrl('http://content-url.com');
 
         $result = $this->mediaObject->getContentUrl();
-        $this->assertEquals('http://content-url.com', $result);
+        self::assertEquals('http://content-url.com', $result);
     }
 
     public function testGetThumbnailUrlMethod(): void
@@ -37,7 +37,7 @@ class MediaObjectTest extends TestCase
         $this->mediaObject->setThumbnailUrl('http://thumbnail-url.com');
 
         $result = $this->mediaObject->getThumbnailUrl();
-        $this->assertEquals('http://thumbnail-url.com', $result);
+        self::assertEquals('http://thumbnail-url.com', $result);
     }
 
     public function testGetDescriptionMethod(): void
@@ -45,7 +45,7 @@ class MediaObjectTest extends TestCase
         $this->mediaObject->setDescription('this is a description');
 
         $result = $this->mediaObject->getDescription();
-        $this->assertEquals('this is a description', $result);
+        self::assertEquals('this is a description', $result);
     }
 
     public function testGetCopyrightHolderMethod(): void
@@ -53,6 +53,6 @@ class MediaObjectTest extends TestCase
         $this->mediaObject->setCopyrightHolder('copyright holder');
 
         $result = $this->mediaObject->getCopyrightHolder();
-        $this->assertEquals('copyright holder', $result);
+        self::assertEquals('copyright holder', $result);
     }
 }

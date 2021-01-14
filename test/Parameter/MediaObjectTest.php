@@ -13,7 +13,7 @@ class MediaObjectTest extends TestCase
         $key = $mediaObject->getKey();
         $value = $mediaObject->getValue();
 
-        $this->assertEquals($key, 'hasMediaObject');
-        $this->assertTrue($value);
+        self::assertEquals($key, 'hasMediaObject');
+        self::assertTrue($value);
     }
 }

@@ -13,7 +13,7 @@ class CreatorTest extends TestCase
         $key = $creator->getKey();
         $value = $creator->getValue();
 
-        $this->assertEquals($key, 'creator');
-        $this->assertEquals($value, 'meneer Oerschaffel');
+        self::assertEquals($key, 'creator');
+        self::assertEquals($value, 'meneer Oerschaffel');
     }
 }

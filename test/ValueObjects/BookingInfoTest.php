@@ -21,7 +21,7 @@ class BookingInfoTest extends TestCase
         $this->bookingInfo->setPhone('0123456789');
 
         $result = $this->bookingInfo->getPhone();
-        $this->assertEquals('0123456789', $result);
+        self::assertEquals('0123456789', $result);
     }
 
     public function testGetEmailMethod(): void
@@ -29,7 +29,7 @@ class BookingInfoTest extends TestCase
         $this->bookingInfo->setEmail('email@gmail.com');
 
         $result = $this->bookingInfo->getEmail();
-        $this->assertEquals('email@gmail.com', $result);
+        self::assertEquals('email@gmail.com', $result);
     }
 
     public function testGetUrlMethod(): void
@@ -37,7 +37,7 @@ class BookingInfoTest extends TestCase
         $this->bookingInfo->setUrl('bookingUrl.com');
 
         $result = $this->bookingInfo->getUrl();
-        $this->assertEquals('bookingUrl.com', $result);
+        self::assertEquals('bookingUrl.com', $result);
     }
 
     public function testGetUrlLabelMethod(): void
@@ -46,7 +46,7 @@ class BookingInfoTest extends TestCase
         $this->bookingInfo->setUrlLabel($urlLabel);
 
         $result = $this->bookingInfo->getUrlLabel();
-        $this->assertInstanceOf('CultuurNet\SearchV3\ValueObjects\TranslatedString', $result);
-        $this->assertEquals($urlLabel, $result);
+        self::assertInstanceOf('CultuurNet\SearchV3\ValueObjects\TranslatedString', $result);
+        self::assertEquals($urlLabel, $result);
     }
 }
