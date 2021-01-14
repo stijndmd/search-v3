@@ -40,7 +40,7 @@ final class FacetResults implements \Iterator
         return $results;
     }
 
-    public function current()
+    public function current(): FacetResult
     {
         return current($this->facetResults);
     }
