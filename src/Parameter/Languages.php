@@ -27,6 +27,9 @@ final class Languages extends AbstractParameter
         return true;
     }
 
+    /**
+     * @return string[]
+     */
     private static function getConstants(): array
     {
         $oClass = new ReflectionClass(__CLASS__);

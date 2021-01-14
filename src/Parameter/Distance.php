@@ -27,6 +27,9 @@ final class Distance extends AbstractParameter
         }
     }
 
+    /**
+     * @return string[]
+     */
     private static function getConstants(): array
     {
         $oClass = new ReflectionClass(__CLASS__);
