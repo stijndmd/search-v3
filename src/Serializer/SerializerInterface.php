@@ -3,13 +3,14 @@
 namespace CultuurNet\SearchV3\Serializer;
 
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
+use JMS\Serializer\SerializerInterface as JMSSerializerInterface;
 
 interface SerializerInterface
 {
     /**
      * Set the JMS serializer.
      */
-    public function setSerializer(\JMS\Serializer\SerializerInterface $serializer);
+    public function setSerializer(JMSSerializerInterface $serializer);
 
     /**
      * Serialize the object to jsonld.
