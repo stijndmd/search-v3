@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\Price;
+use PHPUnit\Framework\TestCase;
 
-class PriceTest extends \PHPUnit_Framework_TestCase
+class PriceTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $price = new Price(5.46);
 
         $key = $price->getKey();
         $value = $price->getValue();
 
-        $this->assertEquals($key, 'price');
-        $this->assertEquals($value, 5.46);
+        $this->assertEquals('price', $key);
+        $this->assertEquals(5.46, $value);
     }
 }

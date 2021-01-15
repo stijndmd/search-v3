@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\MinPrice;
+use PHPUnit\Framework\TestCase;
 
-class MinPriceTest extends \PHPUnit_Framework_TestCase
+class MinPriceTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $price = new minPrice(9.99);
 
         $key = $price->getKey();
         $value = $price->getValue();
 
-        $this->assertEquals($key, 'minPrice');
-        $this->assertEquals($value, 9.99);
+        $this->assertEquals('minPrice', $key);
+        $this->assertEquals(9.99, $value);
     }
 }

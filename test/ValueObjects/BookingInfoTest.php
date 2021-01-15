@@ -1,23 +1,22 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
+namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\ValueObjects\BookingInfo;
-use CultuurNet\SearchV3\ValueObjects\TranslatedString;
+use PHPUnit\Framework\TestCase;
 
-class BookingInfoTest extends \PHPUnit_Framework_TestCase
+class BookingInfoTest extends TestCase
 {
     /**
      * @var BookingInfo
      */
     protected $bookingInfo;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->bookingInfo = new BookingInfo();
     }
 
-    public function testGetPhoneMethod()
+    public function testGetPhoneMethod(): void
     {
         $this->bookingInfo->setPhone('0123456789');
 
@@ -25,7 +24,7 @@ class BookingInfoTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('0123456789', $result);
     }
 
-    public function testGetEmailMethod()
+    public function testGetEmailMethod(): void
     {
         $this->bookingInfo->setEmail('email@gmail.com');
 
@@ -33,7 +32,7 @@ class BookingInfoTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('email@gmail.com', $result);
     }
 
-    public function testGetUrlMethod()
+    public function testGetUrlMethod(): void
     {
         $this->bookingInfo->setUrl('bookingUrl.com');
 
@@ -41,7 +40,7 @@ class BookingInfoTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('bookingUrl.com', $result);
     }
 
-    public function testGetUrlLabelMethod()
+    public function testGetUrlLabelMethod(): void
     {
         $urlLabel = new TranslatedString(['nl' => 'Koop tickets']);
         $this->bookingInfo->setUrlLabel($urlLabel);

@@ -1,33 +1,29 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
+namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\ValueObjects\BookingInfo;
-use CultuurNet\SearchV3\ValueObjects\Event;
-use CultuurNet\SearchV3\ValueObjects\Place;
-use CultuurNet\SearchV3\ValueObjects\PriceInfo;
-use CultuurNet\SearchV3\ValueObjects\TranslatedString;
+use PHPUnit\Framework\TestCase;
 
-class EventTest extends \PHPUnit_Framework_TestCase
+class EventTest extends TestCase
 {
     /**
      * @var Event
      */
     protected $event;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->event = new Event();
     }
 
-    public function testNameGettersAndSetters()
+    public function testNameGettersAndSetters(): void
     {
         $name = new TranslatedString(['nl' => 'event name']);
         $this->event->setName($name);
         $this->assertEquals($name, $this->event->getName());
     }
 
-    public function testGetLocationMethod()
+    public function testGetLocationMethod(): void
     {
         $location = new Place();
         $this->event->setLocation($location);
@@ -36,7 +32,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($location, $result);
     }
 
-    public function testGetSubEventsMethod()
+    public function testGetSubEventsMethod(): void
     {
         $this->event->setSubEvents(array(new Event(), new Event()));
 
@@ -44,16 +40,16 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array(new Event(), new Event()), $result);
     }
 
-    public function testGetPriceInfoMethod()
+    public function testGetPriceInfoMethod(): void
     {
         $priceInfo = new PriceInfo();
-        $this->event->setPriceInfo($priceInfo);
+        $this->event->setPriceInfo([$priceInfo]);
 
         $result = $this->event->getPriceInfo();
-        $this->assertEquals($priceInfo, $result);
+        $this->assertEquals([$priceInfo], $result);
     }
 
-    public function testGetBookingInfoMethod()
+    public function testGetBookingInfoMethod(): void
     {
         $bookingInfo = new BookingInfo();
         $this->event->setBookingInfo($bookingInfo);

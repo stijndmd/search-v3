@@ -1,23 +1,23 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\Distance;
+use PHPUnit\Framework\TestCase;
 
-class DistanceTest extends \PHPUnit_Framework_TestCase
+class DistanceTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $distance = new Distance(15, Distance::UNIT_KILOMETER);
 
         $key = $distance->getKey();
         $value = $distance->getValue();
 
-        $this->assertEquals($key, 'distance');
-        $this->assertEquals($value, '15km');
+        $this->assertEquals('distance', $key);
+        $this->assertEquals('15km', $value);
     }
 
-    public function testConstructorWithWrongUnit()
+    public function testConstructorWithWrongUnit(): void
     {
         $this->expectException(\Exception::class);
         new Distance(15, 'wrong unit');

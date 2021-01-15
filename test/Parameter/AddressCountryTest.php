@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\AddressCountry;
+use PHPUnit\Framework\TestCase;
 
-class AddressCountryTest extends \PHPUnit_Framework_TestCase
+class AddressCountryTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $query = new AddressCountry('BE');
 
         $key = $query->getKey();
         $value = $query->getValue();
 
-        $this->assertEquals($key, 'addressCountry');
-        $this->assertEquals($value, 'BE');
+        $this->assertEquals('addressCountry', $key);
+        $this->assertEquals('BE', $value);
     }
 }

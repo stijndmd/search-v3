@@ -2,17 +2,9 @@
 
 namespace CultuurNet\SearchV3\Parameter;
 
-/**
- * Provides a parameter to search on organizerId.
- */
-class OrganizerId extends AbstractParameter
+final class OrganizerId extends AbstractParameter
 {
-
-    /**
-     * locationId constructor.
-     * @param $organizerId
-     */
-    public function __construct($organizerId)
+    public function __construct(string $organizerId)
     {
         $this->value = $organizerId;
         $this->key = 'organizerId';

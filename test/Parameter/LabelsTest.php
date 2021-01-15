@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\Label;
+use PHPUnit\Framework\TestCase;
 
-class LabelTest extends \PHPUnit_Framework_TestCase
+class LabelTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $label = new Label('this-is-a-label');
 
         $key = $label->getKey();
         $value = $label->getValue();
 
-        $this->assertEquals($key, 'labels');
-        $this->assertEquals($value, 'this-is-a-label');
+        $this->assertEquals('labels', $key);
+        $this->assertEquals('this-is-a-label', $value);
     }
 }

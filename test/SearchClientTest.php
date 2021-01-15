@@ -1,29 +1,30 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test;
+namespace CultuurNet\SearchV3;
 
 use CultuurNet\SearchV3\Serializer\SerializerInterface;
-use CultuurNet\SearchV3\SearchQueryInterface;
-use CultuurNet\SearchV3\SearchClient;
-use Guzzle\Http\Message\Response;
+use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface;
 
-class SearchClientTest extends \PHPUnit_Framework_TestCase
+class SearchClientTest extends TestCase
 {
     /**
-     * @var ClientInterface | \PHPUnit_Framework_MockObject_MockObject
+     * @var ClientInterface | MockObject
      */
     protected $client;
 
     /**
-     * @var SerializerInterface | \PHPUnit_Framework_MockObject_MockObject
+     * @var SerializerInterface | MockObject
      */
     protected $serializer;
 
     protected $searchClient;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->client = $this->getMockBuilder(ClientInterface::class)
             ->getMock();
@@ -32,20 +33,20 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
         $this->searchClient = new SearchClient($this->client, $this->serializer);
     }
 
-    public function provideSearchQueryMock()
+    public function provideSearchQueryMock(): SearchQueryInterface
     {
         $searchQueryMock = $this->getMockBuilder(SearchQueryInterface::class)
             ->getMock();
         $searchQueryMock->expects($this->once())
             ->method('toArray')
-            ->willReturn('asdfadsf');
+            ->willReturn(['foo' => 'bar']);
 
         return $searchQueryMock;
     }
 
-    public function provideResponseMockup()
+    public function provideResponseMockup(): ResponseInterface
     {
-        $response = $this->getMockBuilder(Response::class)
+        $response = $this->getMockBuilder(ResponseInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
         $response->expects($this->once())
@@ -58,24 +59,25 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
     /**
      * Test the setter and getter of the search client.
      */
-    public function testSetClient()
+    public function testSetClient(): void
     {
         $client = new Client(['headers' => ['lorem' => 'ipsum']]);
         $this->searchClient->setClient($client);
         $this->assertEquals($client, $this->searchClient->getClient());
     }
 
-    public function testSearchEventsMethod()
+    public function testSearchEventsMethod(): void
     {
-        $options = array('query' => 'asdfadsf');
+        $options = array('query' => ['foo' => 'bar']);
 
         $searchQueryMock = $this->provideSearchQueryMock();
+        $pagedCollection = new PagedCollection();
         $response = $this->provideResponseMockup();
 
         $this->serializer->expects($this->once())
             ->method('deserialize')
             ->with('test response')
-            ->willReturn('test event');
+            ->willReturn($pagedCollection);
 
         $this->client->expects($this->once())
             ->method('request')
@@ -83,20 +85,21 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
             ->willReturn($response);
 
         $queryResult = $this->searchClient->searchEvents($searchQueryMock);
-        $this->assertEquals('test event', $queryResult);
+        $this->assertEquals($pagedCollection, $queryResult);
     }
 
-    public function testSearchPlacesMethod()
+    public function testSearchPlacesMethod(): void
     {
-        $options = array('query' => 'asdfadsf');
+        $options = array('query' => ['foo' => 'bar']);
 
         $searchQueryMock = $this->provideSearchQueryMock();
+        $pagedCollection = new PagedCollection();
         $response = $this->provideResponseMockup();
 
         $this->serializer->expects($this->once())
             ->method('deserialize')
             ->with('test response')
-            ->willReturn('test place');
+            ->willReturn($pagedCollection);
 
         $this->client->expects($this->once())
             ->method('request')
@@ -104,20 +107,21 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
             ->willReturn($response);
 
         $queryResult = $this->searchClient->searchPlaces($searchQueryMock);
-        $this->assertEquals('test place', $queryResult);
+        $this->assertEquals($pagedCollection, $queryResult);
     }
 
-    public function testSearchOfferMethod()
+    public function testSearchOfferMethod(): void
     {
-        $options = array('query' => 'asdfadsf');
-
+        $options = array('query' => ['foo' => 'bar']);
+        $pagedCollection = new PagedCollection();
         $searchQueryMock = $this->provideSearchQueryMock();
+
         $response = $this->provideResponseMockup();
 
         $this->serializer->expects($this->once())
             ->method('deserialize')
             ->with('test response')
-            ->willReturn('test offer');
+            ->willReturn($pagedCollection);
 
         $this->client->expects($this->once())
             ->method('request')
@@ -125,6 +129,6 @@ class SearchClientTest extends \PHPUnit_Framework_TestCase
             ->willReturn($response);
 
         $queryResult = $this->searchClient->searchOffers($searchQueryMock);
-        $this->assertEquals('test offer', $queryResult);
+        $this->assertEquals($pagedCollection, $queryResult);
     }
 }

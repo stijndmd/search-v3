@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\WorkflowStatus;
+use PHPUnit\Framework\TestCase;
 
-class WorkflowStatusTest extends \PHPUnit_Framework_TestCase
+class WorkflowStatusTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $workflow = new WorkflowStatus(WorkflowStatus::STATUS_APPROVED);
 
         $key = $workflow->getKey();
         $value = $workflow->getValue();
 
-        $this->assertEquals($key, 'workflowStatus');
-        $this->assertEquals($value, 'APPROVED');
+        $this->assertEquals('workflowStatus', $key);
+        $this->assertEquals('APPROVED', $value);
     }
 }

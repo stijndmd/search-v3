@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\AudienceType;
+use PHPUnit\Framework\TestCase;
 
-class AudienceTypeTest extends \PHPUnit_Framework_TestCase
+class AudienceTypeTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $audienceType = new AudienceType(AudienceType::AUDIENCE_EVERYONE);
 
         $key = $audienceType->getKey();
         $value = $audienceType->getValue();
 
-        $this->assertEquals($key, 'audienceType');
-        $this->assertEquals($value, 'everyone');
+        $this->assertEquals('audienceType', $key);
+        $this->assertEquals('everyone', $value);
     }
 }

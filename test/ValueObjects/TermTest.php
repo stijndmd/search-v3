@@ -1,22 +1,22 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
+namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\ValueObjects\Term;
+use PHPUnit\Framework\TestCase;
 
-class TermTest extends \PHPUnit_Framework_TestCase
+class TermTest extends TestCase
 {
     /**
      * @var Term
      */
     protected $term;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->term = new Term();
     }
 
-    public function testGetIdMethod()
+    public function testGetIdMethod(): void
     {
         $this->term->setId('term-id');
 
@@ -24,7 +24,7 @@ class TermTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('term-id', $result);
     }
 
-    public function testGetLabelMethod()
+    public function testGetLabelMethod(): void
     {
         $this->term->setLabel('term-label');
 
@@ -32,7 +32,7 @@ class TermTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('term-label', $result);
     }
 
-    public function testGetDomainMethod()
+    public function testGetDomainMethod(): void
     {
         $this->term->setDomain('term-domain');
 

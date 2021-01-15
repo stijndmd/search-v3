@@ -1,15 +1,12 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
+namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\ValueObjects\FacetResults;
-use CultuurNet\SearchV3\ValueObjects\FacetResult;
-use CultuurNet\SearchV3\ValueObjects\FacetResultItem;
-use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
+use PHPUnit\Framework\TestCase;
 
-class FacetResultsTest extends \PHPUnit_Framework_TestCase
+class FacetResultsTest extends TestCase
 {
     /**
      * @var FacetResults
@@ -22,13 +19,13 @@ class FacetResultsTest extends \PHPUnit_Framework_TestCase
 
     protected $context;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->facetResults = new FacetResults();
         $this->facetJson = json_decode(file_get_contents(__DIR__ . '/data/facetResults.json'), true);
     }
 
-    public function deserializeEverything()
+    public function deserializeEverything(): void
     {
         $this->visitor = $this->getMockBuilder(JsonDeserializationVisitor::class)
             ->disableOriginalConstructor()
@@ -39,7 +36,7 @@ class FacetResultsTest extends \PHPUnit_Framework_TestCase
         $this->facetResults->deserializeFromJson($this->visitor, $this->facetJson, $this->context);
     }
 
-    public function deserializeFacilitiesTestData($results)
+    public function deserializeFacilitiesTestData($results): array
     {
         $items = [];
         foreach ($results as $value => $result) {
@@ -50,14 +47,14 @@ class FacetResultsTest extends \PHPUnit_Framework_TestCase
         return $items;
     }
 
-    public function testGetFacetResultsMethod()
+    public function testGetFacetResultsMethod(): void
     {
         $this->facetResults->setFacetResults($this->facetJson);
         $result = $this->facetResults->getFacetResults();
         $this->assertEquals($result, $this->facetJson);
     }
 
-    public function testGetFacetResultsByFieldMethod()
+    public function testGetFacetResultsByFieldMethod(): void
     {
         $this->deserializeEverything();
 
@@ -67,35 +64,5 @@ class FacetResultsTest extends \PHPUnit_Framework_TestCase
         $result = $this->facetResults->getFacetResultsByField('facilities');
 
         $this->assertEquals($result, $facilitiesTestData);
-    }
-
-    public function testIteratorCurrentMethod()
-    {
-        $this->deserializeEverything();
-        $this->facetResults->current();
-    }
-
-    public function testIteratorNextMethod()
-    {
-        $this->deserializeEverything();
-        $this->facetResults->next();
-    }
-
-    public function testIteratorKeyMethod()
-    {
-        $this->deserializeEverything();
-        $this->facetResults->key();
-    }
-
-    public function testIteratorValidMethod()
-    {
-        $this->deserializeEverything();
-        $this->facetResults->valid();
-    }
-
-    public function testIteratorRewindMethod()
-    {
-        $this->deserializeEverything();
-        $this->facetResults->rewind();
     }
 }

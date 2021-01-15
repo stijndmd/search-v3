@@ -1,22 +1,22 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
+namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\ValueObjects\Address;
+use PHPUnit\Framework\TestCase;
 
-class AddressTest extends \PHPUnit_Framework_TestCase
+class AddressTest extends TestCase
 {
     /**
      * @var Address
      */
     protected $address;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->address = new Address();
     }
 
-    public function testGetAddressCountryMethod()
+    public function testGetAddressCountryMethod(): void
     {
         $this->address->setAddressCountry('België');
 
@@ -24,7 +24,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('België', $result);
     }
 
-    public function testGetAddressLocalityMethod()
+    public function testGetAddressLocalityMethod(): void
     {
         $this->address->setAddressLocality('Brussel');
 
@@ -32,7 +32,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Brussel', $result);
     }
 
-    public function testGetPostalCodeMethod()
+    public function testGetPostalCodeMethod(): void
     {
         $this->address->setPostalCode('1000');
 
@@ -40,7 +40,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('1000', $result);
     }
 
-    public function testGetStreetAddressMethod()
+    public function testGetStreetAddressMethod(): void
     {
         $this->address->setStreetAddress('Henegouwenkaai 41-43');
 

@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\MaxAge;
+use PHPUnit\Framework\TestCase;
 
-class MaxAgeTest extends \PHPUnit_Framework_TestCase
+class MaxAgeTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $id = new MaxAge('16');
 
         $key = $id->getKey();
         $value = $id->getValue();
 
-        $this->assertEquals($key, 'maxAge');
-        $this->assertEquals($value, '16');
+        $this->assertEquals('maxAge', $key);
+        $this->assertEquals('16', $value);
     }
 }

@@ -1,13 +1,12 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
+namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\ValueObjects\Address;
-use CultuurNet\SearchV3\ValueObjects\TranslatedAddress;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
+use PHPUnit\Framework\TestCase;
 
-class TranslatedAddressTest extends \PHPUnit_Framework_TestCase
+class TranslatedAddressTest extends TestCase
 {
     /**
      * @var TranslatedAddress
@@ -19,7 +18,7 @@ class TranslatedAddressTest extends \PHPUnit_Framework_TestCase
      */
     protected $addressValues;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->address = new TranslatedAddress();
 
@@ -27,7 +26,7 @@ class TranslatedAddressTest extends \PHPUnit_Framework_TestCase
         $this->addressValues = $searchResult['location']['address'];
     }
 
-    public function deserializeAddress()
+    public function deserializeAddress(): void
     {
         $this->visitor = $this->getMockBuilder(JsonDeserializationVisitor::class)
             ->disableOriginalConstructor()
@@ -39,7 +38,7 @@ class TranslatedAddressTest extends \PHPUnit_Framework_TestCase
         $this->address->deserializeFromJson($this->visitor, $this->addressValues, $this->context);
     }
 
-    public function testGetAddressesMethod()
+    public function testGetAddressesMethod(): void
     {
         $addresses = [
             'nl' => new Address('België', 'Brussel', '1000', 'Henegouwenkaai 41-43'),
@@ -52,7 +51,7 @@ class TranslatedAddressTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($addresses, $result);
     }
 
-    public function testGetAddressForLanguageMethod()
+    public function testGetAddressForLanguageMethod(): void
     {
         $addresses = [
             'nl' => new Address('België', 'Brussel', '1000', 'Henegouwenkaai 41-43'),
@@ -69,7 +68,7 @@ class TranslatedAddressTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Henegouwenkaai 41-43', $result->getStreetAddress());
     }
 
-    public function testDeserializeAddress()
+    public function testDeserializeAddress(): void
     {
         $this->deserializeAddress();
 

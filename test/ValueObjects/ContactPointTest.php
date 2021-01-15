@@ -1,22 +1,22 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
+namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\ValueObjects\ContactPoint;
+use PHPUnit\Framework\TestCase;
 
-class ContactPointTest extends \PHPUnit_Framework_TestCase
+class ContactPointTest extends TestCase
 {
     /**
      * @var ContactPoint
      */
     protected $contactPoint;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->contactPoint = new ContactPoint();
     }
 
-    public function testGetEmailsMethod()
+    public function testGetEmailsMethod(): void
     {
         $emails = array('email1@gmail.com', 'email2@gmail.com');
         $this->contactPoint->setEmails($emails);
@@ -25,7 +25,7 @@ class ContactPointTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($emails, $result);
     }
 
-    public function testGetPhoneNumbersMethod()
+    public function testGetPhoneNumbersMethod(): void
     {
         $phones = array('1234567890', '0987654321');
         $this->contactPoint->setPhoneNumbers($phones);
@@ -34,7 +34,7 @@ class ContactPointTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($phones, $result);
     }
 
-    public function testGetUrlsMethod()
+    public function testGetUrlsMethod(): void
     {
         $urls = array('http://google.com', 'http://yahoo.com');
         $this->contactPoint->setUrls($urls);

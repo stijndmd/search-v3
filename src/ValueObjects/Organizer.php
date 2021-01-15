@@ -2,143 +2,105 @@
 
 namespace CultuurNet\SearchV3\ValueObjects;
 
-use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
 
-class Organizer
+final class Organizer
 {
-
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      * @SerializedName("@id")
      */
-    protected $id;
+    private $id;
 
     /**
-     * @var TranslatedString
+     * @var TranslatedString|null
      * @Type("CultuurNet\SearchV3\ValueObjects\TranslatedString")
      */
-    protected $name;
+    private $name;
 
     /**
-     * @var array
+     * @var string[]
      * @Type("array<string>")
      */
-    protected $email;
+    private $email = [];
 
     /**
-     * @var ContactPoint
+     * @var ContactPoint|null
      * @Type("CultuurNet\SearchV3\ValueObjects\ContactPoint")
      */
-    protected $contactPoint;
+    private $contactPoint;
 
     /**
-     * @var array
+     * @var string[]
      * @Type("array<string>")
      */
-    protected $hiddenLabels;
+    private $hiddenLabels = [];
 
-    /**
-     * @return string
-     */
-    public function getId()
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     * @return Organizer
-     */
-    public function setId($id)
+    public function setId(string $id): void
     {
         $this->id = $id;
-        return $this;
     }
 
-    /**
-     * Get the cdbid.
-     * @return string
-     */
-    public function getCdbid()
+    public function getCdbid(): ?string
     {
+        if (is_null($this->id)) {
+            return null;
+        }
+
         $id_parts = explode('/', rtrim($this->id, '/'));
         return end($id_parts);
     }
 
-    /**
-     * @return TranslatedString
-     */
-    public function getName()
+    public function getName(): ?TranslatedString
     {
         return $this->name;
     }
 
-    /**
-     * @param TranslatedString $name
-     * @return Organizer
-     */
-    public function setName(TranslatedString $name)
+    public function setName(TranslatedString $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getEmail()
+    public function getEmail(): array
     {
         return $this->email;
     }
 
-    /**
-     * @param array $email
-     * @return Organizer
-     */
-    public function setEmail($email)
+    public function setEmail(array $email): void
     {
         $this->email = $email;
-
-        return $this;
     }
 
-    /**
-     * @return ContactPoint
-     */
-    public function getContactPoint()
+    public function getContactPoint(): ?ContactPoint
     {
         return $this->contactPoint;
     }
 
-    /**
-     * @param ContactPoint $contactPoint
-     * @return Organizer
-     */
-    public function setContactPoint($contactPoint)
+    public function setContactPoint(ContactPoint $contactPoint): void
     {
         $this->contactPoint = $contactPoint;
-        return $this;
     }
 
     /**
-     * @return array
+     * @return string[]
      */
-    public function getHiddenLabels()
+    public function getHiddenLabels(): array
     {
         return $this->hiddenLabels;
     }
 
     /**
-     * @param array $hiddenLabels
-     * @return Organizer
+     * @param string[] $hiddenLabels
      */
-    public function setHiddenLabels($hiddenLabels)
+    public function setHiddenLabels(array $hiddenLabels): void
     {
         $this->hiddenLabels = $hiddenLabels;
-
-        return $this;
     }
 }

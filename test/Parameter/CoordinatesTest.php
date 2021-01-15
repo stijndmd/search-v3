@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\Coordinates;
+use PHPUnit\Framework\TestCase;
 
-class CoordinatesTest extends \PHPUnit_Framework_TestCase
+class CoordinatesTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $coordinates = new Coordinates('50.8511740', '4.3386740');
 
         $key = $coordinates->getKey();
         $value = $coordinates->getValue();
 
-        $this->assertEquals($key, 'coordinates');
-        $this->assertEquals($value, '50.8511740,4.3386740');
+        $this->assertEquals('coordinates', $key);
+        $this->assertEquals('50.8511740,4.3386740', $value);
     }
 }

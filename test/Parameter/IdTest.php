@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\Id;
+use PHPUnit\Framework\TestCase;
 
-class IdTest extends \PHPUnit_Framework_TestCase
+class IdTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $id = new Id('this-is-an-id');
 
         $key = $id->getKey();
         $value = $id->getValue();
 
-        $this->assertEquals($key, 'id');
-        $this->assertEquals($value, 'this-is-an-id');
+        $this->assertEquals('id', $key);
+        $this->assertEquals('this-is-an-id', $value);
     }
 }

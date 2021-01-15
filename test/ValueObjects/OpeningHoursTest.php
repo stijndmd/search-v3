@@ -1,22 +1,22 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
+namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\ValueObjects\OpeningHours;
+use PHPUnit\Framework\TestCase;
 
-class OpeningHoursTest extends \PHPUnit_Framework_TestCase
+class OpeningHoursTest extends TestCase
 {
     /**
      * @var OpeningHours
      */
     protected $openingHours;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->openingHours = new OpeningHours();
     }
 
-    public function testGetDayOfWeekMethod()
+    public function testGetDayOfWeekMethod(): void
     {
         $daysOfWeek = array('tuesday', 'wednesday', 'thursday');
         $this->openingHours->setDaysOfWeek($daysOfWeek);
@@ -25,7 +25,7 @@ class OpeningHoursTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($daysOfWeek, $result);
     }
 
-    public function testGetOpensMethod()
+    public function testGetOpensMethod(): void
     {
         $opens = '10:00';
         $this->openingHours->setOpens($opens);
@@ -34,7 +34,7 @@ class OpeningHoursTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($opens, $result);
     }
 
-    public function testGetClosesMethod()
+    public function testGetClosesMethod(): void
     {
         $closes = '18:00';
         $this->openingHours->setCloses($closes);

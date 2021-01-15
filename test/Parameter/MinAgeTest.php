@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\MinAge;
+use PHPUnit\Framework\TestCase;
 
-class MinAgeTest extends \PHPUnit_Framework_TestCase
+class MinAgeTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $id = new MinAge('12');
 
         $key = $id->getKey();
         $value = $id->getValue();
 
-        $this->assertEquals($key, 'minAge');
-        $this->assertEquals($value, '12');
+        $this->assertEquals('minAge', $key);
+        $this->assertEquals('12', $value);
     }
 }

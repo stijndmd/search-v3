@@ -1,27 +1,39 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\CreatedFrom;
+use DateTime;
+use PHPUnit\Framework\TestCase;
 
-class CreatedFromTest extends \PHPUnit_Framework_TestCase
+class CreatedFromTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
-        $dateTime = new \DateTime('21-12-2017T10:00:00+01:00');
-        $id = new CreatedFrom($dateTime);
+        $dateTime = new DateTime('2017-12-21T10:00:00+01:00');
+        $createdFrom = new CreatedFrom($dateTime);
 
-        $key = $id->getKey();
-        $value = $id->getValue();
+        $key = $createdFrom->getKey();
+        $value = $createdFrom->getValue();
 
         $this->assertEquals('createdFrom', $key);
         $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
     }
 
-    public function testConstructorWithWildcard()
+    public function testFactoryMethodWithAtomString(): void
     {
-        $wildCard = '*';
-        $id = new CreatedFrom($wildCard);
+        $dateTime = '2017-12-21T10:00:00+01:00';
+        $createdFrom = CreatedFrom::createFromAtomString($dateTime);
+
+        $key = $createdFrom->getKey();
+        $value = $createdFrom->getValue();
+
+        $this->assertEquals('createdFrom', $key);
+        $this->assertEquals('2017-12-21T10:00:00+01:00', $value);
+    }
+
+    public function testWithWildcard(): void
+    {
+        $id = CreatedFrom::wildcard();
 
         $key = $id->getKey();
         $value = $id->getValue();

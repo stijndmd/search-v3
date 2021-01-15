@@ -1,25 +1,25 @@
 <?php
 
-namespace CultuurNet\SearchV3\Test\ValueObjects;
+namespace CultuurNet\SearchV3\ValueObjects;
 
-use CultuurNet\SearchV3\ValueObjects\FacetResult;
+use PHPUnit\Framework\TestCase;
 
-class FacetResultTest extends \PHPUnit_Framework_TestCase
+class FacetResultTest extends TestCase
 {
     /**
      * @var FacetResult
      */
     protected $facetResult;
 
-    public function setUp()
+    public function setUp(): void
     {
         $field = 'facet result field';
         $results = $this->getMockBuilder('\FacetResultItem')
             ->getMock();
-        $this->facetResult = new FacetResult($field, $results);
+        $this->facetResult = new FacetResult($field, [$results]);
     }
 
-    public function testGetFieldMethod()
+    public function testGetFieldMethod(): void
     {
         $this->facetResult->setField('new facet result field');
 
@@ -27,13 +27,13 @@ class FacetResultTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('new facet result field', $result);
     }
 
-    public function testGetResultsMethod()
+    public function testGetResultsMethod(): void
     {
         $newResults = $this->getMockBuilder('\FacetResultItem')
             ->getMock();
-        $this->facetResult->setResults($newResults);
+        $this->facetResult->setResults([$newResults]);
 
         $result = $this->facetResult->getResults();
-        $this->assertEquals($newResults, $result);
+        $this->assertEquals([$newResults], $result);
     }
 }

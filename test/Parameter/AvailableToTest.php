@@ -1,27 +1,39 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\AvailableTo;
+use DateTime;
+use PHPUnit\Framework\TestCase;
 
-class AvailableToTest extends \PHPUnit_Framework_TestCase
+class AvailableToTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
-        $dateTime = new \DateTime('2017-04-11T12:08:01+01:00');
-        $id = new AvailableTo($dateTime);
+        $dateTime = new DateTime('2017-04-11T12:08:01+01:00');
+        $availableTo = new AvailableTo($dateTime);
 
-        $key = $id->getKey();
-        $value = $id->getValue();
+        $key = $availableTo->getKey();
+        $value = $availableTo->getValue();
 
         $this->assertEquals('availableTo', $key);
         $this->assertEquals('2017-04-11T12:08:01+01:00', $value);
     }
 
-    public function testConstructorWithWildcard()
+    public function testFactoryMethodWithAtomString(): void
     {
-        $wildCard = '*';
-        $id = new AvailableTo($wildCard);
+        $dateTime = '2017-04-11T12:08:01+01:00';
+        $availableFrom = AvailableTo::createFromAtomString($dateTime);
+
+        $key = $availableFrom->getKey();
+        $value = $availableFrom->getValue();
+
+        $this->assertEquals('availableTo', $key);
+        $this->assertEquals('2017-04-11T12:08:01+01:00', $value);
+    }
+
+    public function testWithWildcard(): void
+    {
+        $id = AvailableTo::wildcard();
 
         $key = $id->getKey();
         $value = $id->getValue();

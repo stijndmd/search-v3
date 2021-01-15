@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\Regions;
+use PHPUnit\Framework\TestCase;
 
-class RegionsTest extends \PHPUnit_Framework_TestCase
+class RegionsTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $region = new Regions('prv-antwerpen');
 
         $key = $region->getKey();
         $value = $region->getValue();
 
-        $this->assertEquals($key, 'regions');
-        $this->assertEquals($value, 'prv-antwerpen');
+        $this->assertEquals('regions', $key);
+        $this->assertEquals('prv-antwerpen', $value);
     }
 }

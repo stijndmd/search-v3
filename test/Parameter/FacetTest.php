@@ -1,19 +1,19 @@
 <?php
 
-namespace CultuurNet\SearchV3\Parameter\Test;
+namespace CultuurNet\SearchV3\Parameter;
 
-use CultuurNet\SearchV3\Parameter\Facet;
+use PHPUnit\Framework\TestCase;
 
-class FacetTest extends \PHPUnit_Framework_TestCase
+class FacetTest extends TestCase
 {
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $facet = new Facet('regions');
 
         $key = $facet->getKey();
         $value = $facet->getValue();
 
-        $this->assertEquals($key, 'facets');
-        $this->assertEquals($value, 'regions');
+        $this->assertEquals('facets', $key);
+        $this->assertEquals('regions', $value);
     }
 }
