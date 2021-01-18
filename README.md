@@ -32,7 +32,7 @@ You can then perform searches like this:
 ```php
 $searchQuery = new \CultuurNet\SearchV3\SearchQuery();
 $events = $searchClient->searchEvents($searchQuery); // Search events
-$places = $searchClient->searchPlace($searchQuery); // Search places
+$places = $searchClient->searchPlaces($searchQuery); // Search places
 $offers = $searchClient->searchOffers($searchQuery); // Search both events + places
 ```
 
