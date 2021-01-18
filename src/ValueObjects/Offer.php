@@ -160,6 +160,12 @@ abstract class Offer
      */
     private $openingHours = [];
 
+    /**
+     * @var Status
+     * @Type("CultuurNet\SearchV3\ValueObjects\Status")
+     */
+    private $status;
+
     public function getId(): ?string
     {
         return $this->id;
@@ -473,5 +479,15 @@ abstract class Offer
     public function setOpeningHours(array $openingHours): void
     {
         $this->openingHours = $openingHours;
+    }
+
+    public function getStatus(): Status
+    {
+        return $this->status;
+    }
+
+    public function setStatus(Status $status): void
+    {
+        $this->status = $status;
     }
 }
