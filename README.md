@@ -5,6 +5,12 @@ This PHP library allows you to integrate with publiq's Search API3.
 Full API documentation: https://documentatie.uitdatabank.be/content/search_api_3/latest/start.html <br />
 Getting an API key: https://projectaanvraag.uitdatabank.be
 
+## Installation
+
+```bash
+composer require cultuurnet/search-v3
+```
+
 ## Usage
 
 Set up a Guzzle client with a URL and API key for the test environment of Search API3 like this:
