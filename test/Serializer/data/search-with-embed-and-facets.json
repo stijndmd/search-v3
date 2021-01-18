@@ -63,18 +63,38 @@
           "latitude": 50.8299134,
           "longitude": 4.3434589
         },
-        "status": "Available"
+        "status": {
+          "type": "Available"
+        }
       },
-      "calendarType": "single",
+      "calendarType": "multiple",
       "startDate": "2021-01-21T23:00:00+00:00",
       "endDate": "2021-03-04T22:59:59+00:00",
-      "status": "Available",
+      "status": {
+        "type": "Available",
+        "reason": {
+          "nl": "Nederlandse reden",
+          "en": "English reason"
+        }
+      },
       "subEvent": [
         {
           "status": {
             "type": "Available"
           },
           "startDate": "2021-01-21T23:00:00+00:00",
+          "endDate": "2021-01-22T22:59:59+00:00",
+          "@type": "Event"
+        },
+        {
+          "status": {
+            "type": "Unavailable",
+            "reason": {
+              "nl": "Nederlandse reden",
+              "en": "English reason"
+            }
+          },
+          "startDate": "2021-03-03T23:00:00+00:00",
           "endDate": "2021-03-04T22:59:59+00:00",
           "@type": "Event"
         }

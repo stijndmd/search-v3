@@ -16,6 +16,7 @@ use CultuurNet\SearchV3\ValueObjects\Organizer;
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use CultuurNet\SearchV3\ValueObjects\Place;
 use CultuurNet\SearchV3\ValueObjects\PriceInfo;
+use CultuurNet\SearchV3\ValueObjects\Status;
 use CultuurNet\SearchV3\ValueObjects\Term;
 use CultuurNet\SearchV3\ValueObjects\TranslatedAddress;
 use CultuurNet\SearchV3\ValueObjects\TranslatedString;
@@ -83,14 +84,43 @@ class SerializerTest extends TestCase
             'fr' => 'Le sanglier et le papillon - La mue',
             'nl' => 'Het zwijn en de vlinder - De rui',
         ]));
-        $event->setCalendarType('single');
+        $event->setCalendarType('multiple');
         $event->setStartDate(new \DateTime('2021-01-21T23:00:00+00:00'));
         $event->setEndDate(new \DateTime('2021-03-04T22:59:59+00:00'));
 
-        $subEvent = new Event();
-        $subEvent->setStartDate(new \DateTime('2021-01-21T23:00:00+00:00'));
-        $subEvent->setEndDate(new \DateTime('2021-03-04T22:59:59+00:00'));
-        $event->setSubEvents([$subEvent]);
+        $event->setStatus(
+            new Status(
+                'Available',
+                new TranslatedString(
+                    [
+                        'nl' => 'Nederlandse reden',
+                        'en' => 'English reason',
+                    ]
+                )
+            )
+        );
+
+        $subEvent1 = new Event();
+        $subEvent1->setStatus(new Status('Available'));
+        $subEvent1->setStartDate(new \DateTime('2021-01-21T23:00:00+00:00'));
+        $subEvent1->setEndDate(new \DateTime('2021-01-22T22:59:59+00:00'));
+
+        $subEvent2 = new Event();
+        $subEvent2->setStatus(
+            new Status(
+                'Unavailable',
+                new TranslatedString(
+                    [
+                        'nl' => 'Nederlandse reden',
+                        'en' => 'English reason',
+                    ]
+                )
+            )
+        );
+        $subEvent2->setStartDate(new \DateTime('2021-03-03T23:00:00+00:00'));
+        $subEvent2->setEndDate(new \DateTime('2021-03-04T22:59:59+00:00'));
+
+        $event->setSubEvents([$subEvent1, $subEvent2]);
 
         $term = new Term();
         $term->setId('0.0.0.0.0');
@@ -151,6 +181,8 @@ class SerializerTest extends TestCase
             'fr' => 'Constant asbl',
             'en' => 'Constant',
         ]));
+
+        $location->setStatus(new Status('Available'));
 
         $addressNl = new Address();
         $addressNl->setAddressCountry('BE');
