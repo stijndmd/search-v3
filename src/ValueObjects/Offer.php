@@ -220,11 +220,21 @@ abstract class Offer
         $this->calendarType = $calendarType;
     }
 
+    /**
+     * @deprecated
+     *   There is no calendarSummary property on events/places, so this will always return null in reality.
+     *   Will be removed in 2.0
+     */
     public function getCalendarSummary(): ?string
     {
         return $this->calendarSummary;
     }
 
+    /**
+     * @deprecated
+     *   There is no calendarSummary property on events/places, so serializing this and sending it to UDB3 does nothing.
+     *   Will be removed in 2.0
+     */
     public function setCalendarSummary(string $calendarSummary): void
     {
         $this->calendarSummary = $calendarSummary;
