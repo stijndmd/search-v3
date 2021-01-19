@@ -19,7 +19,7 @@ jobs:
                   php-version: ${{ matrix.php-versions }}
                   ini-values: xdebug.mode=coverage
                   extensions: intl
-                  tools: composer:v1
+                  tools: composer:v2
 
             - name: Check PHP Version
               run: php -v
@@ -28,7 +28,7 @@ jobs:
               run: composer validate
 
             - name: Install dependencies
-              run: composer install --no-progress --no-suggest
+              run: composer update --no-progress
 
             - name: Run Phing
               run: composer run-script phing

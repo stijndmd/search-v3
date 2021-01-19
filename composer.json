@@ -21,7 +21,7 @@
     "guzzlehttp/guzzle": "~6.0",
     "jms/serializer": "~1.9",
     "simple-bus/jms-serializer-bridge": "^1.0",
-    "indigophp/doctrine-annotation-autoload": "^0.1.0"
+    "yogarine/doctrine-annotation-autoload": "^0.3.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~7.5",
