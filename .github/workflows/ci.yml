@@ -28,7 +28,7 @@ jobs:
               run: composer validate
 
             - name: Install dependencies
-              run: composer install --no-progress
+              run: composer update --no-progress
 
             - name: Run Phing
               run: composer run-script phing
