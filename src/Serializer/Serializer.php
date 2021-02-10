@@ -32,7 +32,6 @@ final class Serializer implements SerializerInterface
                 $registry->registerSubscribingHandler(new DateTimeHandler());
             })
             ->build();
-
     }
 
     public function setSerializer(JMSSerializerInterface $serializer)
