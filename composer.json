@@ -28,6 +28,11 @@
     "squizlabs/php_codesniffer": "3.5"
   },
   "scripts": {
-    "phing": "./vendor/bin/phing test"
+    "test": "vendor/bin/phpunit",
+    "phpcs": "vendor/bin/phpcs -p",
+    "ci": [
+      "composer test",
+      "composer phpcs"
+    ]
   }
 }
