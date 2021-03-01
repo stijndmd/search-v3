@@ -10,7 +10,7 @@ final class MinPriceTest extends TestCase
 {
     public function testConstructor(): void
     {
-        $price = new minPrice(9.99);
+        $price = new MinPrice(9.99);
 
         $key = $price->getKey();
         $value = $price->getValue();
