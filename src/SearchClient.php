@@ -54,7 +54,7 @@ final class SearchClient implements SearchClientInterface
     private function search(SearchQueryInterface $searchQuery, $type): PagedCollection
     {
         $options = [
-          'query' => $searchQuery->toArray()
+          'query' => $searchQuery->toArray(),
         ];
 
         $result = $this->client->request('GET', $type, $options);
