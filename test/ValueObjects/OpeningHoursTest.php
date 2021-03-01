@@ -20,7 +20,7 @@ final class OpeningHoursTest extends TestCase
 
     public function testGetDayOfWeekMethod(): void
     {
-        $daysOfWeek = array('tuesday', 'wednesday', 'thursday');
+        $daysOfWeek = ['tuesday', 'wednesday', 'thursday'];
         $this->openingHours->setDaysOfWeek($daysOfWeek);
 
         $result = $this->openingHours->getDaysOfWeek();

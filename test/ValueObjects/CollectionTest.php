@@ -20,7 +20,7 @@ final class CollectionTest extends TestCase
 
     public function testGetItemsMethod(): void
     {
-        $items = array('item1', 'item2', 'item3');
+        $items = ['item1', 'item2', 'item3'];
         $this->collection->setItems($items);
 
         $result = $this->collection->getItems();

@@ -66,7 +66,6 @@ final class PlaceTest extends TestCase
 
     public function testGetNameMethod(): void
     {
-
         $name = new TranslatedString(['nl' => 'name']);
         $this->place->setName($name);
         $this->assertEquals($name, $this->place->getName());
@@ -138,10 +137,10 @@ final class PlaceTest extends TestCase
 
     public function testGetPerformersMethod(): void
     {
-        $this->place->setPerformers(array(new Performer('performer name')));
+        $this->place->setPerformers([new Performer('performer name')]);
 
         $result = $this->place->getPerformers();
-        $this->assertEquals(array(new Performer('performer name')), $result);
+        $this->assertEquals([new Performer('performer name')], $result);
     }
 
     public function testGetImageMethod(): void
@@ -155,10 +154,10 @@ final class PlaceTest extends TestCase
     public function testGetMediaObjectsMethod(): void
     {
         $mockMediaObject = new MediaObject();
-        $this->place->setMediaObjects(array($mockMediaObject));
+        $this->place->setMediaObjects([$mockMediaObject]);
 
         $result = $this->place->getMediaObjects();
-        $this->assertEquals(array($mockMediaObject), $result);
+        $this->assertEquals([$mockMediaObject], $result);
     }
 
     public function testGetMainMediaObjectMethod(): void
@@ -167,7 +166,7 @@ final class PlaceTest extends TestCase
 
         $mockMediaObject = new MediaObject();
         $mockMediaObject->setContentUrl('http://path-to-image.com');
-        $this->place->setMediaObjects(array($mockMediaObject));
+        $this->place->setMediaObjects([$mockMediaObject]);
 
         $result = $this->place->getMainMediaObject();
         $this->assertEquals($mockMediaObject, $result);
@@ -184,18 +183,18 @@ final class PlaceTest extends TestCase
 
     public function testGetLabelsMethod(): void
     {
-        $this->place->setLabels(array('label1', 'label2'));
+        $this->place->setLabels(['label1', 'label2']);
 
         $result = $this->place->getLabels();
-        $this->assertEquals(array('label1', 'label2'), $result);
+        $this->assertEquals(['label1', 'label2'], $result);
     }
 
     public function testGetHiddenLabelsMethod(): void
     {
-        $this->place->setHiddenLabels(array('hidden1', 'hidden2'));
+        $this->place->setHiddenLabels(['hidden1', 'hidden2']);
 
         $result = $this->place->getHiddenLabels();
-        $this->assertEquals(array('hidden1', 'hidden2'), $result);
+        $this->assertEquals(['hidden1', 'hidden2'], $result);
     }
 
     public function testGetStartDateMethod(): void
@@ -226,10 +225,10 @@ final class PlaceTest extends TestCase
         $mockTerm2->setLabel('term-label');
         $mockTerm2->setDomain('testOtherDomain');
 
-        $this->place->setTerms(array($mockTerm1, $mockTerm2));
+        $this->place->setTerms([$mockTerm1, $mockTerm2]);
 
         $result = $this->place->getTerms();
-        $this->assertEquals(array($mockTerm1, $mockTerm2), $result);
+        $this->assertEquals([$mockTerm1, $mockTerm2], $result);
     }
 
     public function testGetTermsByDomainMethod(): void
@@ -244,10 +243,10 @@ final class PlaceTest extends TestCase
         $mockTerm2->setLabel('term-label');
         $mockTerm2->setDomain('testOtherDomain');
 
-        $this->place->setTerms(array($mockTerm1, $mockTerm2));
+        $this->place->setTerms([$mockTerm1, $mockTerm2]);
 
         $result = $this->place->getTermsByDomain('testDomain');
-        $this->assertEquals(array($mockTerm1), $result);
+        $this->assertEquals([$mockTerm1], $result);
     }
 
     public function testGetContactPointMethod(): void

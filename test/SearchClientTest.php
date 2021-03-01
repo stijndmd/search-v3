@@ -70,7 +70,7 @@ final class SearchClientTest extends TestCase
 
     public function testSearchEventsMethod(): void
     {
-        $options = array('query' => ['foo' => 'bar']);
+        $options = ['query' => ['foo' => 'bar']];
 
         $searchQueryMock = $this->provideSearchQueryMock();
         $pagedCollection = new PagedCollection();
@@ -92,7 +92,7 @@ final class SearchClientTest extends TestCase
 
     public function testSearchPlacesMethod(): void
     {
-        $options = array('query' => ['foo' => 'bar']);
+        $options = ['query' => ['foo' => 'bar']];
 
         $searchQueryMock = $this->provideSearchQueryMock();
         $pagedCollection = new PagedCollection();
@@ -114,7 +114,7 @@ final class SearchClientTest extends TestCase
 
     public function testSearchOfferMethod(): void
     {
-        $options = array('query' => ['foo' => 'bar']);
+        $options = ['query' => ['foo' => 'bar']];
         $pagedCollection = new PagedCollection();
         $searchQueryMock = $this->provideSearchQueryMock();
 

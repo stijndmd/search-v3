@@ -16,9 +16,9 @@ final class FacetResultItemTest extends TestCase
     public function setUp(): void
     {
         $value = 'facetResultItemValue';
-        $names = new TranslatedString(array('name1', 'name2'));
+        $names = new TranslatedString(['name1', 'name2']);
         $count = 2;
-        $children = array('child1', 'child2');
+        $children = ['child1', 'child2'];
         $this->facetResultItem = new FacetResultItem($value, $names, $count, $children);
     }
 
@@ -32,7 +32,7 @@ final class FacetResultItemTest extends TestCase
 
     public function testGetNamesMethod(): void
     {
-        $names = new TranslatedString(array('new name1', 'new name2'));
+        $names = new TranslatedString(['new name1', 'new name2']);
         $this->facetResultItem->setName($names);
 
         $this->assertEquals($names, $this->facetResultItem->getName());
@@ -48,9 +48,9 @@ final class FacetResultItemTest extends TestCase
 
     public function testGetChildrenMethod(): void
     {
-        $this->facetResultItem->setChildren(array('new child1', 'new child2'));
+        $this->facetResultItem->setChildren(['new child1', 'new child2']);
 
         $result = $this->facetResultItem->getChildren();
-        $this->assertEquals(array('new child1', 'new child2'), $result);
+        $this->assertEquals(['new child1', 'new child2'], $result);
     }
 }

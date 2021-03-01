@@ -36,10 +36,10 @@ final class EventTest extends TestCase
 
     public function testGetSubEventsMethod(): void
     {
-        $this->event->setSubEvents(array(new Event(), new Event()));
+        $this->event->setSubEvents([new Event(), new Event()]);
 
         $result = $this->event->getSubEvents();
-        $this->assertEquals(array(new Event(), new Event()), $result);
+        $this->assertEquals([new Event(), new Event()], $result);
     }
 
     public function testGetPriceInfoMethod(): void

@@ -43,7 +43,7 @@ final class SearchQueryTest extends TestCase
         $this->label = new Label('test-label');
         $this->facet = new Facet('regions');
 
-        $this->sorting = array('title', 'asc');
+        $this->sorting = ['title', 'asc'];
 
         $this->searchQuery->addParameter($this->label);
         $this->searchQuery->addParameter($this->facet);
@@ -113,16 +113,16 @@ final class SearchQueryTest extends TestCase
 
     public function testToArrayMethod(): void
     {
-        $expectedQuery = array(
-            'sort' => array(
-                'title' => 'asc'
-            ),
+        $expectedQuery = [
+            'sort' => [
+                'title' => 'asc',
+            ],
             'embed' => true,
             'start' => 10,
             'limit' => 50,
             'labels' => 'test-label',
-            'facets' => 'regions'
-        );
+            'facets' => 'regions',
+        ];
 
         $result = $this->searchQuery->toArray();
 
@@ -133,19 +133,19 @@ final class SearchQueryTest extends TestCase
     {
         $this->searchQuery->addParameter(new Label('test-label2'));
 
-        $expectedQuery = array(
-            'sort' => array(
-                'title' => 'asc'
-            ),
+        $expectedQuery = [
+            'sort' => [
+                'title' => 'asc',
+            ],
             'embed' => true,
             'start' => 10,
             'limit' => 50,
-            'labels' => array(
+            'labels' => [
               'test-label',
               'test-label2',
-            ),
-            'facets' => 'regions'
-        );
+            ],
+            'facets' => 'regions',
+        ];
 
         $result = $this->searchQuery->toArray();
 
@@ -156,19 +156,19 @@ final class SearchQueryTest extends TestCase
     {
         $this->searchQuery->addParameter(new Facet('types'));
 
-        $expectedQuery = array(
-            'sort' => array(
-                'title' => 'asc'
-            ),
+        $expectedQuery = [
+            'sort' => [
+                'title' => 'asc',
+            ],
             'embed' => true,
             'start' => 10,
             'limit' => 50,
             'labels' => 'test-label',
-            'facets' => array(
+            'facets' => [
                 'regions',
-                'types'
-            )
-        );
+                'types',
+            ],
+        ];
 
         $result = $this->searchQuery->toArray();
 
