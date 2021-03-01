@@ -23,8 +23,8 @@ interface SerializerInterface
      * Deserialize the jsonld.
      * @param string $jsonString
      *   The json formatted string of the object.
-     * @param $class
+     * @param string $class
      *   Type to decode to.
      */
-    public function deserialize(string $jsonString, $class = PagedCollection::class);
+    public function deserialize(string $jsonString, string $class = PagedCollection::class);
 }
