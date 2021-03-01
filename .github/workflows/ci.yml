@@ -49,7 +49,7 @@ jobs:
 
     phpstan:
       runs-on: ubuntu-latest
-      name: Code style
+      name: Static analysis
       steps:
         - name: 📤 Checkout project
           uses: actions/checkout@v2
