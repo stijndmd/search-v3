@@ -10,7 +10,7 @@ class MaxAgeTest extends TestCase
 {
     public function testConstructor(): void
     {
-        $id = new MaxAge('16');
+        $id = new MaxAge(16);
 
         $key = $id->getKey();
         $value = $id->getValue();

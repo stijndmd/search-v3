@@ -10,7 +10,7 @@ class MinAgeTest extends TestCase
 {
     public function testConstructor(): void
     {
-        $id = new MinAge('12');
+        $id = new MinAge(12);
 
         $key = $id->getKey();
         $value = $id->getValue();
