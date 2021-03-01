@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\Parameter;
 
 use PHPUnit\Framework\TestCase;
 
-class AddressCountryTest extends TestCase
+final class AddressCountryTest extends TestCase
 {
     public function testConstructor(): void
     {

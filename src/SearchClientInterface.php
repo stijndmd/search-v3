@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3;
 
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
