@@ -20,7 +20,7 @@ final class Languages extends AbstractParameter
             $this->value = $language;
             $this->key = 'languages';
         } else {
-            throw new InvalidArgumentException('Invalid language parameter for '.__CLASS__.' constructor');
+            throw new InvalidArgumentException('Invalid language parameter for ' . __CLASS__ . ' constructor');
         }
     }
 

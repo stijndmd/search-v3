@@ -25,7 +25,7 @@ final class Distance extends AbstractParameter
             $this->value = $distance . $unit;
             $this->key = 'distance';
         } else {
-            throw new InvalidArgumentException('Invalid unit parameter for '.__CLASS__.' constructor', 400);
+            throw new InvalidArgumentException('Invalid unit parameter for ' . __CLASS__ . ' constructor', 400);
         }
     }
 
