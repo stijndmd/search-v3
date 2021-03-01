@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class ContactPointTest extends TestCase
+final class ContactPointTest extends TestCase
 {
     /**
      * @var ContactPoint

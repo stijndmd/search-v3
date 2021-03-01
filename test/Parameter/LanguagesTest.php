@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\Parameter;
 
 use PHPUnit\Framework\TestCase;
 
-class LanguagesTest extends TestCase
+final class LanguagesTest extends TestCase
 {
     public function testConstructor(): void
     {

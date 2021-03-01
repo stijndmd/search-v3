@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class FacetResultItemTest extends TestCase
+final class FacetResultItemTest extends TestCase
 {
     /**
      * @var FacetResultItem

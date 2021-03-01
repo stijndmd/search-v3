@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class MediaObjectTest extends TestCase
+final class MediaObjectTest extends TestCase
 {
     /**
      * @var MediaObject

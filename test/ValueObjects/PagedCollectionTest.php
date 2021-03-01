@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class PagedCollectionTest extends TestCase
+final class PagedCollectionTest extends TestCase
 {
     /**
      * @var PagedCollection

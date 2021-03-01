@@ -24,7 +24,7 @@ use CultuurNet\SearchV3\ValueObjects\TranslatedAddress;
 use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 use PHPUnit\Framework\TestCase;
 
-class SerializerTest extends TestCase
+final class SerializerTest extends TestCase
 {
     /**
      * @var Serializer

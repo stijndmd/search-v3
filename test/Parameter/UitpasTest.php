@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\Parameter;
 
 use PHPUnit\Framework\TestCase;
 
-class UitpasTest extends TestCase
+final class UitpasTest extends TestCase
 {
     public function testConstructor(): void
     {

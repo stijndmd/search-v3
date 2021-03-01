@@ -9,7 +9,7 @@ use CultuurNet\SearchV3\Parameter\Id;
 use CultuurNet\SearchV3\Parameter\Label;
 use PHPUnit\Framework\TestCase;
 
-class SearchQueryTest extends TestCase
+final class SearchQueryTest extends TestCase
 {
     /**
      * @var SearchQuery

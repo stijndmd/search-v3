@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class EventTest extends TestCase
+final class EventTest extends TestCase
 {
     /**
      * @var Event

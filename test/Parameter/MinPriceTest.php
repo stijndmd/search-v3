@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\Parameter;
 
 use PHPUnit\Framework\TestCase;
 
-class MinPriceTest extends TestCase
+final class MinPriceTest extends TestCase
 {
     public function testConstructor(): void
     {

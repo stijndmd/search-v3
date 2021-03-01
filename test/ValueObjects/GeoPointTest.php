@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class GeoPointTest extends TestCase
+final class GeoPointTest extends TestCase
 {
     /**
      * @var GeoPoint

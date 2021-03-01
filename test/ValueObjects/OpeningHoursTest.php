@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class OpeningHoursTest extends TestCase
+final class OpeningHoursTest extends TestCase
 {
     /**
      * @var OpeningHours

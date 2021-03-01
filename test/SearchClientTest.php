@@ -12,7 +12,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
-class SearchClientTest extends TestCase
+final class SearchClientTest extends TestCase
 {
     /**
      * @var ClientInterface | MockObject

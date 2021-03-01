@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\Parameter;
 
 use PHPUnit\Framework\TestCase;
 
-class PostalCodeTest extends TestCase
+final class PostalCodeTest extends TestCase
 {
     public function testConstructor(): void
     {

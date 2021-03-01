@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class OrganizerTest extends TestCase
+final class OrganizerTest extends TestCase
 {
     /**
      * @var Organizer

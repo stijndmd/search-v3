@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class PlaceTest extends TestCase
+final class PlaceTest extends TestCase
 {
     /**
      * @var Place

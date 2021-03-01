@@ -7,7 +7,7 @@ namespace CultuurNet\SearchV3\Parameter;
 use DateTime;
 use PHPUnit\Framework\TestCase;
 
-class DateToTest extends TestCase
+final class DateToTest extends TestCase
 {
     public function testConstructor(): void
     {

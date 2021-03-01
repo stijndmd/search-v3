@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class CollectionTest extends TestCase
+final class CollectionTest extends TestCase
 {
     /**
      * @var Collection

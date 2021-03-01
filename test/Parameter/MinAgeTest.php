@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\Parameter;
 
 use PHPUnit\Framework\TestCase;
 
-class MinAgeTest extends TestCase
+final class MinAgeTest extends TestCase
 {
     public function testConstructor(): void
     {

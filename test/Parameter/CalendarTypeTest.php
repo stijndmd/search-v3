@@ -6,7 +6,7 @@ namespace CultuurNet\SearchV3\Parameter;
 
 use PHPUnit\Framework\TestCase;
 
-class CalendarTypeTest extends TestCase
+final class CalendarTypeTest extends TestCase
 {
     public function testConstructor(): void
     {
