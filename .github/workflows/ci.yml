@@ -46,3 +46,23 @@ jobs:
 
             - name: ✨ Run code style check
               run: composer cs
+
+    phpstan:
+      runs-on: ubuntu-latest
+      name: Code style
+      steps:
+        - name: 📤 Checkout project
+          uses: actions/checkout@v2
+
+        - name: 🐘 Install PHP
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: 7.1
+            extensions: intl, tidy, bcmath, zip
+            tools: composer
+
+        - name: 📦 Install dependencies
+          run: composer update
+
+        - name: 🔍 Run static analysis
+          run: composer phpstan
