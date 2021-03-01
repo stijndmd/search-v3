@@ -161,9 +161,9 @@ final class SerializerTest extends TestCase
         $priceInfo->setCategory('base');
         $priceInfo->setName(new TranslatedString([
             'nl' => 'Basistarief',
-            'fr' => "Tarif de base",
-            'en' => "Base tariff",
-            'de' => "Basisrate",
+            'fr' => 'Tarif de base',
+            'en' => 'Base tariff',
+            'de' => 'Basisrate',
         ]));
         $priceInfo->setPrice(0);
         $priceInfo->setPriceCurrency('EUR');
