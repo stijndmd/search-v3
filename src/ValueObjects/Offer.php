@@ -435,7 +435,6 @@ abstract class Offer
     /**
      * Return terms, filtered on domain.
      *
-     * @param string $domain
      * @return Term[]
      */
     public function getTermsByDomain(string $domain): array

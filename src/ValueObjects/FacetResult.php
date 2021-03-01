@@ -18,7 +18,6 @@ final class FacetResult
     private $results;
 
     /**
-     * @param string $field
      * @param FacetResultItem[] $results
      */
     public function __construct(string $field, array $results)
