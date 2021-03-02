@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\Parameter;
 
 use PHPUnit\Framework\TestCase;
 
-class MaxPriceTest extends TestCase
+final class MaxPriceTest extends TestCase
 {
     public function testConstructor(): void
     {

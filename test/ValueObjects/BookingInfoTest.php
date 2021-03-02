@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class BookingInfoTest extends TestCase
+final class BookingInfoTest extends TestCase
 {
     /**
      * @var BookingInfo

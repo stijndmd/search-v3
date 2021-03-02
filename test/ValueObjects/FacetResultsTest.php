@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
 use PHPUnit\Framework\TestCase;
 
-class FacetResultsTest extends TestCase
+final class FacetResultsTest extends TestCase
 {
     /**
      * @var FacetResults

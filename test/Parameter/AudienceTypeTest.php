@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\Parameter;
 
 use PHPUnit\Framework\TestCase;
 
-class AudienceTypeTest extends TestCase
+final class AudienceTypeTest extends TestCase
 {
     public function testConstructor(): void
     {

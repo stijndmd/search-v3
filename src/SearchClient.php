@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3;
 
 use CultuurNet\SearchV3\Serializer\SerializerInterface;
@@ -52,7 +54,7 @@ final class SearchClient implements SearchClientInterface
     private function search(SearchQueryInterface $searchQuery, $type): PagedCollection
     {
         $options = [
-          'query' => $searchQuery->toArray()
+          'query' => $searchQuery->toArray(),
         ];
 
         $result = $this->client->request('GET', $type, $options);

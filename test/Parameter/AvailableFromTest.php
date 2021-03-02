@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\Parameter;
 
 use DateTime;
 use PHPUnit\Framework\TestCase;
 
-class AvailableFromTest extends TestCase
+final class AvailableFromTest extends TestCase
 {
     public function testConstructor(): void
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3;
 
 interface SearchQueryInterface

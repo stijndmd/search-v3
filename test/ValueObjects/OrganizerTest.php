@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class OrganizerTest extends TestCase
+final class OrganizerTest extends TestCase
 {
     /**
      * @var Organizer
@@ -41,18 +43,18 @@ class OrganizerTest extends TestCase
 
     public function testGetEmailMethod(): void
     {
-        $this->organizer->setEmail(array('test@organizer.com'));
+        $this->organizer->setEmail(['test@organizer.com']);
 
         $result = $this->organizer->getEmail();
-        $this->assertEquals(array('test@organizer.com'), $result);
+        $this->assertEquals(['test@organizer.com'], $result);
     }
 
     public function testGetContactPointMehtod(): void
     {
         $contactPoint = new ContactPoint();
-        $contactPoint->setEmails(array('info@publiq.be'));
-        $contactPoint->setUrls(array('google.be'));
-        $contactPoint->setPhoneNumbers(array('1234567890'));
+        $contactPoint->setEmails(['info@publiq.be']);
+        $contactPoint->setUrls(['google.be']);
+        $contactPoint->setPhoneNumbers(['1234567890']);
         $this->organizer->setContactPoint($contactPoint);
 
         $result = $this->organizer->getContactPoint();
@@ -61,9 +63,9 @@ class OrganizerTest extends TestCase
 
     public function testGetHiddenLabelsMethod(): void
     {
-        $this->organizer->setHiddenLabels(array('hidden1', 'hidden2'));
+        $this->organizer->setHiddenLabels(['hidden1', 'hidden2']);
 
         $result = $this->organizer->getHiddenLabels();
-        $this->assertEquals(array('hidden1', 'hidden2'), $result);
+        $this->assertEquals(['hidden1', 'hidden2'], $result);
     }
 }

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class CollectionTest extends TestCase
+final class CollectionTest extends TestCase
 {
     /**
      * @var Collection
@@ -18,7 +20,7 @@ class CollectionTest extends TestCase
 
     public function testGetItemsMethod(): void
     {
-        $items = array('item1', 'item2', 'item3');
+        $items = ['item1', 'item2', 'item3'];
         $this->collection->setItems($items);
 
         $result = $this->collection->getItems();

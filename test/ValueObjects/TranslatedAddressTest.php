@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
 use PHPUnit\Framework\TestCase;
 
-class TranslatedAddressTest extends TestCase
+final class TranslatedAddressTest extends TestCase
 {
     /**
      * @var TranslatedAddress

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class EventTest extends TestCase
+final class EventTest extends TestCase
 {
     /**
      * @var Event
@@ -34,10 +36,10 @@ class EventTest extends TestCase
 
     public function testGetSubEventsMethod(): void
     {
-        $this->event->setSubEvents(array(new Event(), new Event()));
+        $this->event->setSubEvents([new Event(), new Event()]);
 
         $result = $this->event->getSubEvents();
-        $this->assertEquals(array(new Event(), new Event()), $result);
+        $this->assertEquals([new Event(), new Event()], $result);
     }
 
     public function testGetPriceInfoMethod(): void

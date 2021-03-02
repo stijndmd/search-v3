@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\Serializer;
 
 use CultuurNet\SearchV3\ValueObjects\Address;
@@ -22,7 +24,7 @@ use CultuurNet\SearchV3\ValueObjects\TranslatedAddress;
 use CultuurNet\SearchV3\ValueObjects\TranslatedString;
 use PHPUnit\Framework\TestCase;
 
-class SerializerTest extends TestCase
+final class SerializerTest extends TestCase
 {
     /**
      * @var Serializer
@@ -159,9 +161,9 @@ class SerializerTest extends TestCase
         $priceInfo->setCategory('base');
         $priceInfo->setName(new TranslatedString([
             'nl' => 'Basistarief',
-            'fr' => "Tarif de base",
-            'en' => "Base tariff",
-            'de' => "Basisrate",
+            'fr' => 'Tarif de base',
+            'en' => 'Base tariff',
+            'de' => 'Basisrate',
         ]));
         $priceInfo->setPrice(0);
         $priceInfo->setPriceCurrency('EUR');

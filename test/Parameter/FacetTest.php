@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\Parameter;
 
 use PHPUnit\Framework\TestCase;
 
-class FacetTest extends TestCase
+final class FacetTest extends TestCase
 {
     public function testConstructor(): void
     {

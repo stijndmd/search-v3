@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\ValueObjects;
 
 final class FacetResult
@@ -16,7 +18,6 @@ final class FacetResult
     private $results;
 
     /**
-     * @param string $field
      * @param FacetResultItem[] $results
      */
     public function __construct(string $field, array $results)

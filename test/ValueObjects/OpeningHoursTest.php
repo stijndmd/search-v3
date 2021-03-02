@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
 
-class OpeningHoursTest extends TestCase
+final class OpeningHoursTest extends TestCase
 {
     /**
      * @var OpeningHours
@@ -18,7 +20,7 @@ class OpeningHoursTest extends TestCase
 
     public function testGetDayOfWeekMethod(): void
     {
-        $daysOfWeek = array('tuesday', 'wednesday', 'thursday');
+        $daysOfWeek = ['tuesday', 'wednesday', 'thursday'];
         $this->openingHours->setDaysOfWeek($daysOfWeek);
 
         $result = $this->openingHours->getDaysOfWeek();

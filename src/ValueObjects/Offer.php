@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3\ValueObjects;
 
 use DateTime;
@@ -433,7 +435,6 @@ abstract class Offer
     /**
      * Return terms, filtered on domain.
      *
-     * @param string $domain
      * @return Term[]
      */
     public function getTermsByDomain(string $domain): array

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CultuurNet\SearchV3;
 
 use CultuurNet\SearchV3\Serializer\SerializerInterface;
@@ -10,7 +12,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
-class SearchClientTest extends TestCase
+final class SearchClientTest extends TestCase
 {
     /**
      * @var ClientInterface | MockObject
@@ -68,7 +70,7 @@ class SearchClientTest extends TestCase
 
     public function testSearchEventsMethod(): void
     {
-        $options = array('query' => ['foo' => 'bar']);
+        $options = ['query' => ['foo' => 'bar']];
 
         $searchQueryMock = $this->provideSearchQueryMock();
         $pagedCollection = new PagedCollection();
@@ -90,7 +92,7 @@ class SearchClientTest extends TestCase
 
     public function testSearchPlacesMethod(): void
     {
-        $options = array('query' => ['foo' => 'bar']);
+        $options = ['query' => ['foo' => 'bar']];
 
         $searchQueryMock = $this->provideSearchQueryMock();
         $pagedCollection = new PagedCollection();
@@ -112,7 +114,7 @@ class SearchClientTest extends TestCase
 
     public function testSearchOfferMethod(): void
     {
-        $options = array('query' => ['foo' => 'bar']);
+        $options = ['query' => ['foo' => 'bar']];
         $pagedCollection = new PagedCollection();
         $searchQueryMock = $this->provideSearchQueryMock();
 
