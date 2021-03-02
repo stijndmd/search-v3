@@ -58,7 +58,6 @@ jobs:
           uses: shivammathur/setup-php@v2
           with:
             php-version: 7.1
-            extensions: intl, tidy, bcmath, zip
             tools: composer
 
         - name: 📦 Install dependencies
