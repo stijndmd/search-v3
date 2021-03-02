@@ -37,6 +37,7 @@ final class SearchClientTest extends TestCase
 
     public function provideSearchQueryMock(): SearchQueryInterface
     {
+        /** @var SearchQueryInterface|MockObject $searchQueryMock */
         $searchQueryMock = $this->getMockBuilder(SearchQueryInterface::class)
             ->getMock();
         $searchQueryMock->expects($this->once())
@@ -48,6 +49,7 @@ final class SearchClientTest extends TestCase
 
     public function provideResponseMockup(): ResponseInterface
     {
+        /** @var ResponseInterface|MockObject $response */
         $response = $this->getMockBuilder(ResponseInterface::class)
             ->disableOriginalConstructor()
             ->getMock();

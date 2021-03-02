@@ -15,7 +15,7 @@ final class PriceInfoTest extends TestCase
 
     public function setUp(): void
     {
-        $this->priceInfo = new priceInfo();
+        $this->priceInfo = new PriceInfo();
     }
 
     public function testGetCategoryMethod(): void

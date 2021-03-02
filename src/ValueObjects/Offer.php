@@ -330,7 +330,6 @@ abstract class Offer
 
     /**
      * @param Performer[] $performers
-     * @return self
      */
     public function setPerformers(array $performers): void
     {

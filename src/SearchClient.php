@@ -59,6 +59,6 @@ final class SearchClient implements SearchClientInterface
 
         $result = $this->client->request('GET', $type, $options);
 
-        return $this->serializer->deserialize($result->getBody(true));
+        return $this->serializer->deserialize($result->getBody());
     }
 }

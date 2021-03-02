@@ -10,7 +10,7 @@ final class MaxPriceTest extends TestCase
 {
     public function testConstructor(): void
     {
-        $price = new maxPrice(19.99);
+        $price = new MaxPrice(19.99);
 
         $key = $price->getKey();
         $value = $price->getValue();
