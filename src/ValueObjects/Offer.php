@@ -41,8 +41,8 @@ abstract class Offer
     private $description;
 
     /**
-     * @var string|null
-     * @Type("string")
+     * @var CalendarSummary|null
+     * @Type("CultuurNet\SearchV3\ValueObjects\CalendarSummary")
      */
     private $calendarSummary;
 
@@ -228,24 +228,12 @@ abstract class Offer
         $this->calendarType = $calendarType;
     }
 
-    /**
-     * @deprecated
-     *   There is no calendarSummary property on events/places, so this will always return null in reality.
-     *   Will be removed in 2.0
-     *   As a replacement, use https://github.com/cultuurnet/calendar-summary-v3
-     */
-    public function getCalendarSummary(): ?string
+    public function getCalendarSummary(): ?CalendarSummary
     {
         return $this->calendarSummary;
     }
 
-    /**
-     * @deprecated
-     *   There is no calendarSummary property on events/places, so serializing this and sending it to UDB3 does nothing.
-     *   Will be removed in 2.0
-     *   No replacement will be provided since there is no functionality for directly setting a calendar summary.
-     */
-    public function setCalendarSummary(string $calendarSummary): void
+    public function setCalendarSummary(CalendarSummary $calendarSummary): void
     {
         $this->calendarSummary = $calendarSummary;
     }
