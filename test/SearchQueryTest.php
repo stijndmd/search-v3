@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace CultuurNet\SearchV3;
 
+use CultuurNet\SearchV3\Parameter\CalendarSummary;
 use CultuurNet\SearchV3\Parameter\Facet;
 use CultuurNet\SearchV3\Parameter\Id;
 use CultuurNet\SearchV3\Parameter\Label;
+use CultuurNet\SearchV3\ValueObjects\CalendarSummaryFormat;
+use CultuurNet\SearchV3\ValueObjects\CalendarSummaryType;
 use PHPUnit\Framework\TestCase;
 
 final class SearchQueryTest extends TestCase
@@ -47,6 +50,9 @@ final class SearchQueryTest extends TestCase
 
         $this->searchQuery->addParameter($this->label);
         $this->searchQuery->addParameter($this->facet);
+
+        $this->searchQuery->addParameter(new CalendarSummary(CalendarSummaryType::html(), CalendarSummaryFormat::md()));
+        $this->searchQuery->addParameter(new CalendarSummary(CalendarSummaryType::text(), CalendarSummaryFormat::lg()));
 
         $this->searchQuery->addSort($this->sorting[0], $this->sorting[1]);
         $this->searchQuery->setEmbed(true);
@@ -122,6 +128,10 @@ final class SearchQueryTest extends TestCase
             'limit' => 50,
             'labels' => 'test-label',
             'facets' => 'regions',
+            'embedCalendarSummaries' => [
+                'md-html',
+                'lg-text',
+            ],
         ];
 
         $result = $this->searchQuery->toArray();
@@ -145,6 +155,10 @@ final class SearchQueryTest extends TestCase
               'test-label2',
             ],
             'facets' => 'regions',
+            'embedCalendarSummaries' => [
+                'md-html',
+                'lg-text',
+            ],
         ];
 
         $result = $this->searchQuery->toArray();
@@ -168,6 +182,10 @@ final class SearchQueryTest extends TestCase
                 'regions',
                 'types',
             ],
+            'embedCalendarSummaries' => [
+                'md-html',
+                'lg-text',
+            ],
         ];
 
         $result = $this->searchQuery->toArray();
@@ -177,7 +195,7 @@ final class SearchQueryTest extends TestCase
 
     public function testToStringMethod(): void
     {
-        $expectedQueryString = 'labels=test-label&facets=regions&sort[title]=asc&embed=1&start=10&limit=50';
+        $expectedQueryString = 'labels=test-label&facets=regions&embedCalendarSummaries[0]=md-html&embedCalendarSummaries[1]=lg-text&sort[title]=asc&embed=1&start=10&limit=50';
         $result = $this->searchQuery->__toString();
 
         $this->assertEquals($result, $expectedQueryString);
