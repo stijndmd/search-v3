@@ -12,10 +12,20 @@ final class CalendarSummaryFormatTest extends TestCase
     /**
      * @test
      */
-    public function it_throws_on_unsupported_format(): void
+    public function it_throws_on_unsupported_type(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
-        new CalendarSummaryFormat('xl');
+        new CalendarSummaryFormat('markdown', 'sm');
+    }
+
+    /**
+     * @test
+     */
+    public function it_throws_on_unsupported_size(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        new CalendarSummaryFormat('html', 'xl');
     }
 }

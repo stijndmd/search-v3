@@ -8,7 +8,12 @@ use InvalidArgumentException;
 
 final class CalendarSummaryFormat
 {
-    private const FORMATS = [
+    private const TYPES = [
+        'text',
+        'html',
+    ];
+
+    private const SIZES = [
         'xs',
         'sm',
         'md',
@@ -18,41 +23,43 @@ final class CalendarSummaryFormat
     /**
      * @var string
      */
-    private $value;
+    private $type;
 
-    public function __construct(string $value)
+    /**
+     * @var string
+     */
+    private $size;
+
+    public function __construct(string $type, string $size)
     {
-        if (!in_array($value, self::FORMATS)) {
+        if (!in_array($type, self::TYPES)) {
             throw new InvalidArgumentException(
-                'Unsupported format ' . $value . '. Allowed values: ' . implode(', ', self::FORMATS)
+                'Unsupported type ' . $type . '. Allowed values: ' . implode(', ', self::TYPES)
             );
         }
 
-        $this->value = $value;
+        if (!in_array($size, self::SIZES)) {
+            throw new InvalidArgumentException(
+                'Unsupported size ' . $size . '. Allowed values: ' . implode(', ', self::SIZES)
+            );
+        }
+
+        $this->type = $type;
+        $this->size = $size;
     }
 
-    public static function xs(): self
+    public function getType(): string
     {
-        return new self('xs');
+        return $this->type;
     }
 
-    public static function sm(): self
+    public function getSize(): string
     {
-        return new self('sm');
+        return $this->size;
     }
 
-    public static function md(): self
+    public function getCombined(): string
     {
-        return new self('md');
-    }
-
-    public static function lg(): self
-    {
-        return new self('lg');
-    }
-
-    public function getValue(): string
-    {
-        return $this->value;
+        return $this->size . '-' . $this->type;
     }
 }

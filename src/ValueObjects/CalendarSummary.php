@@ -21,21 +21,20 @@ final class CalendarSummary
 
     public function getSummary(
         CalendarSummaryLanguage $language,
-        CalendarSummaryType $type,
         CalendarSummaryFormat $format
     ): string {
         if (!isset($this->summaries[$language->getValue()])) {
             throw new InvalidArgumentException('The language ' . $language->getValue() . ' is not provided');
         }
 
-        if (!isset($this->summaries[$language->getValue()][$type->getValue()])) {
-            throw new InvalidArgumentException('The type ' . $type->getValue() . ' is not provided');
+        if (!isset($this->summaries[$language->getValue()][$format->getType()])) {
+            throw new InvalidArgumentException('The type ' . $format->getType() . ' is not provided');
         }
 
-        if (!isset($this->summaries[$language->getValue()][$type->getValue()][$format->getValue()])) {
-            throw new InvalidArgumentException('The format ' . $format->getValue() . ' is not provided');
+        if (!isset($this->summaries[$language->getValue()][$format->getType()][$format->getSize()])) {
+            throw new InvalidArgumentException('The size ' . $format->getSize() . ' is not provided');
         }
 
-        return $this->summaries[$language->getValue()][$type->getValue()][$format->getValue()];
+        return $this->summaries[$language->getValue()][$format->getType()][$format->getSize()];
     }
 }

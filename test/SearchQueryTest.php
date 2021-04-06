@@ -9,7 +9,6 @@ use CultuurNet\SearchV3\Parameter\Facet;
 use CultuurNet\SearchV3\Parameter\Id;
 use CultuurNet\SearchV3\Parameter\Label;
 use CultuurNet\SearchV3\ValueObjects\CalendarSummaryFormat;
-use CultuurNet\SearchV3\ValueObjects\CalendarSummaryType;
 use PHPUnit\Framework\TestCase;
 
 final class SearchQueryTest extends TestCase
@@ -51,8 +50,8 @@ final class SearchQueryTest extends TestCase
         $this->searchQuery->addParameter($this->label);
         $this->searchQuery->addParameter($this->facet);
 
-        $this->searchQuery->addParameter(new CalendarSummary(CalendarSummaryType::html(), CalendarSummaryFormat::md()));
-        $this->searchQuery->addParameter(new CalendarSummary(CalendarSummaryType::text(), CalendarSummaryFormat::lg()));
+        $this->searchQuery->addParameter(new CalendarSummary(new CalendarSummaryFormat('html', 'md')));
+        $this->searchQuery->addParameter(new CalendarSummary(new CalendarSummaryFormat('text', 'lg')));
 
         $this->searchQuery->addSort($this->sorting[0], $this->sorting[1]);
         $this->searchQuery->setEmbed(true);

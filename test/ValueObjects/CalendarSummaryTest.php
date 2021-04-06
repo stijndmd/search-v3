@@ -56,8 +56,7 @@ final class CalendarSummaryTest extends TestCase
             'nl-text-xs',
             $this->calendarSummary->getSummary(
                 CalendarSummaryLanguage::nl(),
-                CalendarSummaryType::text(),
-                CalendarSummaryFormat::xs()
+                new CalendarSummaryFormat('text', 'xs')
             )
         );
     }
@@ -73,8 +72,7 @@ final class CalendarSummaryTest extends TestCase
 
         $calendarSummary->getSummary(
             CalendarSummaryLanguage::de(),
-            CalendarSummaryType::html(),
-            CalendarSummaryFormat::md()
+            new CalendarSummaryFormat('html', 'md')
         );
     }
 
@@ -87,8 +85,7 @@ final class CalendarSummaryTest extends TestCase
 
         $this->calendarSummary->getSummary(
             CalendarSummaryLanguage::de(),
-            CalendarSummaryType::html(),
-            CalendarSummaryFormat::md()
+            new CalendarSummaryFormat('html', 'md')
         );
     }
 
@@ -101,8 +98,7 @@ final class CalendarSummaryTest extends TestCase
 
         $this->calendarSummary->getSummary(
             CalendarSummaryLanguage::de(),
-            CalendarSummaryType::html(),
-            CalendarSummaryFormat::lg()
+            new CalendarSummaryFormat('html', 'lg')
         );
     }
 }
