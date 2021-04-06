@@ -100,6 +100,35 @@
         }
       ],
       "availableTo": "2021-03-04T22:59:59+00:00",
+      "calendarSummary": {
+        "nl": {
+          "text": {
+            "xs": "nl-text-xs",
+            "md": "nl-text-md"
+          },
+          "html": {
+            "sm": "nl-html-sm"
+          }
+        },
+        "fr": {
+          "text": {
+            "lg": "fr-text-lg"
+          },
+          "html": {
+            "sm": "fr-html-sm"
+          }
+        },
+        "de": {
+          "text": {
+            "md": "de-text-md"
+          }
+        },
+        "en": {
+          "text": {
+            "md": "en-text-md"
+          }
+        }
+      },
       "sameAs": [
         "http://www.uitinvlaanderen.be/agenda/e/le-sanglier-et-le-papillon-la-mue/7438ac58-fb2b-4ddc-bbda-d2d3d61681c5"
       ],
