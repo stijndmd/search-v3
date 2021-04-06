@@ -54,38 +54,12 @@ final class CalendarSummaryTest extends TestCase
     {
         $this->assertEquals(
             'nl-text-xs',
-            $this->calendarSummary->getSummary('nl', 'text', 'xs')
+            $this->calendarSummary->getSummary(
+                CalendarSummaryLanguage::nl(),
+                CalendarSummaryType::text(),
+                CalendarSummaryFormat::xs()
+            )
         );
-    }
-
-    /**
-     * @test
-     */
-    public function it_throws_on_unsupported_language(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        $this->calendarSummary->getSummary('es', 'text', 'sm');
-    }
-
-    /**
-     * @test
-     */
-    public function it_throws_on_unsupported_type(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        $this->calendarSummary->getSummary('nl', 'markdown', 'sm');
-    }
-
-    /**
-     * @test
-     */
-    public function it_throws_on_unsupported_format(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        $this->calendarSummary->getSummary('nl', 'text', 'xl');
     }
 
     /**
@@ -97,7 +71,11 @@ final class CalendarSummaryTest extends TestCase
 
         $calendarSummary = new CalendarSummary([]);
 
-        $calendarSummary->getSummary('de', 'html', 'md');
+        $calendarSummary->getSummary(
+            CalendarSummaryLanguage::de(),
+            CalendarSummaryType::html(),
+            CalendarSummaryFormat::md()
+        );
     }
 
     /**
@@ -107,7 +85,11 @@ final class CalendarSummaryTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $this->calendarSummary->getSummary('de', 'html', 'md');
+        $this->calendarSummary->getSummary(
+            CalendarSummaryLanguage::de(),
+            CalendarSummaryType::html(),
+            CalendarSummaryFormat::md()
+        );
     }
 
     /**
@@ -117,6 +99,10 @@ final class CalendarSummaryTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $this->calendarSummary->getSummary('de', 'text', 'lg');
+        $this->calendarSummary->getSummary(
+            CalendarSummaryLanguage::de(),
+            CalendarSummaryType::html(),
+            CalendarSummaryFormat::lg()
+        );
     }
 }

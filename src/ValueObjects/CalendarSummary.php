@@ -8,25 +8,6 @@ use InvalidArgumentException;
 
 final class CalendarSummary
 {
-    private const LANGUAGES = [
-        'nl',
-        'fr',
-        'de',
-        'en',
-    ];
-
-    private const TYPES = [
-        'text',
-        'html',
-    ];
-
-    private const FORMATS = [
-        'xs',
-        'sm',
-        'md',
-        'lg',
-    ];
-
     /**
      * Associative array in the form of [language][type][format]
      * @var array<string,array<string,array<string,string>>>
@@ -38,38 +19,23 @@ final class CalendarSummary
         $this->summaries = $summaries;
     }
 
-    public function getSummary(string $language, string $type, string $format): string
-    {
-        if (!in_array($language, self::LANGUAGES)) {
-            throw new InvalidArgumentException(
-                'Unsupported language ' . $language . '. Allowed values: ' . implode(', ', self::LANGUAGES)
-            );
+    public function getSummary(
+        CalendarSummaryLanguage $language,
+        CalendarSummaryType $type,
+        CalendarSummaryFormat $format
+    ): string {
+        if (!isset($this->summaries[$language->getValue()])) {
+            throw new InvalidArgumentException('The language ' . $language->getValue() . ' is not provided');
         }
 
-        if (!isset($this->summaries[$language])) {
-            throw new InvalidArgumentException('The language ' . $language . ' is not provided');
+        if (!isset($this->summaries[$language->getValue()][$type->getValue()])) {
+            throw new InvalidArgumentException('The type ' . $type->getValue() . ' is not provided');
         }
 
-        if (!in_array($type, self::TYPES)) {
-            throw new InvalidArgumentException(
-                'Unsupported type ' . $type . '. Allowed values: ' . implode(', ', self::TYPES)
-            );
+        if (!isset($this->summaries[$language->getValue()][$type->getValue()][$format->getValue()])) {
+            throw new InvalidArgumentException('The format ' . $format->getValue() . ' is not provided');
         }
 
-        if (!isset($this->summaries[$language][$type])) {
-            throw new InvalidArgumentException('The type ' . $type . ' is not provided');
-        }
-
-        if (!in_array($format, self::FORMATS)) {
-            throw new InvalidArgumentException(
-                'Unsupported format ' . $format . '. Allowed values: ' . implode(', ', self::FORMATS)
-            );
-        }
-
-        if (!isset($this->summaries[$language][$type][$format])) {
-            throw new InvalidArgumentException('The format ' . $format . ' is not provided');
-        }
-
-        return $this->summaries[$language][$type][$format];
+        return $this->summaries[$language->getValue()][$type->getValue()][$format->getValue()];
     }
 }
