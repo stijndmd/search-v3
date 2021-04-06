@@ -7,7 +7,7 @@ namespace CultuurNet\SearchV3\ValueObjects;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
-class CalendarSummaryTest extends TestCase
+final class CalendarSummaryTest extends TestCase
 {
     /**
      * @var CalendarSummary
