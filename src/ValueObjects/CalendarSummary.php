@@ -29,7 +29,7 @@ final class CalendarSummary
 
     /**
      * Associative array in the form of [language][type][format]
-     * @var array
+     * @var array<string,array<string,array<string,string>>>
      */
     private $summaries;
 
