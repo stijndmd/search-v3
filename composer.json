@@ -16,6 +16,11 @@
       "CultuurNet\\SearchV3\\": "src"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "CultuurNet\\SearchV3\\": "test"
+    }
+  },
   "require": {
     "php": "^7.1",
     "guzzlehttp/guzzle": "~6.0",
