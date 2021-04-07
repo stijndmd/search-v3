@@ -89,10 +89,10 @@ final class PlaceTest extends TestCase
 
     public function testGetCalendarSummaryMethod(): void
     {
-        $this->place->setCalendarSummary('cal sum');
+        $this->place->setCalendarSummary(new CalendarSummary([]));
 
         $result = $this->place->getCalendarSummary();
-        $this->assertEquals('cal sum', $result);
+        $this->assertEquals(new CalendarSummary([]), $result);
     }
 
     public function testGetCreatorMethod(): void

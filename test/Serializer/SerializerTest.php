@@ -6,6 +6,7 @@ namespace CultuurNet\SearchV3\Serializer;
 
 use CultuurNet\SearchV3\ValueObjects\Address;
 use CultuurNet\SearchV3\ValueObjects\Audience;
+use CultuurNet\SearchV3\ValueObjects\CalendarSummary;
 use CultuurNet\SearchV3\ValueObjects\Collection;
 use CultuurNet\SearchV3\ValueObjects\ContactPoint;
 use CultuurNet\SearchV3\ValueObjects\Event;
@@ -89,6 +90,35 @@ final class SerializerTest extends TestCase
         $event->setCalendarType('multiple');
         $event->setStartDate(new \DateTime('2021-01-21T23:00:00+00:00'));
         $event->setEndDate(new \DateTime('2021-03-04T22:59:59+00:00'));
+        $event->setCalendarSummary(new CalendarSummary([
+            'nl' => [
+                'text' => [
+                    'xs' => 'nl-text-xs',
+                    'md' => 'nl-text-md',
+                ],
+                'html' => [
+                    'sm' => 'nl-html-sm',
+                ],
+            ],
+            'fr' => [
+                'text' => [
+                    'lg' => 'fr-text-lg',
+                ],
+                'html' => [
+                    'sm' => 'fr-html-sm',
+                ],
+            ],
+            'de' => [
+                'text' => [
+                    'md' => 'de-text-md',
+                ],
+            ],
+            'en' => [
+                'text' => [
+                    'md' => 'en-text-md',
+                ],
+            ],
+        ]));
 
         $event->setStatus(
             new Status(

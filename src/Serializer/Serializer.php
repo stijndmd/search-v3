@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace CultuurNet\SearchV3\Serializer;
 
+use CultuurNet\SearchV3\Serializer\Handler\CalendarSummaryHandler;
 use CultuurNet\SearchV3\Serializer\Handler\DateTimeHandler;
 use CultuurNet\SearchV3\ValueObjects\PagedCollection;
 use Doctrine\Common\Annotations\AnnotationReader;
@@ -32,6 +33,7 @@ final class Serializer implements SerializerInterface
             ->setPropertyNamingStrategy(new SerializedNameAnnotationStrategy(new IdenticalPropertyNamingStrategy()))
             ->configureHandlers(function (HandlerRegistry $registry) {
                 $registry->registerSubscribingHandler(new DateTimeHandler());
+                $registry->registerSubscribingHandler(new CalendarSummaryHandler());
             })
             ->build();
     }
