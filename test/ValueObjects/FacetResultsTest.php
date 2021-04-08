@@ -6,7 +6,6 @@ namespace CultuurNet\SearchV3\ValueObjects;
 
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\JsonDeserializationVisitor;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 final class FacetResultsTest extends TestCase
