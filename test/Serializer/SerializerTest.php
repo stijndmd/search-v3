@@ -88,7 +88,6 @@ final class SerializerTest extends TestCase
         $actualEvent = $actual->getMember()->getItems()[0];
 
         $this->assertNull($actualEvent->getCalendarSummary());
-
     }
 
     public function testDeserializeMethodForResultsWithEmbedAndFacets(): void
