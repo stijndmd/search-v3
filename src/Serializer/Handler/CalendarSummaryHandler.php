@@ -24,8 +24,12 @@ final class CalendarSummaryHandler implements SubscribingHandlerInterface
         ];
     }
 
-    public function deserializeCalendarSummaryFromJson(JsonDeserializationVisitor $visitor, array $data, array $type, Context $context): CalendarSummary
+    public function deserializeCalendarSummaryFromJson(JsonDeserializationVisitor $visitor, $data, array $type, Context $context): ?CalendarSummary
     {
+        if (!is_array($data)) {
+            return null;
+        }
+
         return new CalendarSummary($data);
     }
 }
