@@ -77,6 +77,20 @@ final class SerializerTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testDeserializeMethodForResultWithObsoleteCalendarSummaryFormat(): void
+    {
+        $jsonString = file_get_contents(__DIR__ . '/data/search-with-obsolete-calendar-summary-format.json');
+
+        /** @var PagedCollection $actual */
+        $actual = $this->serializer->deserialize($jsonString);
+
+        /** @var Event $actualEvent */
+        $actualEvent = $actual->getMember()->getItems()[0];
+
+        $this->assertNull($actualEvent->getCalendarSummary());
+
+    }
+
     public function testDeserializeMethodForResultsWithEmbedAndFacets(): void
     {
         $jsonString = file_get_contents(__DIR__ . '/data/search-with-embed-and-facets.json');
