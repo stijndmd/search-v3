@@ -17,10 +17,6 @@ final class FacetResultsTest extends TestCase
 
     protected $facetJson;
 
-    protected $visitor;
-
-    protected $context;
-
     public function setUp(): void
     {
         $this->facetResults = new FacetResults();
@@ -29,13 +25,13 @@ final class FacetResultsTest extends TestCase
 
     public function deserializeEverything(): void
     {
-        $this->visitor = $this->getMockBuilder(JsonDeserializationVisitor::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $this->context = $this->getMockBuilder(DeserializationContext::class)
-            ->getMock();
+        /** @var JsonDeserializationVisitor $visitor */
+        $visitor = $this->createMock(JsonDeserializationVisitor::class);
 
-        $this->facetResults->deserializeFromJson($this->visitor, $this->facetJson, $this->context);
+        /** @var DeserializationContext $context */
+        $context = $this->createMock(DeserializationContext::class);
+
+        $this->facetResults->deserializeFromJson($visitor, $this->facetJson, $context);
     }
 
     public function deserializeFacilitiesTestData($results): array

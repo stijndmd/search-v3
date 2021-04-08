@@ -16,8 +16,7 @@ final class FacetResultTest extends TestCase
     public function setUp(): void
     {
         $field = 'facet result field';
-        $results = $this->getMockBuilder('\FacetResultItem')
-            ->getMock();
+        $results = new FacetResultItem('foo', new TranslatedString(['nl' => 'Foo']), 0, []);
         $this->facetResult = new FacetResult($field, [$results]);
     }
 
@@ -31,8 +30,7 @@ final class FacetResultTest extends TestCase
 
     public function testGetResultsMethod(): void
     {
-        $newResults = $this->getMockBuilder('\FacetResultItem')
-            ->getMock();
+        $newResults = new FacetResultItem('foobar', new TranslatedString(['nl' => 'Foobar']), 10, []);
         $this->facetResult->setResults([$newResults]);
 
         $result = $this->facetResult->getResults();

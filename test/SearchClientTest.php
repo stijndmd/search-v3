@@ -28,11 +28,21 @@ final class SearchClientTest extends TestCase
 
     public function setUp(): void
     {
-        $this->client = $this->getMockBuilder(ClientInterface::class)
-            ->getMock();
-        $this->serializer = $this->getMockBuilder(SerializerInterface::class)
-            ->getMock();
-        $this->searchClient = new SearchClient($this->client, $this->serializer);
+        $this->client = $this->createMock(ClientInterface::class);
+        $this->serializer = $this->createMock(SerializerInterface::class);
+
+        // Use getters instead of properties for better type checking in PHPStan
+        $this->searchClient = new SearchClient($this->getClient(), $this->getSerializer());
+    }
+
+    private function getClient(): ClientInterface
+    {
+        return $this->client;
+    }
+
+    private function getSerializer(): SerializerInterface
+    {
+        return $this->serializer;
     }
 
     public function provideSearchQueryMock(): SearchQueryInterface

@@ -30,11 +30,11 @@ final class TranslatedAddressTest extends TestCase
 
     public function deserializeAddress(): void
     {
-        $visitor = $this->getMockBuilder(JsonDeserializationVisitor::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $context = $this->getMockBuilder(DeserializationContext::class)
-            ->getMock();
+        /** @var JsonDeserializationVisitor $visitor */
+        $visitor = $this->createMock(JsonDeserializationVisitor::class);
+
+        /** @var DeserializationContext $context */
+        $context = $this->createMock(DeserializationContext::class);
 
 
         $this->address->deserializeFromJson($visitor, $this->addressValues, $context);
