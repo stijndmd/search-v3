@@ -34,13 +34,11 @@ final class TranslatedStringTest extends TestCase
      */
     public function testDeserializeMethod(): void
     {
-        $visitor = $this->getMockBuilder(JsonDeserializationVisitor::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        /** @var JsonDeserializationVisitor $visitor */
+        $visitor = $this->createMock(JsonDeserializationVisitor::class);
 
-        $context = $this->getMockBuilder(DeserializationContext::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        /** @var DeserializationContext $context */
+        $context = $this->createMock(DeserializationContext::class);
 
         $string = new TranslatedString();
         $string->deserializeFromJson($visitor, 'value', $context);
