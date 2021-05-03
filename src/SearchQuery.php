@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace CultuurNet\SearchV3;
 
+use CultuurNet\SearchV3\Parameter\Query;
+
 final class SearchQuery implements SearchQueryInterface
 {
     /**
@@ -94,18 +96,32 @@ final class SearchQuery implements SearchQueryInterface
     public function toArray(): array
     {
         $query = [];
+        $advancedQueries = [];
+
         foreach ($this->parameters as $parameter) {
             $key = $parameter->getKey();
+
+            if ($parameter instanceof Query) {
+                $advancedQueries[] = $parameter->getValue();
+                continue;
+            }
 
             if (isset($query[$key])) {
                 if ($parameter->allowsMultiple()) {
                     $query[$key] = is_array($query[$key]) ? $query[$key] : [$query[$key]];
                     $query[$key][] = $parameter->getValue();
-                } else {
-                    continue;
                 }
+                continue;
+            }
+
+            $query[$key] = $parameter->getValue();
+        }
+
+        if (!empty($advancedQueries)) {
+            if (count($advancedQueries) === 1) {
+                $query['q'] = $advancedQueries[0];
             } else {
-                $query[$key] = $parameter->getValue();
+                $query['q'] = '(' . implode(') AND (', $advancedQueries) . ')';
             }
         }
 

@@ -8,6 +8,7 @@ use CultuurNet\SearchV3\Parameter\CalendarSummary;
 use CultuurNet\SearchV3\Parameter\Facet;
 use CultuurNet\SearchV3\Parameter\Id;
 use CultuurNet\SearchV3\Parameter\Label;
+use CultuurNet\SearchV3\Parameter\Query;
 use CultuurNet\SearchV3\ValueObjects\CalendarSummaryFormat;
 use PHPUnit\Framework\TestCase;
 
@@ -185,6 +186,57 @@ final class SearchQueryTest extends TestCase
                 'md-html',
                 'lg-text',
             ],
+        ];
+
+        $result = $this->searchQuery->toArray();
+
+        $this->assertEquals($expectedQuery, $result);
+    }
+
+    public function testToArrayMethodWithOneAdvancedQuery(): void
+    {
+        $this->searchQuery->addParameter(new Query('foo:bar'));
+
+        $expectedQuery = [
+            'sort' => [
+                'title' => 'asc',
+            ],
+            'embed' => true,
+            'start' => 10,
+            'limit' => 50,
+            'labels' => 'test-label',
+            'facets' => 'regions',
+            'embedCalendarSummaries' => [
+                'md-html',
+                'lg-text',
+            ],
+            'q' => 'foo:bar',
+        ];
+
+        $result = $this->searchQuery->toArray();
+
+        $this->assertEquals($expectedQuery, $result);
+    }
+
+    public function testToArrayMethodWithMultipleAdvancedQueries(): void
+    {
+        $this->searchQuery->addParameter(new Query('foo:bar'));
+        $this->searchQuery->addParameter(new Query('het depot'));
+
+        $expectedQuery = [
+            'sort' => [
+                'title' => 'asc',
+            ],
+            'embed' => true,
+            'start' => 10,
+            'limit' => 50,
+            'labels' => 'test-label',
+            'facets' => 'regions',
+            'embedCalendarSummaries' => [
+                'md-html',
+                'lg-text',
+            ],
+            'q' => '(foo:bar) AND (het depot)',
         ];
 
         $result = $this->searchQuery->toArray();
