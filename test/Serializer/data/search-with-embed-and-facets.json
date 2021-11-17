@@ -174,6 +174,22 @@
         }
       ],
       "image": "https://io.uitdatabank.be/images/e65ef366-65a0-4172-a0fe-6844655ad6b9.jpeg",
+      "videos": [
+        {
+          "id": "6d787098-3082-4a0f-a510-1df4597ae02f",
+          "url": "https://www.youtube.com/watch?v=cEItmb_a20D",
+          "embedUrl": "https://www.youtube.com/embed/cEItmb_a20D",
+          "language": "nl",
+          "copyrightHolder": "Copyright afgehandeld door YouTube"
+        },
+        {
+          "id": "192a07d9-049b-4c2a-bc94-e46b7a557529",
+          "url": "https://www.youtube.com/watch?v=sXYtmb_q19C",
+          "embedUrl": "https://www.youtube.com/embed/sXYtmb_q19C",
+          "language": "fr",
+          "copyrightHolder": "publiq"
+        }
+      ],
       "organizer": {
         "@type": "Organizer",
         "@id": "https://io.uitdatabank.be/organizers/50c2e3f1-1f40-47a0-a72f-265ede8048fb",

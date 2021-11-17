@@ -23,6 +23,7 @@ use CultuurNet\SearchV3\ValueObjects\Status;
 use CultuurNet\SearchV3\ValueObjects\Term;
 use CultuurNet\SearchV3\ValueObjects\TranslatedAddress;
 use CultuurNet\SearchV3\ValueObjects\TranslatedString;
+use CultuurNet\SearchV3\ValueObjects\Video;
 use PHPUnit\Framework\TestCase;
 
 final class SerializerTest extends TestCase
@@ -199,6 +200,20 @@ final class SerializerTest extends TestCase
         $mediaObject->setCopyrightHolder('Lucile Desamory, 2010');
         $event->setMediaObjects([$mediaObject]);
         $event->setImage('https://io.uitdatabank.be/images/e65ef366-65a0-4172-a0fe-6844655ad6b9.jpeg');
+
+        $video1 = new Video();
+        $video1->setId('6d787098-3082-4a0f-a510-1df4597ae02f');
+        $video1->setUrl('https://www.youtube.com/watch?v=cEItmb_a20D');
+        $video1->setEmbedUrl('https://www.youtube.com/embed/cEItmb_a20D');
+        $video1->setLanguage('nl');
+        $video1->setCopyrightHolder('Copyright afgehandeld door YouTube');
+        $video2 = new Video();
+        $video2->setId('192a07d9-049b-4c2a-bc94-e46b7a557529');
+        $video2->setUrl('https://www.youtube.com/watch?v=sXYtmb_q19C');
+        $video2->setEmbedUrl('https://www.youtube.com/embed/sXYtmb_q19C');
+        $video2->setLanguage('fr');
+        $video2->setCopyrightHolder('publiq');
+        $event->setVideos([$video1, $video2]);
 
         $priceInfo = new PriceInfo();
         $priceInfo->setCategory('base');
