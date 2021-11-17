@@ -115,6 +115,12 @@ abstract class Offer
     private $mediaObjects = [];
 
     /**
+     * @var Video[]
+     * @Type("array<CultuurNet\SearchV3\ValueObjects\Video>")
+     */
+    private $videos = [];
+
+    /**
      * @var Organizer|null
      * @Type("CultuurNet\SearchV3\ValueObjects\Organizer")
      */
@@ -348,6 +354,22 @@ abstract class Offer
     public function setMediaObjects(array $mediaObjects): void
     {
         $this->mediaObjects = $mediaObjects;
+    }
+
+    /**
+     * @return Video[]
+     */
+    public function getVideos(): array
+    {
+        return $this->videos;
+    }
+
+    /**
+     * @param Video[] $videos
+     */
+    public function setVideos(array $videos): void
+    {
+        $this->videos = $videos;
     }
 
     public function getMainMediaObject(): ?MediaObject
