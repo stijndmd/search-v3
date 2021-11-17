@@ -29,7 +29,7 @@ Then, set up the search-v3 `SearchClient` like this:
 ```php
 $searchClient = new CultuurNet\SearchV3\SearchClient(
     $httpClient, // HTTP client set up in the previous step
-    new CultuurNet\SearchV3\Serializer() // Built-in serializer to deserialize the JSON responses
+    new CultuurNet\SearchV3\Serializer\Serializer() // Built-in serializer to deserialize the JSON responses
 );
 ```
 
