@@ -6,9 +6,9 @@ namespace CultuurNet\SearchV3\Parameter;
 
 final class MediaObject extends AbstractParameter
 {
-    public function __construct(bool $hasMediaObject)
+    public function __construct(bool $hasMediaObjects)
     {
-        $this->value = $hasMediaObject;
+        $this->value = $hasMediaObjects;
         $this->key = 'hasMediaObjects';
     }
 }
