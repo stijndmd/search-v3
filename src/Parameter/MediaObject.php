@@ -9,6 +9,6 @@ final class MediaObject extends AbstractParameter
     public function __construct(bool $hasMediaObject)
     {
         $this->value = $hasMediaObject;
-        $this->key = 'hasMediaObject';
+        $this->key = 'hasMediaObjects';
     }
 }
