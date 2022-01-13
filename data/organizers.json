@@ -1,0 +1,470 @@
+{
+	"@context": "http://www.w3.org/ns/hydra/context.jsonld",
+	"@type": "PagedCollection",
+	"itemsPerPage": 30,
+	"totalItems": 5,
+	"member": [{
+			"@id": "https://io.uitdatabank.be/organizers/6c972750-9f1a-4064-b517-620100e85196",
+			"@context": "/contexts/organizer",
+			"mainLanguage": "nl",
+			"url": "http://www.mediaraven.be",
+			"name": {
+				"nl": "Mediaraven"
+			},
+			"created": "2017-01-31T17:10:38+00:00",
+			"creator": "1fb7638e-a2db-4fca-811c-67b84fed8d7c",
+			"workflowStatus": "ACTIVE",
+			"languages": [
+				"nl"
+			],
+			"completedLanguages": [
+				"nl"
+			],
+			"modified": "2019-05-15T09:05:53+00:00",
+			"labels": [
+				"cultuurkuur_Actief Burgerschap",
+				"cultuurkuur_taal",
+				"cultuurkuur_Media"
+			],
+			"contactPoint": {
+				"phone": [
+					"092318270"
+				],
+				"email": [
+					"vorming@mediaraven.be"
+				],
+				"url": [
+					"www.mediaraven.be",
+					"www.facebook.com/mediaraven",
+					"twitter.com/mediaraven",
+					"www.youtube.com/mediaravenvzw"
+				]
+			},
+			"hiddenLabels": [
+				"Specifiek voor jongeren"
+			],
+			"regions": [
+				"nis-44021",
+				"nis-44021-Z",
+				"nis-40000",
+				"reg-gent"
+			],
+			"images": [{
+					"@id": "https://io.uitdatabank.be/images/4a8d3301-3155-4e9d-aa61-f6f9c29ed992",
+					"contentUrl": "https://images.uitdatabank.be/4a8d3301-3155-4e9d-aa61-f6f9c29ed992.jpeg",
+					"thumbnailUrl": "https://images.uitdatabank.be/4a8d3301-3155-4e9d-aa61-f6f9c29ed992.jpeg",
+					"description": "Mediaraven",
+					"copyrightHolder": "Mediaraven",
+					"language": "nl"
+				},
+				{
+					"@id": "https://io.uitdatabank.be/images/75ade23f-6b95-4136-9ec2-ae245324dfcc",
+					"contentUrl": "https://images.uitdatabank.be/75ade23f-6b95-4136-9ec2-ae245324dfcc.png",
+					"thumbnailUrl": "https://images.uitdatabank.be/75ade23f-6b95-4136-9ec2-ae245324dfcc.png",
+					"description": "Mediaraven logo detail",
+					"copyrightHolder": "Mediaraven",
+					"language": "nl"
+				}
+			],
+			"image": "https://images.uitdatabank.be/4a8d3301-3155-4e9d-aa61-f6f9c29ed992.jpeg"
+		},
+		{
+			"@id": "https://io.uitdatabank.be/organizers/b60f9f75-5c8e-41ef-b665-b9ad9aedac05",
+			"@context": "/contexts/organizer",
+			"mainLanguage": "nl",
+			"url": "http://www.kunstinzicht.be",
+			"name": {
+				"nl": "Kunst in Zicht"
+			},
+			"created": "2017-09-04T08:42:47+00:00",
+			"creator": "96b44880-7137-4d9c-895b-ec54b09ffe2d",
+			"workflowStatus": "ACTIVE",
+			"description": {
+				"nl": "Kunst in Zicht ontwikkelt actieve kunsteducatieve projecten. In een labowerking voor kinderen en jongeren én tijdens vorming en coaching van hun begeleiders staan twee doelen voorop: leren door de kunsten én interesse ontwikkelen voor de kunsten.",
+				"fr": "Description française",
+				"en": "Description in English",
+				"de": "Deutsche Beschreibung"
+			},
+			"languages": [
+				"nl"
+			],
+			"completedLanguages": [
+				"nl"
+			],
+			"modified": "2017-09-04T08:42:47+00:00",
+			"address": {
+				"nl": {
+					"addressCountry": "BE",
+					"addressLocality": "Turnhout",
+					"postalCode": "2300",
+					"streetAddress": "Warandestraat 42"
+				}
+			},
+			"labels": [
+				"cultuurkuur_kunst-en-cultuur",
+				"cultuurkuur_taal",
+				"cultuurkuur_Media"
+			],
+			"contactPoint": {
+				"phone": [
+					"014 47 23 35"
+				],
+				"email": [
+					"info@kunstinzicht.be"
+				],
+				"url": [
+					"http://www.kunstinzicht.be",
+					"www.facebook.com/kunstinzichtvzw"
+				]
+			},
+			"geo": {
+				"latitude": 51.324028,
+				"longitude": 4.94344
+			},
+			"regions": [
+				"nis-10000",
+				"nis-13040",
+				"nis-13040A",
+				"reg-kempen"
+			],
+			"images": [{
+				"@id": "https://io.uitdatabank.be/images/546a90cd-a238-417b-aa98-1b6c50c1345c",
+				"contentUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+				"thumbnailUrl": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg",
+				"description": "Kunst in Zicht - Vrijhaven voor actieve kunsteducatie",
+				"copyrightHolder": "Kunst in Zicht",
+				"language": "nl"
+			}],
+			"image": "https://images.uitdatabank.be/546a90cd-a238-417b-aa98-1b6c50c1345c.jpeg"
+		},
+		{
+			"@id": "https://io.uitdatabank.be/organizers/6C114F25-95D7-860D-E3479C3232046ADF",
+			"@context": "/contexts/organizer",
+			"mainLanguage": "nl",
+			"name": {
+				"nl": "Mooss vzw"
+			},
+			"address": {
+				"nl": {
+					"addressCountry": "BE",
+					"addressLocality": "Leuven",
+					"postalCode": "3000",
+					"streetAddress": "Vaartkom 4"
+				}
+			},
+			"labels": [
+				"cultuurkuur_Actief Burgerschap",
+				"cultuurkuur_kunst-en-cultuur"
+			],
+			"contactPoint": {
+				"phone": [
+					"+32 16 65 94 65",
+					"016 65 94 65"
+				],
+				"email": [
+					"info@mooss.org"
+				],
+				"url": [
+					"www.mooss.org/",
+					"www.schoolmetcultuur.be/"
+				]
+			},
+			"workflowStatus": "ACTIVE",
+			"description": {
+				"nl": "Mooss vzw staat in Vlaanderen synoniem voor 'actieve kunst- en erfgoededucatie'. Het voornaamste doel is kinderen, jongeren en hun begeleiders goesting geven in kunst & erfgoed. Dat doen we via workshops, vormingen, bemiddeling en participatie. Wij werken binnen het jeugdwerk, erfgoedinstellingen, kunst- en cultuurcentra, bibliotheken, onderwijsinstellingen...",
+				"fr": "Description française",
+				"en": "Description in English",
+				"de": "Deutsche Beschreibung"
+			},
+			"languages": [
+				"nl"
+			],
+			"completedLanguages": [
+				"nl"
+			],
+			"modified": "2020-01-11T03:36:08+00:00",
+			"hiddenLabels": [
+				"UiTPAS Leuven",
+				"RO_Kunsteducatief gesubsidieerd",
+				"Specifiek voor jongeren",
+				"UiTPAS Gent",
+				"UiTPAS Regio Aalst"
+			],
+			"url": "http://www.mooss.org",
+			"geo": {
+				"latitude": 50.8875824,
+				"longitude": 4.7002225
+			},
+			"regions": [
+				"nis-24062A",
+				"nis-20001",
+				"reg-leuven",
+				"nis-24062"
+			]
+		},
+		{
+			"@id": "https://io.uitdatabank.be/organizers/8fbfaf6f-bec1-4912-8895-51c40570a7ee",
+			"@context": "/contexts/organizer",
+			"mainLanguage": "nl",
+			"url": "https://www.artforum.be/nl/contact",
+			"name": {
+				"nl": "Artforum"
+			},
+			"address": {
+				"nl": {
+					"addressCountry": "BE",
+					"addressLocality": "Leuven",
+					"postalCode": "3000",
+					"streetAddress": "Stapelhuisstraat 13"
+				}
+			},
+			"created": "2019-04-18T15:05:54+00:00",
+			"creator": "cd4235e0-f4d2-4a3c-a9a8-90a705ab86ab",
+			"labels": [
+				"cultuurkuur_Actief Burgerschap",
+				"cultuurkuur_kunst-en-cultuur",
+				"cultuurkuur_Duurzaamheid, natuur en milieu",
+				"cultuurkuur_taal"
+			],
+			"contactPoint": {
+				"phone": [
+					"016.24 66 24"
+				],
+				"email": [
+					"info@artforum.be"
+				],
+				"url": [
+					"www.artforum.be",
+					"www.schoolmetcultuur.be/",
+					"www.facebook.com/artforumvzw"
+				]
+			},
+			"workflowStatus": "ACTIVE",
+			"description": {
+				"nl": "Artforum is een kunsteducatieve organisatie die zich richt tot kinderen en jongeren van 3 tot 25 jaar. We werken altijd met kinderen en jongeren, kunstenaars en rond maatschappelijke thema's.",
+				"fr": "Description française",
+				"en": "Description in English",
+				"de": "Deutsche Beschreibung"
+			},
+			"languages": [
+				"nl"
+			],
+			"completedLanguages": [
+				"nl"
+			],
+			"modified": "2019-10-30T11:08:49+00:00",
+			"geo": {
+				"latitude": 50.8866322,
+				"longitude": 4.7051347
+			},
+			"regions": [
+				"nis-24062A",
+				"nis-20001",
+				"reg-leuven",
+				"nis-24062"
+			]
+		},
+		{
+			"@id": "https://io.uitdatabank.be/organizers/CCEB27E3-AB71-99D0-D3E3C0E388CDDEED",
+			"@context": "/contexts/organizer",
+			"mainLanguage": "nl",
+			"name": {
+				"nl": "Villa Basta"
+			},
+			"address": {
+				"nl": {
+					"addressCountry": "BE",
+					"addressLocality": "Hasselt",
+					"postalCode": "3500",
+					"streetAddress": "Vissersstraat 2E"
+				}
+			},
+			"labels": [
+				"mijnkindopkamp",
+				"cultuurkuur_Actief Burgerschap",
+				"cultuurkuur_kunst-en-cultuur",
+				"cultuurkuur_Duurzaamheid, natuur en milieu",
+				"cultuurkuur_taal",
+				"cultuurkuur_Leren leren",
+				"cultuurkuur_Ondernemingszin",
+				"cultuurkuur_Lichamelijke, sociale en mentale gezondheid"
+			],
+			"contactPoint": {
+				"phone": [
+					"+32 11 72 77 77"
+				],
+				"email": [
+					"info@villabasta.be"
+				],
+				"url": [
+					"www.villabasta.be",
+					"www.facebook.com/villabasta",
+					"twitter.com/VillaBasta",
+					"www.youtube.com/user/VillaBasta"
+				]
+			},
+			"workflowStatus": "ACTIVE",
+			"description": {
+				"nl": "Villa Basta vzw organiseert creatieve workshops en projecten op locatie in heel Vlaanderen. Binnen de domeinen THEATER, DANS, VIDEO, MUZIEK EN BEELD bieden we creatieve activiteiten op maat aan voor kinderen, tieners en jongvolwassenen.",
+				"fr": "Description française",
+				"en": "Description in English",
+				"de": "Deutsche Beschreibung"
+			},
+			"languages": [
+				"nl"
+			],
+			"completedLanguages": [
+				"nl"
+			],
+			"modified": "2021-05-27T07:26:13+00:00",
+			"hiddenLabels": [
+				"Specifiek voor jongeren",
+				"UiTPAS 26",
+				"RO_Jeugdinitiatief"
+			],
+			"url": "https://villabasta.be/",
+			"geo": {
+				"latitude": 50.9385821,
+				"longitude": 5.3542212
+			},
+			"regions": [
+				"nis-71022",
+				"nis-71022A",
+				"reg-hasselt",
+				"nis-70000"
+			]
+		}
+	],
+	"facet": {
+		"regions": {
+			"nis-70000": {
+				"name": {
+					"nl": "Provincie Limburg",
+					"fr": "Province du Limbourg",
+					"de": "Provinz Limburg"
+				},
+				"count": 1,
+				"children": {
+					"reg-hasselt": {
+						"name": {
+							"nl": "Hasselt"
+						},
+						"count": 1,
+						"children": {
+							"nis-71022": {
+								"name": {
+									"nl": "Hasselt"
+								},
+								"count": 1,
+								"children": {
+									"nis-71022A": {
+										"name": {
+											"nl": "Hasselt"
+										},
+										"count": 1
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"nis-10000": {
+				"name": {
+					"nl": "Provincie Antwerpen",
+					"fr": "Province d'Anvers",
+					"de": "Provinz Antwerpen"
+				},
+				"count": 1,
+				"children": {
+					"reg-kempen": {
+						"name": {
+							"nl": "Kempen"
+						},
+						"count": 1,
+						"children": {
+							"nis-24062": {
+								"name": {
+									"nl": "Turnhout"
+								},
+								"count": 1,
+								"children": {
+									"nis-24062A": {
+										"name": {
+											"nl": "Turnhout"
+										},
+										"count": 1
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"nis-20001": {
+				"name": {
+					"nl": "Provincie Vlaams-Brabant",
+					"fr": "Province du Brabant flamand",
+					"de": "Provinz Flämisch-Brabant"
+				},
+				"count": 1,
+				"children": {
+					"reg-leuven": {
+						"name": {
+							"nl": "Leuven"
+						},
+						"count": 1,
+						"children": {
+							"nis-24062": {
+								"name": {
+									"nl": "Leuven"
+								},
+								"count": 1,
+								"children": {
+									"nis-24062A": {
+										"name": {
+											"nl": "Leuven"
+										},
+										"count": 1
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"nis-40000": {
+				"name": {
+					"nl": "Provincie Oost-Vlaanderen",
+					"fr": "Province de Flandre orientale",
+					"de": "Provinz Ostflandern"
+				},
+				"count": 1,
+				"children": {
+					"reg-gent": {
+						"name": {
+							"nl": "Gent"
+						},
+						"count": 1,
+						"children": {
+							"nis-44021": {
+								"name": {
+									"nl": "Gent"
+								},
+								"count": 1,
+								"children": {
+									"nis-44021-Z": {
+										"name": {
+											"nl": "Gent"
+										},
+										"count": 1
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

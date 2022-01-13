@@ -51,14 +51,23 @@ final class SearchClient implements SearchClientInterface
         return $this->search($searchQuery, 'offers');
     }
 
+    public function searchOrganizers(SearchQueryInterface $searchQuery): PagedCollection
+    {
+      return $this->search($searchQuery, 'organizers');
+    }
+
     private function search(SearchQueryInterface $searchQuery, $type): PagedCollection
     {
         $options = [
           'query' => $searchQuery->toArray(),
         ];
 
-        $result = $this->client->request('GET', $type, $options);
+        // @todo: Remove when the organizers endpoint is functioning.
+        if ($type == 'organizers') {
+          return $this->serializer->deserialize(file_get_contents(__DIR__ . '/../data/organizers.json'));
+        }
 
+        $result = $this->client->request('GET', $type, $options);
         return $this->serializer->deserialize((string) $result->getBody());
     }
 }
