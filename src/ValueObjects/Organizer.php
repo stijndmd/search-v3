@@ -120,7 +120,7 @@ final class Organizer
 
     /**
      * @var array
-     * @Type("array<CultuurNet\SearchV3\ValueObjects\Image>")
+     * @Type("array<CultuurNet\SearchV3\ValueObjects\MediaObject>")
      */
     private $images = [];
 
