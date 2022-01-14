@@ -41,7 +41,7 @@ final class Organizer
     private $creator;
 
     /**
-     * @var DateTime|null
+     * @var \DateTime|null
      * @Type("DateTime")
      */
     private $created;
@@ -65,7 +65,7 @@ final class Organizer
     private $completedLanguages = [];
 
     /**
-     * @var DateTime|null
+     * @var \DateTime|null
      * @Type("DateTime")
      */
     private $modified;
@@ -75,6 +75,11 @@ final class Organizer
      * @Type("array<string>")
      */
     private $labels = [];
+
+    /**
+     * @var string
+     */
+    private $email;
 
     /**
      * @var ContactPoint|null
@@ -234,12 +239,12 @@ final class Organizer
       $this->creator = $creator;
     }
 
-    public function getCreated(): ?DateTime
+    public function getCreated(): ?\DateTime
     {
       return $this->created;
     }
 
-    public function setCreated(?DateTime $created): void
+    public function setCreated(?\DateTime $created): void
     {
       $this->created = $created;
     }
@@ -274,12 +279,12 @@ final class Organizer
       $this->completedLanguages = $completedLanguages;
     }
 
-    public function getModified(): ?DateTime
+    public function getModified(): ?\DateTime
     {
       return $this->modified;
     }
 
-    public function setModified(?DateTime $modified): void
+    public function setModified(?\DateTime $modified): void
     {
       $this->modified = $modified;
     }
