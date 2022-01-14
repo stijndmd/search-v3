@@ -77,7 +77,8 @@ final class Organizer
     private $labels = [];
 
     /**
-     * @var string
+     * @var array
+     * @Type("array<string>")
      */
     private $email;
 
@@ -191,151 +192,151 @@ final class Organizer
 
     public function getAddress(): ?TranslatedAddress
     {
-      return $this->address;
+        return $this->address;
     }
 
     public function setAddress(TranslatedAddress $address): void
     {
-      $this->address = $address;
+        $this->address = $address;
     }
 
     public function getGeo(): ?GeoPoint
     {
-      return $this->geo;
+        return $this->geo;
     }
 
     public function setGeo(GeoPoint $geo): void
     {
-      $this->geo = $geo;
+        $this->geo = $geo;
     }
 
     public function getMainLanguage(): ?string
     {
-      return $this->mainLanguage;
+        return $this->mainLanguage;
     }
 
     public function setMainLanguage(?string $mainLanguage): void
     {
-      $this->mainLanguage = $mainLanguage;
+        $this->mainLanguage = $mainLanguage;
     }
 
     public function getUrl(): ?string
     {
-      return $this->url;
+        return $this->url;
     }
 
     public function setUrl(?string $url): void
     {
-      $this->url = $url;
+        $this->url = $url;
     }
 
     public function getCreator(): ?string
     {
-      return $this->creator;
+        return $this->creator;
     }
 
     public function setCreator(?string $creator): void
     {
-      $this->creator = $creator;
+        $this->creator = $creator;
     }
 
     public function getCreated(): ?\DateTime
     {
-      return $this->created;
+        return $this->created;
     }
 
     public function setCreated(?\DateTime $created): void
     {
-      $this->created = $created;
+        $this->created = $created;
     }
 
     public function getWorkflowStatus(): ?string
     {
-      return $this->workflowStatus;
+        return $this->workflowStatus;
     }
 
     public function setWorkflowStatus(?string $workflowStatus): void
     {
-      $this->workflowStatus = $workflowStatus;
+        $this->workflowStatus = $workflowStatus;
     }
 
     public function getLanguages(): array
     {
-      return $this->languages;
+        return $this->languages;
     }
 
     public function setLanguages(array $languages): void
     {
-      $this->languages = $languages;
+        $this->languages = $languages;
     }
 
     public function getCompletedLanguages(): array
     {
-      return $this->completedLanguages;
+        return $this->completedLanguages;
     }
 
     public function setCompletedLanguages(array $completedLanguages): void
     {
-      $this->completedLanguages = $completedLanguages;
+        $this->completedLanguages = $completedLanguages;
     }
 
     public function getModified(): ?\DateTime
     {
-      return $this->modified;
+        return $this->modified;
     }
 
     public function setModified(?\DateTime $modified): void
     {
-      $this->modified = $modified;
+        $this->modified = $modified;
     }
 
     public function getLabels(): array
     {
-      return $this->labels;
+        return $this->labels;
     }
 
     public function setLabels(array $labels): void
     {
-      $this->labels = $labels;
+        $this->labels = $labels;
     }
 
     public function getRegions(): array
     {
-      return $this->regions;
+        return $this->regions;
     }
 
     public function setRegions(array $regions): void
     {
-      $this->regions = $regions;
+        $this->regions = $regions;
     }
 
     public function getImage(): ?string
     {
-      return $this->image;
+        return $this->image;
     }
 
     public function setImage(?string $image): void
     {
-      $this->image = $image;
+        $this->image = $image;
     }
 
     public function getDescription(): ?TranslatedString
     {
-      return $this->description;
+        return $this->description;
     }
 
     public function setDescription(?TranslatedString $description): void
     {
-      $this->description = $description;
+        $this->description = $description;
     }
 
     public function getImages(): array
     {
-      return $this->images;
+        return $this->images;
     }
 
     public function setImages(array $images): void
     {
-      $this->images = $images;
+        $this->images = $images;
     }
 }
