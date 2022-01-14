@@ -212,9 +212,15 @@
         "address": {
           "nl": {
             "addressCountry": "BE",
-            "addressLocality": "Sint-Gillis (Brussel)",
+            "addressLocality": "Sint-Gillis",
             "postalCode": "1060",
             "streetAddress": "Fortstraat 5"
+          },
+          "fr": {
+            "addressCountry": "BE",
+            "addressLocality": "Saint-Gilles",
+            "postalCode": "1060",
+            "streetAddress": "Rue du Fort 5"
           }
         },
         "contactPoint": {
