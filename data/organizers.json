@@ -49,6 +49,20 @@
 				"nis-40000",
 				"reg-gent"
 			],
+      "address": {
+        "nl": {
+          "addressCountry": "BE",
+          "addressLocality": "Turnhout",
+          "postalCode": "2300",
+          "streetAddress": "Warandestraat 42"
+        }
+      },
+      "description": {
+        "nl": "Villa Basta vzw organiseert creatieve workshops en projecten op locatie in heel Vlaanderen. Binnen de domeinen THEATER, DANS, VIDEO, MUZIEK EN BEELD bieden we creatieve activiteiten op maat aan voor kinderen, tieners en jongvolwassenen.",
+        "fr": "Description française",
+        "en": "Description in English",
+        "de": "Deutsche Beschreibung"
+      },
 			"images": [{
 					"@id": "https://io.uitdatabank.be/images/4a8d3301-3155-4e9d-aa61-f6f9c29ed992",
 					"contentUrl": "https://images.uitdatabank.be/4a8d3301-3155-4e9d-aa61-f6f9c29ed992.jpeg",
