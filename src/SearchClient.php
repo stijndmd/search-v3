@@ -53,7 +53,7 @@ final class SearchClient implements SearchClientInterface
 
     public function searchOrganizers(SearchQueryInterface $searchQuery): PagedCollection
     {
-      return $this->search($searchQuery, 'organizers');
+        return $this->search($searchQuery, 'organizers');
     }
 
     private function search(SearchQueryInterface $searchQuery, $type): PagedCollection
