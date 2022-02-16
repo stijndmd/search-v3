@@ -62,11 +62,6 @@ final class SearchClient implements SearchClientInterface
           'query' => $searchQuery->toArray(),
         ];
 
-        // @todo: Remove when the organizers endpoint is functioning.
-        if ($type == 'organizers') {
-          return $this->serializer->deserialize(file_get_contents(__DIR__ . '/../data/organizers.json'));
-        }
-
         $result = $this->client->request('GET', $type, $options);
         return $this->serializer->deserialize((string) $result->getBody());
     }
