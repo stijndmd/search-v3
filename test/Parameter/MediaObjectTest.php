@@ -15,7 +15,7 @@ final class MediaObjectTest extends TestCase
         $key = $mediaObject->getKey();
         $value = $mediaObject->getValue();
 
-        $this->assertEquals('hasMediaObject', $key);
+        $this->assertEquals('hasMediaObjects', $key);
         $this->assertTrue($value);
     }
 }
