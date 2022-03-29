@@ -77,12 +77,6 @@ final class Organizer
     private $labels = [];
 
     /**
-     * @var array
-     * @Type("array<string>")
-     */
-    private $email;
-
-    /**
      * @var ContactPoint|null
      * @Type("CultuurNet\SearchV3\ValueObjects\ContactPoint")
      */
@@ -158,16 +152,6 @@ final class Organizer
     public function setName(TranslatedString $name): void
     {
         $this->name = $name;
-    }
-
-    public function getEmail(): array
-    {
-        return $this->email;
-    }
-
-    public function setEmail(array $email): void
-    {
-        $this->email = $email;
     }
 
     public function getContactPoint(): ?ContactPoint
