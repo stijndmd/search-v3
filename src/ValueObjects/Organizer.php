@@ -42,7 +42,7 @@ final class Organizer
 
     /**
      * @var \DateTime|null
-     * @Type("DateTime")
+     * @Type("DateTime<'Y-m-d\TH:i:sP'>")
      */
     private $created;
 
@@ -66,7 +66,7 @@ final class Organizer
 
     /**
      * @var \DateTime|null
-     * @Type("DateTime")
+     * @Type("DateTime<'Y-m-d\TH:i:sP'>")
      */
     private $modified;
 
@@ -104,7 +104,7 @@ final class Organizer
      * @var string|null
      * @Type("string")
      */
-    private $image;
+    private $mainImage;
 
     /**
      * @var TranslatedAddress|null
@@ -310,14 +310,14 @@ final class Organizer
         $this->regions = $regions;
     }
 
-    public function getImage(): ?string
+    public function getMainImage(): ?string
     {
-        return $this->image;
+        return $this->mainImage;
     }
 
-    public function setImage(?string $image): void
+    public function setMainImage(?string $image): void
     {
-        $this->image = $image;
+        $this->mainImage = $image;
     }
 
     public function getDescription(): ?TranslatedString
