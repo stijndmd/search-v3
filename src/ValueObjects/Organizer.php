@@ -174,6 +174,11 @@ final class Organizer
         $this->hiddenLabels = $hiddenLabels;
     }
 
+    public function addHiddenLabel(string $hiddenLabel): void
+    {
+        $this->hiddenLabels[] = $hiddenLabel;
+    }
+
     public function getAddress(): ?TranslatedAddress
     {
         return $this->address;
@@ -282,6 +287,11 @@ final class Organizer
     public function setLabels(array $labels): void
     {
         $this->labels = $labels;
+    }
+
+    public function addLabel(string $label): void
+    {
+        $this->labels[] = $label;
     }
 
     public function getRegions(): array
