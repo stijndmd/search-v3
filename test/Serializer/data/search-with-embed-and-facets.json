@@ -70,6 +70,8 @@
       "calendarType": "multiple",
       "startDate": "2021-01-21T23:00:00+00:00",
       "endDate": "2021-03-04T22:59:59+00:00",
+      "attendanceMode": "mixed",
+      "onlineUrl": "https://www.livestream.be/",
       "status": {
         "type": "Available",
         "reason": {
