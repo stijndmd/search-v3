@@ -41,6 +41,12 @@ final class Event extends Offer
      */
     private $attendanceMode = 'offline';
 
+    /**
+     * @var string|null
+     * @Type("string")
+     */
+    private $onlineUrl;
+
     public function getLocation(): ?Place
     {
         return $this->location;
@@ -97,4 +103,13 @@ final class Event extends Offer
         $this->attendanceMode = $attendanceMode;
     }
 
+    public function getOnlineUrl(): ?string
+    {
+        return $this->onlineUrl;
+    }
+
+    public function setOnlineUrl(?string $onlineUrl): void
+    {
+        $this->onlineUrl = $onlineUrl;
+    }
 }
