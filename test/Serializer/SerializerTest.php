@@ -146,6 +146,9 @@ final class SerializerTest extends TestCase
             )
         );
 
+        $event->setAttendanceMode('mixed');
+        $event->setOnlineUrl('https://www.livestream.be/');
+
         $subEvent1 = new Event();
         $subEvent1->setStatus(new Status('Available'));
         $subEvent1->setStartDate(new \DateTime('2021-01-21T23:00:00+00:00'));
