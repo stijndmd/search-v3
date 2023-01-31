@@ -35,6 +35,18 @@ final class Event extends Offer
      */
     private $subEvents = [];
 
+    /**
+     * @var string
+     * @Type("string")
+     */
+    private $attendanceMode = 'offline';
+
+    /**
+     * @var string|null
+     * @Type("string")
+     */
+    private $onlineUrl;
+
     public function getLocation(): ?Place
     {
         return $this->location;
@@ -79,5 +91,25 @@ final class Event extends Offer
     public function setBookingInfo(BookingInfo $bookingInfo): void
     {
         $this->bookingInfo = $bookingInfo;
+    }
+
+    public function getAttendanceMode(): string
+    {
+        return $this->attendanceMode;
+    }
+
+    public function setAttendanceMode(string $attendanceMode): void
+    {
+        $this->attendanceMode = $attendanceMode;
+    }
+
+    public function getOnlineUrl(): ?string
+    {
+        return $this->onlineUrl;
+    }
+
+    public function setOnlineUrl(?string $onlineUrl): void
+    {
+        $this->onlineUrl = $onlineUrl;
     }
 }
