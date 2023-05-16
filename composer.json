@@ -22,7 +22,7 @@
     }
   },
   "require": {
-    "php": "^7.1",
+    "php": "^8.1",
     "guzzlehttp/guzzle": "~6.0",
     "jms/serializer": "~1.9",
     "simple-bus/jms-serializer-bridge": "^1.0",
